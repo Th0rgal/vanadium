@@ -3,6 +3,9 @@ rustflags = [
   # The VM expects ELF binaries with 2 segments (rx and rw). Don't put
   # read-only non-executable sections in their own segment.
   "-Clink-arg=--no-rosegment",
+  "-Cforce-unwind-tables=no",
+  "-Clink-arg=--gc-sections",
+  "-Clink-arg=-Tvanadium_strip_eh.ld",
 ]
 
 [env]

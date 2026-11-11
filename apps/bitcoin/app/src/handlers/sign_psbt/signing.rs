@@ -175,7 +175,7 @@ pub(super) fn sign_all_inputs(
     let unsigned_tx = psbt
         .unsigned_tx()
         .map_err(|_| Error::FailedUnsignedTransaction)?;
-    let unsigned_tx_id: [u8; 32] = unsigned_tx.compute_txid().to_byte_array();
+    let mut cached_unsigned_tx_id: Option<[u8; 32]> = None;
 
     let mut ctx = SigningCtx {
         psbt,
@@ -191,20 +191,39 @@ pub(super) fn sign_all_inputs(
 
     for (input_index, input) in psbt.inputs.iter().enumerate() {
         let (account_id, wallet_policy, coords) = summary.input_account(input_index);
-
-        // (wallet, tx) → 32-byte session id, used to bind MuSig2 session
-        // state to a specific (wallet policy, transaction) pair.
-        let account_name = summary.account_names[account_id as usize]
-            .as_deref()
-            .unwrap_or("");
-        let wallet_id = wallet_policy.get_id(account_name);
-        let session_id = musig_signing::compute_psbt_session_id(&wallet_id, &unsigned_tx_id);
+        let mut cached_session_id: Option<[u8; 32]> = None;
 
         for (placeholder_index, (kp, tapleaf_desc)) in wallet_policy
             .descriptor_template()
             .placeholders()
             .enumerate()
         {
+            if kp.is_musig() {
+                let session_id = *cached_session_id.get_or_insert_with(|| {
+                    let txid = *cached_unsigned_tx_id
+                        .get_or_insert_with(|| unsigned_tx.compute_txid().to_byte_array());
+                    let account_name = summary.account_names[account_id as usize]
+                        .as_deref()
+                        .unwrap_or("");
+                    let wallet_id = wallet_policy.get_id(account_name);
+                    musig_signing::compute_psbt_session_id(&wallet_id, &txid)
+                });
+                let ph = PlaceholderCtx {
+                    input,
+                    input_index,
+                    placeholder_index,
+                    account_id,
+                    wallet_policy,
+                    coords,
+                    kp,
+                    tapleaf_desc,
+                    session_id,
+                    taptree_hashes,
+                };
+                musig::handle_musig_placeholder(&mut ctx, &ph, musig_state)?;
+                continue;
+            }
+
             let ph = PlaceholderCtx {
                 input,
                 input_index,
@@ -214,14 +233,9 @@ pub(super) fn sign_all_inputs(
                 coords,
                 kp,
                 tapleaf_desc,
-                session_id,
+                session_id: [0u8; 32],
                 taptree_hashes,
             };
-
-            if kp.is_musig() {
-                musig::handle_musig_placeholder(&mut ctx, &ph, musig_state)?;
-                continue;
-            }
 
             // ===== plain key path =====
             let key_index = kp

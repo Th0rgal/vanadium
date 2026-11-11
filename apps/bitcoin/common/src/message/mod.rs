@@ -230,6 +230,14 @@ pub enum Request {
         #[n(0)]
         account_index: u32,
     },
+
+    /// Queries the V-App global allocator's live and high-water heap usage in bytes.
+    #[n(9)]
+    #[cbor(map)]
+    GetHeapStats {
+        #[n(0)]
+        reset: bool,
+    },
 }
 
 #[derive(Encode, Decode, Debug, Clone, PartialEq, Eq)]
@@ -410,6 +418,15 @@ pub enum Response {
         /// payments, and its spend public key.
         #[n(0)]
         scan_key: String,
+    },
+
+    #[n(9)]
+    #[cbor(map)]
+    HeapStats {
+        #[n(0)]
+        current_bytes: u32,
+        #[n(1)]
+        peak_bytes: u32,
     },
 }
 

@@ -16,7 +16,9 @@ pub use common::message::KeyTree;
 pub fn derive_hd_node(tree: KeyTree, path: &[u32]) -> Result<HDPrivNode<Secp256k1, 32>, Error> {
     match tree {
         KeyTree::Standard => {
-            if path.len() > MAX_BIP32_PATH_LEN {
+            if path.len() > MAX_BIP32_PATH_LEN
+                || !llb_vanadium_ffi::bip32_vanadium_depth_ok(path.len() as u8)
+            {
                 return Err(Error::DerivationPathTooLong);
             }
             Secp256k1::derive_hd_node(path).map_err(|_| Error::KeyDerivationFailed)

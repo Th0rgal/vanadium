@@ -45,7 +45,7 @@ pub(super) fn resolve_private_key(
 /// (input, placeholder). So each answer is remembered.
 pub(super) struct LocalKeys {
     standard_fpr: u32,
-    resident_fpr: u32,
+    resident_fpr: Option<u32>,
     /// `(account id, key-information index)` → the tree that key lives in, if any.
     seen: Vec<((u32, u32), Option<KeyTree>)>,
 }
@@ -54,7 +54,7 @@ impl LocalKeys {
     pub(super) fn new() -> Result<Self, Error> {
         Ok(Self {
             standard_fpr: sdk::curve::Secp256k1::get_master_fingerprint(),
-            resident_fpr: get_resident_master_fingerprint()?,
+            resident_fpr: None,
             seen: Vec::new(),
         })
     }
@@ -104,15 +104,25 @@ impl LocalKeys {
 
     /// Derives the master xpub locally and checks it matches what the wallet policy
     /// claims; defeats fingerprint collisions.
-    fn check_key_origin(&self, key_info: &KeyInformation) -> Option<KeyTree> {
+    fn check_key_origin(&mut self, key_info: &KeyInformation) -> Option<KeyTree> {
         let key_origin = key_info.origin_info.as_ref()?;
 
         let tree = if key_origin.fingerprint == self.standard_fpr {
             KeyTree::Standard
-        } else if key_origin.fingerprint == self.resident_fpr {
-            KeyTree::Resident
         } else {
-            return None;
+            let res_fpr = match self.resident_fpr {
+                Some(f) => f,
+                None => {
+                    let f = get_resident_master_fingerprint().ok()?;
+                    self.resident_fpr = Some(f);
+                    f
+                }
+            };
+            if key_origin.fingerprint == res_fpr {
+                KeyTree::Resident
+            } else {
+                return None;
+            }
         };
 
         let master_path_u32: Vec<u32> = key_origin

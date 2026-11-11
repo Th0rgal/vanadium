@@ -155,6 +155,23 @@ impl<'a> BitcoinClient {
         }
     }
 
+    pub async fn get_heap_stats(&mut self, reset: bool) -> Result<(u32, u32), BitcoinClientError> {
+        let msg = minicbor::to_vec(&Request::GetHeapStats { reset }).map_err(|_| {
+            BitcoinClientError::GenericError("Failed to serialize GetHeapStats request".to_string())
+        })?;
+        let response_raw = self.send_message(&msg).await?;
+        match Self::parse_response(&response_raw).await? {
+            Response::HeapStats {
+                current_bytes,
+                peak_bytes,
+            } => Ok((current_bytes, peak_bytes)),
+            e => Err(BitcoinClientError::InvalidResponse(format!(
+                "Invalid response: {:?}",
+                e
+            ))),
+        }
+    }
+
     pub async fn get_extended_pubkey(
         &mut self,
         tree: message::KeyTree,

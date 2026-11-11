@@ -1,4 +1,4 @@
-use alloc::{boxed::Box, vec::Vec};
+use alloc::vec::Vec;
 
 use bitcoin::bip32::{ChildNumber, Xpub};
 use bitcoin::hashes::{hash160, sha256, Hash};
@@ -8,33 +8,10 @@ use bitcoin::script::Builder;
 use bitcoin::{PubkeyHash, ScriptBuf, ScriptHash, TapNodeHash, WPubkeyHash, WScriptHash};
 
 use crate::errors::Error;
+use crate::miniscript_check::{
+    check_miniscript_expr, check_wallet_policy_miniscript, REQUIRE_SANE_TOPLEVEL,
+};
 use crate::taproot::GetTapTreeHash;
-
-// Simple generic bubble sort implementation for Vec<[u8; N]>.
-trait BubbleSort {
-    fn bubble_sort(&mut self);
-}
-
-impl<const N: usize> BubbleSort for Vec<[u8; N]> {
-    fn bubble_sort(&mut self) {
-        let len = self.len();
-        if len < 2 {
-            return;
-        }
-        for i in 0..len {
-            let mut swapped = false;
-            for j in 0..(len - 1 - i) {
-                if self[j] > self[j + 1] {
-                    self.swap(j, j + 1);
-                    swapped = true;
-                }
-            }
-            if !swapped {
-                break;
-            }
-        }
-    }
-}
 
 use crate::account::{DescriptorTemplate, KeyExpression, KeyInformation, WalletPolicy};
 
@@ -143,7 +120,7 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
 
         builder = match self {
             DescriptorTemplate::Sh(inner) => {
-                if ctx != ScriptContext::None && ctx != ScriptContext::Wsh {
+                if ctx != ScriptContext::None {
                     return Err(Error::InvalidScriptContext);
                 }
 
@@ -157,7 +134,7 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                 )?;
 
                 let script_hash =
-                    ScriptHash::from_raw_hash(hash160::Hash::hash(&inner_builder.as_bytes()));
+                    ScriptHash::from_raw_hash(hash160::Hash::hash(inner_builder.as_bytes()));
 
                 builder
                     .push_opcode(OP_HASH160)
@@ -165,9 +142,11 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                     .push_opcode(OP_EQUAL)
             }
             DescriptorTemplate::Wsh(inner) => {
-                if ctx != ScriptContext::None {
+                // Allow top-level wsh(...) and BIP-388 sh(wsh(...)) (VND-BUG-005).
+                if ctx != ScriptContext::None && ctx != ScriptContext::Sh {
                     return Err(Error::InvalidScriptContext);
                 }
+                check_miniscript_expr(inner, false, REQUIRE_SANE_TOPLEVEL)?;
 
                 let mut inner_builder = Builder::new();
                 inner_builder = inner.to_script_inner(
@@ -178,18 +157,18 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                     ScriptContext::Wsh,
                 )?;
                 let script_hash =
-                    WScriptHash::from_raw_hash(sha256::Hash::hash(&inner_builder.as_bytes()));
+                    WScriptHash::from_raw_hash(sha256::Hash::hash(inner_builder.as_bytes()));
                 builder.push_int(0).push_slice(script_hash)
             }
             DescriptorTemplate::Pkh(kp) => {
                 let key = derive(kp)?;
-                let pubkey: Vec<u8> = if ctx == ScriptContext::Tr {
-                    key.to_x_only_pub().serialize().to_vec()
+                let pubkey_hash = if ctx == ScriptContext::Tr {
+                    let pk = key.to_x_only_pub().serialize();
+                    PubkeyHash::from_raw_hash(hash160::Hash::hash(&pk))
                 } else {
-                    key.to_pub().to_bytes().to_vec()
+                    let pk = key.to_pub().to_bytes();
+                    PubkeyHash::from_raw_hash(hash160::Hash::hash(&pk))
                 };
-
-                let pubkey_hash = PubkeyHash::from_raw_hash(hash160::Hash::hash(&pubkey));
 
                 builder
                     .push_opcode(OP_DUP)
@@ -231,8 +210,7 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                     .collect::<Result<Vec<[u8; 33]>, Error>>()?;
 
                 if matches!(self, DescriptorTemplate::Sortedmulti(_, _)) {
-                    // O(n^2) sorting, better for small arrays
-                    keys.bubble_sort();
+                    llb_vanadium_ffi::sort_fixed_bytes(&mut keys);
                 }
 
                 for key in keys {
@@ -270,8 +248,7 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                     .collect::<Result<Vec<[u8; 32]>, Error>>()?;
 
                 if matches!(self, DescriptorTemplate::Sortedmulti_a(_, _)) {
-                    // O(n^2) sorting, better for small arrays
-                    keys.bubble_sort();
+                    llb_vanadium_ffi::sort_fixed_bytes(&mut keys);
                 }
 
                 for (idx, key) in keys.iter().enumerate() {
@@ -287,6 +264,9 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                 builder.push_int(*k as i64).push_opcode(OP_NUMEQUAL)
             }
             DescriptorTemplate::Tr(k, tree) => {
+                if ctx != ScriptContext::None {
+                    return Err(Error::InvalidScriptContext);
+                }
                 let secp = bitcoin::secp256k1::Secp256k1::new();
                 let internal_key: UntweakedPublicKey = derive(k)?.to_x_only_pub();
 
@@ -294,8 +274,7 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                     .as_ref()
                     .map(|t| {
                         t.get_taptree_hash(key_information, is_change, address_index)
-                            .map(|t| TapNodeHash::from_byte_array(t))
-                            .map_err(|_| Error::InvalidKey)
+                            .map(TapNodeHash::from_byte_array)
                     })
                     .transpose()?;
 
@@ -307,11 +286,15 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
             }
             DescriptorTemplate::Zero => builder.push_opcode(OP_0),
             DescriptorTemplate::One => builder.push_opcode(OP_PUSHNUM_1),
-            DescriptorTemplate::Pk(k) => {
-                // c:pk_k(key)
-                let desc = DescriptorTemplate::C(Box::new(DescriptorTemplate::Pk_k(k.clone())));
-                desc.to_script_inner(key_information, is_change, address_index, builder, ctx)?
-            }
+            DescriptorTemplate::Pk(k) => builder
+                .push_inner_script(
+                    &DescriptorTemplate::Pk_k(k.clone()),
+                    key_information,
+                    is_change,
+                    address_index,
+                    ctx,
+                )?
+                .push_opcode(OP_CHECKSIG),
             DescriptorTemplate::Pk_k(kp) => {
                 let key = derive(kp)?;
                 if ctx == ScriptContext::Tr {
@@ -334,8 +317,18 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                     .push_slice(&rip.to_byte_array())
                     .push_opcode(OP_EQUALVERIFY)
             }
-            DescriptorTemplate::Older(n) => builder.push_int(*n as i64).push_opcode(OP_CSV),
-            DescriptorTemplate::After(n) => builder.push_int(*n as i64).push_opcode(OP_CLTV),
+            DescriptorTemplate::Older(n) => {
+                if !llb_vanadium_ffi::miniscript_older_ok(*n) {
+                    return Err(Error::InvalidWalletPolicy);
+                }
+                builder.push_int(*n as i64).push_opcode(OP_CSV)
+            }
+            DescriptorTemplate::After(n) => {
+                if !llb_vanadium_ffi::miniscript_after_ok(*n) {
+                    return Err(Error::InvalidWalletPolicy);
+                }
+                builder.push_int(*n as i64).push_opcode(OP_CLTV)
+            }
             DescriptorTemplate::Sha256(h) => builder
                 .push_opcode(OP_SIZE)
                 .push_int(32)
@@ -364,13 +357,21 @@ impl ToScriptWithKeyInfoInner for DescriptorTemplate {
                 .push_opcode(OP_HASH160)
                 .push_slice(h)
                 .push_opcode(OP_EQUAL),
-            DescriptorTemplate::Andor(x, y, z) => builder
-                .push_inner_script(x, key_information, is_change, address_index, ctx)?
-                .push_opcode(OP_NOTIF)
-                .push_inner_script(y, key_information, is_change, address_index, ctx)?
-                .push_opcode(OP_ELSE)
-                .push_inner_script(z, key_information, is_change, address_index, ctx)?
-                .push_opcode(OP_ENDIF),
+            // BIP-379 canonical `andor(X,Y,Z)`: `[X] OP_NOTIF [Z] OP_ELSE [Y] OP_ENDIF` (VND-BUG-001).
+            DescriptorTemplate::Andor(x, y, z) => {
+                debug_assert!(llb_vanadium_ffi::miniscript_andor_branches_valid(
+                    OP_NOTIF.to_u8(),
+                    OP_ELSE.to_u8(),
+                    OP_ENDIF.to_u8()
+                ));
+                builder
+                    .push_inner_script(x, key_information, is_change, address_index, ctx)?
+                    .push_opcode(OP_NOTIF)
+                    .push_inner_script(z, key_information, is_change, address_index, ctx)?
+                    .push_opcode(OP_ELSE)
+                    .push_inner_script(y, key_information, is_change, address_index, ctx)?
+                    .push_opcode(OP_ENDIF)
+            }
             DescriptorTemplate::And_v(x, y) => builder
                 .push_inner_script(x, key_information, is_change, address_index, ctx)?
                 .push_inner_script(y, key_information, is_change, address_index, ctx)?,
@@ -494,6 +495,7 @@ impl ToScriptWithKeyInfo for DescriptorTemplate {
 
 impl ToScript for WalletPolicy {
     fn to_script(&self, is_change: bool, address_index: u32) -> Result<ScriptBuf, Error> {
+        check_wallet_policy_miniscript(self)?;
         self.descriptor_template().to_script(
             self.key_information(),
             is_change,

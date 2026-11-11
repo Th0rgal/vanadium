@@ -9,7 +9,7 @@ use alloc::{
 
 use common::{errors::Error, fastpsbt};
 
-use bitcoin::{Address, ScriptBuf};
+use bitcoin::{Address, Script};
 use sdk::ux::{Icon, TagValue};
 
 use crate::constants::COIN_TICKER;
@@ -88,13 +88,18 @@ pub(super) fn show_transaction_signed(app: &mut sdk::App) {
     app.show_info(Icon::Success, "Transaction signed");
 }
 
+#[cfg(test)]
 const SATS_PER_BTC: u64 = 100_000_000;
 
 fn format_amount(value: u64, ticker: &str) -> String {
-    let whole_part = value / SATS_PER_BTC;
-    let fractional_part = value % SATS_PER_BTC;
-    // Pad fractional part with leading zeros to ensure 8 digits
-    format!("{}.{:08} {}", whole_part, fractional_part, ticker)
+    let mut buf = [0u8; 64];
+    if let Some(s) = llb_vanadium_ffi::format_sats_ascii(value, ticker, true, &mut buf) {
+        return String::from(s);
+    }
+    let mut vec_buf = alloc::vec![0u8; 32 + ticker.len()];
+    let s = llb_vanadium_ffi::format_sats_ascii(value, ticker, true, &mut vec_buf)
+        .expect("vec_buf sized for u64 sats + ticker");
+    String::from(s)
 }
 
 /// Build the `TagValue` pairs shown to the user during transaction review.
@@ -162,11 +167,34 @@ pub(super) fn build_display_pairs(
         let address = match silent_payments.and_then(|sp| sp.address(output_index)) {
             Some(address) => address.to_string(),
             None => {
-                let out_script_pubkey = output.script.ok_or(Error::OutputScriptMissing)?;
-                let out_script_pubkey = ScriptBuf::from_bytes(out_script_pubkey.to_vec());
-                Address::from_script(&out_script_pubkey, bitcoin::Network::Testnet)
-                    .map_err(|_| Error::AddressFromScriptFailed)?
-                    .to_string()
+                let raw_spk = output.script.ok_or(Error::OutputScriptMissing)?;
+                let out_script_pubkey = Script::from_bytes(raw_spk);
+                // Validate SegWit witness program length via Lean kernel when applicable (VND-BUG-006).
+                if raw_spk.len() >= 2 {
+                    if let Some(witver) = llb_vanadium_ffi::witness_opcode_to_version(raw_spk[0]) {
+                        let prog_len = raw_spk[1];
+                        if raw_spk.len() == 2 + (prog_len as usize)
+                            && !llb_vanadium_ffi::segwit_program_valid(witver, prog_len)
+                        {
+                            return Err(Error::AddressFromScriptFailed);
+                        }
+                    }
+                }
+                if out_script_pubkey.is_op_return() {
+                    // Gracefully render OP_RETURN outputs instead of failing Address::from_script (VND-BUG-009).
+                    if raw_spk.len() <= 1 {
+                        String::from("OP_RETURN")
+                    } else {
+                        let mut s = String::with_capacity(10 + raw_spk.len() * 2);
+                        s.push_str("OP_RETURN ");
+                        s.push_str(&hex::encode(&raw_spk[1..]));
+                        s
+                    }
+                } else {
+                    Address::from_script(out_script_pubkey, bitcoin::Network::Testnet)
+                        .map_err(|_| Error::AddressFromScriptFailed)?
+                        .to_string()
+                }
             }
         };
 
@@ -178,7 +206,7 @@ pub(super) fn build_display_pairs(
                 format!("{}:{}", name, address)
             }
         } else {
-            format!("{}", address)
+            address
         };
 
         pairs.push(TagValue {
@@ -246,5 +274,23 @@ mod tests {
         assert_eq!(pairs[0].value, "account: My legacy account #0");
         assert_eq!(pairs[1].value, "0.01000000 TEST"); // 1_000_000 sat in
         assert_eq!(pairs[3].value, "0.00999800 TEST"); // 999_800 sat out
+    }
+
+    #[test]
+    fn bug_009_op_return_output_renders_without_failing() {
+        let mut psbt = legacy_pkh_psbt();
+        let op_ret = bitcoin::ScriptBuf::new_op_return(*b"lean");
+        psbt.outputs[0].insert(common::fastpsbt::PSBT_OUT_SCRIPT, &[], op_ret.to_bytes());
+        psbt.outputs[0].insert(
+            common::fastpsbt::PSBT_OUT_AMOUNT,
+            &[],
+            0u64.to_le_bytes().to_vec(),
+        );
+        let serialized = psbt.serialize();
+        let parsed = fastpsbt::Psbt::parse(&serialized).unwrap();
+        let (summary, _) = analyze_transaction(&parsed).unwrap();
+        let pairs = build_display_pairs(&parsed, &summary, None).unwrap();
+        let out0 = pairs.iter().find(|p| p.tag == "Output 0").unwrap();
+        assert!(out0.value.starts_with("OP_RETURN "));
     }
 }

@@ -343,10 +343,10 @@ fn show_step_raw(page: &[u8]) {{
 }
 
 fn build_heap() {
-    let size_str = env::var("VAPP_HEAP_SIZE").unwrap_or_else(|_| "65536".to_string());
+    let size_str = env::var("VAPP_HEAP_SIZE").unwrap_or_else(|_| "32768".to_string());
     let size: usize = size_str
         .parse()
-        .expect("VAPP_HEAP_SIZE must be a valid usize (e.g., 65536)");
+        .expect("VAPP_HEAP_SIZE must be a valid usize (e.g., 32768)");
 
     let out_dir = env::var("OUT_DIR").unwrap();
     let dest_path = Path::new(&out_dir).join("heap_config.rs");

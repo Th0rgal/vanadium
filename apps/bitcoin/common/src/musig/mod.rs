@@ -508,7 +508,7 @@ pub fn aggregate_xpub(participant_xpubs: &[Xpub]) -> Result<Xpub, MusigError> {
         .iter()
         .map(|x| x.public_key.serialize())
         .collect();
-    pks.sort();
+    llb_vanadium_ffi::sort_fixed_bytes(&mut pks);
     let ctx = key_agg(&pks)?;
 
     // The synthetic xpub must preserve the *natural* parity of `Q`, not

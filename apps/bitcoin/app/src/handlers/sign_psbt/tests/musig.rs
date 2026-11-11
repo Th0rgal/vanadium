@@ -500,3 +500,50 @@ fn test_handle_sign_psbt_musig_round2_missing_cosigner_pubnonce_errors() {
     ));
     assert_eq!(result, Err(Error::MissingMusigPubnonce));
 }
+
+#[test]
+fn bug_008_musig_round2_tampered_self_pubnonce_is_rejected() {
+    musig_signing::reset_storage_for_tests();
+
+    let address_index: u32 = 17;
+    let wallet_policy = make_2of2_keypath_policy();
+    let account_name = "Musig tampered self-pubnonce test";
+
+    let mut psbt = build_musig_keypath_psbt(&wallet_policy, address_index);
+    let por =
+        ProofOfRegistration::new(&wallet_policy.registration_id(account_name)).dangerous_as_bytes();
+    let accounts = [(&wallet_policy, account_name, &por)];
+
+    // ---- Round 1 ----
+    let r1 = sdk::executor::block_on(handle_sign_psbt(
+        &mut sdk::App::singleton(),
+        &prepare_as_psbtv2(&psbt, &accounts),
+    ))
+    .unwrap();
+    let device_pubnonce = match r1 {
+        Response::PsbtSigned {
+            musig_pubnonces, ..
+        } => musig_pubnonces.into_iter().next().unwrap(),
+        _ => panic!(),
+    };
+    let agg_pk = device_pubnonce.aggregate_pubkey;
+    let agg_xonly: [u8; 32] = agg_pk[1..].try_into().unwrap();
+
+    // Substitute a valid-curve-point spoofed pubnonce for the device's own participant key!
+    let (_sn_spoof, spoofed_dev_pn) =
+        musig_lib::nonce_gen(&[0xABu8; 32], &device_pubnonce.participant_pk, &agg_xonly).unwrap();
+    let (cosigner_pk, _, cosigner_pubnonce, _) = cosigner_master_round1(&agg_xonly, &[0xCDu8; 32]);
+    insert_pubnonce(
+        &mut psbt,
+        &device_pubnonce.participant_pk,
+        &agg_pk,
+        &spoofed_dev_pn.0,
+    );
+    insert_pubnonce(&mut psbt, &cosigner_pk, &agg_pk, &cosigner_pubnonce.0);
+
+    let result = sdk::executor::block_on(handle_sign_psbt(
+        &mut sdk::App::singleton(),
+        &prepare_as_psbtv2(&psbt, &accounts),
+    ));
+    assert_eq!(result, Err(Error::SigningFailed));
+}

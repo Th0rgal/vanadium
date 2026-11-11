@@ -229,24 +229,38 @@ impl<'a> Cursor<'a> {
     }
 
     fn read_compact_size(&mut self) -> Result<u64, PsbtError> {
-        let b = *self.take(1)?.first().unwrap();
-        match b {
-            n @ 0x00..=0xfc => Ok(n as u64),
-            0xfd => {
-                let s = self.take(2)?;
-                Ok(u16::from_le_bytes([s[0], s[1]]) as u64)
+        let slice = &self.buf[self.pos..];
+        let Some(&b) = slice.first() else {
+            return Err(PsbtError::UnexpectedEof);
+        };
+        if b < 0xff {
+            let needed = match b {
+                0x00..=0xfc => 1usize,
+                0xfd => 3usize,
+                _ => 5usize,
+            };
+            if slice.len() < needed {
+                return Err(PsbtError::UnexpectedEof);
             }
-            0xfe => {
-                let s = self.take(4)?;
-                Ok(u32::from_le_bytes([s[0], s[1], s[2], s[3]]) as u64)
-            }
-            0xff => {
-                let s = self.take(8)?;
-                Ok(u64::from_le_bytes([
-                    s[0], s[1], s[2], s[3], s[4], s[5], s[6], s[7],
-                ]))
-            }
+            let Some((val, consumed)) =
+                llb_vanadium_ffi::read_compact_size_checked(slice, u32::MAX)
+            else {
+                return Err(PsbtError::BadValue);
+            };
+            self.pos += consumed;
+            return Ok(val as u64);
         }
+        if slice.len() < 9 {
+            return Err(PsbtError::UnexpectedEof);
+        }
+        let val = u64::from_le_bytes([
+            slice[1], slice[2], slice[3], slice[4], slice[5], slice[6], slice[7], slice[8],
+        ]);
+        if !llb_vanadium_ffi::varint_prefix_is_canonical(0xff, val) {
+            return Err(PsbtError::BadValue);
+        }
+        self.pos += 9;
+        Ok(val)
     }
 
     fn read_len_prefixed(&mut self) -> Result<&'a [u8], PsbtError> {
@@ -599,38 +613,21 @@ impl<'a> Psbt<'a> {
     }
 
     fn build_unsigned_tx(&self) -> Result<bitcoin::Transaction, PsbtError> {
-        // Determine lock_time
-        let mut req_height: Option<u32> = None;
-        let mut req_time: Option<u32> = None;
-
+        // BIP-370 lock_time calculation (VND-BUG-004) via freestanding Lean state machine:
+        // 1. Validate per-input required height (`1..500_000_000`) and time (`>= 500_000_000`).
+        // 2. Determine whether all inputs with required locktimes can share height or time mode.
+        // 3. Only fall back to `fallback_locktime` when NO input specifies a required locktime.
+        let mut lt_state = llb_vanadium_ffi::psbt_locktime_init();
         for inp in &self.inputs {
-            if let Some(h) = inp.required_height_locktime {
-                req_height = Some(req_height.map_or(h, |m| m.max(h)));
-            }
-            if let Some(t) = inp.required_time_locktime {
-                req_time = Some(req_time.map_or(t, |m| m.max(t)));
-            }
+            lt_state = llb_vanadium_ffi::psbt_locktime_step(
+                lt_state,
+                inp.required_height_locktime,
+                inp.required_time_locktime,
+            );
         }
-
-        // Both height- and time-based requirements cannot be satisfied together.
-        if req_height.is_some() && req_time.is_some() {
-            return Err(PsbtError::BadValue);
-        }
-
-        let mut lock_time: u32 = self.fallback_locktime.unwrap_or(0);
-
-        if let Some(h) = req_height {
-            if h >= 500_000_000 {
-                return Err(PsbtError::BadValue);
-            }
-            lock_time = lock_time.max(h);
-        }
-        if let Some(t) = req_time {
-            if t < 500_000_000 {
-                return Err(PsbtError::BadValue);
-            }
-            lock_time = lock_time.max(t);
-        }
+        let lock_time =
+            llb_vanadium_ffi::psbt_locktime_finalize(lt_state, self.fallback_locktime.unwrap_or(0))
+                .ok_or(PsbtError::BadValue)?;
 
         // Build inputs
         let mut ins = Vec::with_capacity(self.inputs.len());
@@ -1043,15 +1040,28 @@ impl<'a> Input<'a> {
             return Ok(None);
         };
 
-        if wutxo.len() < 8 + 1 || wutxo[8] > 0xfc || wutxo.len() != 8 + 1 + wutxo[8] as usize {
+        let mut cur = Cursor::new(wutxo, 0);
+        let amt_bytes = cur.take(8)?;
+        let raw_sats = u64::from_le_bytes([
+            amt_bytes[0],
+            amt_bytes[1],
+            amt_bytes[2],
+            amt_bytes[3],
+            amt_bytes[4],
+            amt_bytes[5],
+            amt_bytes[6],
+            amt_bytes[7],
+        ]);
+        if !llb_vanadium_ffi::valid_amount(raw_sats) {
+            return Err(PsbtError::OutOfRange);
+        }
+        let spk_slice = cur.read_len_prefixed()?;
+        if cur.remaining() != 0 {
             return Err(PsbtError::BadValue);
         }
-        let script_len = wutxo[8] as usize;
 
-        let script_pubkey = ScriptBuf::from_bytes(wutxo[9..9 + script_len].to_vec());
-        let amount = Amount::from_sat(u64::from_le_bytes([
-            wutxo[0], wutxo[1], wutxo[2], wutxo[3], wutxo[4], wutxo[5], wutxo[6], wutxo[7],
-        ]));
+        let script_pubkey = ScriptBuf::from_bytes(spk_slice.to_vec());
+        let amount = Amount::from_sat(raw_sats);
 
         let txout = TxOut {
             value: amount,
@@ -1117,7 +1127,7 @@ impl<'a> Output<'a> {
                     if pair.value.len() != 8 {
                         return Err(PsbtError::BadValue);
                     }
-                    amount = Some(u64::from_le_bytes([
+                    let raw_sats = u64::from_le_bytes([
                         pair.value[0],
                         pair.value[1],
                         pair.value[2],
@@ -1126,7 +1136,11 @@ impl<'a> Output<'a> {
                         pair.value[5],
                         pair.value[6],
                         pair.value[7],
-                    ]));
+                    ]);
+                    if !llb_vanadium_ffi::valid_amount(raw_sats) {
+                        return Err(PsbtError::OutOfRange);
+                    }
+                    amount = Some(raw_sats);
                 }
                 PSBT_OUT_SCRIPT => {
                     script = Some(pair.value);
@@ -1926,5 +1940,94 @@ mod test {
         let mut psbt = Psbt::parse(&raw).unwrap();
         psbt.unsigned_tx().unwrap();
         assert_eq!(psbt.set_sp_output_scripts(alloc::vec![]), invalid);
+    }
+
+    #[test]
+    fn bug_004_bip370_locktime_rules() {
+        // 1. required_height_locktime == 0 is invalid per BIP-370
+        let raw_zero_h = sp_psbt(
+            &[],
+            &[&[(PSBT_IN_REQUIRED_HEIGHT_LOCKTIME, &[], &0u32.to_le_bytes())]],
+            &[&[(PSBT_OUT_SCRIPT, &[], &P2WPKH)]],
+        );
+        assert_eq!(
+            Psbt::parse(&raw_zero_h).unwrap().unsigned_tx().err(),
+            Some(PsbtError::BadValue)
+        );
+
+        // 2. fallback_locktime MUST NOT override an input's required_height_locktime!
+        let raw_fallback = sp_psbt(
+            &[(PSBT_GLOBAL_FALLBACK_LOCKTIME, &[], &600_000_000u32.to_le_bytes())],
+            &[&[(PSBT_IN_REQUIRED_HEIGHT_LOCKTIME, &[], &850_000u32.to_le_bytes())]],
+            &[&[(PSBT_OUT_SCRIPT, &[], &P2WPKH)]],
+        );
+        let parsed_fb = Psbt::parse(&raw_fallback).unwrap();
+        let tx = parsed_fb.unsigned_tx().unwrap();
+        assert_eq!(tx.lock_time.to_consensus_u32(), 850_000);
+
+        // 3. Single input specifying both height & time locktime picks height when compatible
+        let raw_dual = sp_psbt(
+            &[],
+            &[&[
+                (PSBT_IN_REQUIRED_HEIGHT_LOCKTIME, &[], &850_000u32.to_le_bytes()),
+                (PSBT_IN_REQUIRED_TIME_LOCKTIME, &[], &1_700_000_000u32.to_le_bytes()),
+            ]],
+            &[&[(PSBT_OUT_SCRIPT, &[], &P2WPKH)]],
+        );
+        let parsed_dual = Psbt::parse(&raw_dual).unwrap();
+        let tx_dual = parsed_dual.unsigned_tx().unwrap();
+        assert_eq!(tx_dual.lock_time.to_consensus_u32(), 850_000);
+    }
+
+    #[test]
+    fn bug_009_non_canonical_compact_size_and_long_witness_utxo() {
+        // Non-minimal CompactSize (0xfd, 0x05, 0x00 for value 5) is rejected by Lean VarInt kernel
+        let mut cur = Cursor::new(&[0xfd, 0x05, 0x00], 0);
+        assert_eq!(cur.read_compact_size(), Err(PsbtError::BadValue));
+
+        // >= 253-byte witness UTXO scriptPubKey parses cleanly via CompactSize 0xfd
+        let long_spk = alloc::vec![0x6a; 300];
+        let mut wutxo = Vec::new();
+        wutxo.extend_from_slice(&50_000u64.to_le_bytes());
+        wutxo.extend_from_slice(&[0xfd, 0x2c, 0x01]); // 300 in canonical CompactSize
+        wutxo.extend_from_slice(&long_spk);
+
+        let mut v = Vec::new();
+        // Build minimal PSBT with this witness_utxo via sp_psbt isn't suitable for >255 byte value in helper `map()`,
+        // so test Cursor + get_witness_utxo directly on a parsed PSBT input:
+        v.extend_from_slice(b"psbt\xff");
+        // Global map: version=2, tx_version=2, in_count=1, out_count=1
+        v.extend_from_slice(&map(&[
+            (PSBT_GLOBAL_TX_VERSION, &[], &[2, 0, 0, 0]),
+            (PSBT_GLOBAL_INPUT_COUNT, &[], &[1]),
+            (PSBT_GLOBAL_OUTPUT_COUNT, &[], &[1]),
+            (PSBT_GLOBAL_VERSION, &[], &[2, 0, 0, 0]),
+        ]));
+        // Input 0 map: key=0x01 (WITNESS_UTXO, len=1), val=wutxo (len=311 -> 0xfd 0x37 0x01), plus prev_txid (0x0e) and vout (0x0f)
+        v.push(1);
+        v.push(PSBT_IN_WITNESS_UTXO);
+        let wlen = wutxo.len() as u16;
+        v.push(0xfd);
+        v.extend_from_slice(&wlen.to_le_bytes());
+        v.extend_from_slice(&wutxo);
+        v.push(1);
+        v.push(PSBT_IN_PREVIOUS_TXID);
+        v.push(32);
+        v.extend_from_slice(&[0x11; 32]);
+        v.push(1);
+        v.push(PSBT_IN_OUTPUT_INDEX);
+        v.push(4);
+        v.extend_from_slice(&0u32.to_le_bytes());
+        v.push(0); // end input 0
+        // Output 0 map
+        v.extend_from_slice(&map(&[
+            (PSBT_OUT_AMOUNT, &[], &40_000u64.to_le_bytes()),
+            (PSBT_OUT_SCRIPT, &[], &P2WPKH),
+        ]));
+
+        let parsed = Psbt::parse(&v).unwrap();
+        let txout = parsed.inputs[0].get_witness_utxo().unwrap().unwrap();
+        assert_eq!(txout.value.to_sat(), 50_000);
+        assert_eq!(txout.script_pubkey.len(), 300);
     }
 }

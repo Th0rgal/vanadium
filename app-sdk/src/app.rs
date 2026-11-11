@@ -308,8 +308,9 @@ where
                     self.cleanup_ticks -= 1;
                 }
             }
-            (view, ev) => {
-                crate::println!("Unhandled event {:?} in view {:?}", ev, view);
+            (_view, _ev) => {
+                #[cfg(feature = "target_native")]
+                crate::println!("Unhandled event {:?} in view {:?}", _ev, _view);
             }
         }
     }

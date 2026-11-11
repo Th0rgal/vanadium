@@ -1,4 +1,5 @@
 pub const COIN_TICKER: &'static str = "TEST";
+pub const BIP44_COIN_TYPE: u32 = 1;
 
 /// The human-readable part of silent payment addresses (BIP-352): `tsp` on the test networks.
 pub const SILENT_PAYMENT_HRP: &str = "tsp";

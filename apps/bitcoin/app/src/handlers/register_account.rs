@@ -187,7 +187,10 @@ pub async fn handle_register_account(
     app.show_spinner("Processing...");
 
     let wallet_policy = match account {
-        message::Account::WalletPolicy(wallet_policy) => wallet_policy,
+        message::Account::WalletPolicy(wallet_policy) => {
+            common::miniscript_check::check_wallet_policy_miniscript(wallet_policy)?;
+            wallet_policy
+        }
         message::Account::SilentPayment(account) => {
             // a silent payment account has no keys to authenticate
             if registered_identities.is_some_and(|i| !i.is_empty())
@@ -268,7 +271,7 @@ pub async fn handle_register_account(
 
     // Label keys as "dummy" or "our key" based on their properties.
     let standard_fpr = crate::bip32::master_fingerprint(KeyTree::Standard)?;
-    let resident_fpr = crate::bip32::master_fingerprint(KeyTree::Resident)?;
+    let mut resident_fpr: Option<u32> = None;
     for (i, key_info) in wallet_policy.key_information().iter().enumerate() {
         // Skip keys that already have a label from identity signature verification.
         if key_auth_names[i].is_some() {
@@ -296,10 +299,20 @@ pub async fn handle_register_account(
 
         let tree = if origin.fingerprint == standard_fpr {
             Some(KeyTree::Standard)
-        } else if origin.fingerprint == resident_fpr {
-            Some(KeyTree::Resident)
         } else {
-            None
+            let res_fpr = match resident_fpr {
+                Some(f) => f,
+                None => {
+                    let f = crate::bip32::master_fingerprint(KeyTree::Resident)?;
+                    resident_fpr = Some(f);
+                    f
+                }
+            };
+            if origin.fingerprint == res_fpr {
+                Some(KeyTree::Resident)
+            } else {
+                None
+            }
         };
         let hd_node = tree.and_then(|t| crate::bip32::derive_hd_node(t, &path).ok());
 

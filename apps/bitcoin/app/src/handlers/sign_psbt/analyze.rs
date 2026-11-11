@@ -25,7 +25,7 @@ use common::{
     script::ToScript,
 };
 
-use bitcoin::{hashes::Hash, ScriptBuf, TxOut};
+use bitcoin::{hashes::Hash, Script, ScriptBuf, TxOut};
 use sdk::curve::EcfpPublicKey;
 
 /// A script derivation check to be verified in the background task.
@@ -155,6 +155,31 @@ pub(super) fn input_prevout<'i>(input: &'i fastpsbt::Input<'_>) -> Result<&'i Tx
         .get_witness_utxo()
         .map_err(|_| Error::InvalidWitnessUtxo)?
     {
+        if !llb_vanadium_ffi::valid_amount(witness_utxo.value.to_sat()) {
+            return Err(Error::InvalidWitnessUtxo);
+        }
+        // CVE-2020-14199 / VND-BUG-003: when an input carries BOTH witness_utxo and
+        // non_witness_utxo, enforce exact equality (value + scriptPubKey) with prevtx[vout].
+        if let Some(non_witness_utxo) = input
+            .get_non_witness_utxo()
+            .map_err(|_| Error::InvalidNonWitnessUtxo)?
+        {
+            let output_index = input
+                .output_index
+                .ok_or(Error::MissingPreviousOutputIndex)? as usize;
+            let prev_out = non_witness_utxo
+                .output
+                .get(output_index)
+                .ok_or(Error::InvalidNonWitnessUtxo)?;
+            if !llb_vanadium_ffi::check_dual_utxo(
+                witness_utxo.value.to_sat(),
+                witness_utxo.script_pubkey.as_bytes(),
+                prev_out.value.to_sat(),
+                prev_out.script_pubkey.as_bytes(),
+            ) {
+                return Err(Error::InvalidWitnessUtxo);
+            }
+        }
         return Ok(witness_utxo);
     }
 
@@ -165,10 +190,14 @@ pub(super) fn input_prevout<'i>(input: &'i fastpsbt::Input<'_>) -> Result<&'i Tx
     let output_index = input
         .output_index
         .ok_or(Error::MissingPreviousOutputIndex)? as usize;
-    non_witness_utxo
+    let prev_out = non_witness_utxo
         .output
         .get(output_index)
-        .ok_or(Error::InvalidNonWitnessUtxo)
+        .ok_or(Error::InvalidNonWitnessUtxo)?;
+    if !llb_vanadium_ffi::valid_amount(prev_out.value.to_sat()) {
+        return Err(Error::InvalidNonWitnessUtxo);
+    }
+    Ok(prev_out)
 }
 
 /// Lazily materializes the prevouts list shared by all taproot sighashes in
@@ -210,6 +239,18 @@ fn analyze_input<'i>(
 
     // Only SIGHASH_ALL is supported, and its taproot equivalent SIGHASH_DEFAULT. Without a
     // sighash type, the device signs with SIGHASH_ALL (SIGHASH_DEFAULT for taproot).
+    if let Some(sh) = input.sighash_type {
+        let valid_consensus = if segwit_version == SegwitVersion::Taproot {
+            u8::try_from(sh)
+                .map(llb_vanadium_ffi::taproot_sighash_valid)
+                .unwrap_or(false)
+        } else {
+            llb_vanadium_ffi::sighash_type_valid(sh)
+        };
+        if !valid_consensus {
+            return Err(Error::UnsupportedSighashType);
+        }
+    }
     match (input.sighash_type, segwit_version) {
         (None | Some(0x01), _) | (Some(0x00), SegwitVersion::Taproot) => {}
         _ => return Err(Error::UnsupportedSighashType),
@@ -220,23 +261,22 @@ fn analyze_input<'i>(
     }
 
     let mut amount_unverified = false;
-    if segwit_version == SegwitVersion::Legacy || segwit_version == SegwitVersion::SegwitV0 {
-        match input
-            .get_non_witness_utxo()
-            .map_err(|_| Error::InvalidNonWitnessUtxo)?
-        {
-            Some(tx) => {
-                let computed_txid = tx.compute_txid();
-                if input.previous_txid != Some(computed_txid.as_byte_array()) {
-                    return Err(Error::NonWitnessUtxoMismatch);
-                }
+    // Also verify non_witness_utxo txid for Taproot inputs if supplied (VND-BUG-003).
+    match input
+        .get_non_witness_utxo()
+        .map_err(|_| Error::InvalidNonWitnessUtxo)?
+    {
+        Some(tx) => {
+            let computed_txid = tx.compute_txid();
+            if input.previous_txid != Some(computed_txid.as_byte_array()) {
+                return Err(Error::NonWitnessUtxoMismatch);
             }
-            None => {
-                if segwit_version == SegwitVersion::Legacy {
-                    return Err(Error::NonWitnessUtxoRequired);
-                } else if segwit_version == SegwitVersion::SegwitV0 {
-                    amount_unverified = true;
-                }
+        }
+        None => {
+            if segwit_version == SegwitVersion::Legacy {
+                return Err(Error::NonWitnessUtxoRequired);
+            } else if segwit_version == SegwitVersion::SegwitV0 {
+                amount_unverified = true;
             }
         }
     }
@@ -246,27 +286,24 @@ fn analyze_input<'i>(
     }
 
     // Resolving the prevout first bounds-checks the attacker-controlled `output_index`
-    // before the redeem-script checks below read the referenced output. The two checks
-    // above pin down which UTXO it came from: a segwit input has a witness UTXO and a
-    // legacy one is forbidden from carrying one, so `prevout` is the witness UTXO in the
-    // first branch and the non-witness one in the second.
+    // before the redeem-script checks below read the referenced output.
     let prevout = input_prevout(input)?;
 
     if segwit_version.is_segwit() {
-        let script = if let Some(redeem_script) = input.redeem_script {
-            let redeem_script = ScriptBuf::from_bytes(redeem_script.to_vec());
+        let script: &Script = if let Some(redeem_script) = input.redeem_script {
+            let redeem_script = Script::from_bytes(redeem_script);
             if prevout.script_pubkey != redeem_script.to_p2sh() {
                 return Err(Error::RedeemScriptMismatchWitness);
             }
             redeem_script
         } else {
-            prevout.script_pubkey.clone()
+            prevout.script_pubkey.as_script()
         };
 
         if script.is_p2wsh() {
-            if let Some(witness_script) = &input.witness_script {
-                let witness_script = ScriptBuf::from_bytes(witness_script.to_vec());
-                if script != witness_script.to_p2wsh() {
+            if let Some(witness_script) = input.witness_script {
+                let witness_script = Script::from_bytes(witness_script);
+                if script != witness_script.to_p2wsh().as_script() {
                     return Err(Error::WitnessScriptMismatchWitness);
                 }
             } else {
@@ -274,7 +311,7 @@ fn analyze_input<'i>(
             }
         }
     } else if let Some(redeem_script) = input.redeem_script {
-        let redeem_script = ScriptBuf::from_bytes(redeem_script.to_vec());
+        let redeem_script = Script::from_bytes(redeem_script);
         if prevout.script_pubkey != redeem_script.to_p2sh() {
             return Err(Error::RedeemScriptMismatch);
         }
@@ -327,7 +364,7 @@ fn analyze_output(
         let proofs = output
             .get_auth_proofs()
             .map_err(|_| Error::InvalidIdentitySignature)?;
-        let out_script_bytes = output.script.ok_or(Error::OutputScriptMissing)?.to_vec();
+        let out_script_bytes = output.script.ok_or(Error::OutputScriptMissing)?;
 
         let mut first_auth_name: Option<String> = None;
         for proof in proofs {
@@ -337,7 +374,7 @@ fn analyze_output(
                     let ecfp_pubkey =
                         EcfpPublicKey::<sdk::curve::Secp256k1, 32>::from_compressed(&pubkey)
                             .map_err(|_| Error::InvalidIdentitySignature)?;
-                    let msg = build_identity_message(MSG_TYPE_OUTPUT, &out_script_bytes)
+                    let msg = build_identity_message(MSG_TYPE_OUTPUT, out_script_bytes)
                         .map_err(|_| Error::InvalidIdentitySignature)?;
                     ecfp_pubkey
                         .schnorr_verify(&msg, &sig)
@@ -431,8 +468,10 @@ pub(super) fn analyze_transaction(
         });
 
         let value = analyzed.prevout.value.to_sat();
+        inputs_total_amount =
+            llb_vanadium_ffi::checked_add_sats(inputs_total_amount, value)
+                .ok_or(Error::InvalidWitnessUtxo)?;
         account_spent_amounts[account_id as usize] += value as i64;
-        inputs_total_amount += value;
     }
 
     /***** output checks (structural only — script derivation is deferred) *****/
@@ -449,6 +488,9 @@ pub(super) fn analyze_transaction(
 
     for (output_index, output) in psbt.outputs.iter().enumerate() {
         let amount = output.amount.ok_or(Error::OutputAmountMissing)?;
+        if !llb_vanadium_ffi::valid_amount(amount) {
+            return Err(Error::InvalidParameter);
+        }
 
         match analyze_output(
             output,
@@ -466,10 +508,12 @@ pub(super) fn analyze_transaction(
             }
         }
 
-        outputs_total_amount += amount;
+        outputs_total_amount =
+            llb_vanadium_ffi::checked_add_sats(outputs_total_amount, amount)
+                .ok_or(Error::InvalidParameter)?;
     }
 
-    if outputs_total_amount > inputs_total_amount {
+    if llb_vanadium_ffi::checked_sub_sats(inputs_total_amount, outputs_total_amount).is_none() {
         return Err(Error::InputsLessThanOutputs);
     }
 
@@ -722,5 +766,27 @@ mod tests {
             ensure_prevouts(&mut cache, &parsed).unwrap(),
             &[witness_prevout, legacy_prevout]
         );
+    }
+
+    #[test]
+    fn bug_003_mismatched_dual_utxo_is_rejected() {
+        let mut psbt = segwit_wpkh_psbt();
+        // Tamper witness_utxo value while keeping valid non_witness_utxo txid!
+        let spoofed_utxo = TxOut {
+            value: Amount::from_sat(100),
+            script_pubkey: ScriptBuf::new(),
+        };
+        psbt.inputs[0].insert(PSBT_IN_WITNESS_UTXO, &[], serialize(&spoofed_utxo));
+
+        assert_eq!(analyze(&psbt).err(), Some(Error::InvalidWitnessUtxo));
+    }
+
+    #[test]
+    fn bug_002_amount_above_max_money_is_rejected() {
+        let mut psbt = legacy_pkh_psbt();
+        let over_max = llb_vanadium_ffi::MAX_MONEY_SATS + 1;
+        psbt.outputs[0].insert(PSBT_OUT_AMOUNT, &[], over_max.to_le_bytes().to_vec());
+        let serialized = psbt.serialize();
+        assert!(fastpsbt::Psbt::parse(&serialized).is_err());
     }
 }

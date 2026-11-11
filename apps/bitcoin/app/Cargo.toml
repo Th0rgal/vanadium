@@ -5,7 +5,7 @@ edition = "2021"
 
 [package.metadata.vapp]
 name = "Bitcoin"
-stack_size = 65536
+stack_size = 32768
 n_storage_slots = 3
 
 [features]
@@ -30,7 +30,7 @@ autoapprove = []
 fixed_resident_seed = []  # always use a fixed resident seed (only for testing/development)
 
 [dependencies]
-bitcoin = { version = "0.32.0", features = ["serde"], default-features = false }
+bitcoin = { version = "0.32.0", default-features = false }
 hashes   = { package = "bitcoin_hashes", version = "0.14", default-features = false, features = ["alloc", "io"] }
 secp256k1 = { package = "secp256k1", version = "0.29", default-features = false }
 base58   = { package = "base58ck", version = "0.1", default-features = false }
@@ -38,8 +38,8 @@ base58   = { package = "base58ck", version = "0.1", default-features = false }
 common = { package = "vnd-bitcoin-common", path = "../common", default-features = false }
 hex = { version = "0.4.3", default-features = false, features = ["alloc"] }
 hex-literal = "0.4.1"
+llb-vanadium-ffi = { path = "../../../../lean-ledger-bitcoin/ffi/vanadium", default-features = false }
 minicbor = { version = "2.2", default-features = false, features = ["alloc", "derive"] }
-nom = { version = "7.1.3", default-features = false, features = ["alloc"] }
 sdk = { package = "vanadium-app-sdk", path = "../../../app-sdk", default-features = false }
 subtle = { version = "2.6.1", default-features = false }
 zeroize = { version = "1.8.1", default-features = false }
@@ -53,6 +53,8 @@ opt-level = "s"
 lto = true
 # improves LTO performance and code size (but it slows down compilation a bit)
 codegen-units = 1
+panic = "abort"
+strip = "symbols"
 
 [workspace]
 

@@ -49,6 +49,9 @@ mod ux_generated {
     include!(concat!(env!("OUT_DIR"), "/ux_generated.rs"));
 }
 
+use core::alloc::{GlobalAlloc, Layout};
+use core::sync::atomic::{AtomicUsize, Ordering};
+
 #[cfg(feature = "target_vanadium_ledger")]
 use embedded_alloc::Heap;
 
@@ -58,15 +61,126 @@ include!(concat!(env!("OUT_DIR"), "/heap_config.rs"));
 #[cfg(feature = "target_vanadium_ledger")]
 static mut HEAP_MEM: [u8; VAPP_HEAP_SIZE] = [0; VAPP_HEAP_SIZE];
 
-#[cfg(feature = "target_vanadium_ledger")]
+static CURRENT_HEAP_BYTES: AtomicUsize = AtomicUsize::new(0);
+static PEAK_HEAP_BYTES: AtomicUsize = AtomicUsize::new(0);
+
+#[inline]
+fn record_alloc(size: usize) {
+    let prev = CURRENT_HEAP_BYTES.fetch_add(size, Ordering::Relaxed);
+    let cur = prev.saturating_add(size);
+    let mut peak = PEAK_HEAP_BYTES.load(Ordering::Relaxed);
+    while cur > peak {
+        match PEAK_HEAP_BYTES.compare_exchange_weak(
+            peak,
+            cur,
+            Ordering::Relaxed,
+            Ordering::Relaxed,
+        ) {
+            Ok(_) => break,
+            Err(actual) => peak = actual,
+        }
+    }
+}
+
+#[inline]
+fn record_dealloc(size: usize) {
+    let mut cur = CURRENT_HEAP_BYTES.load(Ordering::Relaxed);
+    loop {
+        let next = cur.saturating_sub(size);
+        match CURRENT_HEAP_BYTES.compare_exchange_weak(
+            cur,
+            next,
+            Ordering::Relaxed,
+            Ordering::Relaxed,
+        ) {
+            Ok(_) => break,
+            Err(actual) => cur = actual,
+        }
+    }
+}
+
+struct TrackingHeap {
+    #[cfg(feature = "target_vanadium_ledger")]
+    inner: Heap,
+    #[cfg(feature = "target_native")]
+    inner: std::alloc::System,
+}
+
+impl TrackingHeap {
+    #[cfg(feature = "target_vanadium_ledger")]
+    const fn new() -> Self {
+        Self {
+            inner: Heap::empty(),
+        }
+    }
+
+    #[cfg(feature = "target_native")]
+    const fn new() -> Self {
+        Self {
+            inner: std::alloc::System,
+        }
+    }
+}
+
+unsafe impl GlobalAlloc for TrackingHeap {
+    unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
+        let ptr = unsafe { self.inner.alloc(layout) };
+        if !ptr.is_null() {
+            record_alloc(layout.size());
+        }
+        ptr
+    }
+
+    unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
+        unsafe { self.inner.dealloc(ptr, layout) };
+        record_dealloc(layout.size());
+    }
+
+    unsafe fn alloc_zeroed(&self, layout: Layout) -> *mut u8 {
+        let ptr = unsafe { self.inner.alloc_zeroed(layout) };
+        if !ptr.is_null() {
+            record_alloc(layout.size());
+        }
+        ptr
+    }
+
+    unsafe fn realloc(&self, ptr: *mut u8, layout: Layout, new_size: usize) -> *mut u8 {
+        let new_ptr = unsafe { self.inner.realloc(ptr, layout, new_size) };
+        if !new_ptr.is_null() {
+            if new_size >= layout.size() {
+                record_alloc(new_size - layout.size());
+            } else {
+                record_dealloc(layout.size() - new_size);
+            }
+        }
+        new_ptr
+    }
+}
+
 #[global_allocator]
-static HEAP: Heap = Heap::empty();
+static HEAP: TrackingHeap = TrackingHeap::new();
+
+#[inline]
+pub fn current_heap_bytes() -> usize {
+    CURRENT_HEAP_BYTES.load(Ordering::Relaxed)
+}
+
+#[inline]
+pub fn peak_heap_bytes() -> usize {
+    PEAK_HEAP_BYTES.load(Ordering::Relaxed)
+}
+
+#[inline]
+pub fn reset_peak_heap_bytes() -> usize {
+    let cur = CURRENT_HEAP_BYTES.load(Ordering::Relaxed);
+    PEAK_HEAP_BYTES.swap(cur, Ordering::Relaxed)
+}
 
 #[cfg(feature = "target_vanadium_ledger")]
 fn init_heap() {
     unsafe {
         #[allow(static_mut_refs)]
-        HEAP.init(HEAP_MEM.as_mut_ptr() as usize, VAPP_HEAP_SIZE);
+        HEAP.inner.init(HEAP_MEM.as_mut_ptr() as usize, VAPP_HEAP_SIZE);
     }
 }
 
@@ -100,18 +214,8 @@ pub fn exit(status: i32) -> ! {
 
 #[cfg(feature = "target_vanadium_ledger")]
 #[panic_handler]
-fn my_panic(info: &core::panic::PanicInfo) -> ! {
-    let message = if let Some(location) = info.location() {
-        alloc::format!(
-            "Panic occurred in file '{}' at line {}: {}",
-            location.file(),
-            location.line(),
-            info.message()
-        )
-    } else {
-        alloc::format!("Panic occurred: {}", info.message())
-    };
-    fatal(&message); // does not return
+fn my_panic(_info: &core::panic::PanicInfo) -> ! {
+    fatal("V-App panic"); // does not return; avoids heap allocation & core::fmt bloat
 }
 
 pub fn xrecv(size: usize) -> Vec<u8> {

@@ -6,6 +6,7 @@ use bitcoin::{TapLeafHash, TapNodeHash};
 use crate::{
     account::{DescriptorTemplate, KeyInformation, TapTree},
     errors::Error,
+    miniscript_check::{check_miniscript_expr, REQUIRE_SANE_TOPLEVEL},
     script::{ScriptContext, ToScriptWithKeyInfo},
 };
 
@@ -60,6 +61,7 @@ impl GetTapLeafHash for DescriptorTemplate {
         is_change: bool,
         address_index: u32,
     ) -> Result<TapLeafHash, Error> {
+        check_miniscript_expr(self, true, REQUIRE_SANE_TOPLEVEL)?;
         let script =
             self.to_script(key_information, is_change, address_index, ScriptContext::Tr)?;
         Ok(TapLeafHash::from_script(

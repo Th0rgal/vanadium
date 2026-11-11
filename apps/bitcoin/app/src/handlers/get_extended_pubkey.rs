@@ -4,7 +4,9 @@ use common::{errors::Error, identity, message::Response};
 use sdk::curve::{EcfpPrivateKey, Secp256k1, ToPublicKey};
 
 use crate::{
-    bip32::KeyTree, constants::BIP32_TESTNET_PUBKEY_VERSION, identity::compute_identity_signature,
+    bip32::KeyTree,
+    constants::{BIP32_TESTNET_PUBKEY_VERSION, BIP44_COIN_TYPE},
+    identity::compute_identity_signature,
 };
 
 const AUTO_APPROVE: bool = cfg!(any(test, feature = "autoapprove"));
@@ -135,7 +137,7 @@ pub async fn handle_get_extended_pubkey(
     display: bool,
     identity_index: Option<u32>,
 ) -> Result<Response, Error> {
-    if bip32_path.0.len() > 256 {
+    if bip32_path.0.len() > u8::MAX as usize {
         return Err(Error::DerivationPathTooLong);
     }
 
@@ -144,19 +146,18 @@ pub async fn handle_get_extended_pubkey(
         return Err(Error::InvalidParameter);
     }
 
+    // Silent xpub export (`display == false`) is restricted to standard BIP-44/49/84/86/48
+    // export prefixes validated by the freestanding Lean classifier (`VND-07`).
+    // Identity key paths (`m/1229210958'` and `m/1229210958'/i`) and any non-standard path
+    // require explicit on-device user confirmation (`display == true`).
+    if !display && !llb_vanadium_ffi::bip32_check_export_path(&bip32_path.0, BIP44_COIN_TYPE) {
+        return Err(Error::InvalidParameter);
+    }
+
     let hd_node = crate::bip32::derive_hd_node(tree, &bip32_path.0)?;
     let privkey: EcfpPrivateKey<Secp256k1, 32> = EcfpPrivateKey::new(*hd_node.privkey);
     let pubkey = privkey.to_public_key();
     let pubkey_bytes = pubkey.as_ref().to_bytes();
-
-    let compressed_pubkey_hex = {
-        let mut compressed = alloc::vec![pubkey_bytes[64] % 2 + 0x02];
-        compressed.extend_from_slice(&pubkey_bytes[1..33]);
-        compressed
-            .iter()
-            .map(|b| format!("{:02x}", b))
-            .collect::<alloc::string::String>()
-    };
 
     let depth = bip32_path.0.len() as u8;
 
@@ -190,24 +191,18 @@ pub async fn handle_get_extended_pubkey(
     if display {
         let xpub_base58 = bitcoin::base58::encode_check(&xpub);
         // identity keys are displayed in hex, rather than as an xpub
-        let is_identity =
-            tree == KeyTree::Standard && identity::is_identity_path(&bip32_path.0).is_some();
-        let value = if is_identity {
-            match identity::is_identity_path(&bip32_path.0) {
-                Some(None) => &xpub_base58,
-                Some(Some(_)) => &compressed_pubkey_hex,
-                None => &xpub_base58,
-            }
+        let id_opt = if tree == KeyTree::Standard {
+            identity::is_identity_path(&bip32_path.0)
         } else {
-            &xpub_base58
+            None
         };
-        let approved = if is_identity {
-            display_identity_key(
-                app,
-                value,
-                identity::is_identity_path(&bip32_path.0).unwrap(),
-            )
-            .await
+        let approved = if let Some(id_idx) = id_opt {
+            if id_idx.is_some() {
+                let compressed_pubkey_hex = hex::encode(&xpub[45..78]);
+                display_identity_key(app, &compressed_pubkey_hex, id_idx).await
+            } else {
+                display_identity_key(app, &xpub_base58, id_idx).await
+            }
         } else {
             display_xpub(app, tree, &xpub_base58, &bip32_path.0).await
         };

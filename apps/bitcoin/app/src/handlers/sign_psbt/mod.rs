@@ -37,7 +37,8 @@ pub async fn handle_sign_psbt(app: &mut sdk::App, psbt: &[u8]) -> Result<Respons
     let silent_payments = silent_payments::analyze(&psbt, &summary, &mut local_keys)?;
 
     // Spawn expensive verification (proof-of-registration + script derivation) as a background
-    // task so it runs concurrently with the UX flows below.
+    // task so it runs concurrently with the UX flows below (identical control flow in both
+    // plain and autoapprove builds).
     let verification_handle = app.spawn_task(async { deferred_checks.verify(&summary).await });
 
     // Show warnings (runs while verification task progresses in the background)

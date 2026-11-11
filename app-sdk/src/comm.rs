@@ -18,7 +18,7 @@
 //! a static mutable buffer for chunk reuse.
 
 use crate::{xrecv_to, xsend};
-use alloc::{vec, vec::Vec};
+use alloc::vec::Vec;
 use core::cmp::min;
 use core::convert::TryInto;
 
@@ -155,12 +155,17 @@ pub fn send_message(msg: &[u8]) {
     // Calculate how much of the message fits in the first chunk.
     let first_chunk_msg_bytes = min(CHUNK_LENGTH - 4, msg.len());
 
-    // Send the initial chunk containing the length and part of the message.
-    xsend(&[&length_be, &msg[..first_chunk_msg_bytes]].concat());
+    // Send the initial chunk using CHUNK_BUFFER to avoid heap allocation.
+    let chunk = &raw mut CHUNK_BUFFER;
+    unsafe {
+        (&mut *chunk)[..4].copy_from_slice(&length_be);
+        (&mut *chunk)[4..4 + first_chunk_msg_bytes].copy_from_slice(&msg[..first_chunk_msg_bytes]);
+        xsend(&(&*chunk)[..4 + first_chunk_msg_bytes]);
+    }
 
     let mut total_bytes_sent = first_chunk_msg_bytes;
 
-    let mut acc_chunk = vec![0u8];
+    let mut acc_chunk = [0u8; 1];
     // Send the remaining chunks.
     while total_bytes_sent < msg.len() {
         // Wait for ACK to maintain the alternating protocol.
@@ -175,7 +180,7 @@ pub fn send_message(msg: &[u8]) {
             }
         };
         if acc_len != 1 || acc_chunk != ACK {
-            panic!("Unexpected byte received: {}", acc_chunk[0]);
+            crate::fatal("Invalid ACK");
         }
 
         let end_idx = min(total_bytes_sent + CHUNK_LENGTH, msg.len());
