@@ -276,6 +276,38 @@ mod lean_security_tests {
         ));
         assert!(reg_older_after_res.is_ok());
 
+        let sane_older_same_unit = WalletPolicy::new(
+            "wsh(and_v(v:older(100),and_v(v:older(500),pk(@0/**))))",
+            vec![xpub0.try_into().unwrap()],
+        )
+        .unwrap();
+        assert!(sane_older_same_unit.to_script(false, 0).is_ok());
+        let reg_older_same_unit_res = sdk::executor::block_on(handlers::handle_register_account(
+            &mut app,
+            "Sane older same unit",
+            &common::message::Account::WalletPolicy(sane_older_same_unit),
+            None,
+            None,
+            false,
+        ));
+        assert!(reg_older_same_unit_res.is_ok());
+
+        let sane_after_same_unit = WalletPolicy::new(
+            "wsh(and_v(v:after(100),and_v(v:after(500),pk(@0/**))))",
+            vec![xpub0.try_into().unwrap()],
+        )
+        .unwrap();
+        assert!(sane_after_same_unit.to_script(false, 0).is_ok());
+        let reg_after_same_unit_res = sdk::executor::block_on(handlers::handle_register_account(
+            &mut app,
+            "Sane after same unit",
+            &common::message::Account::WalletPolicy(sane_after_same_unit),
+            None,
+            None,
+            false,
+        ));
+        assert!(reg_after_same_unit_res.is_ok());
+
         // Unsane `older(0)` must be rejected.
         let older_zero = WalletPolicy::new(
             "wsh(and_v(v:pk(@0/**),older(0)))",
