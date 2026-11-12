@@ -219,9 +219,9 @@ mod lean_security_tests {
         let xpub0 = "tpubDCwYjpDhUdPGP5rS3wgNg13mTrrjBuG8V9VpWbyptX6TRPbNoZVXsoVUSkCjmQ8jJycjuDKBb9eataSymXakTTaGifxR6kmVsfFehH1ZgJT";
         let xpub1 = "tpubDCwYjpDhUdPGQWG6wG6hkBJuWFZEtrn7j3xwG3i8XcQabcGC53xWZm1hSXrUPFS5UvZ3QhdPSjXWNfWmFGTioARHuG5J7XguEjgg7p8PxAm";
 
-        // Unsane timelock mix (older + after in `and_v`) must be rejected by both `to_script` and `handle_register_account`.
+        // Unsane timelock mix (height + time `after` in `and_v`) must be rejected by both `to_script` and `handle_register_account`.
         let unsane_timelock = WalletPolicy::new(
-            "wsh(and_v(v:older(100),and_v(v:after(500000100),pk(@0/**))))",
+            "wsh(and_v(v:after(100),and_v(v:after(500000100),pk(@0/**))))",
             vec![xpub0.try_into().unwrap()],
         )
         .unwrap();
@@ -239,6 +239,7 @@ mod lean_security_tests {
             false,
         ));
         assert_eq!(reg_res, Err(common::errors::Error::InvalidWalletPolicy));
+
 
         // Unsane `older(0)` must be rejected.
         let older_zero = WalletPolicy::new(
