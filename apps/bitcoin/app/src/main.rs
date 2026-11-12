@@ -240,6 +240,25 @@ mod lean_security_tests {
         ));
         assert_eq!(reg_res, Err(common::errors::Error::InvalidWalletPolicy));
 
+        // Unsane relative timelock mix (blocks + 512s time `older` in `and_v`) must also be rejected.
+        let unsane_older_mix = WalletPolicy::new(
+            "wsh(and_v(v:older(100),and_v(v:older(4194305),pk(@0/**))))",
+            vec![xpub0.try_into().unwrap()],
+        )
+        .unwrap();
+        assert_eq!(
+            unsane_older_mix.to_script(false, 0),
+            Err(common::errors::Error::InvalidWalletPolicy)
+        );
+        let reg_older_res = sdk::executor::block_on(handlers::handle_register_account(
+            &mut app,
+            "Bad older mix",
+            &common::message::Account::WalletPolicy(unsane_older_mix),
+            None,
+            None,
+            false,
+        ));
+        assert_eq!(reg_older_res, Err(common::errors::Error::InvalidWalletPolicy));
 
         // Unsane `older(0)` must be rejected.
         let older_zero = WalletPolicy::new(
