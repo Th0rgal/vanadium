@@ -260,6 +260,22 @@ mod lean_security_tests {
         ));
         assert_eq!(reg_older_res, Err(common::errors::Error::InvalidWalletPolicy));
 
+        let sane_older_after = WalletPolicy::new(
+            "wsh(and_v(v:older(100),and_v(v:after(500000100),pk(@0/**))))",
+            vec![xpub0.try_into().unwrap()],
+        )
+        .unwrap();
+        assert!(sane_older_after.to_script(false, 0).is_ok());
+        let reg_older_after_res = sdk::executor::block_on(handlers::handle_register_account(
+            &mut app,
+            "Sane older after",
+            &common::message::Account::WalletPolicy(sane_older_after),
+            None,
+            None,
+            false,
+        ));
+        assert!(reg_older_after_res.is_ok());
+
         // Unsane `older(0)` must be rejected.
         let older_zero = WalletPolicy::new(
             "wsh(and_v(v:pk(@0/**),older(0)))",
