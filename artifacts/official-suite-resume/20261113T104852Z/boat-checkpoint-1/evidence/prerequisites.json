@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "cat .github/workflows/unit_tests.yml .github/workflows/build_and_functional_tests.yml; cat unit-tests/README.md; cat tests/README.md; cat tests/conftest.py; cat tests_mainnet/conftest.py; cat requirements.txt; cat unit-tests/CMakeLists.txt; docker version; id; ls -l /var/run/docker.sock; python3 -m pip --version; dpkg-query -W libcmocka-dev libssl-dev libgmp-dev; git -C ../vanadium ls-tree HEAD apps/bitcoin; cat ../vanadium/apps/bitcoin/app/Cargo.toml ../vanadium/apps/bitcoin/common/Cargo.toml"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567293.5206707,
+  "exit": 0,
+  "ended": 1794567293.9795675
+}

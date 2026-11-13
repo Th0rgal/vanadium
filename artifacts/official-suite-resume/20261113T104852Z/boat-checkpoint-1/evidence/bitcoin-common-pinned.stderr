@@ -1,0 +1,4 @@
+    Blocking waiting for file lock on package cache
+    Updating crates.io index
+error: cannot create the lock file /var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common/Cargo.lock because --locked was passed to prevent this
+help: to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.

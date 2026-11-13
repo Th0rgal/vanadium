@@ -1,0 +1,106 @@
+FROM debian:trixie-slim@sha256:b6e2a152f22a40ff69d92cb397223c906017e1391a73c952b588e51af8883bf8
+
+ARG NANOSP_SDK_VERSION=v27.1.7
+ARG NANOX_SDK_VERSION=v27.1.7
+ARG STAX_SDK_VERSION=v27.1.7
+ARG FLEX_SDK_VERSION=v27.1.7
+ARG APEX_P_SDK_VERSION=v27.1.7
+
+ARG CLANG_MAJOR=21
+ARG CLANG_NIGHTLY=1:21.1.8~++20251221033036+2078da43e25a-1~exp1~20251221153213.50
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get upgrade -y && apt-get install -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        cmake \
+        curl \
+        doxygen \
+        gcc-arm-none-eabi \
+        git \
+        gpg \
+        jq \
+        lcov \
+        libbsd-dev \
+        libcmocka-dev \
+        libjson-xs-perl \
+        libnewlib-arm-none-eabi \
+        libtool \
+        make \
+        ninja-build \
+        pkg-config \
+        protobuf-compiler \
+        python-is-python3 \
+        python3 \
+        python3-pip \
+        ruby
+
+# Install clang 21 toolchain
+RUN curl https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor -o /usr/share/keyrings/llvm-archive-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/llvm-archive-keyring.gpg] https://apt.llvm.org/trixie/ llvm-toolchain-trixie-$CLANG_MAJOR main" > /etc/apt/sources.list.d/llvm.list && \
+    echo "deb-src [signed-by=/usr/share/keyrings/llvm-archive-keyring.gpg] https://apt.llvm.org/trixie/ llvm-toolchain-trixie-$CLANG_MAJOR main" >> /etc/apt/sources.list.d/llvm.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends clang-$CLANG_MAJOR=${CLANG_NIGHTLY} clang-format-$CLANG_MAJOR=${CLANG_NIGHTLY} clang-tools-$CLANG_MAJOR=${CLANG_NIGHTLY} \
+                                           lld-$CLANG_MAJOR=${CLANG_NIGHTLY} llvm-$CLANG_MAJOR=${CLANG_NIGHTLY} && \
+    update-alternatives --install /usr/bin/clang clang /usr/bin/clang-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/lld lld /usr/bin/lld-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/llvm-ar llvm-ar /usr/bin/llvm-ar-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/llvm-ranlib llvm-ranlib /usr/bin/llvm-ranlib-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/llvm-objcopy llvm-objcopy /usr/bin/llvm-objcopy-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/llvm-objdump llvm-objdump /usr/bin/llvm-objdump-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/llvm-nm llvm-nm /usr/bin/llvm-nm-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/scan-build scan-build /usr/bin/scan-build-$CLANG_MAJOR 100 && \
+    update-alternatives --install /usr/bin/scan-view scan-view /usr/bin/scan-view-$CLANG_MAJOR 100 && \
+    rm -rf /var/lib/apt/lists/*
+
+# XXX dirty fix related to B2CA-2754
+# TO BE REMOVED when the issue is fixed in the bip32 and coincurve package.
+COPY ./lite/pip-constraints.txt /opt/pip-constraints.txt
+ENV PIP_CONSTRAINT=/opt/pip-constraints.txt
+
+# Python package to load app onto device
+RUN pip3 install --break-system-packages --no-cache-dir "ledgerblue==0.1.58" tomli-w ledgered semver lcov_cobertura
+
+# Unified SDK
+ARG LEDGER_SECURE_SDK=/opt/ledger-secure-sdk
+ARG LEDGER_SECURE_SDK_REPO=https://github.com/LedgerHQ/ledger-secure-sdk.git
+
+# Optional token to clone
+RUN --mount=type=secret,id=github_token \
+    if [ -s /run/secrets/github_token ]; then \
+        set -- -c "http.extraHeader=Authorization: Basic $(printf 'x-access-token:%s' "$(cat /run/secrets/github_token)" | base64 -w0)"; \
+    fi && \
+    git "$@" clone "$LEDGER_SECURE_SDK_REPO" "$LEDGER_SECURE_SDK"
+
+# Latest Nano S SDK (OS nanos_2.1.0 => based on API_LEVEL LNS)
+ENV NANOS_SDK=/opt/nanos-secure-sdk
+
+ENV NANOX_SDK=/opt/nanox-secure-sdk
+ENV NANOSP_SDK=/opt/nanosplus-secure-sdk
+ENV STAX_SDK=/opt/stax-secure-sdk
+ENV FLEX_SDK=/opt/flex-secure-sdk
+ENV APEX_P_SDK=/opt/apex-secure-sdk
+
+# Default SDK
+ENV BOLOS_SDK=$NANOSP_SDK
+
+RUN git -C "$LEDGER_SECURE_SDK" worktree add -d "$NANOS_SDK" lns-2.1.0-v24.0 && \
+    git -C "$LEDGER_SECURE_SDK" worktree add -d "$NANOX_SDK"  $NANOX_SDK_VERSION && \
+    git -C "$LEDGER_SECURE_SDK" worktree add -d "$NANOSP_SDK" $NANOSP_SDK_VERSION && \
+    git -C "$LEDGER_SECURE_SDK" worktree add -d "$STAX_SDK"   $STAX_SDK_VERSION && \
+    git -C "$LEDGER_SECURE_SDK" worktree add -d "$FLEX_SDK"   $FLEX_SDK_VERSION && \
+    git -C "$LEDGER_SECURE_SDK" worktree add -d "$APEX_P_SDK" $APEX_P_SDK_VERSION && \
+    echo nanos  > $NANOS_SDK/.target && \
+    echo nanox  > $NANOX_SDK/.target && \
+    echo nanos2 > $NANOSP_SDK/.target && \
+    echo stax   > $STAX_SDK/.target && \
+    echo flex   > $FLEX_SDK/.target && \
+    echo apex_p > $APEX_P_SDK/.target
+
+WORKDIR /app
+
+# Work around the git security to be able to get informations from repositories
+# even if the container is not run with root UID/GID
+RUN git config --system --add safe.directory "*"

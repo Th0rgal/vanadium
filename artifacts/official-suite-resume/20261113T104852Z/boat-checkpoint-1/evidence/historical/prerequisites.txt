@@ -1,0 +1,22 @@
+COMMAND ["docker", "version"]
+Client: Docker Engine - Community
+ Version:           29.9.2
+ API version:       1.56
+ Go version:        go1.26.10
+ Git commit:        a82e528
+ Built:             Tue Oct 20 18:44:40 2026
+ OS/Arch:           linux/amd64
+ Context:           default
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+
+EXIT 1
+COMMAND ["cmake", "-S", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/official-resume-app/unit-tests", "-B", "/var/lib/sandboxed-node/734c3bb7-f8bf-4b1b-bd1e-e0e6f366aaed/artifacts/official-suite-resume/20261113T104852Z/cmake-prereq"]
+[Errno 2] No such file or directory: 'cmake'
+EXIT 127 (executable absent)
+COMMAND ["python3", "-m", "pytest", "--version"]
+/usr/bin/python3: No module named pytest
+
+EXIT 1
+COMMAND ["bash", "-c", "find /opt /usr/local /var/lib/sandboxed-node/caches -maxdepth 4 -type d \\( -iname \"*ledger*\" -o -iname \"*speculos*\" -o -name \"*sdk*\" -o -name \"*ragger*\" \\) 2>/dev/null"]
+
+EXIT 1

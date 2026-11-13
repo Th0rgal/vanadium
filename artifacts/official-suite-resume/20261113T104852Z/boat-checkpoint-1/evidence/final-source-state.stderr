@@ -1,0 +1,4 @@
+ls: cannot access 'lean-ledger-bitcoin/ffi/vanadium/build/host/liblean_ledger_bitcoin.a': No such file or directory
+ls: cannot access 'lean-ledger-bitcoin/ffi/vanadium/build/host/liblean_ledger_bitcoin.ll': No such file or directory
+ls: cannot access 'vanadium/apps/bitcoin/app/Cargo.lock': No such file or directory
+ls: cannot access 'vanadium/apps/bitcoin/common/Cargo.lock': No such file or directory

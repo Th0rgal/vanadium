@@ -1,0 +1,110 @@
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/vanadium", "rev-parse", "HEAD"]
+6ee1f9545e2efaed439d463a02187c73a9d6d1b4
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/vanadium", "status", "--short"]
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/vanadium", "log", "-1", "--format=%G? %GF %an <%ae>"]
+U 30EAE29B6766A7A70A4DEB4BF480B9A3F84BE648 Thomas Marchand (agent) <agent@thomas.md>
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/app-bitcoin", "rev-parse", "HEAD"]
+afe126fea70c8c7d6091948bb8a8ae529ea89a60
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/app-bitcoin", "status", "--short"]
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/app-bitcoin", "log", "-1", "--format=%G? %GF %an <%ae>"]
+U 30EAE29B6766A7A70A4DEB4BF480B9A3F84BE648 Thomas Marchand (agent) <agent@thomas.md>
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/lean-ledger-bitcoin", "rev-parse", "HEAD"]
+f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/lean-ledger-bitcoin", "status", "--short"]
+?? benchmarks/t7-candidate-a.boat-large.experimental.json
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/lean-ledger-bitcoin", "log", "-1", "--format=%G? %GF %an <%ae>"]
+U 30EAE29B6766A7A70A4DEB4BF480B9A3F84BE648 Thomas Marchand (agent) <agent@thomas.md>
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/t7-fable-a", "rev-parse", "HEAD"]
+092bb97fe05e4957e3f8399c04fd2434b9a902f1
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/t7-fable-a", "status", "--short"]
+
+EXIT 0
+
+COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/t7-fable-a", "log", "-1", "--format=%G? %GF %an <%ae>"]
+U 30EAE29B6766A7A70A4DEB4BF480B9A3F84BE648 Thomas Marchand (agent) <agent@thomas.md>
+
+EXIT 0
+
+COMMAND ["bash", "-c", "command -v cargo rustc rustup docker cargo-ledger turbo-lean; ls -ld /var/run/docker.sock /opt/ledger-hub /opt/bolos 2>&1"]
+/usr/bin/docker
+/var/lib/sandboxed-node/caches/bin/turbo-lean
+ls: cannot access '/opt/ledger-hub': No such file or directory
+ls: cannot access '/opt/bolos': No such file or directory
+srw-rw---- 1 root docker 0 Nov  8 12:03 /var/run/docker.sock
+
+EXIT 2
+
+COMMAND ["bash", "-c", "find toolchains .cache -maxdepth 4 -type d 2>/dev/null"]
+toolchains
+toolchains/cargo
+toolchains/cargo/bin
+toolchains/cargo/registry
+toolchains/cargo/registry/index
+toolchains/cargo/registry/index/index.crates.io-1949cf8c6b5b557f
+toolchains/cargo/registry/cache
+toolchains/cargo/registry/cache/index.crates.io-1949cf8c6b5b557f
+toolchains/cargo/registry/src
+toolchains/cargo/registry/src/index.crates.io-1949cf8c6b5b557f
+toolchains/rustup
+toolchains/rustup/update-hashes
+toolchains/rustup/tmp
+toolchains/rustup/tmp/c0rhdeipg0rk9abu_dir
+toolchains/rustup/tmp/c0rhdeipg0rk9abu_dir/rustc
+toolchains/rustup/downloads
+toolchains/rustup/toolchains
+toolchains/rustup/toolchains/stable-x86_64-unknown-linux-gnu
+toolchains/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+toolchains/rustup/toolchains/stable-x86_64-unknown-linux-gnu/etc
+toolchains/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share
+toolchains/rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib
+toolchains/rustup/toolchains/stable-x86_64-unknown-linux-gnu/libexec
+toolchains/rustup/toolchains/nightly-2025-12-05-x86_64-unknown-linux-gnu
+toolchains/rustup/toolchains/nightly-2025-12-05-x86_64-unknown-linux-gnu/bin
+toolchains/rustup/toolchains/nightly-2025-12-05-x86_64-unknown-linux-gnu/etc
+toolchains/rustup/toolchains/nightly-2025-12-05-x86_64-unknown-linux-gnu/share
+toolchains/rustup/toolchains/nightly-2025-12-05-x86_64-unknown-linux-gnu/lib
+.cache
+.cache/sandboxed-sh
+.cache/sandboxed-sh/library-skills
+.cache/sandboxed-sh/library-skills/3749211b62ab759f5d46442994382f1c45778c09250b2b2cde6d20a453083a86
+.cache/sandboxed-sh/library-skills/3749211b62ab759f5d46442994382f1c45778c09250b2b2cde6d20a453083a86/skills
+.cache/opencode
+.cache/opencode/bin
+
+EXIT 0
+
+COMMAND ["gh", "api", "user", "--jq", ".login"]
+Th0rgal
+
+EXIT 0

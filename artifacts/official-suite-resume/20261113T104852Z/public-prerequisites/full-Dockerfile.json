@@ -1,0 +1,6 @@
+{
+  "url": "https://raw.githubusercontent.com/LedgerHQ/ledger-app-builder/master/full/Dockerfile",
+  "retrieval": "Python urllib.request.urlopen HTTP200",
+  "sha256": "20ea53b290ced54ad648d4160d59be7a4d64330257024e1e31fef9c88b7b8e4b",
+  "classification": "public upstream source, mutable master; executor must pin git SHA before build"
+}

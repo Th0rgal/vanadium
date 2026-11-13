@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "cat .github/workflows/unit_tests.yml .github/workflows/build_and_functional_tests.yml tests/README.md; sed -n \"1,115p\" unit-tests/CMakeLists.txt; rg -n \"lean-ledger|LEAN|LLB|SDK|docker|ghcr|pytest\" unit-tests/CMakeLists.txt .github/workflows/ci-workflow.yml; rg -n \"skip|deselect|ignore|slow|addoption|collection_modify\" tests/conftest.py tests_mainnet tests/pytest.ini pytest.ini pyproject.toml; ls tests_mainnet; cat tests/requirements.txt tests_mainnet/requirements.txt; git status --short; git -C ../vanadium diff --exit-code; sha256sum ../vanadium/Cargo.lock"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567307.2467313,
+  "exit": 0,
+  "ended": 1794567307.3738112
+}

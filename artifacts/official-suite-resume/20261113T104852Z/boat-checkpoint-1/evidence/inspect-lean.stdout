@@ -1,0 +1,147 @@
+f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb
+ffi/vanadium/build.rs
+ffi/bolos/Makefile
+[package]
+name = "llb-vanadium-ffi"
+version = "0.2.4"
+edition = "2021"
+description = "Vanadium Bitcoin V-App FFI bindings for the lean-ledger-bitcoin freestanding kernels (riscv32imac + host)"
+license = "MIT"
+publish = false
+
+[dependencies]
+# Intentionally dependency-free: `no_std`-compatible and linkable into the
+# Vanadium V-App (apps/bitcoin/app) sandbox next to the lean-native-emitted
+# freestanding archive.
+total 36
+drwxr-xr-x 5 orbnode orbnode 4096 Nov 13 10:56 .
+drwxr-xr-x 4 orbnode orbnode 4096 Nov 13 10:56 ..
+-rw-r--r-- 1 orbnode orbnode   21 Nov 13 10:56 .gitignore
+-rw-r--r-- 1 orbnode orbnode  416 Nov 13 10:56 Cargo.toml
+-rw-r--r-- 1 orbnode orbnode 5484 Nov 13 10:56 build.rs
+drwxr-xr-x 2 orbnode orbnode 4096 Nov 13 10:56 examples
+drwxr-xr-x 2 orbnode orbnode 4096 Nov 13 10:56 patches
+drwxr-xr-x 2 orbnode orbnode 4096 Nov 13 10:56 src
+ffi/vanadium/src/lib.rs:4://! Links the `turbo-lean`-emitted static archive (`liblean_ledger_bitcoin.a`)
+ffi/vanadium/src/lib.rs:332:            ops.as_ptr(),
+ffi/vanadium/src/lib.rs:336:            scratch.as_mut_ptr(),
+ffi/vanadium/src/lib.rs:382:        core::ptr::NonNull::<u8>::dangling().as_ptr()
+ffi/vanadium/src/lib.rs:384:        records_10b.as_ptr()
+ffi/vanadium/src/lib.rs:403:    unsafe { sys::llb_bytes_eq(a.as_ptr(), b.as_ptr(), a.len() as u32) != 0 }
+ffi/vanadium/src/lib.rs:418:        core::ptr::NonNull::<u8>::dangling().as_ptr()
+ffi/vanadium/src/lib.rs:420:        wit_spk.as_ptr()
+ffi/vanadium/src/lib.rs:423:        core::ptr::NonNull::<u8>::dangling().as_ptr()
+ffi/vanadium/src/lib.rs:425:        non_wit_spk.as_ptr()
+ffi/vanadium/src/lib.rs:447:        core::ptr::NonNull::<u8>::dangling().as_ptr()
+ffi/vanadium/src/lib.rs:449:        amounts_le.as_ptr()
+ffi/vanadium/src/lib.rs:466:        core::ptr::NonNull::<u32>::dangling().as_ptr()
+ffi/vanadium/src/lib.rs:468:        path.as_ptr()
+ffi/vanadium/src/lib.rs:481:    let packed = unsafe { sys::llb_read_compact_size_checked(buf.as_ptr(), capped_len, max_val) };
+ffi/vanadium/src/lib.rs:498:        sys::llb_sort_fixed_bytes(items.as_mut_ptr().cast::<u8>(), items.len() as u32, N as u32);
+ffi/vanadium/src/lib.rs:509:        sys::llb_sort_u16(arr.as_mut_ptr(), arr.len() as u32);
+ffi/vanadium/src/lib.rs:526:        core::ptr::NonNull::<u8>::dangling().as_ptr()
+ffi/vanadium/src/lib.rs:528:        ticker.as_bytes().as_ptr()
+ffi/vanadium/src/lib.rs:536:            out.as_mut_ptr(),
+ffi/vanadium/src/lib.rs:547:/// Exercises scalar and Option 2 buffer freestanding C99 kernel exports from `liblean_ledger_bitcoin.a`.
+ffi/vanadium/examples/bench_kernels.rs:81:    let ub = unit.as_bytes();
+ffi/vanadium/examples/bench_kernels.rs:189:        .and_then(|s| s.parse().ok())
+ffi/vanadium/examples/bench_kernels.rs:209:        ref_hot_ns.push(t0.elapsed().as_nanos() as u64);
+ffi/vanadium/examples/bench_kernels.rs:217:        lean_hot_ns.push(t1.elapsed().as_nanos() as u64);
+ffi/vanadium/examples/bench_kernels.rs:223:        lean_kern_ns.push(t2.elapsed().as_nanos() as u64);
+ffi/vanadium/build.rs:1://! build.rs — links the turbo-lean-emitted `lean-ledger-bitcoin` freestanding
+ffi/vanadium/build.rs:5://!   `ffi/vanadium/build/riscv32imac/liblean_ledger_bitcoin.a`
+ffi/vanadium/build.rs:7://!   `ffi/vanadium/build/host/liblean_ledger_bitcoin.a`
+ffi/vanadium/build.rs:9://! Both archives are produced by `scripts/build-freestanding.sh`; the script
+ffi/vanadium/build.rs:36:                .join("build")
+ffi/vanadium/build.rs:48:                .join("build")
+ffi/vanadium/build.rs:62:    let archive = dir.join(format!("{}.a", LIB_NAME));
+ffi/vanadium/build.rs:65:        .args([
+ffi/vanadium/build.rs:82:        let ll = dir.join(format!("{}.ll", LIB_NAME));
+ffi/vanadium/build.rs:86:                .args([
+ffi/vanadium/build.rs:103:                let ar_bin = if Command::new("llvm-ar").arg("--version").output().is_ok() {
+ffi/vanadium/build.rs:109:                    .args(["rcs", archive.to_str().unwrap(), obj.to_str().unwrap()])
+ffi/vanadium/build.rs:127:    let dir = manifest_dir.join("build").join(tag);
+ffi/vanadium/build.rs:128:    let archive = dir.join(format!("{}.a", LIB_NAME));
+ffi/vanadium/build.rs:133:        // Ensure existing RV32 archive uses -ffunction-sections -fno-unwind-tables if .ll is present
+ffi/vanadium/build.rs:134:        let ll = dir.join(format!("{}.ll", LIB_NAME));
+ffi/vanadium/build.rs:145:             Run scripts/build-freestanding.sh from the repository root first.",
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1:diff --git a/app-sdk/build.rs b/app-sdk/build.rs
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:3:--- a/app-sdk/build.rs
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:4:+++ b/app-sdk/build.rs
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:8: fn build_heap() {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:16:     let out_dir = env::var("OUT_DIR").unwrap();
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:81:@@ -49,6 +49,9 @@ mod ux_generated {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:82:     include!(concat!(env!("OUT_DIR"), "/ux_generated.rs"));
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:91:@@ -58,15 +61,126 @@ include!(concat!(env!("OUT_DIR"), "/heap_config.rs"));
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:159:+        let ptr = unsafe { self.inner.alloc(layout) };
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:172:+        let ptr = unsafe { self.inner.alloc_zeroed(layout) };
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:216:-        HEAP.init(HEAP_MEM.as_mut_ptr() as usize, VAPP_HEAP_SIZE);
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:217:+        HEAP.inner.init(HEAP_MEM.as_mut_ptr() as usize, VAPP_HEAP_SIZE);
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:361:     let pubkey_bytes = pubkey.as_ref().to_bytes();
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:399:-            .await
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:403:+                display_identity_key(app, &compressed_pubkey_hex, id_idx).await
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:405:+                display_identity_key(app, &xpub_base58, id_idx).await
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:408:             display_xpub(app, tree, &xpub_base58, &bip32_path.0).await
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:499:         let hd_node = tree.and_then(|t| crate::bip32::derive_hd_node(t, &path).ok());
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:536:+                witness_utxo.script_pubkey.as_bytes(),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:538:+                prev_out.script_pubkey.as_bytes(),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:593:-                if input.previous_txid != Some(computed_txid.as_byte_array()) {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:603:+            if input.previous_txid != Some(computed_txid.as_byte_array()) {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:643:+            prevout.script_pubkey.as_script()
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:652:+                if script != witness_script.to_p2wsh().as_script() {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:678:-                    let msg = build_identity_message(MSG_TYPE_OUTPUT, &out_script_bytes)
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:679:+                    let msg = build_identity_message(MSG_TYPE_OUTPUT, out_script_bytes)
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:698:         let amount = output.amount.ok_or(Error::OutputAmountMissing)?;
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:783:@@ -162,11 +167,34 @@ pub(super) fn build_display_pairs(
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:784:         let address = match silent_payments.and_then(|sp| sp.address(output_index)) {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:823:@@ -178,7 +206,7 @@ pub(super) fn build_display_pairs(
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:850:+        let pairs = build_display_pairs(&parsed, &summary, None).unwrap();
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:883:         let key_origin = key_info.origin_info.as_ref()?;
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:917:+    // plain and autoapprove builds).
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:918:     let verification_handle = app.spawn_task(async { deferred_checks.verify(&summary).await });
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:941:-        let account_name = summary.account_names[account_id as usize]
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:942:-            .as_deref()
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:957:+                    let account_name = summary.account_names[account_id as usize]
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:958:+                        .as_deref()
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1016:+    let mut psbt = build_musig_keypath_psbt(&wallet_policy, address_index);
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1033:+    let agg_pk = device_pubnonce.aggregate_pubkey;
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1071:             handle_export_sp_scan_key(app, *account_index).await
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1152:+        let bytes = witness_script.as_bytes();
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1386:+        let response_raw = self.send_message(&msg).await?;
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1387:+        match Self::parse_response(&response_raw).await? {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1484:     fn build_unsigned_tx(&self) -> Result<bitcoin::Transaction, PsbtError> {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1685:index 8b834c4..a7800f9 100644
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:1981:+        postfix.as_slice(),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2008:+        DescriptorTemplate::Sh(inner) => match inner.as_ref() {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2173:+            ops.as_slice(),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2183:+            pk_k_ops.as_slice(),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2253:         builder = match self {
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2264:-                    ScriptHash::from_raw_hash(hash160::Hash::hash(&inner_builder.as_bytes()));
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2265:+                    ScriptHash::from_raw_hash(hash160::Hash::hash(inner_builder.as_bytes()));
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2267:                 builder
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2280:                 let mut inner_builder = Builder::new();
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2281:                 inner_builder = inner.to_script_inner(
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2286:-                    WScriptHash::from_raw_hash(sha256::Hash::hash(&inner_builder.as_bytes()));
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2287:+                    WScriptHash::from_raw_hash(sha256::Hash::hash(inner_builder.as_bytes()));
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2288:                 builder.push_int(0).push_slice(script_hash)
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2305:                 builder
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2329:                 builder.push_int(*k as i64).push_opcode(OP_NUMEQUAL)
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2339:                     .as_ref()
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2350:             DescriptorTemplate::Zero => builder.push_opcode(OP_0),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2351:             DescriptorTemplate::One => builder.push_opcode(OP_PUSHNUM_1),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2355:-                desc.to_script_inner(key_information, is_change, address_index, builder, ctx)?
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2357:+            DescriptorTemplate::Pk(k) => builder
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2373:-            DescriptorTemplate::Older(n) => builder.push_int(*n as i64).push_opcode(OP_CSV),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2374:-            DescriptorTemplate::After(n) => builder.push_int(*n as i64).push_opcode(OP_CLTV),
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2379:+                builder.push_int(*n as i64).push_opcode(OP_CSV)
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2385:+                builder.push_int(*n as i64).push_opcode(OP_CLTV)
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2387:             DescriptorTemplate::Sha256(h) => builder
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2394:-            DescriptorTemplate::Andor(x, y, z) => builder
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2408:+                builder
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch:2416:             DescriptorTemplate::And_v(x, y) => builder
+ffi/vanadium/.gitignore
+ffi/vanadium/Cargo.toml
+ffi/vanadium/build.rs
+ffi/vanadium/examples/bench_kernels.rs
+ffi/vanadium/patches/vanadium-bitcoin-lean-opt.patch
+ffi/vanadium/src/lib.rs

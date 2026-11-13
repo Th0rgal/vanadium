@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "sed -n \"1,175p\" ffi/vanadium/build.rs; sed -n \"1,45p\" scripts/build-freestanding.sh; git status --porcelain=v1; test -x ../turbo-lean/lean/.lake/build/bin/lean-native"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567419.451384,
+  "exit": 1,
+  "ended": 1794567419.4587107
+}
