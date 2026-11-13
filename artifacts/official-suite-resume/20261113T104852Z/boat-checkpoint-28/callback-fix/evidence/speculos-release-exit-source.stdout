@@ -1,0 +1,12 @@
+https://raw.githubusercontent.com/LedgerHQ/speculos/39e6fb1503d2de2c0bc599ffec095470f46097a3/src/bolos/os.c
+source_sha256 64ccef67d286bc9d5d47ab3f92282f22e47fa7cc4cf0407671b78461cea321bb
+unsigned long sys_os_sched_exit(unsigned int code)
+{
+  fprintf(stderr, "[*] exit called (%u)\n", code);
+  _exit(code);
+}
+
+unsigned long sys_reset(void)
+{
+  fprintf(stderr, "[*] res
+installed_launcher_sha256 cd414754882b5dff5bd2265f920d044ca1145c1abf191c0ebdaa624cabf79a93

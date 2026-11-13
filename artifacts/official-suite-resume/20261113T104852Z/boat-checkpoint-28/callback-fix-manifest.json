@@ -1,0 +1,11 @@
+{
+  "whole_sha256": "1cc596912692947b09fe1376513bb4b66605e1c91c7139cab78d72b306781a8e",
+  "whole_bytes": 8329,
+  "parts": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/speculos-callback-fix-evidence.part000",
+      "bytes": 8329,
+      "sha256": "1cc596912692947b09fe1376513bb4b66605e1c91c7139cab78d72b306781a8e"
+    }
+  ]
+}

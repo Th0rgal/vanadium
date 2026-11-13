@@ -1,0 +1,148 @@
+diff --git a/speculos/api/apdu.py b/speculos/api/apdu.py
+index fce1ce6..e95d4f1 100644
+--- a/speculos/api/apdu.py
++++ b/speculos/api/apdu.py
+@@ -41,7 +41,6 @@ class APDUBridge:
+         self.endpoint_lock = threading.Lock()
+         self.response_condition = threading.Condition()
+         self._seph = seph
+-        self._seph.apdu_callbacks.append(self.seph_apdu_callback)
+         self.response: bytes | None
+ 
+     def exchange(self, data: bytes, tick_timeout: int = 5 * 60 * 10) -> Generator[bytes, None, None]:
+@@ -53,15 +52,22 @@ class APDUBridge:
+         with self.endpoint_lock:  # Lock for a command/response for one client
+             with self.response_condition:
+                 self.response = None
+-            self._seph.to_app(data)
+-            with self.response_condition:
+-                while self.response is None:
+-                    self.response_condition.wait(0.1)
+-                    exchange_tick_count = self._seph.get_tick_count() - tick_count_before_exchange
+-
+-                    if tick_timeout != 0 and exchange_tick_count > tick_timeout:
+-                        raise TimeoutError()
+-            yield json.dumps({"data": self.response.hex()}).encode()
++            # Subscribe only while this response is being produced. Flask creates a
++            # new resource per request, so retaining bridges here makes every later
++            # APDU notify all completed requests.
++            self._seph.apdu_callbacks.append(self.seph_apdu_callback)
++            try:
++                self._seph.to_app(data)
++                with self.response_condition:
++                    while self.response is None:
++                        self.response_condition.wait(0.1)
++                        exchange_tick_count = self._seph.get_tick_count() - tick_count_before_exchange
++
++                        if tick_timeout != 0 and exchange_tick_count > tick_timeout:
++                            raise TimeoutError()
++                yield json.dumps({"data": self.response.hex()}).encode()
++            finally:
++                self._seph.apdu_callbacks.remove(self.seph_apdu_callback)
+ 
+     def seph_apdu_callback(self, data: bytes) -> None:
+         """
+diff --git a/speculos/mcu/seproxyhal.py b/speculos/mcu/seproxyhal.py
+index f443c89..a3a9ebe 100644
+--- a/speculos/mcu/seproxyhal.py
++++ b/speculos/mcu/seproxyhal.py
+@@ -420,7 +420,7 @@ class SeProxyHal(IODevice):
+ 
+         elif tag == SephTag.RAPDU:
+             screen.display.forward_to_apdu_client(data)
+-            for c in self.apdu_callbacks:
++            for c in self.apdu_callbacks.copy():
+                 c(data)
+ 
+         elif tag == SephTag.USB_CONFIG:
+@@ -429,7 +429,7 @@ class SeProxyHal(IODevice):
+         elif tag == SephTag.USB_EP_PREPARE:
+             data = self.transport.prepare(data)
+             if data:
+-                for c in self.apdu_callbacks:
++                for c in self.apdu_callbacks.copy():
+                     c(data)
+                 screen.display.forward_to_apdu_client(data)
+ 
+@@ -549,7 +549,7 @@ class SeProxyHal(IODevice):
+         elif tag == SephTag.NFC_RAPDU:
+             data = self.transport.handle_rapdu(data)
+             if data is not None:
+-                for c in self.apdu_callbacks:
++                for c in self.apdu_callbacks.copy():
+                     c(data)
+                 screen.display.forward_to_apdu_client(data)
+ 
+diff --git a/tests/python/unit/test_api_APDUCallbacks.py b/tests/python/unit/test_api_APDUCallbacks.py
+new file mode 100644
+index 0000000..5e32ecb
+--- /dev/null
++++ b/tests/python/unit/test_api_APDUCallbacks.py
+@@ -0,0 +1,67 @@
++from flask import Flask
++from flask_restful import Api
++import pytest
++from speculos.api.apdu import APDU, pending_replies
++
++
++class RespondingSeph:
++    def __init__(self):
++        self.apdu_callbacks = []
++        self.callback_counts = []
++        self.fail = False
++
++    def get_tick_count(self):
++        return 0
++
++    def to_app(self, data):
++        self.callback_counts.append(len(self.apdu_callbacks))
++        if self.fail:
++            raise RuntimeError("transport failed")
++        for callback in list(self.apdu_callbacks):
++            callback(b"\x90\x00")
++
++
++def client_for(seph):
++    app = Flask(__name__)
++    app.testing = True
++    Api(app).add_resource(APDU, "/apdu", resource_class_kwargs={"seph": seph})
++    return app.test_client()
++
++
++def test_completed_requests_release_callbacks_and_keep_other_observers():
++    seph = RespondingSeph()
++    observed = []
++    observer = observed.append
++    seph.apdu_callbacks.append(observer)
++    client = client_for(seph)
++    for _ in range(50):
++        response = client.post("/apdu", json={"data": "e0ff000000"})
++        assert response.get_json() == {"data": "9000"}
++        response.close()
++    assert seph.apdu_callbacks == [observer]
++    assert seph.callback_counts == [2] * 50
++    assert observed == [b"\x90\x00"] * 50
++    assert pending_replies.wait_idle(0)
++
++
++def test_invalid_requests_do_not_register_callbacks():
++    seph = RespondingSeph()
++    client = client_for(seph)
++    for _ in range(10):
++        response = client.post("/apdu", json={"nodata": ""})
++        assert response.status_code == 400
++        response.close()
++    assert seph.apdu_callbacks == []
++
++
++def test_transport_failure_releases_callback():
++    seph = RespondingSeph()
++    seph.fail = True
++    response = client_for(seph).post("/apdu", json={"data": "e0ff000000"}, buffered=False)
++    try:
++        with pytest.raises(RuntimeError, match="transport failed"):
++            response.get_data()
++    finally:
++        response.close()
++    assert seph.apdu_callbacks == []
++    assert pending_replies.wait_idle(0)

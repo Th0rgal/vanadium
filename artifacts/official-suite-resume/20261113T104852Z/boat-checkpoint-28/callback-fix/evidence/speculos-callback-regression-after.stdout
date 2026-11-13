@@ -1,0 +1,13 @@
+........                                                                 [100%]
+=============================== warnings summary ===============================
+unit/test_api_PendingReplies.py::TestPendingReplies::test_idle_when_nothing_pending
+unit/test_api_PendingReplies.py::TestPendingReplies::test_not_idle_until_done
+unit/test_api_PendingReplies.py::TestPendingReplies::test_wait_wakes_up_on_done
+unit/test_api_PendingReplies.py::TestApduPendingReplies::test_answer_stays_pending_until_the_response_is_closed
+unit/test_api_PendingReplies.py::TestApduPendingReplies::test_invalid_request_is_not_counted
+  /usr/lib/python3.12/unittest/case.py:580: RuntimeWarning: TestResult has no addDuration method
+    warnings.warn("TestResult has no addDuration method",
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-after.xml -
+8 passed, 5 warnings in 0.14s

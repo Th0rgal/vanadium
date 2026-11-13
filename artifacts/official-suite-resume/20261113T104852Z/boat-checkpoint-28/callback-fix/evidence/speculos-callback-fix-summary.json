@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-11-13T14:50:54.975170+00:00",
+  "baseline": "39e6fb1503d2de2c0bc599ffec095470f46097a3",
+  "repository": "https://github.com/LedgerHQ/speculos.git",
+  "patch_sha256": "f85345d9a3b5f5a5dda035f1484c83b95deb904f67a8874e3b771bf6b3423c07",
+  "regression_before": {
+    "failed": 3,
+    "passed": 5,
+    "exit": 1
+  },
+  "regression_after": {
+    "failed": 0,
+    "passed": 8,
+    "exit": 0
+  },
+  "full_python_unit": {
+    "failed": 0,
+    "passed": 15,
+    "exit": 0
+  },
+  "official_environment_modified": false,
+  "root_cause_claim": "Demonstrated callback retention bug in Speculos; contribution to 512 exit255 remains unproven; no guest/spec/test change."
+}

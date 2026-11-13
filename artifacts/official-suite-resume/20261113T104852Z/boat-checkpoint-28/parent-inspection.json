@@ -1,0 +1,16 @@
+{
+  "boat_expiry": 1794586947,
+  "extension_minutes": 60,
+  "increment_max_usd": 0.072,
+  "callback_regression": {
+    "before": "3fail5pass exit1",
+    "after": "8pass exit0",
+    "full_unit": "15pass exit0",
+    "independent_match": true,
+    "official_failure_causality": "UNPROVEN"
+  },
+  "baseline_trace_sha256": "70b8a8500e69f94549efdfda9d6261ed9ea12bf3b095e11a930f72bf5023a1e7",
+  "baseline_trace_signal": "pytestSIGTERMtoSpeculos aftertimeout, thenQEMU",
+  "candidate": "active15:06 no result",
+  "spec_changes": []
+}

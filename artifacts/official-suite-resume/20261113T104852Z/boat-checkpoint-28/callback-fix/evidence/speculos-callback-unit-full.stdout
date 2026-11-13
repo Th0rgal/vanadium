@@ -1,0 +1,12 @@
+...............                                                          [100%]
+=============================== warnings summary ===============================
+unit/test_api_PendingReplies.py: 5 warnings
+unit/test_client_Api.py: 1 warning
+unit/test_client_SpeculosClient.py: 2 warnings
+unit/test_mcu_vnc.py: 4 warnings
+  /usr/lib/python3.12/unittest/case.py:580: RuntimeWarning: TestResult has no addDuration method
+    warnings.warn("TestResult has no addDuration method",
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-unit-full.xml -
+15 passed, 12 warnings in 0.15s

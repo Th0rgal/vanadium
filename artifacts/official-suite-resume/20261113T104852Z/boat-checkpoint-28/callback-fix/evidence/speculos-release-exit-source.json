@@ -1,0 +1,21 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "python3",
+    "-c",
+    "import urllib.request,hashlib,pathlib;u=\"https://raw.githubusercontent.com/LedgerHQ/speculos/39e6fb1503d2de2c0bc599ffec095470f46097a3/src/bolos/os.c\";b=urllib.request.urlopen(u,timeout=20).read();p=pathlib.Path(\"evidence/speculos-0.27.4-os.c\");p.write_bytes(b);print(u);print(\"source_sha256\",hashlib.sha256(b).hexdigest());s=b.decode();i=s.index(\"unsigned long sys_os_sched_exit\");print(s[i:i+180]);p=pathlib.Path(\"venv/lib/python3.12/site-packages/speculos/resources/launcher\");print(\"installed_launcher_sha256\",hashlib.sha256(p.read_bytes()).hexdigest())"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794580008.0707805,
+  "child_pid": 1386977,
+  "exit": 0,
+  "ended": 1794580008.4140127
+}

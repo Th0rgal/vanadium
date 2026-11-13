@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="8" time="0.150" timestamp="2026-11-13T14:48:50.885446" hostname="box-node-7fabc707450cea8d"><testcase classname="unit.test_api_APDUCallbacks" name="test_completed_requests_release_callbacks_and_keep_other_observers" time="0.021"><failure message="AssertionError: assert [&lt;built-in me...6d89b0&gt;&gt;, ...] == [&lt;built-in me...72ece68ff740&gt;]&#10;  Left contains 50 more items, first extra item: &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece68715e0&gt;&gt;&#10;  Full diff:&#10;    [&#10;     &lt;built-in method append of list object at 0x72ece68ff740&gt;,&#10;  +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece68715e0&gt;&gt;,&#10;  +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece6872c00&gt;&gt;,&#10;  +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece68732f0&gt;&gt;,...&#10;  &#10;  ...Full output truncated (49 lines hidden), use '-vv' to show">def test_completed_requests_release_callbacks_and_keep_other_observers():
+        seph = RespondingSeph()
+        observed = []
+        observer = observed.append
+        seph.apdu_callbacks.append(observer)
+        client = client_for(seph)
+        for _ in range(50):
+            response = client.post("/apdu", json={"data": "e0ff000000"})
+            assert response.get_json() == {"data": "9000"}
+            response.close()
+&gt;       assert seph.apdu_callbacks == [observer]
+E       AssertionError: assert [&lt;built-in me...6d89b0&gt;&gt;, ...] == [&lt;built-in me...72ece68ff740&gt;]
+E         Left contains 50 more items, first extra item: &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece68715e0&gt;&gt;
+E         Full diff:
+E           [
+E            &lt;built-in method append of list object at 0x72ece68ff740&gt;,
+E         +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece68715e0&gt;&gt;,
+E         +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece6872c00&gt;&gt;,
+E         +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece68732f0&gt;&gt;,...
+E         
+E         ...Full output truncated (49 lines hidden), use '-vv' to show
+
+tests/python/unit/test_api_APDUCallbacks.py:41: AssertionError</failure></testcase><testcase classname="unit.test_api_APDUCallbacks" name="test_invalid_requests_do_not_register_callbacks" time="0.007"><failure message="AssertionError: assert [&lt;bound metho...6d1850&gt;&gt;, ...] == []&#10;  Left contains 10 more items, first extra item: &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece6d08d40&gt;&gt;&#10;  Full diff:&#10;    [&#10;  -  ,&#10;  +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece6d08d40&gt;&gt;,&#10;  +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66d09e0&gt;&gt;,&#10;  +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66db350&gt;&gt;,...&#10;  &#10;  ...Full output truncated (9 lines hidden), use '-vv' to show">def test_invalid_requests_do_not_register_callbacks():
+        seph = RespondingSeph()
+        client = client_for(seph)
+        for _ in range(10):
+            response = client.post("/apdu", json={"nodata": ""})
+            assert response.status_code == 400
+            response.close()
+&gt;       assert seph.apdu_callbacks == []
+E       AssertionError: assert [&lt;bound metho...6d1850&gt;&gt;, ...] == []
+E         Left contains 10 more items, first extra item: &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece6d08d40&gt;&gt;
+E         Full diff:
+E           [
+E         -  ,
+E         +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece6d08d40&gt;&gt;,
+E         +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66d09e0&gt;&gt;,
+E         +  &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66db350&gt;&gt;,...
+E         
+E         ...Full output truncated (9 lines hidden), use '-vv' to show
+
+tests/python/unit/test_api_APDUCallbacks.py:54: AssertionError</failure></testcase><testcase classname="unit.test_api_APDUCallbacks" name="test_transport_failure_releases_callback" time="0.002"><failure message="assert [&lt;bound metho...2ece66dab40&gt;&gt;] == []&#10;  Left contains one more item: &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66dab40&gt;&gt;&#10;  Full diff:&#10;  - []&#10;  + [&lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66dab40&gt;&gt;]">def test_transport_failure_releases_callback():
+        seph = RespondingSeph()
+        seph.fail = True
+        response = client_for(seph).post("/apdu", json={"data": "e0ff000000"}, buffered=False)
+        try:
+            with pytest.raises(RuntimeError, match="transport failed"):
+                response.get_data()
+        finally:
+            response.close()
+&gt;       assert seph.apdu_callbacks == []
+E       assert [&lt;bound metho...2ece66dab40&gt;&gt;] == []
+E         Left contains one more item: &lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66dab40&gt;&gt;
+E         Full diff:
+E         - []
+E         + [&lt;bound method APDUBridge.seph_apdu_callback of &lt;speculos.api.apdu.APDUBridge object at 0x72ece66dab40&gt;&gt;]
+
+tests/python/unit/test_api_APDUCallbacks.py:66: AssertionError</failure></testcase><testcase classname="unit.test_api_PendingReplies.TestPendingReplies" name="test_idle_when_nothing_pending" time="0.000" /><testcase classname="unit.test_api_PendingReplies.TestPendingReplies" name="test_not_idle_until_done" time="0.011" /><testcase classname="unit.test_api_PendingReplies.TestPendingReplies" name="test_wait_wakes_up_on_done" time="0.052" /><testcase classname="unit.test_api_PendingReplies.TestApduPendingReplies" name="test_answer_stays_pending_until_the_response_is_closed" time="0.002" /><testcase classname="unit.test_api_PendingReplies.TestApduPendingReplies" name="test_invalid_request_is_not_counted" time="0.002" /></testsuite></testsuites>

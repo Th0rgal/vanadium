@@ -1,0 +1,152 @@
+FFF.....                                                                 [100%]
+=================================== FAILURES ===================================
+______ test_completed_requests_release_callbacks_and_keep_other_observers ______
+
+    def test_completed_requests_release_callbacks_and_keep_other_observers():
+        seph = RespondingSeph()
+        observed = []
+        observer = observed.append
+        seph.apdu_callbacks.append(observer)
+        client = client_for(seph)
+        for _ in range(50):
+            response = client.post("/apdu", json={"data": "e0ff000000"})
+            assert response.get_json() == {"data": "9000"}
+            response.close()
+>       assert seph.apdu_callbacks == [observer]
+E       AssertionError: assert [<built-in me...6d89b0>>, ...] == [<built-in me...72ece68ff740>]
+E         Left contains 50 more items, first extra item: <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece68715e0>>
+E         Full diff:
+E           [
+E            <built-in method append of list object at 0x72ece68ff740>,
+E         +  <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece68715e0>>,
+E         +  <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece6872c00>>,
+E         +  <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece68732f0>>,...
+E         
+E         ...Full output truncated (49 lines hidden), use '-vv' to show
+
+tests/python/unit/test_api_APDUCallbacks.py:41: AssertionError
+_______________ test_invalid_requests_do_not_register_callbacks ________________
+
+    def test_invalid_requests_do_not_register_callbacks():
+        seph = RespondingSeph()
+        client = client_for(seph)
+        for _ in range(10):
+            response = client.post("/apdu", json={"nodata": ""})
+            assert response.status_code == 400
+            response.close()
+>       assert seph.apdu_callbacks == []
+E       AssertionError: assert [<bound metho...6d1850>>, ...] == []
+E         Left contains 10 more items, first extra item: <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece6d08d40>>
+E         Full diff:
+E           [
+E         -  ,
+E         +  <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece6d08d40>>,
+E         +  <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece66d09e0>>,
+E         +  <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece66db350>>,...
+E         
+E         ...Full output truncated (9 lines hidden), use '-vv' to show
+
+tests/python/unit/test_api_APDUCallbacks.py:54: AssertionError
+___________________ test_transport_failure_releases_callback ___________________
+
+    def test_transport_failure_releases_callback():
+        seph = RespondingSeph()
+        seph.fail = True
+        response = client_for(seph).post("/apdu", json={"data": "e0ff000000"}, buffered=False)
+        try:
+            with pytest.raises(RuntimeError, match="transport failed"):
+                response.get_data()
+        finally:
+            response.close()
+>       assert seph.apdu_callbacks == []
+E       assert [<bound metho...2ece66dab40>>] == []
+E         Left contains one more item: <bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece66dab40>>
+E         Full diff:
+E         - []
+E         + [<bound method APDUBridge.seph_apdu_callback of <speculos.api.apdu.APDUBridge object at 0x72ece66dab40>>]
+
+tests/python/unit/test_api_APDUCallbacks.py:66: AssertionError
+=============================== warnings summary ===============================
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:958: 10 warnings
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:958: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    inlocs = ast.Compare(ast.Str(name.id), [ast.In()], [locs])
+
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    expr = ast.IfExp(test, self.display(name), ast.Str(name.id))
+
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    syms.append(ast.Str(sym))
+
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    expls.append(ast.Str(expl))
+
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:823: 38 warnings
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:823: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    keys = [ast.Str(key) for key in current.keys()]
+
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    assertmsg = ast.Str("")
+
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    template = ast.BinOp(assertmsg, ast.Add(), ast.Str(explanation))
+
+../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947: 10 warnings
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947: DeprecationWarning: ast.NameConstant is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    clear = ast.Assign(variables, ast.NameConstant(None))
+
+unit/test_api_PendingReplies.py::TestPendingReplies::test_idle_when_nothing_pending
+unit/test_api_PendingReplies.py::TestPendingReplies::test_not_idle_until_done
+unit/test_api_PendingReplies.py::TestPendingReplies::test_wait_wakes_up_on_done
+unit/test_api_PendingReplies.py::TestApduPendingReplies::test_answer_stays_pending_until_the_response_is_closed
+unit/test_api_PendingReplies.py::TestApduPendingReplies::test_invalid_request_is_not_counted
+  /usr/lib/python3.12/unittest/case.py:580: RuntimeWarning: TestResult has no addDuration method
+    warnings.warn("TestResult has no addDuration method",
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-before.xml -
+=========================== short test summary info ============================
+FAILED tests/python/unit/test_api_APDUCallbacks.py::test_completed_requests_release_callbacks_and_keep_other_observers
+FAILED tests/python/unit/test_api_APDUCallbacks.py::test_invalid_requests_do_not_register_callbacks
+FAILED tests/python/unit/test_api_APDUCallbacks.py::test_transport_failure_releases_callback
+3 failed, 5 passed, 104 warnings in 0.16s
