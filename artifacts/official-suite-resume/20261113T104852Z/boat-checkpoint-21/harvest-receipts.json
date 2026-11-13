@@ -1,0 +1,20 @@
+[
+  {
+    "bytes": 10517,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/7ee96d52-6950-4fa1-9a2f-bebcb030021d/ragger-tests-nanosp-1800-full-retry3.stdout",
+    "sha256": "2b771197e5a9635ab894d85bcaf5ae303f9f4a3a70cafc4c86176ad364ea4c69",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanosp-1800-full-retry3.stdout"
+  },
+  {
+    "bytes": 10342,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/e52b28f5-820a-4d44-b8fb-c0bff2f363bf/ragger-tests-nanox-1800-full-retry3.stdout",
+    "sha256": "9a5dcaeaee6a85abed1a2539b54e5e43dc9eeea5fe4795de58c8690e24b4a5c7",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanox-1800-full-retry3.stdout"
+  }
+]

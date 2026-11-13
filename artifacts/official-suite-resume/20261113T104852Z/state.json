@@ -161,7 +161,7 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 20,
+  "latest_parent_checkpoint": 21,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
   "runtime_monitor_deadline": "lastobserved12:57:17 deadline14:20, PIDabsent13:01:39; no longer confirmedactive",
   "durable_workspace_probe": {
@@ -287,5 +287,11 @@
     "counts": null,
     "exit": null
   },
-  "last_budget_usd": 37.39
+  "last_budget_usd": 37.39,
+  "checkpoint21": "13:44stdoutunchangedcp20 completionJSONmissingboth",
+  "last_budget_observation": {
+    "usd": 0.05,
+    "prior_usd": 37.39,
+    "note": "scope/accountingdiscontinuity"
+  }
 }

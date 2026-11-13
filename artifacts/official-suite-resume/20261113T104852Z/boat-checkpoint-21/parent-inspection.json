@@ -1,0 +1,11 @@
+{
+  "new_completed_results": [],
+  "retry3_stdout": "byte-identicalcp20 both51237%",
+  "completion_json_error": "harvest_not_found both",
+  "transfer_manifest_error": "harvest_not_found",
+  "machine_expiry": 1794579747,
+  "budget_observed_usd": 0.05,
+  "budget_prior_usd": 37.39,
+  "budget_limit_usd": 50,
+  "budget_note": "APIaccounting/scope changed; no refund inference"
+}
