@@ -1,0 +1,20 @@
+[
+  {
+    "bytes": 42828,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/3208941c-e876-4054-a3b5-a211b44f2fac/diagnostic-512-nanox-serial-trace.progress.jsonl",
+    "sha256": "04f85a7698757a6b812ed2c82851fdc1fa1103975f7b86f6dc72c6402a1ce1cc",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.progress.jsonl"
+  },
+  {
+    "bytes": 3105,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/a844eb2b-a004-419c-98cd-442aa65ceec2/diagnostic-512-serial-trace.py",
+    "sha256": "011aa62674aca2ca8619f28a139d3fe40e6363d92647f7c59487dfed64509a8b",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-serial-trace.py"
+  }
+]

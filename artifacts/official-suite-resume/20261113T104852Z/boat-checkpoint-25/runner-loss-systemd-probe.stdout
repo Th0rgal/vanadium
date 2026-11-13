@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-11-13T14:16:27.347893+00:00",
+  "old_scope": "sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-f32ce04047734612b04033f2bd122b9c.scope",
+  "old_scope_current_cgroup": {
+    "path": "/sys/fs/cgroup/user.slice/user-996.slice/user@996.service/app.slice/sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-f32ce04047734612b04033f2bd122b9c.scope",
+    "exists": false,
+    "files": {}
+  },
+  "current_process_cgroup": "0::/user.slice/user-996.slice/user@996.service/app.slice/sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-086c4ad0885e4e3982701fbd1d95f416.scope\n",
+  "commands": [
+    {
+      "argv": [
+        "systemctl",
+        "--user",
+        "show",
+        "sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-f32ce04047734612b04033f2bd122b9c.scope",
+        "--property=Id,LoadState,ActiveState,SubState,Result,KillMode,OOMPolicy,MemoryMax,MemoryHigh,RuntimeMaxUSec,ActiveEnterTimestamp,InactiveEnterTimestamp,InvocationID"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Failed to connect to bus: No medium found\n"
+    },
+    {
+      "argv": [
+        "journalctl",
+        "--user",
+        "--unit=sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-f32ce04047734612b04033f2bd122b9c.scope",
+        "--since=2026-11-13 12:55:00 UTC",
+        "--until=2026-11-13 13:03:00 UTC",
+        "--no-pager",
+        "--output=short-iso"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Hint: You are currently not seeing messages from the system.\n      Users in groups 'adm', 'systemd-journal' can see all messages.\n      Pass -q to turn off this notice.\nNo journal files were opened due to insufficient permissions.\n"
+    }
+  ],
+  "interpretation": "setsid detaches process session but does not move a process out of its executor-owned systemd cgroup. Historical snapshot places both pytest runners and monitor in one job scope. This explains a shared cleanup vulnerability; exact disappearance cause still requires a journal/termination receipt, not an OOM inference."
+}

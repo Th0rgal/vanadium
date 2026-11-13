@@ -1,0 +1,16 @@
+{
+  "new_completed_results": [],
+  "diagnostic": "serialNanoX512active; process/APDUcapture; no counts",
+  "last_raw_utc": "2026-11-13T14:31:12.336602+00:00",
+  "apdu_requests": 0,
+  "apdu_responses": 0,
+  "runner_loss": {
+    "systemctl_exit": 1,
+    "systemctl_error": "Failed to connect to bus: No medium found",
+    "journalctl_exit": 1,
+    "journalctl_error": "No journal files were opened due to insufficient permissions",
+    "cause": "UNKNOWN; sharedcgroupcleanupvulnerability only"
+  },
+  "boat_expiry": 1794583347,
+  "spec_changes": []
+}
