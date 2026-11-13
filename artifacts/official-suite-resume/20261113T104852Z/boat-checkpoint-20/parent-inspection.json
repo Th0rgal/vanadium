@@ -1,0 +1,12 @@
+{
+  "capture": "individualSHAverified noatomicarchive",
+  "new_completed_results": [],
+  "retry3": {
+    "both": "282collected ends51237%",
+    "counts": null,
+    "exit": null
+  },
+  "transfer_manifest_error": "harvest_rejected/harvest_not_found",
+  "boat_expiry": 1794579747,
+  "budget_usd": 37.39
+}

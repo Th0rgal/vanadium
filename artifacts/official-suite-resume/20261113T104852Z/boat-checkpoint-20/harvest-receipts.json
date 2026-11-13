@@ -1,0 +1,29 @@
+[
+  {
+    "bytes": 10517,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/f5fcd5a5-ccb3-481a-bd2f-cce94a513d7a/ragger-tests-nanosp-1800-full-retry3.stdout",
+    "sha256": "2b771197e5a9635ab894d85bcaf5ae303f9f4a3a70cafc4c86176ad364ea4c69",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanosp-1800-full-retry3.stdout"
+  },
+  {
+    "bytes": 10342,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/7bb61a17-be44-481a-b261-7e2552617a02/ragger-tests-nanox-1800-full-retry3.stdout",
+    "sha256": "9a5dcaeaee6a85abed1a2539b54e5e43dc9eeea5fe4795de58c8690e24b4a5c7",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanox-1800-full-retry3.stdout"
+  },
+  {
+    "bytes": 281,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/350f75d0-b831-4b37-b60c-5896127329d5/monitor-retry3-active.json",
+    "sha256": "f14e776aa88a2ae16af5d065d0bd114bc4f252c5e41d9c4b68aab864adb61cdb",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/monitor-retry3-active.json"
+  }
+]
