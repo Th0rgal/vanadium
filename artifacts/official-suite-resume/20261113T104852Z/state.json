@@ -7,7 +7,7 @@
   "app_pushed_sha": "afe126fea70c8c7d6091948bb8a8ae529ea89a60",
   "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
   "node_id": "managed-af55be7b-51a1-45a9-8d79-04e836758cd7",
-  "machine_expires_at_sec": 1794590547,
+  "machine_expires_at_sec": 1794594147,
   "executor_mission_id": "819a0cd5-1d6d-4c3d-9e48-0acfc0c62e23",
   "requested_backend": "codex",
   "effective_backend": "codex",
@@ -161,7 +161,7 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 34,
+  "latest_parent_checkpoint": 35,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
   "runtime_monitor_deadline": "retry3receiptended13:58:11; noactive monitorasserted",
   "durable_workspace_probe": {
@@ -304,11 +304,8 @@
     "observererror": "stackread0x50007000"
   },
   "navigation_candidate": {
-    "status": "verifiedruntime active16:26:45",
-    "APDUrequests": 53558,
-    "APDUresponses": 53557,
-    "exit": null,
-    "counts": null
+    "status": "NARROWPASS verified1exit0; fullbothqueuednotyetstartproven",
+    "app_sha": "a6fdc867893ab9935cf8ff4c96311b72712f9294"
   },
   "latest_extension": {
     "minutes": 60,

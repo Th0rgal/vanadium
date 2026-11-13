@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-11-13T16:28:13.713160+00:00",
+  "classification": "COMPLETED_NARROW_PASS_NOT_FULL_SUITE",
+  "yield_count": 512,
+  "first_input_index": 0,
+  "last_input_index": 511,
+  "strictly_monotonic_zero_based": true,
+  "early_async_responses": 247,
+  "exit": 0,
+  "pass": 1,
+  "fail": 0,
+  "skip": 0,
+  "errors": 0,
+  "deselected": 0
+}

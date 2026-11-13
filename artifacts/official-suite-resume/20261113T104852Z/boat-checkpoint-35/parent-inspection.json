@@ -1,0 +1,17 @@
+{
+  "checkpoint": 35,
+  "narrow512": {
+    "pass": 1,
+    "fail": 0,
+    "skip": 0,
+    "errors": 0,
+    "deselected": 0,
+    "exit": 0,
+    "terminal_junit_argv_exit_matched": true
+  },
+  "raw7parts_original_hashes_verified": true,
+  "app_navigation_signed_remote_sha": "a6fdc867893ab9935cf8ff4c96311b72712f9294",
+  "full_next": "instructionqueued startunproven",
+  "boat_expiry": 1794594147,
+  "official_full_counts_unchanged": true
+}

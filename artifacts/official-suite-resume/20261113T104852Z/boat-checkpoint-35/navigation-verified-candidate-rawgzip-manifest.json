@@ -1,0 +1,80 @@
+{
+  "created_utc": "2026-11-13T16:28:26.210116+00:00",
+  "compression": "lossless gzip; original and gzip SHA256 plus all512KiB parts; decompression independently verified",
+  "files": [
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.stdout",
+      "original_bytes": 2531,
+      "original_sha256": "380075359ab7842a0f393ae630960dd15e8789a14b64a449bee1be6f03bafe08",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stdout.gz",
+      "gzip_bytes": 1119,
+      "gzip_sha256": "b758b05c65e51667b41f4dfa9dd8dc610d75afb0bfa695306c40871b359fb35f",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stdout.gz.part000",
+          "bytes": 1119,
+          "sha256": "b758b05c65e51667b41f4dfa9dd8dc610d75afb0bfa695306c40871b359fb35f"
+        }
+      ],
+      "decompression_independently_verified": true
+    },
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.stderr",
+      "original_bytes": 24928969,
+      "original_sha256": "ed7992690cea01f9fa7d83f3359cba5b96fc61812243c6eafdc302facb7ded1b",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stderr.gz",
+      "gzip_bytes": 2176771,
+      "gzip_sha256": "6b62d8e8f9c2cd3cf17c7820b293673b8060f6e6e5201d6a0d5c4fcb2472116e",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stderr.gz.part000",
+          "bytes": 524288,
+          "sha256": "0c710b2a355e9fd9ee9689c978c2d76208845cdeb197add487d72e918016e329"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stderr.gz.part001",
+          "bytes": 524288,
+          "sha256": "14f75458f85ccd53f311d45e7bb611a1d97e3e96fccc2234b288113b3e6ca4ee"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stderr.gz.part002",
+          "bytes": 524288,
+          "sha256": "ead2ea42690d3a7616f37ae85653c2027d546b324a743d821220dc73ddf5c4b8"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stderr.gz.part003",
+          "bytes": 524288,
+          "sha256": "96169dfbc615fe1001d1b3f235853eecd89e90e1c1f579d7de3945bc9e5076fe"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.stderr.gz.part004",
+          "bytes": 79619,
+          "sha256": "63002c839d09a4ca9d15c192691950c5f15d485eeca5ef145f63d71f9392cb93"
+        }
+      ],
+      "decompression_independently_verified": true
+    },
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.process.trace",
+      "original_bytes": 2893454,
+      "original_sha256": "32303b7f2791405eda46bcc560ff72c23e9fa2a70e0aa2138116bc06561ef665",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.process.trace.gz",
+      "gzip_bytes": 443804,
+      "gzip_sha256": "9416724cca59cc862867caf18de2f4973044f20ab5713483063a61e2095297b6",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix-verified.process.trace.gz.part000",
+          "bytes": 443804,
+          "sha256": "9416724cca59cc862867caf18de2f4973044f20ab5713483063a61e2095297b6"
+        }
+      ],
+      "decompression_independently_verified": true
+    }
+  ],
+  "protocol_progress_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic512-timeout-protocol-progress.json",
+  "classification_path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-terminal-analysis.json",
+  "exit_evidence_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.process.trace",
+  "guest_caller_stack": "Separate baseline guest GDB captured interruptiontimeout5, exitrequest255",
+  "no_new_runs": true,
+  "classification": "COMPLETED_NARROW_PASS_NOT_FULL_SUITE"
+}

@@ -223,6 +223,16 @@
       "duration_seconds": 724.92,
       "scope": "exact NanoX diagnostic only; no fullsuite acceptance",
       "failure": "RemoteDisconnected; QEMU/Speculos exit255; guestcallerUNKNOWN"
+    },
+    "navigation_verified_512": {
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "exit": 0,
+      "duration_seconds": 1421.42,
+      "scope": "oneexactNanoXdiagnostic, notfullsuite"
     }
   },
   "completed_testnet_1800_retry3": {
