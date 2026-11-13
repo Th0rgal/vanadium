@@ -1,0 +1,90 @@
+{
+  "prerequisite": "verified narrow512 candidate completion plus parentBoat budget/expiry extension; do notlaunch blind",
+  "selection": "same complete trackedtests directory, bothdevice slow2, originalskiprules unchanged",
+  "commands": [
+    {
+      "name": "ragger-navigation-full-nanosp",
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/app-navigation-fix/tests",
+      "argv": [
+        "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+        "-m",
+        "pytest",
+        "-p",
+        "navigation_candidate_provenance",
+        ".",
+        "--device",
+        "nanosp",
+        "--model",
+        "nanosp",
+        "--speculos_port=6401",
+        "--enable_slow_tests=2",
+        "--timeout=1800",
+        "-ra",
+        "-v",
+        "--tb=short",
+        "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-full-nanosp.xml"
+      ],
+      "env": {
+        "PATH": "/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+        "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/evidence:/var/lib/orb-node/work/official-suite-resume/ragger-navigation-fix/src:/var/lib/orb-node/work/official-suite-resume/app-navigation-fix:/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime",
+        "BITCOIND": "/var/lib/orb-node/work/official-suite-resume/evidence/bitcoind-navigation-full-nanosp.sh",
+        "BITCOIN_DIRNAME": "/var/lib/orb-node/work/official-suite-resume/core-navigation-full-nanosp",
+        "BTC_RPC_PORT": "27443",
+        "PYTHONWARNINGS": "ignore::DeprecationWarning",
+        "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+        "NAV_PROVENANCE_FILE": "ragger-navigation-full-nanosp-provenance.json"
+      },
+      "status": "PREPARED_NOT_RUN",
+      "counts": {
+        "pass": null,
+        "fail": null,
+        "skip": null,
+        "errors": null,
+        "deselected": null,
+        "exit": null
+      }
+    },
+    {
+      "name": "ragger-navigation-full-nanox",
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/app-navigation-fix/tests",
+      "argv": [
+        "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+        "-m",
+        "pytest",
+        "-p",
+        "navigation_candidate_provenance",
+        ".",
+        "--device",
+        "nanox",
+        "--model",
+        "nanox",
+        "--speculos_port=6501",
+        "--enable_slow_tests=2",
+        "--timeout=1800",
+        "-ra",
+        "-v",
+        "--tb=short",
+        "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-full-nanox.xml"
+      ],
+      "env": {
+        "PATH": "/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+        "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/evidence:/var/lib/orb-node/work/official-suite-resume/ragger-navigation-fix/src:/var/lib/orb-node/work/official-suite-resume/app-navigation-fix:/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime",
+        "BITCOIND": "/var/lib/orb-node/work/official-suite-resume/evidence/bitcoind-navigation-full-nanox.sh",
+        "BITCOIN_DIRNAME": "/var/lib/orb-node/work/official-suite-resume/core-navigation-full-nanox",
+        "BTC_RPC_PORT": "28443",
+        "PYTHONWARNINGS": "ignore::DeprecationWarning",
+        "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+        "NAV_PROVENANCE_FILE": "ragger-navigation-full-nanox-provenance.json"
+      },
+      "status": "PREPARED_NOT_RUN",
+      "counts": {
+        "pass": null,
+        "fail": null,
+        "skip": null,
+        "errors": null,
+        "deselected": null,
+        "exit": null
+      }
+    }
+  ]
+}

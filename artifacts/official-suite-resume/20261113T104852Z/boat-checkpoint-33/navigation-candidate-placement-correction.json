@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-13T16:04:35.880239+00:00",
+  "classification": "FAILED_PARTIAL_CANDIDATE_WRONG_ADAPTER_IMPORT",
+  "exit": 1,
+  "pass": 0,
+  "fail": 1,
+  "duration_pytest_seconds": 604.5,
+  "actual_adapter": "app-bitcoin/ragger_bitcoin/ragger_bitcoin.py unchanged baseline per pytesttraceback",
+  "actual_navigator": "ragger-navigation-fix/src/ragger/navigator/navigator.py patchedtickerfinally",
+  "cause": "pytest package-root insertion overrode PYTHONPATH for appadapter; independent pythonimportprovenance not representative of pytest",
+  "not_validation_of_complete_candidate": true,
+  "remediation": "run unchanged trackedtests from newappclone whosebuild symlinks identicalbaselineELF, assert modulepaths insidepytestsessionstart",
+  "verified_candidate_active": "diagnostic-512-nanox-navigation-fix-verified",
+  "plugin_assertions": "moduleprovenanceonly; no testassertionsweakened"
+}

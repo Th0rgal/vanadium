@@ -1,0 +1,12 @@
+{
+  "checkpoint": 33,
+  "first_navigation_attempt": "completedFAILexit1; wrongbaselineadapterimport; terminalpending",
+  "corrected_attempt": "active16:15:14",
+  "pytest_session_provenance_verified": true,
+  "APDUrequests": 38032,
+  "APDUresponses": 38031,
+  "exit": null,
+  "official_counts_unchanged": true,
+  "boat_expiry": 1794590547,
+  "plugin_hash_drift": "staleindex286501 vs harvested2eec7d790; preserve distinction"
+}

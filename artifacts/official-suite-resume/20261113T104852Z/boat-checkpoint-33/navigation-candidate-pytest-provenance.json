@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-13T16:04:19.451445+00:00",
+  "classification": "IN_PYTEST_SESSION_MODULE_PROVENANCE",
+  "modules": [
+    {
+      "module": "ragger_bitcoin.ragger_bitcoin",
+      "path": "/var/lib/orb-node/work/official-suite-resume/app-navigation-fix/ragger_bitcoin/ragger_bitcoin.py",
+      "sha256": "5a64b7665aefbee23f9500bfc8da1bd911be42fe4c7362008e1fee2361cd35fa"
+    },
+    {
+      "module": "ragger.navigator.navigator",
+      "path": "/var/lib/orb-node/work/official-suite-resume/ragger-navigation-fix/src/ragger/navigator/navigator.py",
+      "sha256": "a4a8d6d864ee9c47827e518c3daf61b5dba2d0dbb28e16c6e420fd47c1cf667b"
+    },
+    {
+      "module": "ragger.backend.speculos",
+      "path": "/var/lib/orb-node/work/official-suite-resume/ragger-navigation-fix/src/ragger/backend/speculos.py",
+      "sha256": "d81906105f6dbeda78a13d2cf1076465b459b388742c0f8d8572208e90fb9615"
+    },
+    {
+      "module": "speculos.mcu.seproxyhal",
+      "path": "/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime/speculos/mcu/seproxyhal.py",
+      "sha256": "b4ff75b8a9e3b99f2e32623bfb73ad760d906fe90bf466a1877c1590b6dac127"
+    }
+  ]
+}
