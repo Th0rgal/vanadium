@@ -1,0 +1,17 @@
+{
+  "archive_sha256": "56a7fcfa9eab46eed138683556519846b341087ec7f39029b18fbd7f50eb2b70",
+  "new_command_records": [
+    "emitter-public-branches.json",
+    "fetch-flat-emitter.json",
+    "inspect-flat-emitter.json",
+    "pin-compatible-emitter.json"
+  ],
+  "emitter_checkout": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
+  "emitter_checkout_exit": 0,
+  "emitter_build_at_pinned_revision": "still pending evidence",
+  "new_test_results_accepted": [],
+  "preserved_results": "CTest31/31; official mainnet2/2 each device",
+  "testnet": "No complete run output available yet; aborted earlier attempt not certified",
+  "status": "IN_PROGRESS",
+  "boat_expiry_epoch": 1794572547
+}

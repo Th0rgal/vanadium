@@ -1,0 +1,25 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "git",
+    "-c",
+    "credential.helper=",
+    "-c",
+    "core.askPass=",
+    "ls-remote",
+    "--heads",
+    "https://github.com/Th0rgal/turbo-lean.git"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568563.580781,
+  "exit": 0,
+  "ended": 1794568564.138213
+}

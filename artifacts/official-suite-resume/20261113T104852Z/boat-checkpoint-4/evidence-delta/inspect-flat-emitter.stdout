@@ -1,0 +1,44 @@
+commit 8c3503fa0df74fafcd7a3b91e4319606985b7198
+Author:     Thomas Marchand (agent) <agent@thomas.md>
+AuthorDate: Thu Nov 12 17:48:19 2026 +0100
+Commit:     Thomas Marchand (agent) <agent@thomas.md>
+CommitDate: Thu Nov 12 17:48:19 2026 +0100
+
+    fix(llvm): omit seqFor loop unroll metadata on embedded targets
+ lean/LeanNative/Backend/LLVM.lean                  |  38 +-
+ lean/LeanNative/Driver/BuildExe.lean               |   1 +
+ lean/LeanNative/Driver/CAbiEmit.lean               |  30 +-
+ lean/LeanNative/IR/AST.lean                        |  36 +-
+ lean/LeanNative/IR/Bridge.lean                     | 141 +++-
+ lean/LeanNative/IR/BridgeHelpers.lean              | 353 +++++++++-
+ lean/LeanNative/Proofs/AxiomAudit.lean             |  11 +-
+ lean/LeanNative/Proofs/LedgerEmbedded32Proofs.lean | 215 ++++++
+ lean/LeanNative/Proofs/SymbolicTV.lean             |  25 +-
+ lean/LeanNative/Proofs/SymbolicTVCode.lean         |   8 +-
+ lean/LeanNative/Tests/LedgerEmbedded32Tests.lean   | 244 ++++++-
+ lean/LeanNative/Transform/EqSat.lean               |   5 +-
+ lean/TurboLean/Assembler.lean                      |   5 -
+ lean/TurboLean/ZygoteWorker.lean                   | 744 ++++-----------------
+ 14 files changed, 1187 insertions(+), 669 deletions(-)
+31:/-- Effect-anchoring combinator used internally during freestanding flat-pointer LCNF preparation so
+50:def flatPtrCombinatorType? : Lean.Name → Option LNIRType
+51:  | .str _ "ConstBytes" | .str _ "MutBytes" => some (.rawPtr .i8)
+243:      else if let some fpTy := flatPtrCombinatorType? declName then fpTy
+314:      if (nullaryEnumScalarType? env e).isSome || (flatPtrCombinatorType? declName).isSome ||
+414:            Lean.throwError s!"[lean-native] Unsupported exported tuple parameter `{pName}` in `{declName}`"
+2346:  | .const nm _ => (flatPtrCombinatorType? nm).isSome
+2421:    (match flatPtrCombinatorType? nm with | some _ => true | none => false) ||
+2427:    (flatPtrCombinatorType? nm).isSome ||
+2435:  if isFreestandingStubCombinatorName nm || (flatPtrCombinatorType? nm).isSome then true
+2447:      let isFlatPtrProj := match nm with | .str p _ => (flatPtrCombinatorType? p).isSome | _ => false
+2479:      if !isFreestandingStubCombinatorName fn && (flatPtrCombinatorType? fn).isNone then
+2495:        if !isLiftedOrClosed && !isFreestandingStubCombinatorName fn && (flatPtrCombinatorType? fn).isNone && (env.getModuleIdxFor? fn).isNone then
+leanprover/lean4:v4.35.0
+# AGENTS.md — Architectural Charter (`turbo-lean` [incl. `LeanNative`] ⟷ `lean-sys` ⟷ `orb`)
+
+## 1. Symbiosis & Architectural Roles
+
+`turbo-lean` (unifying `TurboLean` and `LeanNative`), `lean-sys`, and `orb` form a co-designed formal verification, native compilation, and systems runtime stack for Lean 4:
+
+- **`turbo-lean` (`lean/TurboLean/` + `crates/turbo-lean/` — Incremental Verification, Zygote Elaboration & Counterexample Triage)**:
+  Partitions Lean modules into topological dependency cones and sub-proof cuts, caches artifacts across content-addressed memory and persistent stores, orchestrates warm `Command.State` Zygote workers, exposes an MCP server (`turbo_fast_check`, `turbo_agent_step`, `turbo_audit_spec`, `turbo_check_decl`, `turbo_pr_verify`, `turbo_cluster_status`, `turbo_agent_analytics`) with structured counterexample triage (`CandidateBug | SpecTooStrong | ReferenceDiscrepancy`), and enforces an in-kernel soundness gate (`0 sorryAx`, `0 native_decide`, `0 trustCompiler`, statement pinning, and nested-inductive hygiene).

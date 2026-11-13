@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/turbo-lean",
+  "argv": [
+    "bash",
+    "-c",
+    "git show -s --format=fuller 8c3503fa0df74fafcd7a3b91e4319606985b7198; git diff --stat HEAD 8c3503fa0df74fafcd7a3b91e4319606985b7198 -- lean; git show 8c3503fa0df74fafcd7a3b91e4319606985b7198:lean/LeanNative/IR/BridgeHelpers.lean | rg -n \"ConstBytes|isPtr|flat|tuple parameter|MutBytes\"; git show 8c3503fa0df74fafcd7a3b91e4319606985b7198:lean/lean-toolchain; git show 8c3503fa0df74fafcd7a3b91e4319606985b7198:AGENTS.md | head -8"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568579.6149433,
+  "exit": 0,
+  "ended": 1794568579.6326737
+}

@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS: CTest31/31 and mainnet2/2 each device verified; testnet incomplete, Rust emitter revision being pinned",
+  "status": "IN_PROGRESS: emitter source now pinned8c3503; new build and isolated full testnet results pending",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -81,6 +81,9 @@
   "emitter_revision": {
     "observed": "15676ea244a08d386f8047c4bbfe0416692d1089",
     "requested": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
-    "action": "explicit baseline checkout and executable hash requested before Rust acceptance"
-  }
+    "action": "explicit baseline checkout and executable hash requested before Rust acceptance",
+    "observed_checkout": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
+    "pinned_build_gate": "pending"
+  },
+  "checkpoint4_archive_sha256": "56a7fcfa9eab46eed138683556519846b341087ec7f39029b18fbd7f50eb2b70"
 }
