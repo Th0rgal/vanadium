@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-6.2.5, py-1.11.0, pluggy-1.7.0 -- /var/lib/orb-node/work/official-suite-resume/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests, configfile: setup.cfg
+plugins: timeout-2.2.0, benchmark-4.0.0
+timeout: 1800.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 282 items
+
+test_dashboard.py::test_dashboard[nanox-nanox] PASSED                    [  0%]
+test_e2e_miniscript.py::test_e2e_miniscript_one_of_two_1[nanox-nanox] PASSED [  0%]
+test_e2e_miniscript.py::test_e2e_miniscript_one_of_two_2[nanox-nanox] PASSED [  1%]
+test_e2e_miniscript.py::test_e2e_miniscript_2fa[nanox-nanox] PASSED      [  1%]
+test_e2e_miniscript.py::test_e2e_miniscript_decaying_3of3[nanox-nanox] 
+
+=============================== warnings summary ===============================
+../../venv/lib/python3.12/site-packages/ragger/firmware/structs.py:45
+test_dashboard.py::test_dashboard[nanox-nanox]
+test_e2e_miniscript.py::test_e2e_miniscript_one_of_two_1[nanox-nanox]
+test_e2e_miniscript.py::test_e2e_miniscript_one_of_two_2[nanox-nanox]
+test_e2e_miniscript.py::test_e2e_miniscript_2fa[nanox-nanox]
+test_e2e_miniscript.py::test_e2e_miniscript_decaying_3of3[nanox-nanox]
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/ragger/firmware/structs.py:45: UserWarning: `ragger.firmware.Firmware` is deprecated, use `ledgered.devices.Devices` or `ledgered.devices.DeviceType` instead
+    self.deprec_warning()
+
+test_dashboard.py::test_dashboard[nanox-nanox]
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/ragger/firmware/structs.py:54: UserWarning: `ragger.firmware.Firmware` is deprecated, use `ledgered.devices.Devices` or `ledgered.devices.DeviceType` instead
+    self.deprec_warning()
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanox-long.xml -
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/ragger/backend/speculos.py:446: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+======================== 4 passed, 7 warnings in 59.21s ========================

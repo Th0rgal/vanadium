@@ -1,0 +1,7 @@
+# Checkpoint 8 — evidence provenance and interrupted attempts
+
+Independently inspected full LastTest.log:31 target starts,31 Test Passed markers,0 Test Failed markers, names match31 JUnit entries. No CMocka FAILED markers. Native CMake cache sets SPECULOS=ON and C compiler=/usr/bin/cc; installed LLVM21 provenance is separate. CTest was not repeated. Both actual nested Cargo.lock copies match previously accepted hashes. Source/SDK/emitter/Lean pins confirmed in fresh11:41 snapshot, tracked diffs empty; generated untracked tests/tests paths require inventory. Emitter executable hash still requested.
+
+Earlier full testnet attempts and diagnostics vanished without completed exit/JUnit; cause unknown, counts remain null. Timeout1800 full attempts were explicitly interrupted after about60sec, exit2; retained, not certified. Fresh timeout300 full attempts are active. Full1800 reruns remain necessary if300 limit prevents completion; parent superseded TTL-only cutoff and will extend if meaningful work needs it. No exclusions, assertion edits, or spec changes.
+
+Raw fresh isolated NanoS+ final2 log explicitly shows bolt3_received_htlc PASSED. Original overlapped0x6901 cause remains unproven; no full-suite claim.

@@ -11,7 +11,7 @@
       "exit": 0,
       "enumeration_matches_executed_junit": true,
       "added_target": "test_lean_bolos_kernels",
-      "full_cmocka_output": "requested LastTest.log, JUnit truncates stdout per test at1024bytes"
+      "full_cmocka_output": "LastTest.log archived and independently verified31passed markers/0failed, names matchJUnit; target-level counts retained"
     },
     "mainnet": {
       "nanosp": {

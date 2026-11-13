@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS: complete testnet runs and512-input duration diagnostics active; acquired suites retained",
+  "status": "IN_PROGRESS: previous testnet attempts interrupted; fresh full300 attempts active; full1800 required if measured budget insufficient",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -38,7 +38,7 @@
     "exit": 0,
     "enumeration_matches_executed_junit": true,
     "added_target": "test_lean_bolos_kernels",
-    "full_cmocka_output": "requested LastTest.log, JUnit truncates stdout per test at1024bytes"
+    "full_cmocka_output": "LastTest.log archived and independently verified31passed markers/0failed, names matchJUnit; target-level counts retained"
   },
   "checkpoint3_archive_sha256": "ca8751748f8a83759f6e7aaa8274eb835265439bd1d51eeb23d2e39ccf812544",
   "accepted_mainnet": {
@@ -83,7 +83,7 @@
     "requested": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
     "action": "explicit baseline checkout and executable hash requested before Rust acceptance",
     "observed_checkout": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
-    "pinned_build_gate": "success, source8c3503 and authentic FFI audit; executable hash requested"
+    "pinned_build_gate": "source8c3503 and baselineFFI verified; executable hash still missing"
   },
   "checkpoint4_archive_sha256": "56a7fcfa9eab46eed138683556519846b341087ec7f39029b18fbd7f50eb2b70",
   "checkpoint5_archive_sha256": "3b999127b82710d9d900f72098110c0f333feb2f7da18a27a9c5a4081b16113c",
@@ -157,5 +157,8 @@
       "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common"
     }
   },
-  "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24"
+  "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
+  "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
+  "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
+  "latest_parent_checkpoint": 8
 }

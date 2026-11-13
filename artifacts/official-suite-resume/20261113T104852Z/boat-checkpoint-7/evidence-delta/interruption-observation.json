@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-11-13T11:45:13.664402+00:00",
+  "observation": "No pytest, run.py, queued-run, QEMU, or bitcoind processes exist; prior session75012 unknown. Previous first full and exact512 diagnostics have no completed exit JSON or JUnit. Cause not established.",
+  "affected_runs": [
+    "ragger-tests-nanosp3",
+    "ragger-tests-nanox",
+    "diagnostic-512-nanosp",
+    "diagnostic-512-nanox"
+  ],
+  "exit": null,
+  "counts": null
+}

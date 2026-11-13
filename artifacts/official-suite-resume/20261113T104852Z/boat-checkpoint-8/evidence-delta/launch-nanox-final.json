@@ -1,0 +1,27 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests",
+  "argv": [
+    "env",
+    "PATH=/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "BITCOIND=/var/lib/orb-node/work/official-suite-resume/evidence/bitcoind-nanox.sh",
+    "BITCOIN_DIRNAME=/var/lib/orb-node/work/official-suite-resume/core-nanox-long",
+    "BTC_RPC_PORT=19443",
+    "PYTHONPATH=/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+    "PYTHONWARNINGS=ignore::DeprecationWarning",
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    ".",
+    "--device",
+    "nanox",
+    "--model",
+    "nanox",
+    "--speculos_port=5101",
+    "--enable_slow_tests=2",
+    "--timeout=300",
+    "-ra",
+    "-v",
+    "--tb=short",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanox-final.xml"
+  ]
+}

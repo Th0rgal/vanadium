@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "rg -n \"secp256k1|coincurve|embit|bip32|sign\\(\" test_utils/txmaker.py bitcoin_client/ledger_bitcoin/_script.py; /var/lib/orb-node/work/official-suite-resume/venv/bin/python - <<'PY'\nfrom embit.util import secp256k1\nimport inspect\nprint(secp256k1.__file__)\nprint(inspect.getsource(secp256k1)[:7000])\nPY"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794570018.6140504,
+  "exit": 0,
+  "ended": 1794570018.701971
+}

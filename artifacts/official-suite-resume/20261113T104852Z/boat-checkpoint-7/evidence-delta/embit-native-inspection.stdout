@@ -1,0 +1,157 @@
+import ctypes, os
+import ctypes.util
+import platform
+import threading
+
+from ctypes import (
+    cast,
+    byref,
+    c_char,
+    c_byte,
+    c_int,
+    c_uint,
+    c_char_p,
+    c_size_t,
+    c_void_p,
+    c_uint64,
+    create_string_buffer,
+    CFUNCTYPE,
+    POINTER,
+)
+
+_lock = threading.Lock()
+# @locked decorator
+def locked(func):
+    def wrapper(*args, **kwargs):
+        with _lock:
+            return func(*args, **kwargs)
+    return wrapper
+
+# Flags to pass to context_create.
+CONTEXT_VERIFY = 0b0100000001
+CONTEXT_SIGN = 0b1000000001
+CONTEXT_NONE = 0b0000000001
+
+# Flags to pass to ec_pubkey_serialize
+EC_COMPRESSED = 0b0100000010
+EC_UNCOMPRESSED = 0b0000000010
+
+def _copy(a:bytes) -> bytes:
+    """Ugly copy that works everywhere incl micropython"""
+    if len(a) == 0:
+        return b""
+    return a[:1] + a[1:]
+
+def _find_library():
+    library_path = None
+    extension = ""
+    if platform.system() == "Darwin":
+        extension = ".dylib"
+    elif platform.system() == "Linux":
+        extension = ".so"
+    elif platform.system() == "Windows":
+        extension = ".dll"
+
+    path = os.path.join(
+        os.path.dirname(__file__),
+        "prebuilt/libsecp256k1_%s_%s%s"
+        % (platform.system().lower(), platform.machine().lower(), extension),
+    )
+    if os.path.isfile(path):
+        return path
+    # try searching
+    if not library_path:
+        library_path = ctypes.util.find_library("libsecp256k1")
+    if not library_path:
+        library_path = ctypes.util.find_library("secp256k1")
+    # library search failed
+    if not library_path:
+        if platform.system() == "Linux" and os.path.isfile(
+            "/usr/local/lib/libsecp256k1.so.0"
+        ):
+            library_path = "/usr/local/lib/libsecp256k1.so.0"
+    return library_path
+
+@locked
+def _init(flags=(CONTEXT_SIGN | CONTEXT_VERIFY)):
+    library_path = _find_library()
+    # meh, can't find library
+    if not library_path:
+        raise RuntimeError(
+            "Can't find libsecp256k1 library. Make sure to compile and install it."
+        )
+
+    secp256k1 = ctypes.cdll.LoadLibrary(library_path)
+
+    secp256k1.secp256k1_context_create.argtypes = [c_uint]
+    secp256k1.secp256k1_context_create.restype = c_void_p
+
+    secp256k1.secp256k1_context_randomize.argtypes = [c_void_p, c_char_p]
+    secp256k1.secp256k1_context_randomize.restype = c_int
+
+    secp256k1.secp256k1_ec_seckey_verify.argtypes = [c_void_p, c_char_p]
+    secp256k1.secp256k1_ec_seckey_verify.restype = c_int
+
+    secp256k1.secp256k1_ec_privkey_negate.argtypes = [c_void_p, c_char_p]
+    secp256k1.secp256k1_ec_privkey_negate.restype = c_int
+
+    secp256k1.secp256k1_ec_pubkey_negate.argtypes = [c_void_p, c_char_p]
+    secp256k1.secp256k1_ec_pubkey_negate.restype = c_int
+
+    secp256k1.secp256k1_ec_privkey_tweak_add.argtypes = [c_void_p, c_char_p, c_char_p]
+    secp256k1.secp256k1_ec_privkey_tweak_add.restype = c_int
+
+    secp256k1.secp256k1_ec_privkey_tweak_mul.argtypes = [c_void_p, c_char_p, c_char_p]
+    secp256k1.secp256k1_ec_privkey_tweak_mul.restype = c_int
+
+    secp256k1.secp256k1_ec_pubkey_create.argtypes = [c_void_p, c_void_p, c_char_p]
+    secp256k1.secp256k1_ec_pubkey_create.restype = c_int
+
+    secp256k1.secp256k1_ec_pubkey_parse.argtypes = [c_void_p, c_char_p, c_char_p, c_int]
+    secp256k1.secp256k1_ec_pubkey_parse.restype = c_int
+
+    secp256k1.secp256k1_ec_pubkey_serialize.argtypes = [
+        c_void_p,
+        c_char_p,
+        c_void_p,
+        c_char_p,
+        c_uint,
+    ]
+    secp256k1.secp256k1_ec_pubkey_serialize.restype = c_int
+
+    secp256k1.secp256k1_ec_pubkey_tweak_add.argtypes = [c_void_p, c_char_p, c_char_p]
+    secp256k1.secp256k1_ec_pubkey_tweak_add.restype = c_int
+
+    secp256k1.secp256k1_ec_pubkey_tweak_mul.argtypes = [c_void_p, c_char_p, c_char_p]
+    secp256k1.secp256k1_ec_pubkey_tweak_mul.restype = c_int
+
+    secp256k1.secp256k1_ecdsa_signature_parse_compact.argtypes = [
+        c_void_p,
+        c_char_p,
+        c_char_p,
+    ]
+    secp256k1.secp256k1_ecdsa_signature_parse_compact.restype = c_int
+
+    secp256k1.secp256k1_ecdsa_signature_serialize_compact.argtypes = [
+        c_void_p,
+        c_char_p,
+        c_char_p,
+    ]
+    secp256k1.secp256k1_ecdsa_signature_serialize_compact.restype = c_int
+
+    secp256k1.secp256k1_ecdsa_signature_parse_der.argtypes = [
+        c_void_p,
+        c_char_p,
+        c_char_p,
+        c_uint,
+    ]
+    secp256k1.secp256k1_ecdsa_signature_parse_der.restype = c_int
+
+    secp256k1.secp256k1_ecdsa_signature_serialize_der.argtypes = [
+        c_void_p,
+        c_char_p,
+        c_void_p,
+        c_char_p,
+    ]
+embit.util.ctypes_secp256k1
+ctypes imported <CDLL '/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/embit/util/prebuilt/libsecp256k1_linux_x86_64.so', handle 3dd92120 at 0x7ae449b98050>

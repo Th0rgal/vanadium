@@ -1,0 +1,22 @@
+{
+  "archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
+  "new_test_results_accepted": [],
+  "ctest_full_log": {
+    "targets": 31,
+    "passed_markers": 31,
+    "failed_markers": 0,
+    "names_match_junit": true,
+    "sha256": "4995b4cb24efbd8329ea7f733cbcabb1a6f538e0ca5b9da36fcdb8c39bf2aed5",
+    "compiler_cache": "/usr/bin/cc",
+    "SPECULOS": true
+  },
+  "nested_locks_verified": {
+    "bitcoin-app.Cargo.lock": "a06a3367c8595ad3d0d650d7546d25ded405567d17131ca0b5ed0a92e9c51525",
+    "bitcoin-common.Cargo.lock": "0102c2b3e5b8bd79baa4c93014be5021e6e5d2bb282cff67f8a3cbd6e31b3cbc"
+  },
+  "sources": "Tracked diffs empty in11:41 snapshot; two test trees have generated untracked tests/tests paths; inventory requested",
+  "emitter_executable_hash": "still missing",
+  "testnet": "original attempts interrupted without exit records; explicit1800 attempts interrupted exit2; fresh300 full attempts active; no full completion",
+  "baseline_pins_confirmed": true,
+  "spec_changes": []
+}

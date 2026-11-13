@@ -1,0 +1,27 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-slow-diagnostic/tests",
+  "argv": [
+    "env",
+    "PATH=/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "BITCOIN_DIRNAME=/var/lib/orb-node/work/official-suite-resume/core-diag-nanox-retry",
+    "BTC_RPC_PORT=21443",
+    "BITCOIND=/var/lib/orb-node/work/official-suite-resume/evidence/bitcoind-diag-nanox.sh",
+    "PYTHONPATH=/var/lib/orb-node/work/official-suite-resume/app-slow-diagnostic",
+    "PYTHONWARNINGS=ignore::DeprecationWarning",
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256",
+    "--device",
+    "nanox",
+    "--model",
+    "nanox",
+    "--speculos_port=5301",
+    "--enable_slow_tests=2",
+    "--timeout=1800",
+    "-ra",
+    "-v",
+    "--tb=short",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-retry.xml"
+  ]
+}

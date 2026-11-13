@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "cat venv/lib/python3.12/site-packages/embit/util/ctypes_secp256k1.py | head -155; venv/bin/python - <<'PY'\nimport embit.util.secp256k1 as s\nprint(s.ec_pubkey_create.__module__)\ntry:\n from embit.util import ctypes_secp256k1\n print(\"ctypes imported\",ctypes_secp256k1._secp)\nexcept Exception as e: print(type(e).__name__,str(e))\nPY"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794570100.425587,
+  "exit": 0,
+  "ended": 1794570100.5159934
+}

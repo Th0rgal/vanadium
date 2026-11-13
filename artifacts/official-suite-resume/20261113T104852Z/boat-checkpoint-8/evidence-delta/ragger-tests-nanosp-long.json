@@ -1,0 +1,37 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests",
+  "argv": [
+    "env",
+    "PATH=/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "BITCOIND=/var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin/bitcoind",
+    "PYTHONPATH=/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+    "PYTHONWARNINGS=ignore::DeprecationWarning",
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    ".",
+    "--device",
+    "nanosp",
+    "--model",
+    "nanosp",
+    "--speculos_port=5001",
+    "--enable_slow_tests=2",
+    "--timeout=1800",
+    "-ra",
+    "-v",
+    "--tb=short",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanosp-long.xml"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794570313.712193,
+  "exit": 2,
+  "ended": 1794570375.7424548
+}

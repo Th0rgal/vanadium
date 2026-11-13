@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-6.2.5, py-1.11.0, pluggy-1.7.0 -- /var/lib/orb-node/work/official-suite-resume/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /var/lib/orb-node/work/official-suite-resume/app-slow-diagnostic/tests, configfile: setup.cfg
+plugins: timeout-2.2.0, benchmark-4.0.0
+timeout: 1800.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 1 item
+
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp] 

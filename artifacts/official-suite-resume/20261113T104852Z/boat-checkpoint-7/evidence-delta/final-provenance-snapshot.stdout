@@ -1,0 +1,65 @@
+Fri Nov 13 11:41:37 UTC 2026
+REPO vanadium
+045439a8c1a984b67f13b913df7c75002ef732a7
+REPO app-bitcoin
+afe126fea70c8c7d6091948bb8a8ae529ea89a60
+?? tests/tests/
+REPO app-testnet
+afe126fea70c8c7d6091948bb8a8ae529ea89a60
+?? tests/tests/
+REPO app-mainnet
+afe126fea70c8c7d6091948bb8a8ae529ea89a60
+REPO lean-ledger-bitcoin
+f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb
+REPO ledger-secure-sdk
+9ea0fae9b40bb91e7c4f94bb0e9b8cf22df36306
+REPO ledger-app-builder
+98693c3b63446779677d35bd7ed7c5923949ab01
+REPO turbo-lean
+8c3503fa0df74fafcd7a3b91e4319606985b7198
+REPO native-ctest/_deps/speculos-src
+ad72692eacd8d961a42c95d5c4fda9d3573c2427
+Ubuntu clang version 21.1.8 (++20251221032922+2078da43e25a-1~exp1~20251221153059.70)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/llvm-21/bin
+qemu-arm version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)
+Copyright (c) 2003-2023 Fabrice Bellard and the QEMU Project developers
+Name: speculos
+Version: 0.27.4
+Summary: Ledger Stax, Flex, Apex+ and Nano S+/X application emulator
+Home-page: 
+Author: Ledger
+Author-email: 
+License: 
+Location: /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages
+Requires: construct, flask, flask-cors, flask-restful, jsonschema, ledgered, mnemonic, pillow, pyelftools, pygame, pyqt6, requests
+Required-by: 
+---
+Name: ragger
+Version: 1.47.4
+Summary: Testing framework using Speculos and LedgerComm as backends
+Home-page: 
+Author: 
+Author-email: Ledger <hello@ledger.fr>
+License: 
+Location: /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages
+Requires: bip_utils, ecdsa, ledgered, py-sr25519-bindings, toml
+Required-by: 
+---
+Name: embit
+Version: 0.7.0
+Summary: yet another bitcoin library
+Home-page: https://github.com/diybitcoinhardware/embit
+Author: Stepan Snigirev
+Author-email: snigirev.stepan@gmail.com
+License: MIT license
+Location: /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages
+Requires: 
+Required-by: 
+139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546  vanadium/Cargo.lock
+a06a3367c8595ad3d0d650d7546d25ded405567d17131ca0b5ed0a92e9c51525  vanadium/apps/bitcoin/app/Cargo.lock
+0102c2b3e5b8bd79baa4c93014be5021e6e5d2bb282cff67f8a3cbd6e31b3cbc  vanadium/apps/bitcoin/common/Cargo.lock
+cmake version 3.31.3
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).

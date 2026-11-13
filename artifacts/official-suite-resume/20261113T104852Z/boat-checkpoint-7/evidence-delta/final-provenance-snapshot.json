@@ -1,0 +1,22 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "env",
+    "LD_LIBRARY_PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/x86_64-linux-gnu",
+    "bash",
+    "-c",
+    "set -e; date -u; for repo in vanadium app-bitcoin app-testnet app-mainnet lean-ledger-bitcoin ledger-secure-sdk ledger-app-builder turbo-lean native-ctest/_deps/speculos-src; do printf \"REPO %s\\n\" \"$repo\"; git -C \"$repo\" rev-parse HEAD; git -C \"$repo\" status --porcelain=v1; git -C \"$repo\" diff --stat; git -C \"$repo\" diff --exit-code; done; prefix/usr/bin/clang-21 --version; prefix/usr/bin/qemu-arm-static --version; venv/bin/python -m pip show speculos ragger embit; sha256sum vanadium/Cargo.lock vanadium/apps/bitcoin/app/Cargo.lock vanadium/apps/bitcoin/common/Cargo.lock; cmake --version"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794570097.1096888,
+  "exit": 0,
+  "ended": 1794570100.3793397
+}

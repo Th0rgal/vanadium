@@ -1,0 +1,22 @@
+test_utils/txmaker.py:26:from embit.bip32 import HDKey
+test_utils/txmaker.py:27:from embit.bip39 import mnemonic_to_seed
+test_utils/txmaker.py:28:from embit.descriptor import Descriptor
+test_utils/txmaker.py:29:from embit.networks import NETWORKS
+test_utils/txmaker.py:30:from embit.script import Script
+test_utils/txmaker.py:32:from bitcoin_client.ledger_bitcoin._embit.descriptor.miniscript import Miniscript
+test_utils/txmaker.py:319:                inout.tap_bip32_paths[derived_pubkey.pubkey[1:]] = (
+test_utils/txmaker.py:331:                inout.tap_bip32_paths[derived_pubkey.pubkey[1:]] = (
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/embit/util/secp256k1.py
+try:
+    # if it's micropython
+    from micropython import const
+    from secp256k1 import *
+except:
+    # we are in python
+    try:
+        # try ctypes bindings
+        from .ctypes_secp256k1 import *
+    except:
+        # fallback to python version
+        from .py_secp256k1 import *
+
