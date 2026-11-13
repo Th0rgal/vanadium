@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS_WITH_FAILURES: new full navigation-resume both active nofinalcounts",
+  "status": "FULL_DEVICE_SUITES_PASS_WITH_EXPLICIT_HOST_PATCHES_ORIGINAL_ROOT_LOCK_LIMITATION",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -7,7 +7,7 @@
   "app_pushed_sha": "afe126fea70c8c7d6091948bb8a8ae529ea89a60",
   "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
   "node_id": "managed-af55be7b-51a1-45a9-8d79-04e836758cd7",
-  "machine_expires_at_sec": 1794594147,
+  "machine_expires_at_sec": 1794597747,
   "executor_mission_id": "819a0cd5-1d6d-4c3d-9e48-0acfc0c62e23",
   "requested_backend": "codex",
   "effective_backend": "codex",
@@ -161,7 +161,7 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 41,
+  "latest_parent_checkpoint": 42,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
   "runtime_monitor_deadline": "retry3receiptended13:58:11; noactive monitorasserted",
   "durable_workspace_probe": {
@@ -309,42 +309,44 @@
   },
   "latest_extension": {
     "minutes": 60,
-    "expiry": "2026-11-13T17:22:27Z",
+    "expiry": "2026-11-13T19:22:27Z",
     "budget_checked": true,
     "maxincrementUSD": 0.072
   },
   "navigation_full": {
-    "historical_candidate_v1": "completedFAIL280p1f1skip both",
-    "current_resume_full": {
+    "status": "completedaccepted281pass1skipboth exit0 with explicit hostpatches",
+    "counts": {
       "nanosp": {
-        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
-        "started_utc": "2026-11-13T17:21:33.235695+00:00",
-        "pid": 2317166,
+        "run": "ragger-navigation-resume-full-nanosp",
+        "pass": 281,
+        "fail": 0,
+        "skip": 1,
+        "errors": 0,
+        "deselected": 0,
         "collected": 282,
-        "slow": 2,
-        "timeout": 1800,
-        "selection": ".",
-        "counts": null,
-        "exit": null,
-        "guest_sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2",
-        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
-        "harvested_modules_match_loaded_hashes": true
+        "exit": 0,
+        "scope": "FULL testnet entire dot slow2 timeout1800 with explicit adapter/Ragger/Speculos host patches",
+        "terminal_junit_argv_exit_matched": true,
+        "selection_names_match_prior_full": true,
+        "started_utc": "2026-11-13T17:21:33.235695+00:00",
+        "ended_utc": "2026-11-13T17:56:27.137412+00:00"
       },
       "nanox": {
-        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
-        "started_utc": "2026-11-13T17:21:33.236053+00:00",
-        "pid": 2317167,
+        "run": "ragger-navigation-resume-full-nanox",
+        "pass": 281,
+        "fail": 0,
+        "skip": 1,
+        "errors": 0,
+        "deselected": 0,
         "collected": 282,
-        "slow": 2,
-        "timeout": 1800,
-        "selection": ".",
-        "counts": null,
-        "exit": null,
-        "guest_sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02",
-        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
-        "harvested_modules_match_loaded_hashes": true
+        "exit": 0,
+        "scope": "FULL testnet entire dot slow2 timeout1800 with explicit adapter/Ragger/Speculos host patches",
+        "terminal_junit_argv_exit_matched": true,
+        "selection_names_match_prior_full": true,
+        "started_utc": "2026-11-13T17:21:33.236053+00:00",
+        "ended_utc": "2026-11-13T17:56:30.723054+00:00"
       }
     },
-    "latest_observation": "both91percent512+4toMaxPlus1PASSmarkers nofinalcounts/exit"
+    "active": false
   }
 }

@@ -1,0 +1,151 @@
+{
+  "utc": "2026-11-13T18:00:58.816357+00:00",
+  "archive_path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.tar.gz",
+  "whole_bytes": 14563426,
+  "whole_sha256": "78087260c6d0ec4284fac61a617491364e695c37e5a30480d6901b494147e858",
+  "parts": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part000",
+      "bytes": 524288,
+      "sha256": "620f6b89fac2a2bda7017bbf09b8175b7368fbca40d3ad0c7d22e5807658f8c3"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part001",
+      "bytes": 524288,
+      "sha256": "e1e23ca0e906a358e645d7eae2f3e017e0c3212994366109b9338bfe191af9cd"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part002",
+      "bytes": 524288,
+      "sha256": "406632f64bb88bfa00b0775f1ff42dc8f17f12514830343c668ef1ab8e540a27"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part003",
+      "bytes": 524288,
+      "sha256": "0bcea0817d4a661ef5dd7e7f300af9e692fa8d99f9a8174f883ff3788a37d157"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part004",
+      "bytes": 524288,
+      "sha256": "e358d5c6c77959789d81fe021fbcd01c281bd5389a8b220e6d0be0b3efd94d59"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part005",
+      "bytes": 524288,
+      "sha256": "3a66b84b1e51ff82f026761bdf28c9bd105196b6627d4ec41e6efc4e4f0d9fa5"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part006",
+      "bytes": 524288,
+      "sha256": "d2f0ef67874eaff5ebdc9ffc24b804dea78ece64a4794802e84515adb7cb1258"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part007",
+      "bytes": 524288,
+      "sha256": "242abbbecacb23208cadc824d1ca7df1671027e165ba7d8a9bb3a434376d5621"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part008",
+      "bytes": 524288,
+      "sha256": "4baf8a3634184873e8c338971a700957316c39d6098e4b8e6d32536d8ab0f169"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part009",
+      "bytes": 524288,
+      "sha256": "dcdcb8d69baedf876cf4c609a870f6191b7f10576bd00cd72b69d3255ab712fc"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part010",
+      "bytes": 524288,
+      "sha256": "b5b5d05e1fdfe429c63677824293a2b1e6d434b369d0f40f2a45d2298ad67192"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part011",
+      "bytes": 524288,
+      "sha256": "7a6c8e6ed74cf6c4742415f24ac7b3efe87f08afe5cfbeb8e23d5bac58ab7708"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part012",
+      "bytes": 524288,
+      "sha256": "c9d696eee7e7135125a3628395974f57b9aaf8f640bc30bebddff68c2610d07d"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part013",
+      "bytes": 524288,
+      "sha256": "693fa51b59d7e777094af3aba4e327875aac9d6e4424ff8eb640377a52e41b8d"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part014",
+      "bytes": 524288,
+      "sha256": "c15586213ba54c00831e70aae320e3464c6bb07bfa61ba316fc43809c81428fc"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part015",
+      "bytes": 524288,
+      "sha256": "b855cadeb89bd702ddf12ef52c7b5e1e1afa7b4645e812823b73a262e03eab02"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part016",
+      "bytes": 524288,
+      "sha256": "f729d03517cf8833973eea52bb65d2e043fe33adce2045a20ee8f2465149806a"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part017",
+      "bytes": 524288,
+      "sha256": "46164bd2fb256460d1972afc6b410b524dddef2450779d70ff81ae7a94993667"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part018",
+      "bytes": 524288,
+      "sha256": "bdaead75ea560c4a38cecba4837c14e8a0111bed6f70b82b059772f8139c4e9e"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part019",
+      "bytes": 524288,
+      "sha256": "394ca9dbba1079b15c1f0c0aaff97babc2c7c71ffa9ac4dc5b34c8995c88e8d8"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part020",
+      "bytes": 524288,
+      "sha256": "6ef4a60b5d24598ca640aa58b5d0ac9ff2a6cf13490d02cb7b57843c2ac493fe"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part021",
+      "bytes": 524288,
+      "sha256": "38bc2245b5bcf522292d35dea5e1b22c09dab6f811b41855b089505eaeb43d77"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part022",
+      "bytes": 524288,
+      "sha256": "a641f7d17fecb4412737f517627276accb62bd3791dc576d6e138c93ab202ad5"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part023",
+      "bytes": 524288,
+      "sha256": "dc945a33aaeb3837cb7c6a4eb08898ff021e6ac8088578c076cc5d38e1207efc"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part024",
+      "bytes": 524288,
+      "sha256": "40fd83dcf0c73f5c3372afce506f02ed181b19ad74bb19b1cd0d2c928d8862cd"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part025",
+      "bytes": 524288,
+      "sha256": "8f427af6a348fdb1c7c7b4d69330dc67c3433019c247b255a63e03b0c17f7df9"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part026",
+      "bytes": 524288,
+      "sha256": "ce2a11f0055bab71a86f5a3eb40f56206ebe3507a35871a44315326efd693d34"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint-navigation-final-1801.part027",
+      "bytes": 407650,
+      "sha256": "54abf59385a94b4f4ecaf0c02771724d0295763b3ebcbe0313590952cd0c9d7c"
+    }
+  ],
+  "classification": "FINAL_CURRENT_FULL_TESTNET_AND_MAINNET_COMPLETE_ROOT_ORIGINAL_LOCK_LIMITATION",
+  "large_historical_raw_addenda": "See evidence/large-log-archive-index.json and prior immutable split manifests; no loss of originals",
+  "excluded": "Python/pytest bytecode/cache; binaries/buildoutputs never part of final evidence"
+}

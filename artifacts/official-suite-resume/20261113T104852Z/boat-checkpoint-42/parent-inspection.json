@@ -1,0 +1,118 @@
+{
+  "checkpoint": 42,
+  "archive_sha256": "78087260c6d0ec4284fac61a617491364e695c37e5a30480d6901b494147e858",
+  "parts_verified": 28,
+  "accepted_current_host_runtime": {
+    "nanosp": {
+      "run": "ragger-navigation-resume-full-nanosp",
+      "pass": 281,
+      "fail": 0,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 0,
+      "scope": "FULL testnet entire dot slow2 timeout1800 with explicit adapter/Ragger/Speculos host patches",
+      "terminal_junit_argv_exit_matched": true,
+      "selection_names_match_prior_full": true,
+      "started_utc": "2026-11-13T17:21:33.235695+00:00",
+      "ended_utc": "2026-11-13T17:56:27.137412+00:00"
+    },
+    "mainnet_nanosp": {
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "exit": 0,
+      "run": "mainnet-navigation-resume-runtime-nanosp",
+      "terminal_junit_argv_exit_matched": true,
+      "after_testnet_no_overlap": true
+    },
+    "nanox": {
+      "run": "ragger-navigation-resume-full-nanox",
+      "pass": 281,
+      "fail": 0,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 0,
+      "scope": "FULL testnet entire dot slow2 timeout1800 with explicit adapter/Ragger/Speculos host patches",
+      "terminal_junit_argv_exit_matched": true,
+      "selection_names_match_prior_full": true,
+      "started_utc": "2026-11-13T17:21:33.236053+00:00",
+      "ended_utc": "2026-11-13T17:56:30.723054+00:00"
+    },
+    "mainnet_nanox": {
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "exit": 0,
+      "run": "mainnet-navigation-resume-runtime-nanox",
+      "terminal_junit_argv_exit_matched": true,
+      "after_testnet_no_overlap": true
+    }
+  },
+  "regressions": {
+    "navigation-snapshot-regression-before": {
+      "pass": 0,
+      "fail": 2,
+      "skip": 0,
+      "exit": 1,
+      "terminal_junit_argv_exit_matched": true
+    },
+    "navigation-snapshot-regression-after": {
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "exit": 0,
+      "terminal_junit_argv_exit_matched": true
+    },
+    "navigation-loading-regression-before-final": {
+      "pass": 2,
+      "fail": 2,
+      "skip": 0,
+      "exit": 1,
+      "terminal_junit_argv_exit_matched": true
+    },
+    "navigation-loading-regression-after-final": {
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "exit": 0,
+      "terminal_junit_argv_exit_matched": true
+    },
+    "navigation-resume-unit-final": {
+      "pass": 46,
+      "fail": 0,
+      "skip": 0,
+      "exit": 0,
+      "terminal_junit_argv_exit_matched": true
+    },
+    "navigation-resume-narrow5-nanosp": {
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "exit": 0,
+      "terminal_junit_argv_exit_matched": true
+    },
+    "navigation-resume-narrow5-nanox": {
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "exit": 0,
+      "terminal_junit_argv_exit_matched": true
+    }
+  },
+  "test_selection_integrity_receipt": {
+    "utc": "2026-11-13T18:00:07.017486+00:00",
+    "phase": "AFTER_ALL_CURRENT_FULL_AND_MAINNET_RUNS",
+    "tracked_files": 4846,
+    "differences": [],
+    "root_original_lock_sha256": "139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546"
+  },
+  "global_pass": false
+}

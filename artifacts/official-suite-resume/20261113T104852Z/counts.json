@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS_WITH_FAILURES",
+  "status": "FULL_DEVICE_SUITES_PASS_WITH_EXPLICIT_HOST_PATCHES_ORIGINAL_ROOT_LOCK_LIMITATION",
   "accepted": {
     "ctest": {
       "evidence_tier": "executable-reproduced",
@@ -126,6 +126,62 @@
       "cargo": "nightly-2025-03-01, -Zunstable-options --lockfile-path PRIVATE --locked",
       "rustc": "private stable1.100 via explicitRUSTC",
       "independent_toml_and_unified_diff_check": true
+    },
+    "testnet_updated_host_runtime": {
+      "nanosp": {
+        "run": "ragger-navigation-resume-full-nanosp",
+        "pass": 281,
+        "fail": 0,
+        "skip": 1,
+        "errors": 0,
+        "deselected": 0,
+        "collected": 282,
+        "exit": 0,
+        "scope": "FULL testnet entire dot slow2 timeout1800 with explicit adapter/Ragger/Speculos host patches",
+        "terminal_junit_argv_exit_matched": true,
+        "selection_names_match_prior_full": true,
+        "started_utc": "2026-11-13T17:21:33.235695+00:00",
+        "ended_utc": "2026-11-13T17:56:27.137412+00:00"
+      },
+      "nanox": {
+        "run": "ragger-navigation-resume-full-nanox",
+        "pass": 281,
+        "fail": 0,
+        "skip": 1,
+        "errors": 0,
+        "deselected": 0,
+        "collected": 282,
+        "exit": 0,
+        "scope": "FULL testnet entire dot slow2 timeout1800 with explicit adapter/Ragger/Speculos host patches",
+        "terminal_junit_argv_exit_matched": true,
+        "selection_names_match_prior_full": true,
+        "started_utc": "2026-11-13T17:21:33.236053+00:00",
+        "ended_utc": "2026-11-13T17:56:30.723054+00:00"
+      }
+    },
+    "mainnet_updated_host_runtime": {
+      "nanosp": {
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "errors": 0,
+        "deselected": 0,
+        "exit": 0,
+        "run": "mainnet-navigation-resume-runtime-nanosp",
+        "terminal_junit_argv_exit_matched": true,
+        "after_testnet_no_overlap": true
+      },
+      "nanox": {
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "errors": 0,
+        "deselected": 0,
+        "exit": 0,
+        "run": "mainnet-navigation-resume-runtime-nanox",
+        "terminal_junit_argv_exit_matched": true,
+        "after_testnet_no_overlap": true
+      }
     }
   },
   "uncompleted": {
@@ -191,39 +247,8 @@
     }
   },
   "pending_validation": {
-    "navigation_resume_full": {
-      "nanosp": {
-        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
-        "started_utc": "2026-11-13T17:21:33.235695+00:00",
-        "pid": 2317166,
-        "collected": 282,
-        "slow": 2,
-        "timeout": 1800,
-        "selection": ".",
-        "counts": null,
-        "exit": null,
-        "guest_sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2",
-        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
-        "harvested_modules_match_loaded_hashes": true
-      },
-      "nanox": {
-        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
-        "started_utc": "2026-11-13T17:21:33.236053+00:00",
-        "pid": 2317167,
-        "collected": 282,
-        "slow": 2,
-        "timeout": 1800,
-        "selection": ".",
-        "counts": null,
-        "exit": null,
-        "guest_sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02",
-        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
-        "harvested_modules_match_loaded_hashes": true
-      }
-    },
-    "new_screen_fix_regressions": "not yet independently verified",
-    "updated_mainnet": "queued after full",
-    "latest_observation": "both91percent512and4toMaxPlus1PASSmarkers nofinalcounts"
+    "delivery": "final adapter signedpush/externalhostprerequisites/publication/Boatcleanup pending",
+    "global_pass": false
   },
   "diagnostics": {
     "musig_eviction_nanox": {
@@ -265,6 +290,57 @@
       "exit": 0,
       "duration_seconds": 1421.42,
       "scope": "oneexactNanoXdiagnostic, notfullsuite"
+    },
+    "navigation_resume_verified": {
+      "navigation-snapshot-regression-before": {
+        "pass": 0,
+        "fail": 2,
+        "skip": 0,
+        "exit": 1,
+        "terminal_junit_argv_exit_matched": true
+      },
+      "navigation-snapshot-regression-after": {
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "exit": 0,
+        "terminal_junit_argv_exit_matched": true
+      },
+      "navigation-loading-regression-before-final": {
+        "pass": 2,
+        "fail": 2,
+        "skip": 0,
+        "exit": 1,
+        "terminal_junit_argv_exit_matched": true
+      },
+      "navigation-loading-regression-after-final": {
+        "pass": 4,
+        "fail": 0,
+        "skip": 0,
+        "exit": 0,
+        "terminal_junit_argv_exit_matched": true
+      },
+      "navigation-resume-unit-final": {
+        "pass": 46,
+        "fail": 0,
+        "skip": 0,
+        "exit": 0,
+        "terminal_junit_argv_exit_matched": true
+      },
+      "navigation-resume-narrow5-nanosp": {
+        "pass": 1,
+        "fail": 0,
+        "skip": 0,
+        "exit": 0,
+        "terminal_junit_argv_exit_matched": true
+      },
+      "navigation-resume-narrow5-nanox": {
+        "pass": 1,
+        "fail": 0,
+        "skip": 0,
+        "exit": 0,
+        "terminal_junit_argv_exit_matched": true
+      }
     }
   },
   "completed_testnet_1800_retry3": {
