@@ -1,6 +1,6 @@
 # Official Bitcoin suite resume — current parent assessment
 
-Status: IN_PROGRESS. Evidence reviewed through checkpoint11. No global PASS.
+Status: IN_PROGRESS. Evidence reviewed through checkpoint12. No global PASS.
 
 | Complete fresh suite | Passed | Failed | Skipped/ignored | Deselected/filtered | Exit |
 |---|---:|---:|---:|---:|---:|
@@ -29,3 +29,5 @@ Only NEW owned integration/test trees used; no shared/site/RAM edits. No specs/t
 Checkpoint9 corrects partial NanoX1800 retry to terminal4passed/exit2; JUnit5 includes unfinished case. Full testnet counts remain null. Monitors still have12:20Z cutoff; parent requested updating after extension. Durable workspace probe remote placement failed verification (expected artifact harvest_not_found), so do not rely on its reported completed status.
 
 Checkpoint11 raw full300 logs show512to256 FAILED markers on bothdevices and continued execution. Finaltraceback/counts pending, so no failurecause or whole-suite result certified. Original upstream non_standard_reject_early skip markers retained; final -ra reasons pending. Boat extended120min after budgetcheck to14:22:27Z (increment$0.144). IMPORTANT runningmonitor correction from old12:20Z cutoff still unverified; resume action accepted, not proof of application.
+
+Checkpoint12: full runs progressing69%NanoS+/76%NanoX at12:11, still no completion. A same-model Codex implementation helper (not reviewer) owns only disjoint new parent-monitor files and exact obsolete monitor intervention, because active executor has not applied queued steering. Cutoff fix awaits raw proof; tests/source/locks remain executor-owned. LiveBoatexpiry14:22:27Z and dailybudget$33.62/$50.

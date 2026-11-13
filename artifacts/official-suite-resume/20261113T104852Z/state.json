@@ -160,9 +160,9 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 11,
+  "latest_parent_checkpoint": 12,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
-  "runtime_monitor_deadline": "12:20Z still in harvested script; newexpiry delivered via resume action but actual active monitor correction unverified",
+  "runtime_monitor_deadline": "old12:20 cutoff still in checkpoint12 snapshot; narrowly scoped implementation helper active, actual repair unverified",
   "durable_workspace_probe": {
     "job_id": "4d39a8a1-c75e-4b62-8f3d-49c2fa1f1b36",
     "tool_reported": "completed",
@@ -175,5 +175,21 @@
     "budget_checked": true,
     "increment_max_usd": 0.144,
     "new_expiry_utc": "2026-11-13T14:22:27Z"
+  },
+  "checkpoint12_archive_sha256": "fd45dce9f5c10df6cdaa9af91c63f3d6fcc7334786cb8fc46f26892197f38e0c",
+  "monitor_repair_helper": {
+    "mission_id": "529131f3-789e-4b2d-8dc3-0617a256f22b",
+    "requested_backend": "codex",
+    "effective_backend": "codex",
+    "requested_model": "gpt-6.1-sol",
+    "effective_model": "gpt-6.1-sol",
+    "role": "implementation operations, NOT reviewer",
+    "exclusive_files": [
+      "evidence/parent-monitor-repair.*",
+      "evidence/parent-runtime-monitor.py"
+    ],
+    "exclusive_process": "exact obsolete runtime-monitor.py monitor only",
+    "test_source_lock_ownership": "original executor unchanged",
+    "no_pytest_or_group_signals": true
   }
 }

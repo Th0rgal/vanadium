@@ -1,0 +1,49 @@
+{
+  "archive_sha256": "fd45dce9f5c10df6cdaa9af91c63f3d6fcc7334786cb8fc46f26892197f38e0c",
+  "new_completed_suites": [],
+  "observed_partial_runs": {
+    "ragger-tests-nanosp-final2": {
+      "completion_json": false,
+      "last_line": "test_sign_psbt_with_sighash_types.py::test_sighash_all_anyone_input_changed[nanosp-nanosp] ",
+      "failure_markers": [
+        "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp] FAILED [ 38%]",
+        "test_sign_psbt_musig.py::test_sign_psbt_musig2_evicts_oldest_session[nanosp-nanosp] FAILED [ 62%]"
+      ],
+      "skip_markers": [
+        "test_get_extended_pubkey.py::test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp] SKIPPED [ 12%]"
+      ]
+    },
+    "ragger-tests-nanox-final": {
+      "completion_json": false,
+      "last_line": "test_sign_psbt_with_sighash_types.py::test_sighash_registered_wallet_spent_only[nanox-nanox] ",
+      "failure_markers": [
+        "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanox-nanox] FAILED [ 38%]",
+        "test_sign_psbt_musig.py::test_sign_psbt_musig2_evicts_oldest_session[nanox-nanox] FAILED [ 62%]"
+      ],
+      "skip_markers": [
+        "test_get_extended_pubkey.py::test_get_extended_pubkey_non_standard_reject_early[nanox-nanox] SKIPPED [ 12%]"
+      ]
+    }
+  },
+  "counts": null,
+  "monitor": "old12:20 script unchanged in harvested snapshot; replacement helper active, proof pending",
+  "monitor_repair_helper": {
+    "mission_id": "529131f3-789e-4b2d-8dc3-0617a256f22b",
+    "requested_backend": "codex",
+    "effective_backend": "codex",
+    "requested_model": "gpt-6.1-sol",
+    "effective_model": "gpt-6.1-sol",
+    "role": "implementation operations, NOT reviewer",
+    "exclusive_files": [
+      "evidence/parent-monitor-repair.*",
+      "evidence/parent-runtime-monitor.py"
+    ],
+    "exclusive_process": "exact obsolete runtime-monitor.py monitor only",
+    "test_source_lock_ownership": "original executor unchanged",
+    "no_pytest_or_group_signals": true
+  },
+  "budget_daily_spent_usd": 33.62,
+  "budget_daily_cap_usd": 50,
+  "boat_expiry": 1794579747,
+  "spec_changes": []
+}
