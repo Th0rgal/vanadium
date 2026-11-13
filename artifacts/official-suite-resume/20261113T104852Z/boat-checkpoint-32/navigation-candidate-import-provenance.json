@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-13T15:56:41.845947+00:00",
+  "argv": [
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-c",
+    "import json,hashlib,pathlib,ragger.navigator.navigator as n,ragger.backend.speculos as b,ragger_bitcoin.ragger_bitcoin as a,speculos.mcu.seproxyhal as s; print(json.dumps([{\"path\":m.__file__,\"sha256\":hashlib.sha256(pathlib.Path(m.__file__).read_bytes()).hexdigest()} for m in [n,b,a,s]],indent=2))"
+  ],
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests",
+  "env": {
+    "PATH": "/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/ragger-navigation-fix/src:/var/lib/orb-node/work/official-suite-resume/app-navigation-fix:/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime",
+    "BITCOIND": "/var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin/bitcoind",
+    "BITCOIN_DIRNAME": "/var/lib/orb-node/work/official-suite-resume/core-512-navigation-fix",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp"
+  },
+  "exit": 0,
+  "note": "Independent import resolution under exact diagnosticcwd/env; no instrumentation added to runningpytest"
+}

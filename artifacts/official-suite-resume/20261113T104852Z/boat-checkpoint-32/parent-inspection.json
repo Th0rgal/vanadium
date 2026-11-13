@@ -1,0 +1,17 @@
+{
+  "checkpoint": 32,
+  "boat_expiry": 1794590547,
+  "extension_minutes": 60,
+  "budget_checked": true,
+  "incrementmax_usd": 0.072,
+  "runtime_last": "2026-11-13T16:02:32.547Z",
+  "APDUrequests": 37609,
+  "APDUresponses": 37608,
+  "candidate_exit": null,
+  "ragger_navigator_with_regression": {
+    "pass": 34,
+    "fail": 0,
+    "exit": 0
+  },
+  "official_counts_unchanged": true
+}
