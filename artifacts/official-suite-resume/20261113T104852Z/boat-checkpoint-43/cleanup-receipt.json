@@ -1,0 +1,48 @@
+{
+  "destroy": {
+    "idempotency_key": "bitcoin-official-final-secured-destroy-20261113",
+    "error": {
+      "code": "lifecycle_rejected",
+      "message": "provider_http_error",
+      "retryable": false
+    }
+  },
+  "remediation": {
+    "operation": "stop_managed_machine",
+    "idempotency_key": "bitcoin-official-final-secured-stop-20261113",
+    "ok": true,
+    "state": "stopped"
+  },
+  "independent_list_verification": {
+    "cordoned": false,
+    "cost_usd": 0.62,
+    "cpu": 8,
+    "created_at": "2026-11-13T10:52:27Z",
+    "created_at_sec": 1794567147,
+    "deletable_at": "2026-11-13T10:52:27Z",
+    "expires_at": "2026-11-13T19:22:27Z",
+    "expires_at_sec": 1794597747,
+    "expiry_cleanup_state": "",
+    "expiry_provider_state": "",
+    "id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "image": "orb-node-base",
+    "instance": "prod",
+    "last_poll_sec": 1794593430,
+    "ledger_closed": false,
+    "name": "orb-managed-f6e30e04-7cd",
+    "node_boot_epoch": 1,
+    "node_id": "managed-af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "owner_kind": "mission",
+    "owner_mission": "f711ad14-bd6f-4075-ba46-ee0cf205776c",
+    "owner_mission_id": "f711ad14-bd6f-4075-ba46-ee0cf205776c",
+    "provider": "boat",
+    "provider_id": "bx_8rz4xkzz",
+    "ram_gb": 16,
+    "sandbox_name": "orb-managed-f6e30e04-7cd",
+    "size": "large",
+    "spent_cents": 62,
+    "state": "stopped",
+    "usd_per_hour": 0.072
+  },
+  "limitation": "Destroy failed; stopped state verified. Disk retained; ledger_closed remains false in inventory, no fabricated deletion or ledger closure."
+}

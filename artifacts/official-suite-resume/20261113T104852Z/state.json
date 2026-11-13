@@ -356,6 +356,8 @@
     "adapter_matches_tested_sha256": "02618dd652e52ee7f03c70df740fae37317450850abb2eaa08feb1139014ac03",
     "external_host_patches": "boat-checkpoint-43/prerequisites",
     "executor_status": "completed",
-    "cleanup": "pending after final evidence push"
+    "cleanup": "stop_managed_machine succeeded and independent inventory confirms stopped; destroy rejected provider_http_error; disk retained, ledger_closed false",
+    "complete": true,
+    "evidence_before_cleanup_remote_sha": "9cf2e4fc4858e4f55a6e2b620c3f266278f179b3"
   }
 }

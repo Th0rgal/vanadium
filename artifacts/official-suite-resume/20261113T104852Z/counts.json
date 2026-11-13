@@ -248,8 +248,13 @@
   },
   "pending_validation": {
     "suite_work_remaining": false,
-    "delivery": "implementationpublished; finalreport/evidencecleanup pending",
-    "global_pass": false
+    "delivery_complete": true,
+    "global_pass": false,
+    "limitations": [
+      "original root frozen lock exit101",
+      "passing device suites require explicit external host patches",
+      "Boat stopped after provider deletion failure; disk retained"
+    ]
   },
   "diagnostics": {
     "musig_eviction_nanox": {
