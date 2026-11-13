@@ -191,8 +191,7 @@
     }
   },
   "pending_validation": {
-    "testnet_full_budget_nanosp": "retry3 full1800baseline incomplete counts/exitnull",
-    "testnet_full_budget_nanox": "retry3 full1800baseline incomplete counts/exitnull"
+    "retry3_terminal_matching": "bothcompletedexit1 JUnit280p1f1skip each; stdoutgzipawaiting, nofinalacceptance"
   },
   "diagnostics": {
     "musig_eviction_nanox": {

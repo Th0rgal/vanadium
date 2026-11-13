@@ -1,0 +1,22 @@
+{
+  "completion_exit_both": 1,
+  "junit_per_device": {
+    "cases": 282,
+    "pass": 280,
+    "fail": 1,
+    "skip": 1,
+    "errors": 0
+  },
+  "terminal_matching": "PENDING stdouttooLarge",
+  "stdout_bytes": {
+    "nanosp": 26629877,
+    "nanox": 26629399
+  },
+  "failure": "RemoteDisconnected while POST/ticker from client.sign_psbt",
+  "cause": "UNKNOWN",
+  "boat_expiry": 1794583347,
+  "extension_minutes": 60,
+  "extension_increment_max_usd": 0.072,
+  "monitor_ended": "13:58:11.580130Z",
+  "manifest": "harvest_not_found"
+}
