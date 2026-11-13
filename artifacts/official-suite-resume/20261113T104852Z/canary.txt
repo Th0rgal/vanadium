@@ -1,0 +1,9 @@
+COMMAND ["cargo", "+stable", "test", "--locked", "--offline", "-p", "common", "--lib", "vm::tests::test_vec_memory_new", "--", "--exact", "--nocapture"]
+CWD /var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/official-resume-vanadium
+ENV {"CARGO_HOME": "/var/lib/sandboxed-node/734c3bb7-f8bf-4b1b-bd1e-e0e6f366aaed/toolchains/cargo", "RUSTUP_HOME": "/var/lib/sandboxed-node/734c3bb7-f8bf-4b1b-bd1e-e0e6f366aaed/toolchains/rustup", "CARGO_TARGET_DIR": "/var/lib/sandboxed-node/734c3bb7-f8bf-4b1b-bd1e-e0e6f366aaed/artifacts/official-suite-resume/20261113T104852Z/canary-target", "CARGO_BUILD_JOBS": "1"}
+error: cannot update the lock file /var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/official-resume-vanadium/Cargo.lock because --locked was passed to prevent this
+help: to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.
+
+EXIT 101
+LOCK_BEFORE 139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546
+LOCK_AFTER 139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546
