@@ -1,0 +1,14 @@
+In file included from /var/lib/orb-node/work/official-suite-resume/app-testnet/src/app_settings.c:1:
+In file included from /var/lib/orb-node/work/official-suite-resume/app-testnet/src/app_settings.h:19:
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26:
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16:
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36:
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44:
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9:
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:4:10: fatal error: 'stdio.h' file not found
+    4 | #include <stdio.h>
+      |          ^~~~~~~~~
+1 error generated.
+make: *** [/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/Makefile.rules_generic:110: build/nanos2/obj/app/src/app_settings.o] Error 1
+make: *** Waiting for unfinished jobs....

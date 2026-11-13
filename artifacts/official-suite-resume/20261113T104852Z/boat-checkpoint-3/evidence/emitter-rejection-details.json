@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "rg -n \"Unsupported exported tuple|tuple parameter|SliceView|flat-slice\" turbo-lean/lean/LeanNative/Driver turbo-lean/lean/LeanNative/Backend | head -50; rg -n \"llbCheckDualUtxo|witSpk\" lean-ledger-bitcoin/BitcoinLedger/FreestandingKernels.lean | head -12; git -C lean-ledger-bitcoin status --short; git -C turbo-lean rev-parse HEAD; sha256sum turbo-lean/lean/.lake/build/bin/lean-native; git -C vanadium diff --exit-code -- Cargo.lock"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568444.5819206,
+  "exit": 0,
+  "ended": 1794568444.8400445
+}

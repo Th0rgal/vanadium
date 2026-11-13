@@ -1,0 +1,327 @@
+name: Unit testing with Codecov coverage checking
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+
+jobs:
+  job_unit_test:
+    name: Call Ledger unit_test
+    uses: LedgerHQ/ledger-app-workflows/.github/workflows/reusable_unit_tests.yml@v1
+    secrets: inherit
+    with:
+      test_directory: unit-tests
+      # OpenSSL is needed by the speculos-backed crypto tests. The
+      # speculos sources themselves are fetched at cmake configure time
+      # by unit-tests/CMakeLists.txt (FetchContent, pinned tag).
+      additional_packages: libssl-dev
+name: Build and run functional tests using ragger through reusable workflow
+
+# This workflow will build the app and then run functional tests using the Ragger framework upon Speculos emulation.
+# It calls a reusable workflow developed by Ledger's internal developer team to build the application and upload the
+# resulting binaries.
+# It then calls another reusable workflow to run the Ragger tests on the compiled application binary.
+#
+# The build part of this workflow is mandatory, this ensures that the app will be deployable in the Ledger App Store.
+# While the test part of this workflow is optional, having functional testing on your application is mandatory and this workflow and
+# tooling environment is meant to be easy to use and adapt after forking your application
+
+on:
+  workflow_dispatch:
+    inputs:
+      golden_run:
+        type: choice
+        required: true
+        default: 'Raise an error (default)'
+        description: CI behavior if the test snapshots are different than expected.
+        options:
+          - 'Raise an error (default)'
+          - 'Open a PR'
+      delete_obsolete_snapshots:
+        type: boolean
+        required: false
+        default: false
+        description: When opening a PR, also delete snapshots that are no longer generated (e.g. for removed/renamed tests). Only safe for a full-suite regeneration.
+  push:
+    branches:
+      - master
+      - main
+      - develop
+  pull_request:
+
+jobs:
+  build_application:
+    name: Build application using the reusable workflow
+    uses: LedgerHQ/ledger-app-workflows/.github/workflows/reusable_build.yml@v1
+    with:
+      upload_app_binaries_artifact: "compiled_app_binaries"
+      flags: "DEBUG=0 COIN=bitcoin_testnet"
+      build_comparison: true
+      enable_stack_consumption: true
+
+  ragger_tests:
+    name: Run ragger tests using the reusable workflow
+    needs: build_application
+    uses: LedgerHQ/ledger-app-workflows/.github/workflows/reusable_ragger_tests.yml@v1
+    with:
+      download_app_binaries_artifact: "compiled_app_binaries"
+      # when merging a PR, we run the tests with the --enable_slow_tests parameter
+      test_options: ${{ github.event_name == 'push' && '--enable_slow_tests' || '' }}
+      regenerate_snapshots: ${{ github.event_name == 'workflow_dispatch' && inputs.golden_run == 'Open a PR' }}
+      also_delete_snapshots: ${{ github.event_name == 'workflow_dispatch' && inputs.golden_run == 'Open a PR' && inputs.delete_obsolete_snapshots }}
+      post_stack_consumption: true
+
+  ragger_coverage:
+    name: Functional tests coverage using the reusable workflow
+    # Builds the app with debug symbols and runs the ragger
+    # tests with coverage tracing; uploads the lcov file + HTML report as the
+    # 'coverage-<device>' artifact(s) and to codecov under the 'functionaltests' flag.
+    uses: LedgerHQ/ledger-app-workflows/.github/workflows/reusable_ragger_coverage.yml@v1
+    with:
+      run_for_devices: '["flex"]'
+      flags: "DEBUG=1 COIN=bitcoin_testnet"
+    secrets:
+      codecov_token: ${{ secrets.CODECOV_TOKEN }}
+# End-to-end tests
+
+These tests are implemented in Python and can be executed either using the [Speculos](https://github.com/LedgerHQ/speculos) emulator or a Ledger Nano S/X.
+
+All the commands in this folder are meant to be ran from the `tests` folder, not from the root.
+
+Install the following system dependencies:
+
+```
+sudo apt-get install -y python3-pytest autoconf automake build-essential libffi-dev libtool pkg-config python3-dev
+```
+
+Python dependencies are listed in [requirements.txt](../requirements.txt), install them using [pip](https://pypi.org/project/pip/) from the root of the repository:
+
+```
+pip install -r requirements.txt
+```
+
+Some tests require the `bitcoind` binary from [Bitcoin Core](https://bitcoincore.org/) (the CI uses version 32.1). It must be in the `$PATH` variable, or alternatively be set as the `BITCOIND` environment variable in the shell running the tests:
+
+```
+export BITCOIND=/path/to/my/bitcoind
+```
+
+The [setup_script.sh](setup_script.sh) script downloads, verifies and installs the same pinned release used by the CI (in `/opt` by default, or in `$BITCOIN_CORE_INSTALL_PREFIX` if set), and prints the command to add it to your `PATH`.
+
+## Launch with Speculos
+
+Build the app as normal from the root folder. For convenience, you probably want to enable DEBUG:
+
+```
+DEBUG=1 make
+```
+
+Then run all the tests from this folder, specifying the device: nanox, nanosp, stax, flex, apex_p or all:
+
+```
+pytest --device yourdevice
+```
+You can enable the screen display with the option `--display`
+
+## Launch with your Nano S/X/SP or Stax
+
+Compile and install the app on your device as normal.
+
+To run the tests on your Ledger device you also need to install an optional dependency
+
+```
+pip install ledgercomm[hid]
+```
+
+Be sure to have you device connected through USB (without any other software interacting with it) and run
+
+```
+pytest --device yourdevice --backend ledgercomm
+```
+cmake_minimum_required(VERSION 3.14)
+
+project(unit_tests
+  VERSION 0.1
+  DESCRIPTION "Unit tests for Ledger Nano application"
+  LANGUAGES C)
+
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Debug")
+endif()
+
+include(CTest)
+enable_testing()
+
+# Emit build/compile_commands.json so editor tooling (clangd, VSCode's
+# C/C++ extension, ...) can pick up the exact compile flags / include
+# paths used for each source file. Without this, files like
+# libs/speculos_bridge.c — which depend on per-target BEFORE PRIVATE
+# include directories — show spurious "missing header" errors.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED True)
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -pedantic -g -O0 --coverage")
+
+# --coverage on the link line already pulls in libgcov.
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} --coverage")
+set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS} --coverage")
+
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+  message(FATAL_ERROR "In-source builds not allowed. Please make a new directory (called a build directory) and run CMake from there. You may need to remove CMakeCache.txt.")
+endif()
+
+if(NOT DEFINED ENV{BOLOS_SDK})
+  message(FATAL_ERROR "BOLOS_SDK is not defined.")
+endif()
+
+# Speculos is used by the speculos-backed crypto tests as the pure-C
+# implementation of the BOLOS syscalls, so we can link the real
+# application crypto code against it instead of writing per-syscall mocks.
+#
+# By default the source tree is fetched from upstream at configure time,
+# pinned to a known-good tag. To override (e.g. for offline builds or to
+# test against a local speculos checkout), pass -DSPECULOS_SRC=<path>
+# or set the SPECULOS_SRC environment variable.
+#
+# To skip the speculos-backed targets entirely, pass -DSPECULOS=OFF.
+option(SPECULOS "Build the speculos-backed crypto tests" ON)
+set(SPECULOS_GIT_TAG "v0.25.13" CACHE STRING
+    "Tag/branch/commit of speculos to fetch when SPECULOS_SRC is not set.")
+
+if(SPECULOS)
+  if(NOT DEFINED SPECULOS_SRC AND DEFINED ENV{SPECULOS_SRC})
+    set(SPECULOS_SRC $ENV{SPECULOS_SRC})
+  endif()
+  if(NOT SPECULOS_SRC)
+    include(FetchContent)
+    FetchContent_Declare(speculos
+      GIT_REPOSITORY https://github.com/LedgerHQ/speculos.git
+      GIT_TAG        ${SPECULOS_GIT_TAG}
+      GIT_SHALLOW    TRUE
+    )
+    # Populate without running speculos's own CMakeLists.txt — that one
+    # is configured for an ARM cross-compile and is not relevant here.
+    # We only want the source tree.
+    FetchContent_GetProperties(speculos)
+    if(NOT speculos_POPULATED)
+      FetchContent_Populate(speculos)
+    endif()
+    set(SPECULOS_SRC "${speculos_SOURCE_DIR}")
+  endif()
+endif()
+
+add_compile_definitions(TEST DEBUG=0 PRINTF=printf COIN_NATIVE_SEGWIT_PREFIX=\"tb\")
+
+include_directories(../src)
+include_directories(../src/debug-helpers)
+include_directories(../src/boilerplate)
+include_directories(libs)
+include_directories($ENV{BOLOS_SDK})
+include_directories($ENV{BOLOS_SDK}/include)
+include_directories($ENV{BOLOS_SDK}/lib_standard_app)
+include_directories($ENV{BOLOS_SDK}/target/nanos2/include)
+
+# Include paths shared by every target under ../src/handler.
+set(HANDLER_INCLUDES ../src/handler ../src/handler/lib ../src/common)
+
+# ---------------------------------------------------------------------------
+# Mock libraries (no-crypto, available to all tests)
+# ---------------------------------------------------------------------------
+add_library(psbt_parse SHARED libs/psbt_parse.c)
+
+# Vendored TOML parser (cktan/tomlc17, MIT). Used by the data-driven
+# unit tests that load test vectors from a .toml file.
+add_library(tomlc17 STATIC libs/tomlc17.c)
+target_include_directories(tomlc17 PUBLIC libs)
+# tomlc17 is a third-party source we don't intend to maintain locally —
+# silence warnings on it without affecting the rest of the tree.
+target_compile_options(tomlc17 PRIVATE -w)
+
+# ---------------------------------------------------------------------------
+# Freestanding Lean 4 kernels (compiled from emitted LLVM IR via clang)
+# ---------------------------------------------------------------------------
+find_program(CLANG_EXECUTABLE NAMES clang-21 clang REQUIRED)
+set(LLB_HOST_IR "${CMAKE_CURRENT_SOURCE_DIR}/../src/lean_kernels/liblean_ledger_bitcoin_host.ll")
+set(LLB_HOST_OBJ "${CMAKE_CURRENT_BINARY_DIR}/liblean_ledger_bitcoin_host.o")
+add_custom_command(
+  OUTPUT "${LLB_HOST_OBJ}"
+  COMMAND "${CLANG_EXECUTABLE}" -c -O2 -fPIC -ffunction-sections -fdata-sections -Wno-override-module
+          "${LLB_HOST_IR}" -o "${LLB_HOST_OBJ}"
+  DEPENDS "${LLB_HOST_IR}"
+  COMMENT "Compiling freestanding Lean 4 kernels (host x86_64)"
+)
+add_custom_target(lean_bolos_kernels_obj DEPENDS "${LLB_HOST_OBJ}")
+add_library(lean_bolos_kernels STATIC "${LLB_HOST_OBJ}")
+.github/workflows/ci-workflow.yml:24:            SDK: "$NANOX_SDK"
+.github/workflows/ci-workflow.yml:26:            SDK: "$NANOSP_SDK"
+.github/workflows/ci-workflow.yml:28:            SDK: "$STAX_SDK"
+.github/workflows/ci-workflow.yml:30:            SDK: "$FLEX_SDK"
+.github/workflows/ci-workflow.yml:32:            SDK: "$APEX_P_SDK"
+.github/workflows/ci-workflow.yml:37:      image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
+.github/workflows/ci-workflow.yml:45:          make DEBUG=0 COIN=bitcoin BOLOS_SDK=${{ matrix.SDK }} && mv bin/ bitcoin-bin/
+.github/workflows/ci-workflow.yml:47:          make DEBUG=0 COIN=bitcoin_testnet BOLOS_SDK=${{ matrix.SDK }} && mv bin/ bitcoin-testnet-bin/
+.github/workflows/ci-workflow.yml:66:      image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
+.github/workflows/ci-workflow.yml:74:          make DEBUG=0 COIN=bitcoin_testnet BOLOS_SDK="$NANOSP_SDK" AUTOAPPROVE_FOR_PERF_TESTS=1
+.github/workflows/ci-workflow.yml:97:      image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest
+.github/workflows/ci-workflow.yml:115:          pytest --headless --model=${{ matrix.model }} --timeout=300
+.github/workflows/ci-workflow.yml:124:      image: ghcr.io/ledgerhq/speculos:0.25.5
+.github/workflows/ci-workflow.yml:138:          PYTHONPATH=$PYTHONPATH:/speculos pytest --headless --timeout=300 --model=nanos
+.github/workflows/ci-workflow.yml:147:      image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest
+.github/workflows/ci-workflow.yml:165:          pytest --headless --model=nanosp --benchmark-json=benchmarks.json
+.github/workflows/ci-workflow.yml:257:      image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest
+.github/workflows/ci-workflow.yml:298:      image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
+unit-tests/CMakeLists.txt:34:if(NOT DEFINED ENV{BOLOS_SDK})
+unit-tests/CMakeLists.txt:35:  message(FATAL_ERROR "BOLOS_SDK is not defined.")
+unit-tests/CMakeLists.txt:80:include_directories($ENV{BOLOS_SDK})
+unit-tests/CMakeLists.txt:81:include_directories($ENV{BOLOS_SDK}/include)
+unit-tests/CMakeLists.txt:82:include_directories($ENV{BOLOS_SDK}/lib_standard_app)
+unit-tests/CMakeLists.txt:83:include_directories($ENV{BOLOS_SDK}/target/nanos2/include)
+unit-tests/CMakeLists.txt:105:set(LLB_HOST_IR "${CMAKE_CURRENT_SOURCE_DIR}/../src/lean_kernels/liblean_ledger_bitcoin_host.ll")
+unit-tests/CMakeLists.txt:106:set(LLB_HOST_OBJ "${CMAKE_CURRENT_BINARY_DIR}/liblean_ledger_bitcoin_host.o")
+unit-tests/CMakeLists.txt:108:  OUTPUT "${LLB_HOST_OBJ}"
+unit-tests/CMakeLists.txt:110:          "${LLB_HOST_IR}" -o "${LLB_HOST_OBJ}"
+unit-tests/CMakeLists.txt:111:  DEPENDS "${LLB_HOST_IR}"
+unit-tests/CMakeLists.txt:114:add_custom_target(lean_bolos_kernels_obj DEPENDS "${LLB_HOST_OBJ}")
+unit-tests/CMakeLists.txt:115:add_library(lean_bolos_kernels STATIC "${LLB_HOST_OBJ}")
+unit-tests/CMakeLists.txt:122:add_library(base58      SHARED $ENV{BOLOS_SDK}/lib_standard_app/base58.c)
+unit-tests/CMakeLists.txt:123:add_library(bip32       SHARED $ENV{BOLOS_SDK}/lib_standard_app/bip32.c)
+unit-tests/CMakeLists.txt:124:add_library(buffer      SHARED $ENV{BOLOS_SDK}/lib_standard_app/buffer.c)
+unit-tests/CMakeLists.txt:125:add_library(read        SHARED $ENV{BOLOS_SDK}/lib_standard_app/read.c)
+unit-tests/CMakeLists.txt:126:add_library(varint      SHARED $ENV{BOLOS_SDK}/lib_standard_app/varint.c)
+unit-tests/CMakeLists.txt:127:add_library(write       SHARED $ENV{BOLOS_SDK}/lib_standard_app/write.c)
+unit-tests/CMakeLists.txt:204:  # that must shadow the Ledger SDK's stripped-down appflags.h added
+unit-tests/CMakeLists.txt:217:  # cx_ecpoint_t etc. shadow the SDK ones for the types where they
+unit-tests/CMakeLists.txt:225:    $ENV{BOLOS_SDK}/lib_cxng/include
+unit-tests/CMakeLists.txt:229:  # Build the application code against the real SDK headers so it sees the
+unit-tests/CMakeLists.txt:251:      $ENV{BOLOS_SDK}/target/nanos2/include
+unit-tests/CMakeLists.txt:252:      $ENV{BOLOS_SDK}/include
+unit-tests/CMakeLists.txt:253:      $ENV{BOLOS_SDK}/io/include
+unit-tests/CMakeLists.txt:254:      $ENV{BOLOS_SDK}/io_legacy/include
+unit-tests/CMakeLists.txt:255:      $ENV{BOLOS_SDK}/protocol/include
+unit-tests/CMakeLists.txt:256:      $ENV{BOLOS_SDK}/lib_standard_app
+unit-tests/CMakeLists.txt:257:      $ENV{BOLOS_SDK}/lib_cxng/include
+unit-tests/CMakeLists.txt:258:      $ENV{BOLOS_SDK}/lib_cxng/src
+unit-tests/CMakeLists.txt:259:      $ENV{BOLOS_SDK}/lib_stusb/include
+unit-tests/CMakeLists.txt:289:    $ENV{BOLOS_SDK}/lib_standard_app/crypto_helpers.c
+unit-tests/CMakeLists.txt:293:  # SDK helpers the app code calls into. Expose them as PUBLIC so each
+unit-tests/CMakeLists.txt:301:  # mock_dispatcher and xpub need real SDK headers (cx_hash_sha256, crypto.h)
+unit-tests/CMakeLists.txt:344:  # Compile the test against the real SDK headers too, so that types
+unit-tests/CMakeLists.txt:371:  # depends on constants.h (and therefore the real SDK headers). No app object
+tests_mainnet/setup.cfg:17:ignore_missing_imports = True
+tests_mainnet/setup.cfg:20:ignore_missing_imports = True
+tests_mainnet/test_dashboard.py:10:        pytest.skip("Requires speculos")
+tests_mainnet/test_dashboard.py:13:        pytest.skip("No dashboard test for stax, flex and apex_p")
+README.md
+__init__.py
+conftest.py
+setup.cfg
+test_bip86.py
+test_dashboard.py
+# The reusable ragger workflow expects a requirements.txt file in the tests directory, but we want to just use the one in the repository's root.
+-r ../requirements.txt
+139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546  ../vanadium/Cargo.lock

@@ -1,0 +1,7 @@
+turbo-lean/lean/LeanNative/Driver/CoreCLI.lean:692:    LeanNative.Spec.isValidByteSlice (LeanNative.Spec.subSliceView ⟨64, 8, 32⟩ 4 16) &&
+turbo-lean/lean/LeanNative/Backend/LLVM.lean:2605:/-- Slot-type regression: a 3-field tuple parameter with an `i256` field, a projection that
+992:def llbCheckDualUtxo (witAmount : UInt64) (witSpk : ConstBytes) (witSpkLen : UInt32) (nonWitAmount : UInt64) (nonWitSpk : ConstBytes) (nonWitSpkLen : UInt32) : Bool :=
+993:  llbValidAmount witAmount && decide (witAmount = nonWitAmount) && decide (witSpkLen = nonWitSpkLen) &&
+994:    llbBytesEq witSpk nonWitSpk witSpkLen
+15676ea244a08d386f8047c4bbfe0416692d1089
+ba57e557f5ce017a4a204ec3bcc48410a7fee28d1e502aa8bca05753462b3e93  turbo-lean/lean/.lake/build/bin/lean-native

@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/turbo-lean/lean",
+  "argv": [
+    "bash",
+    "-c",
+    "cat lean-toolchain lake-manifest.json; turbo-lean build --help; cat ../.github/workflows/*.yml | head -120; rg -n \"freestanding|lean-native\" ../scripts | head -65; clang --version"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567808.628265,
+  "exit": 0,
+  "ended": 1794567808.9038384
+}

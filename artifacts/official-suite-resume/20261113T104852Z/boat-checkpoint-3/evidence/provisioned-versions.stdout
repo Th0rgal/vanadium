@@ -1,0 +1,102 @@
+Ubuntu clang version 21.1.8 (++20251221032922+2078da43e25a-1~exp1~20251221153059.70)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/llvm-21/bin
+aniso8601==10.0.1
+annotated-types==0.8.0
+asn1crypto==1.5.1
+attrs==26.1.0
+base58==2.1.1
+bip-utils==2.9.1
+bip32==3.4
+bleak==3.1.0
+blinker==1.9.0
+cbor2==5.9.0
+certifi==2026.10.23
+cffi==2.1.1
+charset-normalizer==3.5.2
+click==8.5.1
+coincurve==18.0.0
+construct==2.10.70
+crcmod==1.7
+cryptography==50.0.2
+dbus-fast==5.2.0
+ecdsa==0.16.1
+ECPy==1.2.5
+ed25519-blake2b==1.4.1
+embit==0.7.0
+Flask==2.3.3
+flask-cors==6.0.5
+Flask-RESTful==0.3.10
+future==1.0.0
+hidapi==0.15.0
+idna==3.20
+iniconfig==2.3.1
+intelhex==2.3.0
+itsdangerous==2.2.0
+Jinja2==3.1.6
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+-e git+https://github.com/Th0rgal/app-bitcoin.git@afe126fea70c8c7d6091948bb8a8ae529ea89a60#egg=ledger_bitcoin&subdirectory=bitcoin_client
+ledgerblue==0.1.58
+ledgercomm==1.2.1
+ledgered==0.17.0
+ledgerwallet==0.10.0
+libusb1==3.4.0
+MarkupSafe==3.0.4
+mnemonic==0.20
+ndeflib==0.3.3
+nfcpy==1.0.4
+packaging==26.3
+pillow==12.3.0
+pluggy==1.7.0
+protobuf==5.29.6
+py==1.11.0
+py-cpuinfo==9.0.0
+py-sr25519-bindings==0.2.4
+pycparser==3.12
+pycryptodome==3.24.1
+pycryptodomex==3.24.2
+pydantic==2.14.3
+pydantic_core==2.50.4
+pyDes==2.0.1
+pyelftools==0.33
+pygame==2.6.1
+PyGithub==2.10.0
+PyJWT==2.15.1
+PyNaCl==1.6.2
+PyQt6==6.12.0
+PyQt6-Qt6==6.12.0
+PyQt6_sip==13.13.0
+pyserial==3.5
+pytesseract==0.3.13
+pytest==6.2.5
+pytest-benchmark==4.0.0
+pytest-timeout==2.2.0
+python-gnupg==0.5.7
+python-u2flib-host==3.0.3
+pytz==2026.6
+ragger==1.47.4
+referencing==0.37.0
+requests==2.34.2
+rpds-py==2026.9.1
+semver==3.1.1
+six==1.17.0
+speculos==0.27.4
+tabulate==0.10.0
+toml==0.10.2
+tomli==2.5.0
+tomli_w==1.2.0
+typing-inspection==0.4.5
+typing_extensions==4.16.0
+urllib3==2.8.0
+websocket-client==1.9.2
+Werkzeug==3.1.9
+98693c3b63446779677d35bd7ed7c5923949ab01
+9ea0fae9b40bb91e7c4f94bb0e9b8cf22df36306
+15676ea244a08d386f8047c4bbfe0416692d1089
+ad72692eacd8d961a42c95d5c4fda9d3573c2427
+139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546  vanadium/Cargo.lock
+a06a3367c8595ad3d0d650d7546d25ded405567d17131ca0b5ed0a92e9c51525  vanadium/apps/bitcoin/app/Cargo.lock
+0102c2b3e5b8bd79baa4c93014be5021e6e5d2bb282cff67f8a3cbd6e31b3cbc  vanadium/apps/bitcoin/common/Cargo.lock
+?? tests/tests/

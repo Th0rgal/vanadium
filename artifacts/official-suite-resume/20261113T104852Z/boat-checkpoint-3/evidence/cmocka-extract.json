@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "set -e; for deb in debs/*.deb; do sha256sum \"$deb\"; dpkg-deb -x \"$deb\" prefix; done; ls -l prefix/usr/lib/x86_64-linux-gnu/libcmocka*"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567771.990085,
+  "exit": 0,
+  "ended": 1794567772.0029807
+}

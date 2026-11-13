@@ -1,0 +1,98 @@
+045439a8c1a984b67f13b913df7c75002ef732a7	refs/heads/test/official-resume-20261113
+afe126fea70c8c7d6091948bb8a8ae529ea89a60	refs/heads/test/official-resume-20261113
+045439a8c1a984b67f13b913df7c75002ef732a7
+139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546  Cargo.lock
+afe126fea70c8c7d6091948bb8a8ae529ea89a60
+apps/bitcoin/client/Cargo.toml
+apps/bitcoin/common/Cargo.toml
+apps/bitcoin/app/Cargo.toml
+apps/bitcoin/benchmarks/cases/bip32_xpub_derive_child/Cargo.toml
+apps/bitcoin/benchmarks/cases/sp_send/Cargo.toml
+apps/bitcoin/benchmarks/cases/psbt_parse/Cargo.toml
+apps/bitcoin/benchmarks/cases/bip32_xpub_deserialize/Cargo.toml
+This is the Bitcoin app for Vanadium. It is composed of the following crates:
+
+- [app](app) contains the V-app.
+- [client](client) contains the client of the V-app.
+- [common](common) contains the code shared between the V-App and the client.
+
+The `client` is a library crate (see [lib.rs](client/src/lib.rs)), but it also has a test executable ([main.rs](client/src/main.rs)) to interact with the app from the command line.
+
+## Project Status
+
+### ✅ Implemented Features
+- Support for all legacy, SegWit, and Taproot transaction types
+- Support for [Miniscript wallet policies](https://github.com/bitcoin/bips/blob/master/bip-0388.mediawiki)
+- Support for transactions spending/receiving to an arbitrary number of accounts
+- [Silent Payments](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki): paying to silent payment addresses, and silent payment accounts to receive
+
+### 🚧 Work in Progress / Planned
+- Spending from silent payment accounts
+- Identity-based output authentication
+- ...anything you can think of
+
+### 🐛 Known Issues & Limitations
+- Performance still needs major work
+- ⚠️ Not audited, only use on testnets! :)
+
+## Build the V-App
+
+### Risc-V
+
+In order to build the app for the Risc-V target, enter the `app` folder and run:
+
+   ```sh
+   cargo build --release --target=riscv32imac-unknown-none-elf
+   ```
+
+### Native
+
+In order to build the app for the native target, enter the `app` folder and run:
+
+   ```sh
+  cargo build --release
+   ```
+
+## Run the V-App
+
+### Native target
+
+Make sure you built the V-App for the native target.
+
+On a terminal in the `app` folder, simply run:
+
+   ```sh
+   cargo run
+   ```
+
+On a different terminal in the `client` folder, run:
+
+   ```sh
+   cargo run -- --native
+   ```
+
+Note: you can customize the hostname and port of the app by setting the `VAPP_ADDRESS` environment variable.
+
+### RISC-V target
+
+Make sure you built the V-App for the RISC-V target.
+
+Launch Vanadium on speculos. Then execute:
+
+From the `client` folder
+
+   ```sh
+   cargo run
+   ```
+
+If you want to run the V-app on a real device, execute instead:
+
+   ```sh
+   cargo run -- --hid
+   ```
+
+## CLI usage
+
+The executable client is a Command Line Interface to the features of the Bitcoin V-App, featuring autocomplete and command history.
+
+Once the CLI interface is running, press TAB to see the existing command and their arguments.

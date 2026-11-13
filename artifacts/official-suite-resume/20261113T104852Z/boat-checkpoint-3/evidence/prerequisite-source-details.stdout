@@ -1,0 +1,90 @@
+test_utils/fixtures.py:58:def pytest_addoption(parser):
+test_utils/fixtures.py:59:    parser.addoption("--hid", action="store_true")
+test_utils/fixtures.py:60:    parser.addoption("--headless", action="store_true")
+test_utils/fixtures.py:61:    parser.addoption(
+test_utils/fixtures.py:62:        "--enable_slow_tests",
+test_utils/fixtures.py:68:        help="If 0, skip slow tests. If set or equal to 1, enable some slow tests. Greater values enable even slower tests.",
+test_utils/fixtures.py:70:    parser.addoption("--model", action="store", default="nanosp")
+test_utils/fixtures.py:71:    parser.addoption(
+test_utils/fixtures.py:122:def enable_slow_tests(pytestconfig) -> int:
+test_utils/fixtures.py:123:    return pytestconfig.getoption("enable_slow_tests")
+test_utils/speculos.py:18:        # not speculos, ignore automation rules
+
+
+def test_register_wallet_with_long_name(navigator: Navigator, firmware: Firmware, client:
+                                        RaggerClient, test_name: str, speculos_globals):
+    name = "Cold storage with a pretty long name that requires 64 characters"
+    assert len(name) == 64
+
+    run_register_test(navigator, client, speculos_globals, MultisigWallet(
+        name=name,
+        address_type=AddressType.WIT,
+        threshold=2,
+        keys_info=[
+            "[76223a6e/48'/1'/0'/2']tpubDE7NQymr4AFtewpAsWtnreyq9ghkzQBXpCZjWLFVRAvnbf7vya2eMTvT2fPapNqL8SuVvLQdbUbMfWLVDCZKnsEBqp6UK93QEzL8Ck23AwF",
+            "[f5acc2fd/48'/1'/0'/2']tpubDFAqEGNyad35aBCKUAXbQGDjdVhNueno5ZZVEn3sQbW5ci457gLR7HyTmHBg93oourBssgUxuWz1jX5uhc1qaqFo9VsybY1J5FuedLfm4dK",
+        ],
+    ),
+        instructions=register_wallet_instruction_approve(firmware),
+        test_name=test_name)
+
+
+def test_register_wallet_reject_header(navigator: Navigator, firmware: Firmware, client:
+                                       RaggerClient, test_name: str):
+    if not firmware.name.startswith("nano"):
+        pytest.skip()
+
+    wallet = MultisigWallet(
+        name="Cold storage",
+        address_type=AddressType.WIT,
+        threshold=2,
+
+    assert wallet_id == wallet.id
+
+    assert hmac.compare_digest(
+        hmac.new(speculos_globals.wallet_registration_key,
+                 wallet_id, sha256).digest(),
+        wallet_hmac,
+    )
+
+
+def test_register_wallet_reject_header_v1(navigator: Navigator, firmware: Firmware, client:
+                                          RaggerClient, test_name: str):
+    if not firmware.name.startswith("nano"):
+        pytest.skip()
+
+    wallet = MultisigWallet(
+        name="Cold storage",
+        address_type=AddressType.WIT,
+        threshold=2,
+        instructions.status_dismiss("approved", save_screenshot=save_screenshot)
+    return instructions
+
+
+def pubkey_instruction_reject_early(model: Firmware) -> Instructions:
+    instructions = Instructions(model)
+
+    # It does not make sense for Nano devices
+    # as with them it is possible to reject only on the
+    # last step.
+    if model.name.startswith("nano"):
+        pytest.skip()
+    else:
+        instructions.new_request("Path", NavInsID.USE_CASE_REVIEW_TAP, NavInsID.CANCEL_FOOTER_TAP)
+        instructions.same_request("Reject", NavInsID.USE_CASE_REVIEW_TAP, NavInsID.USE_CASE_CHOICE_CONFIRM)
+        instructions.status_dismiss("rejected", status_on_same_request=False)
+    return instructions
+
+
+../vanadium/Cargo.lock:2176: "rhai_codegen",
+../vanadium/Cargo.lock:2183:name = "rhai_codegen"
+../vanadium/cargo-vnd/Cargo.toml:17:# rhai_codegen 3.2.0 regressed: the deprecated #[export_fn]/#[export_module] macros
+../vanadium/cargo-vnd/Cargo.toml:21:rhai_codegen = "=3.1.0"
+../vanadium/artifacts/official-suite-resume/WORKER.md:5:Pinned sources: public https://github.com/Th0rgal/vanadium.git branch test/official-resume-20261113 (source parent 6ee1f9545e2efaed439d463a02187c73a9d6d1b4); https://github.com/Th0rgal/app-bitcoin.git branch test/official-resume-20261113 at afe126fea70c8c7d6091948bb8a8ae529ea89a60. Preserve source SHA and upstream Cargo.lock. Read the dated evidence report beside this contract. The first common canary stopped 101 because workspace cargo-vnd manifest needs an extra rhai_codegen lock dependency; metadata diagnostic restored the lock. This is not a passing test. Do not silently remove --locked or modify lock. Bitcoin Rust has a separate workspace apps/bitcoin; run separately.
+../vanadium/artifacts/official-suite-resume/20261113T104852Z/inventory.txt:30:COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/lean-ledger-bitcoin", "rev-parse", "HEAD"]
+../vanadium/artifacts/official-suite-resume/20261113T104852Z/inventory.txt:31:f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb
+../vanadium/artifacts/official-suite-resume/20261113T104852Z/inventory.txt:35:COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/lean-ledger-bitcoin", "status", "--short"]
+../vanadium/artifacts/official-suite-resume/20261113T104852Z/inventory.txt:40:COMMAND ["git", "-C", "/var/lib/sandboxed-node/.scratch/e42fdc4f-ce56-40b8-9b3e-c267ef038ce3/opencode/worktrees/lean-ledger-bitcoin", "log", "-1", "--format=%G? %GF %an <%ae>"]
+../vanadium/artifacts/official-suite-resume/20261113T104852Z/REPORT.md:5:Pinned source: Vanadium 6ee1f9545e2efaed439d463a02187c73a9d6d1b4; app-bitcoin afe126fea70c8c7d6091948bb8a8ae529ea89a60; Lean f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb; candidate A 092bb97fe05e4957e3f8399c04fd2434b9a902f1.
+../vanadium/artifacts/official-suite-resume/20261113T104852Z/REPORT.md:11:See inventory.txt, canary.txt, resolution.stderr.txt, resolution.lock.diff and prerequisites.txt for exact argument vectors, output and exit status. Canary: exit 101 before compilation; upstream Cargo.lock SHA-256 preserved. Official pass/fail/skip/deselected are unknown, not zero. The diagnostic metadata run without --locked was ONLY dependency resolution in the owned worktree, then restored the original lock in a finally block. It is not test evidence. The resolver diff adds rhai_codegen to cargo-vnd; offline resolution also lacks addr2line v0.24.2. This is a build prerequisite discrepancy, not an established Bitcoin behavioral bug. No spec was changed.
+../vanadium/artifacts/official-suite-resume/20261113T104852Z/resolution.lock.diff:9:+ "rhai_codegen",

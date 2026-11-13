@@ -1,0 +1,27 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-testnet",
+  "argv": [
+    "env",
+    "PATH=/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/llvm-21/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "LD_LIBRARY_PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/x86_64-linux-gnu",
+    "BOLOS_SDK=/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk",
+    "make",
+    "-j2",
+    "DEBUG=0",
+    "COIN=bitcoin_testnet",
+    "TARGET=nanox",
+    "SYSROOT=/var/lib/orb-node/work/official-suite-resume/arm-sysroot"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568170.349738,
+  "exit": 0,
+  "ended": 1794568175.9433594
+}

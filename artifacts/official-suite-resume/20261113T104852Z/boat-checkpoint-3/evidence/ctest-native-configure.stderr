@@ -1,0 +1,16 @@
+CMake Warning (dev) at /opt/cmake-3.31.3-linux-x86_64/share/cmake-3.31/Modules/FetchContent.cmake:1953 (message):
+  Calling FetchContent_Populate(speculos) is deprecated, call
+  FetchContent_MakeAvailable(speculos) instead.  Policy CMP0169 can be set to
+  OLD to allow FetchContent_Populate(speculos) to be called directly for now,
+  but the ability to call it with declared details will be removed completely
+  in a future version.
+Call Stack (most recent call first):
+  CMakeLists.txt:68 (FetchContent_Populate)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_POLICY_VERSION_MINIMUM
+
+

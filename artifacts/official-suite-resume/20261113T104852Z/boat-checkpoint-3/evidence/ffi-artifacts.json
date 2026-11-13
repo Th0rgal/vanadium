@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "cat ffi/vanadium/build.rs; cat scripts/build-freestanding.sh; cat lean-toolchain; rg --files -g AGENTS.md; ls -l ffi/vanadium/build/host/liblean_ledger_bitcoin.a ffi/vanadium/build/host/liblean_ledger_bitcoin.ll; command -v turbo-lean lake lean clang; cat ../app-bitcoin/tests/setup_script.sh"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567412.0529375,
+  "exit": 0,
+  "ended": 1794567412.0597186
+}

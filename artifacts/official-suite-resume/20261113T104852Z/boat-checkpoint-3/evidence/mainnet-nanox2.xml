@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="2" time="2.358" timestamp="2026-11-13T11:11:35.642882" hostname="box-node-7fabc707450cea8d"><testcase classname="test_bip86" name="test_bip86" time="0.813" /><testcase classname="test_dashboard" name="test_dashboard" time="1.533" /></testsuite></testsuites>

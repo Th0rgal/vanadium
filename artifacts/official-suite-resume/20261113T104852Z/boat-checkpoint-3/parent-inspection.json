@@ -1,0 +1,56 @@
+{
+  "archive_sha256": "ca8751748f8a83759f6e7aaa8274eb835265439bd1d51eeb23d2e39ccf812544",
+  "accepted_mainnet": {
+    "nanosp": {
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "deselected": 0,
+      "exit": 0,
+      "case_names": [
+        "test_bip86",
+        "test_dashboard"
+      ],
+      "run": "mainnet-nanosp",
+      "scope": "Entire official tests_mainnet directory, legacy official pytest fixtures, not testnet Ragger"
+    },
+    "nanox": {
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "deselected": 0,
+      "exit": 0,
+      "case_names": [
+        "test_bip86",
+        "test_dashboard"
+      ],
+      "run": "mainnet-nanox2",
+      "scope": "Entire official tests_mainnet directory, legacy official pytest fixtures, not testnet Ragger"
+    }
+  },
+  "ctest": "31/31 retained from checkpoint2, not rerun",
+  "testnet_nanosp_incomplete": {
+    "run": "ragger-tests-nanosp2",
+    "collected": 282,
+    "pass_before_interruption": 9,
+    "fail_before_interruption": 1,
+    "exit": 2,
+    "reason": "KeyboardInterrupt; incomplete, not certified",
+    "first_failure": "test_e2e_miniscript_bolt3_received_htlc[nanosp-nanosp]: RAPDU0x6901"
+  },
+  "earlier_mainnet_nanox_attempt": {
+    "run": "mainnet-nanox",
+    "exit": 1,
+    "fail": 1,
+    "errors": 1,
+    "resolution": "successful later run preserved separately; exact root cause requested"
+  },
+  "emitter_revision_not_accepted_for_baseline": {
+    "observed": "15676ea244a08d386f8047c4bbfe0416692d1089",
+    "requested": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
+    "action": "explicit baseline checkout and executable hash requested before Rust acceptance"
+  },
+  "rust": "No passing test result accepted",
+  "worker_REPORT": "stale checkpoint1, current parent report supersedes",
+  "spec_changes": []
+}

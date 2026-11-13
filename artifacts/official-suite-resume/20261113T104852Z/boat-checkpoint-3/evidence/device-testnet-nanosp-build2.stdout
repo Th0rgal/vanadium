@@ -1,0 +1,5 @@
+Prepare directories
+[GLYPH] Compiling...
+[CC]   build/nanos2/gen_src/glyphs.o
+[LL]   build/nanos2/obj/app/src/lean_kernels/liblean_ledger_bitcoin.o
+[CC]   build/nanos2/obj/app/src/app_settings.o

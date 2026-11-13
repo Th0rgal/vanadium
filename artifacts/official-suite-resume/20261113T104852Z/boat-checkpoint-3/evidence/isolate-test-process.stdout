@@ -1,0 +1,1 @@
+{'signal': 'SIGINT', 'pids': [75652], 'reason': 'concurrent mainnet used same default Speculos port; restart full suite with explicit isolated API port'}

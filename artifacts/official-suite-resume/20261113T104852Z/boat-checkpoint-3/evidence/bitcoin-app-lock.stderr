@@ -1,0 +1,13 @@
+    Blocking waiting for file lock on package cache
+    Updating crates.io index
+warning: patch `getrandom v0.2.16 (/var/lib/orb-node/work/official-suite-resume/vanadium/libs/getrandom)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Blocking waiting for file lock on package cache
+     Locking 105 packages to highest compatible versions
+      Adding base64 v0.22.1 (available: v0.23.1)
+      Adding bitcoin v0.32.11 (available: v0.32.102)
+      Adding crypto-common v0.1.6 (available: v0.1.7)
+      Adding hex-literal v0.4.1 (available: v1.1.0)

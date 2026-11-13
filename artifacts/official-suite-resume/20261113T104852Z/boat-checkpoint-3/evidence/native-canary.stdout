@@ -1,0 +1,7 @@
+Test project /var/lib/orb-node/work/official-suite-resume/native-ctest
+    Start 1: test_bitvector
+1/1 Test #1: test_bitvector ...................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.00 sec

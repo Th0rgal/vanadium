@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "rg --files -g AGENTS.md -g \"*requirements*\" -g \"*toolchain*\" -g \"*CMake*\" -g \"*pytest*\" -g \"*conftest*\" -g \"*Makefile*\"; cat README.md; ls .github/workflows; rg -n \"enable_slow|nanosp|nanox|BOLOS_SDK|docker|ragger|pytest|cmake|ctest|SDK\" .github/workflows tests/conftest.py tests_mainnet/conftest.py Makefile unit-tests"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567284.8899345,
+  "exit": 0,
+  "ended": 1794567284.9123917
+}

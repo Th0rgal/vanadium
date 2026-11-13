@@ -1,0 +1,320 @@
+Obtaining file:///var/lib/orb-node/work/official-suite-resume/app-bitcoin/bitcoin_client (from -r requirements.txt (line 3))
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Ignoring annotated-types: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring atomicwrites: markers 'sys_platform == "win32"' don't match your environment
+Ignoring cffi: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring click: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring colorama: markers 'sys_platform == "win32"' don't match your environment
+Ignoring cryptography: markers 'python_full_version <= "3.9"' don't match your environment
+Ignoring importlib-metadata: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring iniconfig: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring jsonschema: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring ledgered: markers 'python_full_version < "3.11"' don't match your environment
+Ignoring pillow: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pluggy: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pycparser: markers 'python_full_version < "3.10" and implementation_name != "PyPy"' don't match your environment
+Ignoring pycparser: markers 'python_full_version == "3.10.*" and implementation_name != "PyPy"' don't match your environment
+Ignoring pydantic: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pydantic-core: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pyelftools: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pygithub: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pyqt6: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pyqt6-qt6: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pyqt6-sip: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring pyrsistent: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring ragger: markers 'python_full_version < "3.11"' don't match your environment
+Ignoring requests: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring rpds-py: markers 'python_full_version == "3.10.*"' don't match your environment
+Ignoring speculos: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring tabulate: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring typing-inspection: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring urllib3: markers 'python_full_version < "3.10"' don't match your environment
+Ignoring zipp: markers 'python_full_version < "3.10"' don't match your environment
+Collecting ledgerblue
+  Using cached ledgerblue-0.1.58-py3-none-any.whl.metadata (18 kB)
+Collecting tomli-w
+  Using cached tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+Collecting semver
+  Using cached semver-3.1.1-py3-none-any.whl.metadata (5.1 kB)
+Collecting ledgered
+  Using cached ledgered-0.17.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting aniso8601==10.0.1 (from -r requirements.txt (line 5))
+  Using cached aniso8601-10.0.1-py2.py3-none-any.whl.metadata (23 kB)
+Collecting annotated-types==0.8.0 (from -r requirements.txt (line 9))
+  Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting asn1crypto==1.5.1 (from -r requirements.txt (line 11))
+  Using cached asn1crypto-1.5.1-py2.py3-none-any.whl.metadata (13 kB)
+Collecting attrs==26.1.0 (from -r requirements.txt (line 15))
+  Using cached attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting base58==2.1.1 (from -r requirements.txt (line 20))
+  Using cached base58-2.1.1-py3-none-any.whl.metadata (3.1 kB)
+Collecting bip-utils==2.9.1 (from -r requirements.txt (line 22))
+  Using cached bip_utils-2.9.1-py3-none-any.whl.metadata (12 kB)
+Collecting bip32==3.4 (from -r requirements.txt (line 24))
+  Using cached bip32-3.4-py3-none-any.whl.metadata (4.6 kB)
+Collecting blinker==1.9.0 (from -r requirements.txt (line 26))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting cbor2==5.9.0 (from -r requirements.txt (line 28))
+  Using cached cbor2-5.9.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting certifi==2026.10.23 (from -r requirements.txt (line 30))
+  Using cached certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Collecting cffi==2.1.1 (from -r requirements.txt (line 37))
+  Using cached cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting charset-normalizer==3.5.2 (from -r requirements.txt (line 42))
+  Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting click==8.5.1 (from -r requirements.txt (line 48))
+  Using cached click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting coincurve==18.0.0 (from -r requirements.txt (line 52))
+  Using cached coincurve-18.0.0.tar.gz (2.5 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting construct==2.10.70 (from -r requirements.txt (line 60))
+  Using cached construct-2.10.70-py3-none-any.whl.metadata (4.2 kB)
+Collecting crcmod==1.7 (from -r requirements.txt (line 64))
+  Using cached crcmod-1.7-cp312-cp312-linux_x86_64.whl
+Collecting cryptography==50.0.2 (from -r requirements.txt (line 70))
+  Using cached cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+Collecting ecdsa==0.16.1 (from -r requirements.txt (line 74))
+  Using cached ecdsa-0.16.1-py2.py3-none-any.whl.metadata (24 kB)
+Collecting ed25519-blake2b==1.4.1 (from -r requirements.txt (line 80))
+  Using cached ed25519_blake2b-1.4.1-cp312-cp312-linux_x86_64.whl
+Collecting embit==0.7.0 (from -r requirements.txt (line 82))
+  Using cached embit-0.7.0-py3-none-any.whl
+Collecting flask==2.3.3 (from -r requirements.txt (line 84))
+  Using cached flask-2.3.3-py3-none-any.whl.metadata (3.6 kB)
+Collecting flask-cors==6.0.5 (from -r requirements.txt (line 89))
+  Using cached flask_cors-6.0.5-py3-none-any.whl.metadata (5.4 kB)
+Collecting flask-restful==0.3.10 (from -r requirements.txt (line 91))
+  Using cached Flask_RESTful-0.3.10-py2.py3-none-any.whl.metadata (1.0 kB)
+Collecting hidapi==0.15.0 (from -r requirements.txt (line 93))
+  Using cached hidapi-0.15.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.7 kB)
+Collecting idna==3.20 (from -r requirements.txt (line 95))
+  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting iniconfig==2.3.1 (from -r requirements.txt (line 101))
+  Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting intelhex==2.3.0 (from -r requirements.txt (line 103))
+  Using cached intelhex-2.3.0-py2.py3-none-any.whl.metadata (2.7 kB)
+Collecting itsdangerous==2.2.0 (from -r requirements.txt (line 105))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting jinja2==3.1.6 (from -r requirements.txt (line 107))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting jsonschema==4.26.0 (from -r requirements.txt (line 111))
+  Using cached jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting jsonschema-specifications==2025.9.1 (from -r requirements.txt (line 113))
+  Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting ledgercomm==1.2.1 (from -r requirements.txt (line 115))
+  Using cached ledgercomm-1.2.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting ledgerwallet==0.10.0 (from -r requirements.txt (line 127))
+  Using cached ledgerwallet-0.10.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting markupsafe==3.0.4 (from -r requirements.txt (line 129))
+  Using cached markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting mnemonic==0.20 (from -r requirements.txt (line 133))
+  Using cached mnemonic-0.20-py3-none-any.whl.metadata (2.9 kB)
+Collecting packaging==26.3 (from -r requirements.txt (line 138))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow==12.3.0 (from -r requirements.txt (line 149))
+  Using cached pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pluggy==1.7.0 (from -r requirements.txt (line 157))
+  Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting protobuf==5.29.6 (from -r requirements.txt (line 159))
+  Using cached protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl.metadata (592 bytes)
+Collecting py==1.11.0 (from -r requirements.txt (line 161))
+  Using cached py-1.11.0-py2.py3-none-any.whl.metadata (2.8 kB)
+Collecting py-cpuinfo==9.0.0 (from -r requirements.txt (line 163))
+  Using cached py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Collecting py-sr25519-bindings==0.2.4 (from -r requirements.txt (line 165))
+  Using cached py_sr25519_bindings-0.2.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.4 kB)
+Collecting pycparser==3.12 (from -r requirements.txt (line 173))
+  Using cached pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+Collecting pycryptodome==3.24.1 (from -r requirements.txt (line 175))
+  Using cached pycryptodome-3.24.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.4 kB)
+Collecting pydantic==2.14.3 (from -r requirements.txt (line 179))
+  Using cached pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+Collecting pydantic-core==2.50.4 (from -r requirements.txt (line 183))
+  Using cached pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+Collecting pyelftools==0.33 (from -r requirements.txt (line 189))
+  Using cached pyelftools-0.33-py3-none-any.whl.metadata (1.0 kB)
+Collecting pygame==2.6.1 (from -r requirements.txt (line 193))
+  Using cached pygame-2.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting pygithub==2.10.0 (from -r requirements.txt (line 197))
+  Using cached pygithub-2.10.0-py3-none-any.whl.metadata (3.9 kB)
+Collecting pyjwt==2.15.1 (from -r requirements.txt (line 199))
+  Using cached pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting pynacl==1.6.2 (from -r requirements.txt (line 201))
+  Using cached pynacl-1.6.2-cp38-abi3-manylinux_2_34_x86_64.whl.metadata (10.0 kB)
+Collecting pyqt6==6.12.0 (from -r requirements.txt (line 209))
+  Using cached pyqt6-6.12.0-cp310-abi3-manylinux_2_34_x86_64.whl.metadata (2.1 kB)
+Collecting pyqt6-qt6==6.12.0 (from -r requirements.txt (line 215))
+  Using cached pyqt6_qt6-6.12.0-py3-none-manylinux_2_34_x86_64.whl.metadata (535 bytes)
+Collecting pyqt6-sip==13.13.0 (from -r requirements.txt (line 219))
+  Using cached pyqt6_sip-13.13.0-cp312-cp312-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (495 bytes)
+Collecting pytesseract==0.3.13 (from -r requirements.txt (line 223))
+  Using cached pytesseract-0.3.13-py3-none-any.whl.metadata (11 kB)
+Collecting pytest==6.2.5 (from -r requirements.txt (line 225))
+  Using cached pytest-6.2.5-py3-none-any.whl.metadata (7.5 kB)
+Collecting pytest-benchmark==4.0.0 (from -r requirements.txt (line 230))
+  Using cached pytest_benchmark-4.0.0-py3-none-any.whl.metadata (23 kB)
+Collecting pytest-timeout==2.2.0 (from -r requirements.txt (line 232))
+  Using cached pytest_timeout-2.2.0-py3-none-any.whl.metadata (17 kB)
+Collecting pytz==2026.6 (from -r requirements.txt (line 234))
+  Using cached pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+Collecting ragger==1.47.4 (from -r requirements.txt (line 238))
+  Using cached ragger-1.47.4-py3-none-any.whl.metadata (10 kB)
+Collecting referencing==0.37.0 (from -r requirements.txt (line 240))
+  Using cached referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting requests==2.34.2 (from -r requirements.txt (line 249))
+  Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting rpds-py==2026.9.1 (from -r requirements.txt (line 258))
+  Using cached rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting six==1.17.0 (from -r requirements.txt (line 262))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting speculos==0.27.4 (from -r requirements.txt (line 270))
+  Using cached speculos-0.27.4-py3-none-any.whl.metadata (5.5 kB)
+Collecting tabulate==0.10.0 (from -r requirements.txt (line 276))
+  Using cached tabulate-0.10.0-py3-none-any.whl.metadata (40 kB)
+Collecting toml==0.10.2 (from -r requirements.txt (line 278))
+  Using cached toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+Collecting tomli==2.5.0 (from -r requirements.txt (line 283))
+  Using cached tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10 kB)
+Collecting typing-extensions==4.16.0 (from -r requirements.txt (line 285))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection==0.4.5 (from -r requirements.txt (line 299))
+  Using cached typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+Collecting urllib3==2.8.0 (from -r requirements.txt (line 305))
+  Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting werkzeug==3.1.9 (from -r requirements.txt (line 309))
+  Using cached werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+Collecting pycryptodomex>=3.6.1 (from ledgerblue)
+  Using cached pycryptodomex-3.24.2-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.4 kB)
+Collecting future (from ledgerblue)
+  Using cached future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting ecpy>=0.9.0 (from ledgerblue)
+  Using cached ECPy-1.2.5-py3-none-any.whl.metadata (3.5 kB)
+Collecting python-u2flib-host>=3.0.2 (from ledgerblue)
+  Using cached python_u2flib_host-3.0.3-py3-none-any.whl
+Collecting websocket_client>=0.56.0 (from ledgerblue)
+  Using cached websocket_client-1.9.2-py3-none-any.whl.metadata (8.3 kB)
+Collecting nfcpy>=1.0.4 (from ledgerblue)
+  Using cached nfcpy-1.0.4-py3-none-any.whl.metadata (3.2 kB)
+Collecting bleak>=0.20.1 (from ledgerblue)
+  Using cached bleak-3.1.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting python-gnupg>=0.5.0 (from ledgerblue)
+  Using cached python_gnupg-0.5.7-py2.py3-none-any.whl.metadata (2.1 kB)
+Collecting pyserial>=3.5 (from ledgerblue)
+  Using cached pyserial-3.5-py2.py3-none-any.whl.metadata (1.6 kB)
+Collecting dbus-fast>=4.0.0 (from bleak>=0.20.1->ledgerblue)
+  Using cached dbus_fast-5.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting libusb1 (from nfcpy>=1.0.4->ledgerblue)
+  Using cached libusb1-3.4.0-py3-none-any.whl.metadata (16 kB)
+Collecting ndeflib (from nfcpy>=1.0.4->ledgerblue)
+  Using cached ndeflib-0.3.3-py2.py3-none-any.whl.metadata (2.9 kB)
+Collecting pydes (from nfcpy>=1.0.4->ledgerblue)
+  Using cached pydes-2.0.1-py2.py3-none-any.whl
+Using cached ledgered-0.17.0-py3-none-any.whl (21 kB)
+Using cached aniso8601-10.0.1-py2.py3-none-any.whl (52 kB)
+Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Using cached asn1crypto-1.5.1-py2.py3-none-any.whl (105 kB)
+Using cached attrs-26.1.0-py3-none-any.whl (67 kB)
+Using cached base58-2.1.1-py3-none-any.whl (5.6 kB)
+Using cached bip_utils-2.9.1-py3-none-any.whl (588 kB)
+Using cached bip32-3.4-py3-none-any.whl (10 kB)
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Using cached cbor2-5.9.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (288 kB)
+Using cached certifi-2026.10.23-py3-none-any.whl (135 kB)
+Using cached cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+Using cached click-8.5.1-py3-none-any.whl (126 kB)
+Using cached construct-2.10.70-py3-none-any.whl (63 kB)
+Using cached cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+Using cached ecdsa-0.16.1-py2.py3-none-any.whl (104 kB)
+Using cached flask-2.3.3-py3-none-any.whl (96 kB)
+Using cached flask_cors-6.0.5-py3-none-any.whl (16 kB)
+Using cached Flask_RESTful-0.3.10-py2.py3-none-any.whl (26 kB)
+Using cached hidapi-0.15.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.1 MB)
+Using cached idna-3.20-py3-none-any.whl (69 kB)
+Using cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Using cached intelhex-2.3.0-py2.py3-none-any.whl (50 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Using cached ledgercomm-1.2.1-py3-none-any.whl (11 kB)
+Using cached ledgerwallet-0.10.0-py3-none-any.whl (35 kB)
+Using cached markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Using cached mnemonic-0.20-py3-none-any.whl (62 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
+Using cached protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl (320 kB)
+Using cached py-1.11.0-py2.py3-none-any.whl (98 kB)
+Using cached py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Using cached py_sr25519_bindings-0.2.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (369 kB)
+Using cached pycparser-3.12-py3-none-any.whl (62 kB)
+Using cached pycryptodome-3.24.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+Using cached pydantic-2.14.3-py3-none-any.whl (494 kB)
+Using cached pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+Using cached pyelftools-0.33-py3-none-any.whl (201 kB)
+Using cached pygame-2.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.0 MB)
+Using cached pygithub-2.10.0-py3-none-any.whl (455 kB)
+Using cached pyjwt-2.15.1-py3-none-any.whl (33 kB)
+Using cached pynacl-1.6.2-cp38-abi3-manylinux_2_34_x86_64.whl (1.4 MB)
+Using cached pyqt6-6.12.0-cp310-abi3-manylinux_2_34_x86_64.whl (8.5 MB)
+Using cached pyqt6_qt6-6.12.0-py3-none-manylinux_2_34_x86_64.whl (88.5 MB)
+Using cached pyqt6_sip-13.13.0-cp312-cp312-manylinux1_x86_64.manylinux_2_5_x86_64.whl (301 kB)
+Using cached pytesseract-0.3.13-py3-none-any.whl (14 kB)
+Using cached pytest-6.2.5-py3-none-any.whl (280 kB)
+Using cached pytest_benchmark-4.0.0-py3-none-any.whl (43 kB)
+Using cached pytest_timeout-2.2.0-py3-none-any.whl (13 kB)
+Using cached pytz-2026.6-py2.py3-none-any.whl (506 kB)
+Using cached ragger-1.47.4-py3-none-any.whl (195 kB)
+Using cached referencing-0.37.0-py3-none-any.whl (26 kB)
+Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+Using cached rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached speculos-0.27.4-py3-none-any.whl (6.6 MB)
+Using cached tabulate-0.10.0-py3-none-any.whl (39 kB)
+Using cached toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Using cached tomli-2.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (286 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+Using cached werkzeug-3.1.9-py3-none-any.whl (228 kB)
+Using cached ledgerblue-0.1.58-py3-none-any.whl (98 kB)
+Using cached tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+Using cached semver-3.1.1-py3-none-any.whl (18 kB)
+Using cached bleak-3.1.0-py3-none-any.whl (176 kB)
+Using cached ECPy-1.2.5-py3-none-any.whl (43 kB)
+Using cached nfcpy-1.0.4-py3-none-any.whl (186 kB)
+Using cached pycryptodomex-3.24.2-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+Using cached pyserial-3.5-py2.py3-none-any.whl (90 kB)
+Using cached python_gnupg-0.5.7-py2.py3-none-any.whl (22 kB)
+Using cached websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Using cached future-1.0.0-py3-none-any.whl (491 kB)
+Using cached dbus_fast-5.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (902 kB)
+Using cached libusb1-3.4.0-py3-none-any.whl (67 kB)
+Using cached ndeflib-0.3.3-py2.py3-none-any.whl (56 kB)
+Building wheels for collected packages: coincurve, ledger_bitcoin
+  Building wheel for coincurve (pyproject.toml): started
+  Building wheel for coincurve (pyproject.toml): finished with status 'done'
+  Created wheel for coincurve: filename=coincurve-18.0.0-cp312-cp312-linux_x86_64.whl size=1352356 sha256=801fed4e571e7430e8f092feb34907ee737acdcf8da6688c22fea44b415f872d
+  Stored in directory: /var/lib/orb-node/work/official-suite-resume/pip-cache/wheels/64/18/94/4652ebfd175bfbcd5d18971e47258015cf8127de9106d19de4
+  Building editable for ledger_bitcoin (pyproject.toml): started
+  Building editable for ledger_bitcoin (pyproject.toml): finished with status 'done'
+  Created wheel for ledger_bitcoin: filename=ledger_bitcoin-0.4.2-0.editable-py3-none-any.whl size=9344 sha256=834320896c477e4603eacf1d7e0cca30438ed7f796a86f9bf6c8173c6a2a2b41
+  Stored in directory: /var/lib/orb-node/work/official-suite-resume/tmp/pip-ephem-wheel-cache-afxwtmbj/wheels/29/1a/f8/5467d5f75be02b14a57fb82615d4475e409902cb776e7051fa
+Successfully built coincurve ledger_bitcoin
+Installing collected packages: pytz, python-gnupg, pyserial, pyqt6-qt6, pydes, py-cpuinfo, ndeflib, libusb1, intelhex, hidapi, embit, ed25519-blake2b, ecpy, crcmod, asn1crypto, aniso8601, websocket_client, urllib3, typing-extensions, tomli-w, tomli, toml, tabulate, six, semver, rpds-py, pyqt6-sip, pyjwt, pygame, pyelftools, pycryptodomex, pycryptodome, pycparser, py-sr25519-bindings, py, protobuf, pluggy, pillow, packaging, nfcpy, mnemonic, markupsafe, ledgercomm, itsdangerous, iniconfig, idna, future, dbus-fast, construct, click, charset-normalizer, certifi, cbor2, blinker, base58, attrs, annotated-types, werkzeug, typing-inspection, requests, referencing, pytest, pytesseract, pyqt6, pydantic-core, ledger_bitcoin, jinja2, ecdsa, cffi, bleak, python-u2flib-host, pytest-timeout, pytest-benchmark, pynacl, pydantic, jsonschema-specifications, flask, cryptography, coincurve, ledgerwallet, ledgerblue, jsonschema, flask-restful, flask-cors, bip32, bip-utils, pygithub, ledgered, speculos, ragger
+Successfully installed aniso8601-10.0.1 annotated-types-0.8.0 asn1crypto-1.5.1 attrs-26.1.0 base58-2.1.1 bip-utils-2.9.1 bip32-3.4 bleak-3.1.0 blinker-1.9.0 cbor2-5.9.0 certifi-2026.10.23 cffi-2.1.1 charset-normalizer-3.5.2 click-8.5.1 coincurve-18.0.0 construct-2.10.70 crcmod-1.7 cryptography-50.0.2 dbus-fast-5.2.0 ecdsa-0.16.1 ecpy-1.2.5 ed25519-blake2b-1.4.1 embit-0.7.0 flask-2.3.3 flask-cors-6.0.5 flask-restful-0.3.10 future-1.0.0 hidapi-0.15.0 idna-3.20 iniconfig-2.3.1 intelhex-2.3.0 itsdangerous-2.2.0 jinja2-3.1.6 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 ledger_bitcoin-0.4.2 ledgerblue-0.1.58 ledgercomm-1.2.1 ledgered-0.17.0 ledgerwallet-0.10.0 libusb1-3.4.0 markupsafe-3.0.4 mnemonic-0.20 ndeflib-0.3.3 nfcpy-1.0.4 packaging-26.3 pillow-12.3.0 pluggy-1.7.0 protobuf-5.29.6 py-1.11.0 py-cpuinfo-9.0.0 py-sr25519-bindings-0.2.4 pycparser-3.12 pycryptodome-3.24.1 pycryptodomex-3.24.2 pydantic-2.14.3 pydantic-core-2.50.4 pydes-2.0.1 pyelftools-0.33 pygame-2.6.1 pygithub-2.10.0 pyjwt-2.15.1 pynacl-1.6.2 pyqt6-6.12.0 pyqt6-qt6-6.12.0 pyqt6-sip-13.13.0 pyserial-3.5 pytesseract-0.3.13 pytest-6.2.5 pytest-benchmark-4.0.0 pytest-timeout-2.2.0 python-gnupg-0.5.7 python-u2flib-host-3.0.3 pytz-2026.6 ragger-1.47.4 referencing-0.37.0 requests-2.34.2 rpds-py-2026.9.1 semver-3.1.1 six-1.17.0 speculos-0.27.4 tabulate-0.10.0 toml-0.10.2 tomli-2.5.0 tomli-w-1.2.0 typing-extensions-4.16.0 typing-inspection-0.4.5 urllib3-2.8.0 websocket_client-1.9.2 werkzeug-3.1.9

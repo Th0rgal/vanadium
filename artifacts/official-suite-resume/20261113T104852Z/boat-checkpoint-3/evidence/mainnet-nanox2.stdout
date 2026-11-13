@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-6.2.5, py-1.11.0, pluggy-1.7.0 -- /var/lib/orb-node/work/official-suite-resume/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /var/lib/orb-node/work/official-suite-resume/app-mainnet/tests_mainnet, configfile: setup.cfg
+plugins: timeout-2.2.0, benchmark-4.0.0
+timeout: 300.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 2 items
+
+test_bip86.py::test_bip86 PASSED                                         [ 50%]
+test_dashboard.py::test_dashboard PASSED                                 [100%]
+
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/mainnet-nanox2.xml -
+============================== 2 passed in 2.36s ===============================

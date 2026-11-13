@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "python3",
+    "-c",
+    "import pathlib,os,signal; target=\"/var/lib/orb-node/work/official-suite-resume/venv/bin/python\"; hits=[]\nfor p in pathlib.Path(\"/proc\").iterdir():\n if not p.name.isdigit(): continue\n try: a=(p/\"cmdline\").read_bytes().split(b\"\\0\"); cwd=os.readlink(p/\"cwd\")\n except (OSError,PermissionError): continue\n if a and a[0].decode()==target and b\"pytest\" in a and b\"--device\" in a and cwd==\"/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests\": hits.append(int(p.name))\nprint({\"signal\":\"SIGINT\",\"pids\":hits,\"reason\":\"concurrent mainnet used same default Speculos port; restart full suite with explicit isolated API port\"});\nfor pid in hits: os.kill(pid,signal.SIGINT)"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568275.12061,
+  "exit": 0,
+  "ended": 1794568275.145941
+}

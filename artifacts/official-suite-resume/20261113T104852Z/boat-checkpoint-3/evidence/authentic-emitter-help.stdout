@@ -1,0 +1,28 @@
+lean-native v0.5.0 — Formally Validated Lean 4 Optimizer, TV, FastCheck & Multi-Target Codegen
+Usage: lean-native <command> [options]
+Commands:
+  build-exe          Compile a .lean source file directly to a native executable (<file.lean> -o <bin>)
+  compile-llvm       Emit baseline or optimized LLVM 18 IR (--input <file>, --arch <target>, --freestanding, --baseline, -o <path>)
+  emit-llvm          Alias of compile-llvm (--target thumbv6m|thumbv8m.main|riscv32imac, --freestanding, -o <path>)
+  compile-static-lib Emit C-ABI static library (.a) + C header (.h) (--input <file>, -o <lib.a>, --header <lib.h>)
+  emit-freestanding-c-lib Emit verified freestanding .ll + C99 .h + .o/.a + .su (--target thumbv6m|thumbv8m.main|riscv32imac, -o <lib.a>)
+  emit-cabi-bindings Emit C/Rust/Swift/modulemap/fixture bindings (--emit-header|--emit-rust|--emit-swift|--emit-modulemap|--emit-fixtures <path>)
+  emit-c-abi         Alias of emit-cabi-bindings (--target <arch>, --freestanding, --emit-header <lib.h>)
+  compile-c-abi      Alias of emit-cabi-bindings (no --signatures-only)
+  compile-mlir       Emit GPU MLIR module (--input <file>, -o <path>)
+  compile-ptx        Emit NVIDIA PTX 8.0 assembly (--input <file>, --sm sm_90, --fastcheck, -o <path>)
+  compile-metal      Emit Apple Metal Shading Language 3.0 (--input <file>, --fastcheck, -o <path>)
+  compile-fastcheck  Run Constraint-Propagating FastCheck or emit SIMD/PTX/Metal kernels (--samples N, --json, -o <path>)
+  compile-hybrid     Partition module into CPU/GPU and emit hybrid host dispatch glue (--input <file>, -o <path>)
+  superopt           Run cost-guided enumerative superoptimizer (--target x86_64|arm64|cuda_ptx|apple_metal, --json)
+  calibrate-cost     Calibrate hardware cost profile (--target <preset>, --samples-json <path>, --json)
+  plugins            Run segregated optimization plugins under Law 1 TV/Cost Gate (--target <arch>, --test-adversarial, --json)
+  pr-verify          Run Law 5 PR & Spec-Pinning Gate (--base <ref>, --disallow-spec-changes, --json)
+  turbo-plugin       Run JSONL-stdio external accelerator plugin for turbo-lean
+  verify-certs       Run optimization pipeline and verify translation certificates (--input <file>, --json, -o <path>)
+  validate-tv        Run Alive2-style symbolic translation validation (--input <file>, --json, -o <path>)
+  audit-axioms       Run in-kernel transitive axiom audit (Lean.collectAxioms snapshot, --json)
+  emit-lnir          Emit LNIR module in wire/JSON format (--wire, --json, --fastcheck, -o <path>)
+  eval-lnir          Evaluate LNIR declaration or module (--decl <name>, --args <csv>, --batch-json, --opt)
+  self-test          Run end-to-end Core, Spec (Laws 1-5), Plugins, Codec, FastCheck, Superopt, SymbolicTV, LLVM/PTX/Metal self-tests
+  worker             Run persistent sub-millisecond JSON-RPC worker loop over stdin/stdout

@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "set -e; mkdir -p app-bitcoin/build; cp -a app-testnet/build/nanos2 app-bitcoin/build/; cp -a app-testnet/build/nanox app-bitcoin/build/; sha256sum app-bitcoin/build/nanos2/bin/app.elf app-bitcoin/build/nanox/bin/app.elf; git -C app-bitcoin rev-parse HEAD"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568208.3360884,
+  "exit": 0,
+  "ended": 1794568208.3700824
+}

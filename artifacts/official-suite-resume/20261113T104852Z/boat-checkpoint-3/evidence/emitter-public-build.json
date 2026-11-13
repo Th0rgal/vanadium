@@ -1,0 +1,25 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/turbo-lean/lean",
+  "argv": [
+    "env",
+    "LEAN_NUM_THREADS=1",
+    "LAKE_JOBS=1",
+    "turbo-lean",
+    "--cache-dir",
+    "/var/lib/orb-node/work/official-suite-resume/turbo-cache",
+    "--max-memory-mb",
+    "6144",
+    "build",
+    "lean-native"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567831.978246,
+  "exit": 0,
+  "ended": 1794568392.4699154
+}

@@ -1,0 +1,106 @@
+diff --git a/unit-tests/CMakeLists.txt b/unit-tests/CMakeLists.txt
+index d3e9250d..9845da4f 100644
+--- a/unit-tests/CMakeLists.txt
++++ b/unit-tests/CMakeLists.txt
+@@ -98,6 +98,24 @@ target_include_directories(tomlc17 PUBLIC libs)
+ # silence warnings on it without affecting the rest of the tree.
+ target_compile_options(tomlc17 PRIVATE -w)
+ 
++# ---------------------------------------------------------------------------
++# Freestanding Lean 4 kernels (compiled from emitted LLVM IR via clang)
++# ---------------------------------------------------------------------------
++find_program(CLANG_EXECUTABLE NAMES clang-21 clang REQUIRED)
++set(LLB_HOST_IR "${CMAKE_CURRENT_SOURCE_DIR}/../src/lean_kernels/liblean_ledger_bitcoin_host.ll")
++set(LLB_HOST_OBJ "${CMAKE_CURRENT_BINARY_DIR}/liblean_ledger_bitcoin_host.o")
++add_custom_command(
++  OUTPUT "${LLB_HOST_OBJ}"
++  COMMAND "${CLANG_EXECUTABLE}" -c -O2 -fPIC -ffunction-sections -fdata-sections -Wno-override-module
++          "${LLB_HOST_IR}" -o "${LLB_HOST_OBJ}"
++  DEPENDS "${LLB_HOST_IR}"
++  COMMENT "Compiling freestanding Lean 4 kernels (host x86_64)"
++)
++add_custom_target(lean_bolos_kernels_obj DEPENDS "${LLB_HOST_OBJ}")
++add_library(lean_bolos_kernels STATIC "${LLB_HOST_OBJ}")
++add_dependencies(lean_bolos_kernels lean_bolos_kernels_obj)
++set_target_properties(lean_bolos_kernels PROPERTIES LINKER_LANGUAGE C)
++
+ # ---------------------------------------------------------------------------
+ # App libraries (built standalone for the non-speculos tests)
+ # ---------------------------------------------------------------------------
+@@ -110,6 +128,7 @@ add_library(write       SHARED $ENV{BOLOS_SDK}/lib_standard_app/write.c)
+ add_library(buffer_ext  SHARED ../src/common/buffer_ext.c)
+ add_library(parser      SHARED ../src/common/parser_ext.c)
+ add_library(display_utils SHARED ../src/ui/display_utils.c)
++target_link_libraries(display_utils PUBLIC lean_bolos_kernels)
+ 
+ # ---------------------------------------------------------------------------
+ # Test executables (non-speculos)
+@@ -131,6 +150,7 @@ endfunction()
+ add_unit_test(test_bitvector     LIBS test_common)
+ add_unit_test(test_buffer        LIBS test_common buffer buffer_ext varint read write bip32)
+ add_unit_test(test_display_utils LIBS test_common display_utils)
++add_unit_test(test_lean_bolos_kernels LIBS test_common lean_bolos_kernels display_utils)
+ add_unit_test(test_parser        LIBS test_common parser buffer buffer_ext varint read write bip32)
+ add_unit_test(test_psbt_parse    LIBS test_common psbt_parse)
+ 
+@@ -274,6 +294,7 @@ if(SPECULOS AND SPECULOS_SRC)
+   # test only has to mention app_crypto plus its own extras.
+   target_link_libraries(app_crypto PUBLIC
+     speculos_bridge
++    lean_bolos_kernels
+     base58 bip32 read write varint
+   )
+ 
+@@ -351,14 +372,14 @@ if(SPECULOS AND SPECULOS_SRC)
+   # code or syscalls are needed, so it just links cmocka.
+   add_executable(test_sighash test_sighash.c)
+   app_apply_real_sdk_config(test_sighash)
+-  target_link_libraries(test_sighash PRIVATE cmocka)
++  target_link_libraries(test_sighash PRIVATE cmocka lean_bolos_kernels)
+   add_test(test_sighash test_sighash)
+ 
+   # test_locktime exercises the BIP-0370 lock time determination
+   # (src/common/locktime.h). Only links with cmocka as it is pure logic.
+   add_executable(test_locktime test_locktime.c)
+   app_apply_real_sdk_config(test_locktime)
+-  target_link_libraries(test_locktime PRIVATE cmocka)
++  target_link_libraries(test_locktime PRIVATE cmocka lean_bolos_kernels)
+   add_test(test_locktime test_locktime)
+ 
+   add_executable(test_wallet test_wallet.c)
+@@ -380,7 +401,7 @@ if(SPECULOS AND SPECULOS_SRC)
+     TEST_VECTORS_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/../test_vectors/get_wallet_address.toml\"
+   )
+   target_link_libraries(test_get_wallet_address PRIVATE
+-    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17
++    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17 lean_bolos_kernels
+   )
+   add_test(test_get_wallet_address test_get_wallet_address)
+ 
+@@ -399,7 +420,7 @@ if(SPECULOS AND SPECULOS_SRC)
+     TEST_VECTORS_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/../test_vectors/get_extended_pubkey.toml\"
+   )
+   target_link_libraries(test_get_extended_pubkey PRIVATE
+-    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17
++    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17 lean_bolos_kernels
+   )
+   add_test(test_get_extended_pubkey test_get_extended_pubkey)
+ 
+@@ -419,7 +440,7 @@ if(SPECULOS AND SPECULOS_SRC)
+     TEST_VECTORS_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/../test_vectors/register_wallet.toml\"
+   )
+   target_link_libraries(test_register_wallet PRIVATE
+-    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17
++    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17 lean_bolos_kernels
+   )
+   add_test(test_register_wallet test_register_wallet)
+ 
+@@ -437,7 +458,7 @@ if(SPECULOS AND SPECULOS_SRC)
+     TEST_VECTORS_PATH=\"${CMAKE_CURRENT_SOURCE_DIR}/../test_vectors/sign_message.toml\"
+   )
+   target_link_libraries(test_sign_message PRIVATE
+-    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17
++    cmocka mock_dispatcher app_crypto buffer buffer_ext tomlc17 lean_bolos_kernels
+   )
+   add_test(test_sign_message test_sign_message)
+ endif()

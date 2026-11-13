@@ -1,0 +1,4 @@
+rg: tests/pytest.ini: No such file or directory (os error 2)
+rg: pytest.ini: No such file or directory (os error 2)
+rg: pyproject.toml: No such file or directory (os error 2)
+cat: tests_mainnet/requirements.txt: No such file or directory

@@ -1,0 +1,313 @@
+unit-tests/CMakeLists.txt
+requirements.txt
+tests_mainnet/conftest.py
+requirements.in
+tests_perf/conftest.py
+bitcoin_client/tests/conftest.py
+Makefile
+dev-tools/playground/requirements.txt
+tests/requirements.txt
+fuzzing/CMakeLists.txt
+tests/conftest.py
+# Ledger Bitcoin Application
+
+This is the Bitcoin application for Ledger devices.
+
+> [!NOTE]
+> **This repository was renamed.** It was previously `LedgerHQ/app-bitcoin-new` and is
+> the current, actively developed Ledger Bitcoin application.
+>
+> The older Bitcoin app that used to live at `LedgerHQ/app-bitcoin` has been renamed to
+> [`LedgerHQ/app-bitcoin-legacy`](https://github.com/LedgerHQ/app-bitcoin-legacy).
+
+## Quick start guide
+
+### With VSCode
+
+You can quickly setup a convenient environment to build and test your application by using [Ledger's VSCode developer tools extension](https://marketplace.visualstudio.com/items?itemName=LedgerHQ.ledger-dev-tools) which leverages the [ledger-app-dev-tools](https://github.com/LedgerHQ/ledger-app-builder/pkgs/container/ledger-app-builder%2Fledger-app-dev-tools) docker image.
+
+It will allow you, whether you are developing on macOS, Windows or Linux to quickly **build** your apps, **test** them on **Speculos** and **load** them on any supported device.
+
+* Install and run [Docker](https://www.docker.com/products/docker-desktop/).
+* Make sure you have an X11 server running :
+    * On Ubuntu Linux, it should be running by default.
+    * On macOS, install and launch [XQuartz](https://www.xquartz.org/) (make sure to go to XQuartz > Preferences > Security and check "Allow client connections").
+    * On Windows, install and launch [VcXsrv](https://sourceforge.net/projects/vcxsrv/) (make sure to configure it to disable access control).
+* Install [VScode](https://code.visualstudio.com/download) and add [Ledger's extension](https://marketplace.visualstudio.com/items?itemName=LedgerHQ.ledger-dev-tools).
+* Open a terminal and clone `app-bitcoin` with `git clone git@github.com:LedgerHQ/app-bitcoin.git`.
+* Open the `app-bitcoin` folder with VSCode.
+* Use Ledger extension's sidebar menu or open the tasks menu with `ctrl + shift + b` (`command + shift + b` on a Mac) to conveniently execute actions :
+    * Build the app for the device model of your choice with `Build`.
+    * Test your binary on [Speculos](https://github.com/LedgerHQ/speculos) with `Run with Speculos`.
+    * You can also run functional tests, load the app on a physical device, and more.
+
+:information_source: The terminal tab of VSCode will show you what commands the extension runs behind the scene.
+
+### With a terminal
+
+The [ledger-app-dev-tools](https://github.com/LedgerHQ/ledger-app-builder/pkgs/container/ledger-app-builder%2Fledger-app-dev-tools) docker image contains all the required tools and libraries to **build**, **test** and **load** an application.
+
+You can download it from the ghcr.io docker repository:
+
+```shell
+sudo docker pull ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest
+```
+
+You can then enter this development environment by executing the following command from the directory of the application `git` repository:
+
+**Linux (Ubuntu)**
+
+```shell
+sudo docker run --rm -ti --user "$(id -u):$(id -g)" --privileged -v "/dev/bus/usb:/dev/bus/usb" -v "$(realpath .):/app" ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest
+```
+
+**macOS**
+
+```shell
+sudo docker run  --rm -ti --user "$(id -u):$(id -g)" --privileged -v "$(pwd -P):/app" ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest
+```
+
+**Windows (with PowerShell)**
+
+```shell
+docker run --rm -ti --privileged -v "$(Get-Location):/app" ghcr.io/ledgerhq/ledger-app-builder/ledger-app-dev-tools:latest
+```
+
+The application's code will be available from inside the docker container, you can proceed to the following compilation steps to build your app.
+
+## Compilation and load
+
+To easily setup a development environment for compilation and loading on a physical device, you can use the [VSCode integration](#with-vscode) whether you are on Linux, macOS or Windows.
+
+If you prefer using a terminal to perform the steps manually, you can use the guide below.
+
+### Compilation
+
+Setup a compilation environment by following the [shell with docker approach](#with-a-terminal).
+
+From inside the container, use the following command to build the app :
+
+```shell
+make DEBUG=1  # compile optionally with PRINTF
+```
+
+You can choose which device to compile and load for by setting the `BOLOS_SDK` environment variable to the following values :
+
+* `BOLOS_SDK=$NANOX_SDK`
+* `BOLOS_SDK=$NANOSP_SDK`
+* `BOLOS_SDK=$STAX_SDK`
+* `BOLOS_SDK=$FLEX_SDK`
+* `BOLOS_SDK=$APEX_P_SDK`
+
+By default this variable is set to build/load for Nano S+.
+
+The app is compiled for testnet by default. In order to compile the app for mainnet, add `COIN=bitcoin` when running the `make` command.
+
+### Loading on a physical device
+
+This step will vary slightly depending on your platform.
+
+:information_source: Your physical device must be connected, unlocked and the screen showing the dashboard (not inside an application).
+
+**Linux (Ubuntu)**
+
+First make sure you have the proper udev rules added on your host :
+
+```shell
+# Run these commands on your host, from the app's source folder.
+sudo cp .vscode/20-ledger.ledgerblue.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules 
+sudo udevadm trigger
+```
+
+Then once you have [opened a terminal](#with-a-terminal) in the `app-builder` image and [built the app](#compilation-and-load) for the device you want, run the following command :
+
+```shell
+# Run this command from the app-builder container terminal.
+make load    # load the app on a Nano S+ by default
+```
+
+[Setting the BOLOS_SDK environment variable](#compilation-and-load) will allow you to load on whichever supported device you want.
+
+**macOS / Windows (with PowerShell)**
+
+:information_source: It is assumed you have [Python](https://www.python.org/downloads/) installed on your computer.
+
+Run these commands on your host from the app's source folder once you have [built the app](#compilation-and-load) for the device you want :
+
+```shell
+# Install Python virtualenv
+python3 -m pip install virtualenv 
+# Create the 'ledger' virtualenv
+python3 -m virtualenv ledger
+```
+
+Enter the Python virtual environment
+
+* macOS : `source ledger/bin/activate`
+* Windows : `.\ledger\Scripts\Activate.ps1`
+
+```shell
+# Install Ledgerblue (tool to load the app)
+python3 -m pip install ledgerblue 
+# Load the app.
+python3 -m ledgerblue.runScript --scp --fileName bin/app.apdu --elfFile bin/app.elf
+```
+
+## Documentation
+
+If you want to understand what the app does or build an integration on top of an existing client library, start here:
+- [features.md](doc/features.md): Overview of the app's features and the account/script types it supports.
+- [integration.md](doc/integration.md): Concepts and security model for integrators — wallet policies, registration, and on-device verification.
+
+For many use cases, the code examples provided in the following client libraries are enough to get started:
+- [Python client library](bitcoin_client)
+- [JavaScript client library](bitcoin_client_js)
+- [Rust client library](bitcoin_client_rs)
+
+If you need to go deeper into the rabbit hole 🐇🕳️ (for example to implement a client library or work at the protocol level), refer to the following documents:
+- [bitcoin.md](doc/bitcoin.md): Low-level documentation of the Bitcoin app's communication protocol and commands.
+- [wallet.md](doc/wallet.md): Formal definition of the wallet policy language, its serialization, and the supported scripts.
+- [merkle.md](doc/merkle.md): Advanced details on techniques used in the Bitcoin app's secured and scalable communication protocol.
+- [musig.md](doc/musig.md): Details of the MuSig2 implementation and its on-device state management.
+- [debugging.md](doc/debugging.md): Guidance on how to diagnose and resolve issues.
+
+## Tests
+
+See the [tests](tests) folder for documentation on the functional and end-to-end test suites of the bitcoin app, and the [unit-tests](unit-tests) folder for the C unit tests.
+
+## Deployment
+
+To have either the python client, javascript client or rust client published to their respective package registries upon a new release, please create a tag with their respective regex :
+
+```bash
+pyclient-\d+\.\d+\.\d+
+jsclient-\d+\.\d+\.\d+
+rsclient-\d+\.\d+\.\d+
+```
+build_and_functional_tests.yml
+ci-workflow.yml
+clusterfuzzlite.yml
+codegen-check.yml
+codeql-workflow.yml
+codespell.yml
+guidelines-enforcer.yml
+lint-workflow.yml
+release.yml
+swap-ci-workflow.yml
+unit_tests.yml
+Makefile:18:ifeq ($(BOLOS_SDK),)
+Makefile:19:$(error Environment variable BOLOS_SDK is not set)
+Makefile:22:include $(BOLOS_SDK)/Makefile.target
+Makefile:45:ICON_NANOX = icons/nanox_app_bitcoin.gif
+Makefile:46:ICON_NANOSP = icons/nanox_app_bitcoin.gif
+Makefile:120:# See SDK `include/appflags.h` for the purpose of each permission
+Makefile:215:include $(BOLOS_SDK)/Makefile.standard_app
+tests/conftest.py:4:from ragger_bitcoin import createRaggerClient, RaggerClient
+tests/conftest.py:5:from ragger.backend import RaisePolicy
+tests/conftest.py:6:from ragger.backend.interface import BackendInterface
+tests/conftest.py:7:from ragger.conftest import configuration
+tests/conftest.py:8:from ragger.firmware import Firmware
+tests/conftest.py:9:from ragger.firmware.touch.positions import STAX_X_CENTER, FLEX_X_CENTER, APEX_P_X_CENTER
+tests/conftest.py:10:from ragger.navigator import Navigator, NavInsID, NavIns
+tests/conftest.py:31:# You can configure optional parameters by overriding the value of ragger.configuration.OPTIONAL_CONFIGURATION
+tests/conftest.py:32:# Please refer to ragger/conftest/configuration.py for their descriptions and accepted values
+tests/conftest.py:39:@pytest.fixture
+tests/conftest.py:41:    # if the --speculos_port argument is given, instruct ragger to use the given port
+tests/conftest.py:54:# Pull all features from the base ragger conftest using the overridden configuration
+tests/conftest.py:55:pytest_plugins = ("ragger.conftest.base_conftest", )
+tests/conftest.py:115:@pytest.fixture(scope="session")
+tests/conftest.py:137:@pytest.fixture(scope="session")
+tests/conftest.py:142:@pytest.fixture(scope="session")
+tests/conftest.py:254:@pytest.fixture
+.github/workflows/build_and_functional_tests.yml:1:name: Build and run functional tests using ragger through reusable workflow
+.github/workflows/build_and_functional_tests.yml:45:  ragger_tests:
+.github/workflows/build_and_functional_tests.yml:46:    name: Run ragger tests using the reusable workflow
+.github/workflows/build_and_functional_tests.yml:48:    uses: LedgerHQ/ledger-app-workflows/.github/workflows/reusable_ragger_tests.yml@v1
+.github/workflows/build_and_functional_tests.yml:51:      # when merging a PR, we run the tests with the --enable_slow_tests parameter
+.github/workflows/build_and_functional_tests.yml:52:      test_options: ${{ github.event_name == 'push' && '--enable_slow_tests' || '' }}
+.github/workflows/build_and_functional_tests.yml:57:  ragger_coverage:
+.github/workflows/build_and_functional_tests.yml:59:    # Builds the app with debug symbols and runs the ragger
+.github/workflows/build_and_functional_tests.yml:62:    uses: LedgerHQ/ledger-app-workflows/.github/workflows/reusable_ragger_coverage.yml@v1
+unit-tests/README.md:17:sudo apt install cmake libcmocka-dev lcov libssl-dev
+unit-tests/README.md:25:cmake -Bbuild -H. && make -C build
+unit-tests/README.md:39:The speculos sources are fetched automatically at cmake configure time
+unit-tests/README.md:46:cmake -Bbuild -H. -DSPECULOS_SRC=/path/to/speculos
+unit-tests/README.md:52:cmake -Bbuild -H. -DSPECULOS=OFF
+.github/workflows/ci-workflow.yml:23:          - model: nanox
+.github/workflows/ci-workflow.yml:24:            SDK: "$NANOX_SDK"
+.github/workflows/ci-workflow.yml:25:          - model: nanosp
+.github/workflows/ci-workflow.yml:26:            SDK: "$NANOSP_SDK"
+.github/workflows/ci-workflow.yml:28:            SDK: "$STAX_SDK"
+.github/workflows/ci-workflow.yml:30:            SDK: "$FLEX_SDK"
+.github/workflows/ci-workflow.yml:32:            SDK: "$APEX_P_SDK"
+.github/workflows/ci-workflow.yml:45:          make DEBUG=0 COIN=bitcoin BOLOS_SDK=${{ matrix.SDK }} && mv bin/ bitcoin-bin/
+.github/workflows/ci-workflow.yml:47:          make DEBUG=0 COIN=bitcoin_testnet BOLOS_SDK=${{ matrix.SDK }} && mv bin/ bitcoin-testnet-bin/
+.github/workflows/ci-workflow.yml:74:          make DEBUG=0 COIN=bitcoin_testnet BOLOS_SDK="$NANOSP_SDK" AUTOAPPROVE_FOR_PERF_TESTS=1
+.github/workflows/ci-workflow.yml:79:          name: bitcoin-testnet-perftest-app-nanosp
+.github/workflows/ci-workflow.yml:87:          - model: nanox
+.github/workflows/ci-workflow.yml:88:          - model: nanosp
+.github/workflows/ci-workflow.yml:115:          pytest --headless --model=${{ matrix.model }} --timeout=300
+.github/workflows/ci-workflow.yml:138:          PYTHONPATH=$PYTHONPATH:/speculos pytest --headless --timeout=300 --model=nanos
+.github/workflows/ci-workflow.yml:156:          name: bitcoin-testnet-perftest-app-nanosp
+.github/workflows/ci-workflow.yml:165:          pytest --headless --model=nanosp --benchmark-json=benchmarks.json
+.github/workflows/ci-workflow.yml:214:  check_ragger_tests:
+.github/workflows/ci-workflow.yml:215:    name: Check that ragger tests passed on the tagged commit
+.github/workflows/ci-workflow.yml:222:      - name: Check ragger_tests result in build_and_functional_tests.yml
+.github/workflows/ci-workflow.yml:231:                  --jq '.jobs[] | select(.name | startswith("Run ragger tests using the reusable workflow / Functional tests with Ragger (")) | .conclusion')
+.github/workflows/ci-workflow.yml:237:          echo "[ERROR] No completed push run of build_and_functional_tests.yml with successful ragger tests for $GITHUB_SHA"
+.github/workflows/ci-workflow.yml:242:    needs: [validate_release_tag, check_ragger_tests]
+.github/workflows/ci-workflow.yml:275:          name: bitcoin-testnet-app-nanosp
+.github/workflows/unit_tests.yml:19:      # speculos sources themselves are fetched at cmake configure time
+unit-tests/libs/speculos_bridge.c:2: * Speculos bridge: bind the SDK symbol names called by the application
+unit-tests/libs/speculos_bridge.c:5: * The application is written against the Ledger SDK API (cx_bn_lock,
+unit-tests/libs/speculos_bridge.c:11: * This file is mostly thin forwarders: the SDK name calls into the
+unit-tests/libs/speculos_bridge.c:16: * app relies on. The SDK's bip32_derive_with_seed_* helpers come from
+unit-tests/libs/speculos_bridge.c:35: * header chain rather than the SDK one to avoid double-defining
+unit-tests/libs/speculos_bridge.c:36: * cx_bn_t / cx_ecpoint_t. cxlib.h itself defines _SDK_2_0_ before
+unit-tests/libs/speculos_bridge.c:40:/* SDK header that defines cx_iovec_t. Speculos does NOT define this
+unit-tests/libs/speculos_bridge.c:41: * type, so we can pull the SDK definition in unconditionally; it has
+unit-tests/libs/speculos_bridge.c:58: * Forwarders: SDK name -> sys_cx_* implementation
+unit-tests/libs/speculos_bridge.c:129: * literal copies of the SDK source (lib_cxng/src/cx_ecfp.c) — the
+unit-tests/libs/speculos_bridge.c:260:     * otherwise; the SDK function returns CX_OK on success regardless.
+unit-tests/libs/speculos_bridge.c:268:    /* Per the SDK header, this function always returns CX_OK. */
+unit-tests/libs/speculos_bridge.c:332:/* sys_cx_math_cmp returns the int comparison result; the SDK wrapper
+unit-tests/libs/speculos_bridge.c:343:/* Constant-time memcmp, matching the SDK char convention (0 on equal,
+unit-tests/libs/speculos_bridge.c:362: * function's return value), while the SDK's _no_throw wrappers use
+unit-tests/libs/speculos_bridge.c:605: * SDK header; we forward them so a THROW-free path stays inert. */
+unit-tests/libs/speculos_bridge.c:634:/* The SDK's PIC() macro forwards to a `pic()` function that on the device
+unit-tests/CMakeLists.txt:1:cmake_minimum_required(VERSION 3.14)
+unit-tests/CMakeLists.txt:34:if(NOT DEFINED ENV{BOLOS_SDK})
+unit-tests/CMakeLists.txt:35:  message(FATAL_ERROR "BOLOS_SDK is not defined.")
+unit-tests/CMakeLists.txt:80:include_directories($ENV{BOLOS_SDK})
+unit-tests/CMakeLists.txt:81:include_directories($ENV{BOLOS_SDK}/include)
+unit-tests/CMakeLists.txt:82:include_directories($ENV{BOLOS_SDK}/lib_standard_app)
+unit-tests/CMakeLists.txt:83:include_directories($ENV{BOLOS_SDK}/target/nanos2/include)
+unit-tests/CMakeLists.txt:122:add_library(base58      SHARED $ENV{BOLOS_SDK}/lib_standard_app/base58.c)
+unit-tests/CMakeLists.txt:123:add_library(bip32       SHARED $ENV{BOLOS_SDK}/lib_standard_app/bip32.c)
+unit-tests/CMakeLists.txt:124:add_library(buffer      SHARED $ENV{BOLOS_SDK}/lib_standard_app/buffer.c)
+unit-tests/CMakeLists.txt:125:add_library(read        SHARED $ENV{BOLOS_SDK}/lib_standard_app/read.c)
+unit-tests/CMakeLists.txt:126:add_library(varint      SHARED $ENV{BOLOS_SDK}/lib_standard_app/varint.c)
+unit-tests/CMakeLists.txt:127:add_library(write       SHARED $ENV{BOLOS_SDK}/lib_standard_app/write.c)
+unit-tests/CMakeLists.txt:141:  cmake_parse_arguments(T "" "" "LIBS;INCLUDES" ${ARGN})
+unit-tests/CMakeLists.txt:204:  # that must shadow the Ledger SDK's stripped-down appflags.h added
+unit-tests/CMakeLists.txt:217:  # cx_ecpoint_t etc. shadow the SDK ones for the types where they
+unit-tests/CMakeLists.txt:225:    $ENV{BOLOS_SDK}/lib_cxng/include
+unit-tests/CMakeLists.txt:229:  # Build the application code against the real SDK headers so it sees the
+unit-tests/CMakeLists.txt:251:      $ENV{BOLOS_SDK}/target/nanos2/include
+unit-tests/CMakeLists.txt:252:      $ENV{BOLOS_SDK}/include
+unit-tests/CMakeLists.txt:253:      $ENV{BOLOS_SDK}/io/include
+unit-tests/CMakeLists.txt:254:      $ENV{BOLOS_SDK}/io_legacy/include
+unit-tests/CMakeLists.txt:255:      $ENV{BOLOS_SDK}/protocol/include
+unit-tests/CMakeLists.txt:256:      $ENV{BOLOS_SDK}/lib_standard_app
+unit-tests/CMakeLists.txt:257:      $ENV{BOLOS_SDK}/lib_cxng/include
+unit-tests/CMakeLists.txt:258:      $ENV{BOLOS_SDK}/lib_cxng/src
+unit-tests/CMakeLists.txt:259:      $ENV{BOLOS_SDK}/lib_stusb/include
+unit-tests/CMakeLists.txt:289:    $ENV{BOLOS_SDK}/lib_standard_app/crypto_helpers.c
+unit-tests/CMakeLists.txt:293:  # SDK helpers the app code calls into. Expose them as PUBLIC so each
+unit-tests/CMakeLists.txt:301:  # mock_dispatcher and xpub need real SDK headers (cx_hash_sha256, crypto.h)
+unit-tests/CMakeLists.txt:344:  # Compile the test against the real SDK headers too, so that types
+unit-tests/CMakeLists.txt:371:  # depends on constants.h (and therefore the real SDK headers). No app object
+unit-tests/libs/speculos_bridge.h:10: * It is NOT a replacement for the SDK headers: it just provides the
+unit-tests/libs/speculos_bridge.h:11: * forwarders/wrappers that bind the SDK symbol names expected by the
+unit-tests/libs/speculos_bridge.h:23:/* Re-export the SDK's cx_err_t error codes (CX_OK, CX_INTERNAL_ERROR,

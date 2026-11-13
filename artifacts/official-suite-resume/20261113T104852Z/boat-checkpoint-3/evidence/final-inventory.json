@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "date -u; rustc +stable -Vv; cargo +stable -V; cmake --version; python3 --version; command -v clang clang-21 arm-none-eabi-gcc speculos bitcoind; cat requirements.txt tests_mainnet/README.md tests_mainnet/conftest.py; cat .github/workflows/unit_tests.yml .github/workflows/build_and_functional_tests.yml; rg -n \"skip|deselect|ignore|slow|addoption|collection_modify\" tests tests_mainnet; git status --porcelain=v1; git -C ../vanadium status --porcelain=v1; sha256sum ../vanadium/Cargo.lock; git -C ../vanadium ls-files \"apps/bitcoin/**/Cargo.lock\"; git -C ../vanadium diff --exit-code"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567321.1923714,
+  "exit": 0,
+  "ended": 1794567321.2608523
+}

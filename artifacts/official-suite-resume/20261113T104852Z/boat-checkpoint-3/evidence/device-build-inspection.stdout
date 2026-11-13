@@ -1,0 +1,257 @@
+98693c3b63446779677d35bd7ed7c5923949ab01
+9ea0fae9b40bb91e7c4f94bb0e9b8cf22df36306
+#*******************************************************************************
+#   Ledger SDK
+#   (c) 2024 Ledger
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#*******************************************************************************
+
+ifeq ($(__MAKEFILE_TARGET__),)
+__MAKEFILE_TARGET__ := 1
+
+# TARGET should be set as an environment variable otherwise it will be read from a `.target`
+# file in the SDK root repository
+TARGETS := nanox nanos2 stax flex apex_p apex_m
+ifeq ($(TARGET),)
+ifeq ("$(wildcard $(BOLOS_SDK)/.target)","")
+$(error No TARGET specified and no .target file in SDK repository $(BOLOS_SDK))
+else
+TARGET := $(shell cat $(BOLOS_SDK)/.target)
+endif
+endif
+
+ifeq ($(filter $(TARGET),$(TARGETS)),)
+$(error TARGET not set to a valid value (possible values: $(TARGETS)))
+endif
+
+TARGET_PATH := $(BOLOS_SDK)/target/$(TARGET)
+BOLOS_TARGET_H := $(TARGET_PATH)/include/bolos_target.h
+TARGET_ID   := $(shell grep -E "^\#define\s*TARGET_ID" $(BOLOS_TARGET_H) | cut -f3 -d' ')
+TARGET_NAME := $(shell grep -E "^\#define\s*TARGET_[^I]" $(BOLOS_TARGET_H) | head -n 1 | cut -f2 -d' ')
+SDK_NAME    := "ledger-secure-sdk"
+SDK_VERSION := $(shell git -C $(BOLOS_SDK) describe --tags --exact-match  --match "v[0-9]*" --dirty)
+SDK_HASH    := $(shell git -C $(BOLOS_SDK) describe --always --dirty --exclude '*' --abbrev=40)
+ifeq ($(SDK_VERSION),)
+SDK_VERSION := "None"
+endif
+ifeq ($(SDK_HASH),)
+SDK_HASH := "None"
+endif
+
+BUILD_DIR := build
+SCAN_DIR := $(BUILD_DIR)/scan
+TARGET_SCAN_DIR := $(SCAN_DIR)/$(TARGET)
+
+RUN_SCAN ?= false
+ifeq ($(RUN_SCAN),true)
+# Override BUILD_DIR to use 'scan' subdirectory
+BUILD_DIR := $(SCAN_DIR)
+endif
+
+TARGET_BUILD_DIR := $(BUILD_DIR)/$(TARGET)
+BIN_DIR := $(TARGET_BUILD_DIR)/bin
+OBJ_DIR := $(TARGET_BUILD_DIR)/obj
+DBG_DIR := $(TARGET_BUILD_DIR)/dbg
+DEP_DIR := $(TARGET_BUILD_DIR)/dep
+GEN_SRC_DIR := $(TARGET_BUILD_DIR)/gen_src
+
+# Debug mode disabled by default
+DEBUG:=0
+DEBUG_OVER_USB:=0
+
+# define the default makefile target (high in include to avoid glyph.h or what not specific target to be the default one when no target passed on the make command line)
+all: default
+
+endif
+ledger-secure-sdk/Makefile.standard_app:308:LDLIBS  += -lclang_rt.builtins
+ledger-secure-sdk/Makefile.defines:53:SYSROOT = $(shell arm-none-eabi-gcc -print-sysroot)
+ledger-secure-sdk/Makefile.defines:54:ifeq ($(SYSROOT),)
+ledger-secure-sdk/Makefile.defines:56:    SYSROOT = /usr/lib/arm-none-eabi
+ledger-secure-sdk/Makefile.defines:58:CFLAGS   += --sysroot="$(SYSROOT)"
+ledger-secure-sdk/Makefile.defines:117:$(OBJ_DIR)/sdk/lib_bagl/src/bagl.o: CFLAGS += -fno-lto -UHAS_LTO
+ledger-secure-sdk/Makefile.target:50:BUILD_DIR := build
+ledger-secure-sdk/Makefile.target:51:SCAN_DIR := $(BUILD_DIR)/scan
+ledger-secure-sdk/Makefile.target:56:# Override BUILD_DIR to use 'scan' subdirectory
+ledger-secure-sdk/Makefile.target:57:BUILD_DIR := $(SCAN_DIR)
+ledger-secure-sdk/Makefile.target:60:TARGET_BUILD_DIR := $(BUILD_DIR)/$(TARGET)
+ledger-secure-sdk/Makefile.target:61:BIN_DIR := $(TARGET_BUILD_DIR)/bin
+ledger-secure-sdk/Makefile.target:62:OBJ_DIR := $(TARGET_BUILD_DIR)/obj
+ledger-secure-sdk/Makefile.target:63:DBG_DIR := $(TARGET_BUILD_DIR)/dbg
+ledger-secure-sdk/Makefile.target:64:DEP_DIR := $(TARGET_BUILD_DIR)/dep
+ledger-secure-sdk/Makefile.target:65:GEN_SRC_DIR := $(TARGET_BUILD_DIR)/gen_src
+app-bitcoin/Makefile:212:LLB_KERNEL_OBJ := $(OBJ_DIR)/app/src/lean_kernels/liblean_ledger_bitcoin.o
+ledger-secure-sdk/Makefile.rules_generic:62:	rm -fr $(BUILD_DIR) bin debug
+ledger-secure-sdk/Makefile.rules_generic:65:	rm -fr $(TARGET_BUILD_DIR) $(TARGET_SCAN_DIR)
+ledger-secure-sdk/Makefile.rules_generic:81:	@mkdir -p $(BIN_DIR) $(OBJ_DIR) $(OBJECTS_DIR) $(DBG_DIR) $(DEP_DIR) $(DEPEND_DIR) $(GEN_SRC_DIR) bin debug
+ledger-secure-sdk/Makefile.rules_generic:108:$(OBJ_DIR)/app/%.o: $(APP_DIR)/%.c $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:112:$(OBJ_DIR)/app/%.o: $(APP_DIR)/%.s $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:116:$(OBJ_DIR)/app/%.o: $(APP_DIR)/%.S $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:121:$(OBJ_DIR)/sdk/%.o: $(BOLOS_SDK)/%.c $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:125:$(OBJ_DIR)/sdk/%.o: $(BOLOS_SDK)/%.s $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:129:$(OBJ_DIR)/sdk/%.o: $(BOLOS_SDK)/%.S $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:134:$(OBJ_DIR)/%.o: %.c $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:138:$(OBJ_DIR)/%.o: %.s $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:142:$(OBJ_DIR)/%.o: %.S $(BUILD_DEPENDENCIES) prepare
+ledger-secure-sdk/Makefile.rules_generic:169:$(BIN_DIR)/app.elf: $(LINK_DEPENDENCIES)
+ledger-secure-sdk/Makefile.rules_generic:170:	@echo "[LINK] $(BIN_DIR)/app.elf"
+ledger-secure-sdk/Makefile.rules_generic:171:	$(L)$(call link_cmdline,$(OBJECT_FILES) $(LDLIBS),$(BIN_DIR)/app.elf)
+ledger-secure-sdk/Makefile.rules_generic:172:	$(L)llvm-objcopy -O ihex -S $(BIN_DIR)/app.elf $(BIN_DIR)/app.hex
+ledger-secure-sdk/Makefile.rules_generic:173:	$(L)llvm-objdump -S -d $(BIN_DIR)/app.elf > $(DBG_DIR)/app.asm
+ledger-secure-sdk/Makefile.rules_generic:175:# This targets are generated along $(OBJ_DIR)/app.elf but we can't make them co-target
+ledger-secure-sdk/Makefile.rules_generic:178:$(BIN_DIR)/app.hex $(DBG_DIR)/app.map $(DBG_DIR)/app.asm: $(BIN_DIR)/app.elf
+ledger-secure-sdk/Makefile.rules_generic:180:$(BIN_DIR)/app.apdu: bin/app.hex debug/app.map
+ledger-secure-sdk/Makefile.rules_generic:181:	$(L)python3 -m ledgerblue.loadApp $(APP_LOAD_PARAMS) --offline $(BIN_DIR)/app.apdu | grep "Application" | cut -f5 -d' ' > $(BIN_DIR)/app.sha256
+ledger-secure-sdk/Makefile.rules_generic:183:# This target is generated along $(BIN_DIR)/app.apdu but we can't make them co-target
+ledger-secure-sdk/Makefile.rules_generic:186:$(BIN_DIR)/app.sha256: $(BIN_DIR)/app.apdu
+ledger-secure-sdk/Makefile.rules_generic:190:bin/app.elf bin/app.hex bin/app.apdu bin/app.sha256: bin/app.%: $(BIN_DIR)/app.%
+ledger-secure-sdk/Makefile.rules_generic:217:cc_cmdline = $(CC) -c $(CFLAGS) -MMD -MT $(4) -MF $(subst $(OBJ_DIR), $(DEP_DIR), $(addsuffix .d, $(basename $(4)))) $(addprefix -D,$(2)) $(addprefix -I,$(1)) -o $(4) $(3)
+ledger-secure-sdk/Makefile:3:BUILD_DIR := build
+ledger-secure-sdk/Makefile:4:DOC_SITE_DIR := $(BUILD_DIR)/doc/site
+ledger-secure-sdk/Makefile:35:doc: | $(BUILD_DIR)
+ledger-secure-sdk/Makefile:37:	@echo "HTML doc for '$(TARGET)' can be found in '$(BUILD_DIR)/doc/html/index.html'"
+ledger-secure-sdk/Makefile:49:	@cp -a $(BUILD_DIR)/doc/html/. $(DOC_SITE_DIR)/wallet/
+ledger-secure-sdk/Makefile:52:	@cp -a $(BUILD_DIR)/doc/html/. $(DOC_SITE_DIR)/nano/
+ledger-secure-sdk/Makefile:56:$(BUILD_DIR):
+ledger-secure-sdk/Makefile.rules:140:OBJECTS_SDK += $(sort $(subst $(BOLOS_SDK), $(OBJ_DIR)/sdk, $(addsuffix .o, $(basename $(SOURCES_SDK)))))
+ledger-secure-sdk/Makefile.rules:141:# App object path = $(OBJ_DIR)/app/<source path relative to APP_DIR>.o
+ledger-secure-sdk/Makefile.rules:142:OBJECTS_APP += $(sort $(addprefix $(OBJ_DIR)/app, $(addsuffix .o, $(basename \
+ledger-secure-sdk/Makefile.rules:145:OBJECTS_PROTOC += $(sort $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(basename $(APP_SOURCE_PROTOC)))))
+ledger-secure-sdk/Makefile.rules:150:DEPEND_FILES = $(subst $(OBJ_DIR), $(DEP_DIR), $(addsuffix .d, $(basename $(OBJECT_FILES))))
+linux
+windows
+bfd-plugins
+bin
+ldscripts
+newlib
+scikit-build-core==0.9.10
+import pytest
+
+from pathlib import Path
+import re
+import os
+import sys
+import json
+from typing import Literal, Union
+
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
+from test_utils import default_settings, SpeculosGlobals
+
+from bitcoin_client.ledger_bitcoin import TransportClient, Client, Chain, createClient
+
+from speculos.client import SpeculosClient
+
+"""
+This module contains fixtures that are shared among several of the test suites.
+The behavior of the fixtures can be altered by setting the following environment variables:
+
+BITCOIN_NETWORK: "test" for testnet, "main" for mainnet. Default: "test"
+
+BITCOIN_APP_BINARY: the full path and file name of the app's binary to use. Defaults to {repo_root_path}/bin/app.elf
+
+BITCOIN_APP_LIB_BINARY: the full path and file name of binary to use as Bitcoin library in speculos.
+                        If omitted no library is used in speculos.
+"""
+
+
+# root of the repository
+repo_root_path: Path = Path(__file__).parent.parent
+
+# path of the folder of the currently running test
+
+ASSIGNMENT_RE = re.compile(
+    r'^\s*([a-zA-Z_][a-zA-Z_0-9]*)\s*=\s*(.*)$', re.MULTILINE)
+
+
+def get_app_version() -> str:
+    makefile_path = repo_root_path / "Makefile"
+    if not makefile_path.is_file():
+        raise FileNotFoundError(f"Can't find file: '{makefile_path}'")
+
+    makefile: str = makefile_path.read_text()
+
+    assignments = {
+        identifier: value for identifier, value in ASSIGNMENT_RE.findall(makefile)
+    }
+
+    return f"{assignments['APPVERSION_M']}.{assignments['APPVERSION_N']}.{assignments['APPVERSION_P']}"
+
+
+DEFAULT_SPECULOS_PORT = 5000
+
+def pytest_addoption(parser):
+    parser.addoption("--hid", action="store_true")
+    parser.addoption("--headless", action="store_true")
+    parser.addoption(
+        "--enable_slow_tests",
+        action="store",
+        nargs="?",
+        const=1,  # Default to 1 if the flag is provided without a value
+        default=0,  # Default to 0 if the flag is not provided
+        type=int,
+        help="If 0, skip slow tests. If set or equal to 1, enable some slow tests. Greater values enable even slower tests.",
+    )
+    parser.addoption("--model", action="store", default="nanosp")
+    parser.addoption(
+        "--speculos_port",
+        action="store",
+        nargs="?",
+        const=DEFAULT_SPECULOS_PORT, # Use the default speculos port if the option is given without a value
+        default=None,                # None when option not given at all
+        type=int,
+        metavar="N",
+        help=(
+            "port number to use for speculos. Useful to run tests against a running speculos instance. If you pass "
+            f"--speculos_port with no value the default ({DEFAULT_SPECULOS_PORT}) is used; omit the flag entirely "
+            "to let ragger launch speculos and manage the port automatically. The option is useful to run tests "
+            "against a running speculos instance."
+        ),
+    )
+
+@pytest.fixture(scope="module")
+def sw_h_path() -> Path:
+    # sw.h should be in src/boilerplate/sw.h
+    sw_h_path = repo_root_path / "src" / "boilerplate" / "sw.h"
+
+    if not sw_h_path.is_file():
+        raise FileNotFoundError(f"Can't find sw.h: '{sw_h_path}'")
+
+    return sw_h_path
+
+
+@pytest.fixture(scope="module")
+def app_version() -> str:
+    return get_app_version()
+
+
+@pytest.fixture
+def settings(request) -> dict:
+    try:
+        return request.function.test_settings
+    except AttributeError:
+        return default_settings.copy()
+
+
+@pytest.fixture
+def hid(pytestconfig) -> bool:
+    return pytestconfig.getoption("hid")
+
+
+@pytest.fixture
+def headless(pytestconfig) -> bool:
+    return pytestconfig.getoption("headless")
+
+

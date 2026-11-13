@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="10" time="66.188" timestamp="2026-11-13T11:10:09.042924" hostname="box-node-7fabc707450cea8d"><testcase classname="test_dashboard" name="test_dashboard[nanosp-nanosp]" time="0.941" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_one_of_two_1[nanosp-nanosp]" time="7.464" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_one_of_two_2[nanosp-nanosp]" time="4.834" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_2fa[nanosp-nanosp]" time="5.066" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_decaying_3of3[nanosp-nanosp]" time="6.126" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_bolt3_offered_htlc[nanosp-nanosp]" time="6.170" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_bolt3_received_htlc[nanosp-nanosp]" time="4.724"><failure message="ragger.error.ExceptionRAPDU: Error [0x6901] b''">navigator = &lt;ragger.navigator.nano_navigator.NanoNavigator object at 0x73837be4bd10&gt;
+firmware = &lt;Firmware.NANOSP: 2&gt;
+client = &lt;ragger_bitcoin.ragger_bitcoin.RaggerClient object at 0x73837b61d820&gt;
+test_name = 'test_e2e_miniscript_bolt3_received_htlc'
+rpc = &lt;test_utils.authproxy.AuthServiceProxy object at 0x73837be652e0&gt;
+rpc_test_wallet = &lt;test_utils.authproxy.AuthServiceProxy object at 0x73837b2bdaf0&gt;
+speculos_globals = &lt;test_utils.SpeculosGlobals object at 0x73837b2bc740&gt;
+
+    def test_e2e_miniscript_bolt3_received_htlc(navigator: Navigator, firmware: Firmware, client:
+                                                RaggerClient, test_name: str, rpc, rpc_test_wallet, speculos_globals: SpeculosGlobals):
+        # The BOLT #3 received HTLC policy
+        # andor(pk(key_remote),or_i(and_v(v:pkh(key_local),hash160(H)),older(1008)),pk(key_revocation))
+    
+        path = "48'/1'/0'/2'"
+        core_wallet_name1, core_xpub_orig1 = create_new_wallet()
+        core_wallet_name2, core_xpub_orig2 = create_new_wallet()
+        internal_xpub = get_internal_xpub(speculos_globals.seed, path)
+        H = "395e368b267d64945f30e4b71de1054f364c9473"  # random
+        wallet_policy = WalletPolicy(
+            name="BOLT #3 received",
+            descriptor_template=f"wsh(andor(pk(@0/**),or_i(and_v(v:pkh(@1/**),hash160({H})),older(1008)),pk(@2/**)))",
+            keys_info=[
+                f"{core_xpub_orig1}",
+                f"[{speculos_globals.master_key_fingerprint.hex()}/{path}]{internal_xpub}",
+                f"{core_xpub_orig2}",
+            ])
+    
+&gt;       run_test_e2e(navigator, client, wallet_policy, [core_wallet_name1, core_wallet_name2], rpc, rpc_test_wallet, speculos_globals,
+                     e2e_register_wallet_instruction(firmware), e2e_sign_psbt_instruction(firmware), test_name)
+
+test_e2e_miniscript.py:284: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_e2e_miniscript.py:110: in run_test_e2e
+    hww_sigs = client.sign_psbt(psbt, wallet_policy, wallet_hmac, navigator,
+../ragger_bitcoin/ragger_bitcoin.py:195: in sign_psbt
+    result = NewClient.sign_psbt(self, psbt, wallet, wallet_hmac)
+../bitcoin_client/ledger_bitcoin/client.py:341: in sign_psbt
+    sw, _ = self._make_request(
+../ragger_bitcoin/ragger_bitcoin.py:51: in _make_request
+    sw, response = self._make_request_with_navigation(navigator=self.navigator,
+../ragger_bitcoin/ragger_bitcoin.py:139: in _make_request_with_navigation
+    sw, response, index = self.ragger_navigate(
+../ragger_bitcoin/ragger_bitcoin.py:96: in ragger_navigate
+    with self.transport_client.exchange_async_raw(pack_APDU(cla, ins, p1, p2, data)) as done:
+/usr/lib/python3.12/contextlib.py:144: in __exit__
+    next(self.gen)
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:256: in exchange_async_raw
+    self._last_async_response = self._get_last_async_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;ragger.backend.speculos.SpeculosBackend object at 0x73838353bcb0&gt;
+args = (&lt;speculos.client.ApduResponse object at 0x73837b52aea0&gt;,), kwargs = {}
+rapdu = RAPDU(status=26881, data=b'')
+
+    def decoration(self: "SpeculosBackend", *args, **kwargs) -&gt; RAPDU:
+        # Catch backend raise
+        try:
+            rapdu: RAPDU = function(self, *args, **kwargs)
+        except ApduException as error:
+            rapdu = RAPDU(error.sw, error.data)
+    
+        self.apdu_logger.info("&lt;= %s%4x", rapdu.data.hex(), rapdu.status)
+    
+        if self.is_raise_required(rapdu):
+&gt;           raise ExceptionRAPDU(rapdu.status, rapdu.data)
+E           ragger.error.ExceptionRAPDU: Error [0x6901] b''
+
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:74: ExceptionRAPDU</failure></testcase><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_me_or_3of5[nanosp-nanosp]" time="8.674" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_me_large_vault[nanosp-nanosp]" time="8.764" /><testcase classname="test_e2e_miniscript" name="test_e2e_miniscript_me_and_bob_or_me_and_carl_1[nanosp-nanosp]" time="6.682" /><testcase time="0.421" /></testsuite></testsuites>

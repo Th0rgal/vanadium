@@ -1,0 +1,2 @@
+error: apps/bitcoin/app/Cargo.lock: already exists in working directory
+error: apps/bitcoin/common/Cargo.lock: already exists in working directory

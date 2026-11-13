@@ -1,0 +1,41 @@
+import json,pathlib,shutil,tarfile,hashlib,datetime
+root=pathlib.Path('/var/lib/orb-node/work/official-suite-resume'); e=root/'evidence'
+suites={}
+for name in ['common_canary','common_full','bitcoin_rust_app','bitcoin_rust_common','ctest_full','ragger_tests_nanosp','ragger_tests_nanox','ragger_tests_mainnet_nanosp','ragger_tests_mainnet_nanox']:
+ suites[name]={'status':'NOT_RUN','pass':None,'fail':None,'skip':None,'deselected':None,'collection_errors':None,'enumerated':None,'exit':None}
+suites['common_canary'].update(status='BLOCKED_BEFORE_COMPILATION',exit=101)
+suites['bitcoin_rust_app'].update(status='BLOCKED_MANIFEST_LOAD',exit=101)
+(e/'counts.json').write_text(json.dumps({'status':'BLOCKED','fresh':True,'suites':suites,'ctest_expected_only':{'upstream':30,'added':1},'ctest_configure_exit':1,'docker_access_exit':1,'exclusions_added':[]},indent=2))
+(e/'REPORT.md').write_text('''# BLOCKED — fresh executor evidence, 2026-11-13
+
+No test body executed. No official suite is certified. Counts are null, including failures: command failures before compilation are not test failures. See counts.json and individual command JSON/stdout/stderr files. Completed within the first 10 minutes; no machine rental or TTL extension.
+
+Verified anonymous remote branches and checked out Vanadium 045439a8c1a984b67f13b913df7c75002ef732a7 and app-bitcoin afe126fea70c8c7d6091948bb8a8ae529ea89a60. Raw VM inventory: 8 CPU, 16 GiB class, hostname box-node-7fabc707450cea8d. Toolchain installed authentically via rustup public stable channel into owned private Rustup/Cargo roots: rustc 1.100.0 (0ef1bc386 2026-11-09). Build jobs 1. Tool versions and timestamps captured. No subagents or reviews.
+
+## Exact blockers and safe remediation
+
+1. Common exact pure canary: cargo +stable test --locked -p common vm::tests::test_vec_memory_new -- --exact, cwd vanadium, exit 101. Cargo refuses to update Cargo.lock. Historical dated evidence diagnoses missing cargo-vnd -> rhai_codegen dependency edge; fresh run confirms a lock inconsistency but did not independently mutate/re-resolve to establish the precise diff. Preserve Cargo.lock (SHA256 139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546). Parent must supply an authorized consistent source/lock revision or demonstrate a matching toolchain; do not remove --locked. This is a local source/dependency consistency failure, not a Bitcoin behavior result.
+
+2. Bitcoin separate workspace: cargo +stable test --locked, cwd vanadium/apps/bitcoin/app, exit 101 loading missing ../lean-ledger-bitcoin/ffi/vanadium/Cargo.toml (sibling to vanadium under owned root). Dated evidence pins Lean source f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb but the supplied public refs do not provide that tree or an anonymous public URL. apps/bitcoin has nested workspaces (app and common), no root Cargo.toml; neither tracked nested Cargo.lock exists. Parent must publish/provide the exact sibling source anonymously and the intended reviewed nested lockfiles before a fully locked official Rust run. No replacement FFI or generated stubs created.
+
+3. Official app build environment: docker version exits 1: permission denied connecting to unix:///var/run/docker.sock. Caller uid 996 is not in docker group; socket root:docker 0660. No chmod, sudo, group changes, alternate privileged socket or rights bypass attempted. CI's authentic public builder is ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest, using NANOSP_SDK/NANOX_SDK. Owner/operator must provide an authorized runnable official build environment or exact authentic native SDK/toolchain revisions. Docker is the blocked CI route, not a claim that native builds are impossible.
+
+4. cmake -S unit-tests -B ../ctest-build exits 1: BOLOS_SDK is not defined. libcmocka-dev absent; no device binaries produced. CMake pins public Speculos v0.25.13 for host crypto sources; Python requirements separately pin Speculos 0.27.4 and Ragger 1.47.4 on Python >=3.11. Actual SDK revision behind mutable builder latest could not be resolved without the environment. No SDK stub, header fabrication, SPECULOS=OFF or assertions/spec changes. Stop dependent execution at missing source/permission prerequisites per WORKER.md.
+
+## Acceptance left open
+
+Full common, both nested Bitcoin Rust workspaces, full ctest raw enumeration and execution (expected 30 upstream + 1 added, actual count not established), and all four full device/directory functional combinations are NOT RUN. Do not infer execution counts from source. No pytest collection performed. No synthetic PASS. No source code or spec changes; no patch/bundle needed for unchanged sources.
+
+CI confirms --enable_slow_tests; test_utils/fixtures.py defines an integer nargs=? const=1 default=0 option. Full slow coverage should use --enable_slow_tests=2 (some tests intentionally skip when <2). Ragger tests use their Ragger plugin; mainnet imports legacy fixtures with --model, --headless and the same slow option. Confirm installed Ragger's actual --help/device flags after provisioning before choosing exact final commands. Tests and tests_mainnet need separate bitcoin_testnet and bitcoin builds for nanosp/nanox. tests README also requires authentic Bitcoin Core 32.1 for RPC tests. No final functional command is claimed executed or validated.
+
+No user-selected exclusions or deselections added. All suites blocked as a whole, not excluded as passing subsets. Upstream skip conditions preserved byte-for-byte: slow gates (<1 and <2), non-Nano wallet rejection header checks, Nano early pubkey rejection helper, and dashboard non-Speculos/touch devices. Static skip locations and conditions are captured in final-inventory and prerequisite-source-details logs; runtime skip counts remain null. No golden snapshots regenerated.
+
+Historical report and lock diff are kept under historical/ solely for provenance, not counted as fresh execution. Initial preparation (pwd/ls, anonymous ls-remote and initial clone, instructions reads) preceded the recording wrapper; refs and status were recaptured, and no retrospective clone output is invented. Each wrapper JSON records exact cwd/argv, relevant private env, start/end and subprocess exit; stdout/stderr are separate complete files. Compound read-only inventory commands have shell overall exits; individual intermediate diagnostic errors are visible in stderr. No credentials accessed, no push, merge, deploy, signing or other machines used.
+''')
+h=e/'historical'; h.mkdir(exist_ok=True)
+for p in (root/'vanadium/artifacts/official-suite-resume/20261113T104852Z').iterdir():
+ if p.is_file(): shutil.copy2(p,h/p.name)
+shutil.copy2(root/'vanadium/artifacts/official-suite-resume/WORKER.md',e/'WORKER.md')
+with tarfile.open(root/'evidence.tar.gz','w:gz') as t:t.add(e,arcname='evidence')
+p=root/'evidence.tar.gz';print(json.dumps({'archive':str(p),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'status':'BLOCKED'}))
+assert p.stat().st_size<20*1024*1024

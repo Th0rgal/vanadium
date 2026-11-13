@@ -1,0 +1,760 @@
+{
+  "backtraceGraph" : 
+  {
+    "commands" : 
+    [
+      "add_test",
+      "add_unit_test"
+    ],
+    "files" : 
+    [
+      "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/CMakeLists.txt"
+    ],
+    "nodes" : 
+    [
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 150,
+        "parent" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 1
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 151,
+        "parent" : 3
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 4
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 152,
+        "parent" : 6
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 7
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 153,
+        "parent" : 9
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 10
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 154,
+        "parent" : 12
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 13
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 155,
+        "parent" : 15
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 16
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 320,
+        "parent" : 18
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 19
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 321,
+        "parent" : 21
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 22
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 322,
+        "parent" : 24
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 25
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 323,
+        "parent" : 27
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 28
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 324,
+        "parent" : 30
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 31
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 325,
+        "parent" : 33
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 34
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 326,
+        "parent" : 36
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 37
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 327,
+        "parent" : 39
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 40
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 328,
+        "parent" : 42
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 43
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 329,
+        "parent" : 45
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 46
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 330,
+        "parent" : 48
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 49
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 331,
+        "parent" : 51
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 52
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 1,
+        "file" : 0,
+        "line" : 332,
+        "parent" : 54
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 147,
+        "parent" : 55
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 349,
+        "parent" : 57
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 354,
+        "parent" : 59
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 362,
+        "parent" : 61
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 368,
+        "parent" : 63
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 376,
+        "parent" : 65
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 383,
+        "parent" : 67
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 388,
+        "parent" : 69
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 393,
+        "parent" : 71
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 406,
+        "parent" : 73
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 425,
+        "parent" : 75
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 445,
+        "parent" : 77
+      },
+      {
+        "file" : 0
+      },
+      {
+        "command" : 0,
+        "file" : 0,
+        "line" : 463,
+        "parent" : 79
+      }
+    ]
+  },
+  "kind" : "ctestInfo",
+  "tests" : 
+  [
+    {
+      "backtrace" : 2,
+      "name" : "test_bitvector",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 5,
+      "name" : "test_buffer",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 8,
+      "name" : "test_display_utils",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 11,
+      "name" : "test_lean_bolos_kernels",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 14,
+      "name" : "test_parser",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 17,
+      "name" : "test_psbt_parse",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 20,
+      "name" : "test_get_preimage",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 23,
+      "name" : "test_get_merkle_preimage",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 26,
+      "name" : "test_extract_bip32_derivation",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 29,
+      "name" : "test_check_merkle_tree_sorted",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 32,
+      "name" : "test_get_merkle_leaf_element",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 35,
+      "name" : "test_get_merkle_leaf_hash",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 38,
+      "name" : "test_get_merkle_leaf_index",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 41,
+      "name" : "test_stream_preimage",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 44,
+      "name" : "test_stream_merkle_leaf_element",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 47,
+      "name" : "test_stream_merkleized_map_value",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 50,
+      "name" : "test_get_merkleized_map",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 53,
+      "name" : "test_get_merkleized_map_value",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 56,
+      "name" : "test_psbt_fields",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 58,
+      "name" : "test_crypto",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 60,
+      "name" : "test_script",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 62,
+      "name" : "test_bip322",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 64,
+      "name" : "test_musig",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 66,
+      "name" : "test_sighash",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 68,
+      "name" : "test_locktime",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 70,
+      "name" : "test_wallet",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 72,
+      "name" : "test_cleartext",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 74,
+      "name" : "test_get_wallet_address",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 76,
+      "name" : "test_get_extended_pubkey",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 78,
+      "name" : "test_register_wallet",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    },
+    {
+      "backtrace" : 80,
+      "name" : "test_sign_message",
+      "properties" : 
+      [
+        {
+          "name" : "WORKING_DIRECTORY",
+          "value" : "/var/lib/orb-node/work/official-suite-resume/native-ctest"
+        }
+      ]
+    }
+  ],
+  "version" : 
+  {
+    "major" : 1,
+    "minor" : 0
+  }
+}

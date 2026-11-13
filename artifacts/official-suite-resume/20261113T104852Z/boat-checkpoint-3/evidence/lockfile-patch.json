@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "python3",
+    "-c",
+    "import pathlib,hashlib; r=pathlib.Path.cwd(); chunks=[]\nfor sub in [\"app\",\"common\"]:\n path=f\"apps/bitcoin/{sub}/Cargo.lock\";p=r/\"vanadium\"/path;s=p.read_text();lines=s.splitlines();chunks.append(f\"diff --git a/{path} b/{path}\\nnew file mode 100644\\n--- /dev/null\\n+++ b/{path}\\n@@ -0,0 +1,{len(lines)} @@\\n\"+\"\".join(\"+\"+x+\"\\n\" for x in lines));print(path,hashlib.sha256(p.read_bytes()).hexdigest())\np=r/\"evidence/nested-lockfiles.patch\";p.write_text(\"\".join(chunks));print(\"patch\",str(p),p.stat().st_size)"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568471.4299457,
+  "exit": 0,
+  "ended": 1794568471.467057
+}

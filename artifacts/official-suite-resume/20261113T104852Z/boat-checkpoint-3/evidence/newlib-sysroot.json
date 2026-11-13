@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "set -e; mkdir -p arm-sysroot; ln -s ../prefix/usr/include/newlib arm-sysroot/include; ln -s ../prefix/usr/lib/arm-none-eabi/newlib arm-sysroot/lib; ls -l arm-sysroot; ls ledger-secure-sdk/arch/st33/lib ledger-secure-sdk/arch/st33k1/lib"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568095.7872422,
+  "exit": 0,
+  "ended": 1794568095.8058147
+}

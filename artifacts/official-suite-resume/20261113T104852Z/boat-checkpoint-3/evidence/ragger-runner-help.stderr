@@ -1,0 +1,20 @@
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:958: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  inlocs = ast.Compare(ast.Str(name.id), [ast.In()], [locs])
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  expr = ast.IfExp(test, self.display(name), ast.Str(name.id))
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  assertmsg = ast.Str("")
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  template = ast.BinOp(assertmsg, ast.Add(), ast.Str(explanation))
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:823: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  keys = [ast.Str(key) for key in current.keys()]
+/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947: DeprecationWarning: ast.NameConstant is deprecated and will be removed in Python 3.14; use ast.Constant instead
+  clear = ast.Assign(variables, ast.NameConstant(None))
+[INFO] ragger.configuration - Running Ragger with the following conf:
+[INFO] ragger.configuration - 	APP_NAME = ''
+[INFO] ragger.configuration - 	MAIN_APP_DIR = 'None'
+[INFO] ragger.configuration - 	SIDELOADED_APPS = '{}'
+[INFO] ragger.configuration - 	SIDELOADED_APPS_DIR = 'None'
+[INFO] ragger.configuration - 	BACKEND_SCOPE = 'function'
+[INFO] ragger.configuration - 	CUSTOM_SEED = 'glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin'
+[INFO] ragger.configuration - 	ALLOWED_SETUPS = '['default']'

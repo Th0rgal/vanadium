@@ -1,0 +1,27 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/debs",
+  "argv": [
+    "apt-get",
+    "download",
+    "libtool",
+    "libtool-bin",
+    "gcc-arm-none-eabi",
+    "libnewlib-arm-none-eabi",
+    "libnewlib-dev",
+    "binutils-arm-none-eabi",
+    "protobuf-compiler",
+    "libprotobuf32t64",
+    "libprotoc32t64",
+    "libstdc++-arm-none-eabi-dev"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567833.139107,
+  "exit": 0,
+  "ended": 1794567834.584362
+}

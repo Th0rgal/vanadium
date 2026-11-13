@@ -1,0 +1,30 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "env",
+    "PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "ACLOCAL_PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/share/aclocal",
+    "LIBTOOLIZE=/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin/libtoolize",
+    "LIBTOOLIZE_PKGDATADIR=/var/lib/orb-node/work/official-suite-resume/prefix/usr/share/libtool",
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/pip",
+    "install",
+    "-r",
+    "requirements.txt",
+    "ledgerblue",
+    "tomli-w",
+    "semver",
+    "ledgered"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794567900.147593,
+  "exit": 1,
+  "ended": 1794567924.8836732
+}

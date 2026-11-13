@@ -1,0 +1,14 @@
+total 0
+lrwxrwxrwx 1 orbnode orbnode 28 Nov 13 11:08 include -> ../prefix/usr/include/newlib
+lrwxrwxrwx 1 orbnode orbnode 38 Nov 13 11:08 lib -> ../prefix/usr/lib/arm-none-eabi/newlib
+ledger-secure-sdk/arch/st33/lib:
+libc.a
+libclang_rt.builtins.a
+libgcc.a
+libm.a
+
+ledger-secure-sdk/arch/st33k1/lib:
+libc.a
+libclang_rt.builtins.a
+libgcc.a
+libm.a

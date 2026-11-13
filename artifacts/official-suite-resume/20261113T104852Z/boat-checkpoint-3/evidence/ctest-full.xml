@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Linux-cc"
+	tests="31"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname="box-node-7fabc707450cea8d"
+	time="0"
+	timestamp="2026-11-13T11:05:43"
+	>
+	<testcase name="test_bitvector" classname="test_bitvector" time="0.00123857" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 3 test(s).
+[ RUN      ] test_bitvector_size
+[       OK ] test_bitvector_size
+[ RUN      ] test_bitvector_get
+[       OK ] test_bitvector_get
+[ RUN      ] test_bitvector_set
+[       OK ] test_bitvector_set
+[==========] tests: 3 test(s) run.
+[  PASSED  ] 3 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_buffer" classname="test_buffer" time="0.0011624" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 8 test(s).
+[ RUN      ] test_buffer_get_cur
+[       OK ] test_buffer_get_cur
+[ RUN      ] test_buffer_read
+[       OK ] test_buffer_read
+[ RUN      ] test_buffer_peek
+[       OK ] test_buffer_peek
+[ RUN      ] test_buffer_peek_n
+[       OK ] test_buffer_peek_n
+[ RUN      ] test_buffer_write
+[       OK ] test_buffer_write
+[ RUN      ] test_buffer_create
+[       OK ] test_buffer_create
+[ RUN      ] test_buffer_alloc
+[       OK ] test_buffer_alloc
+[ RUN      ] test_buffer_is_cur_aligned
+[       OK ] test_buffer_is_cur_aligned
+[==========] tests: 8 test(s) run.
+[  PASSED  ] 8 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_display_utils" classname="test_display_utils" time="0.000998181" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 1 test(s).
+[ RUN      ] test_format_sats_amount
+[       OK ] test_format_sats_amount
+[==========] tests: 1 test(s) run.
+[  PASSED  ] 1 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_lean_bolos_kernels" classname="test_lean_bolos_kernels" time="0.00106222" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 4 test(s).
+[ RUN      ] test_llb_version_and_amounts
+[       OK ] test_llb_version_and_amounts
+[ RUN      ] test_llb_sats_div_mod_and_format
+[       OK ] test_llb_sats_div_mod_and_format
+[ RUN      ] test_llb_merkle_descent_differential
+[       OK ] test_llb_merkle_descent_differential
+[ RUN      ] test_llb_bip32_segwit_sighash_and_policy_name
+[       OK ] test_llb_bip32_segwit_sighash_and_policy_name
+[==========] tests: 4 test(s) run.
+[  PASSED  ] 4 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_parser" classname="test_parser" time="0.000938219" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 7 test(s).
+[ RUN      ] test_parser_init_context
+[       OK ] test_parser_init_context
+[ RUN      ] test_parser_oneshot_from_store
+[       OK ] test_parser_oneshot_from_store
+[ RUN      ] test_parser_oneshot_with_empty_store
+[       OK ] test_parser_oneshot_with_empty_store
+[ RUN      ] test_parser_oneshot_part_store_part_stream
+[       OK ] test_parser_oneshot_part_store_part_stream
+[ RUN      ] test_parser_stream_ends
+[       OK ] test_parser_stream_ends
+[ RUN      ] test_parser_continue_partial
+[       OK ] test_parser_continue_partial
+[ RUN      ] test_parser_error
+[       OK ] test_parser_error
+[==========] tests: 7 test(s) run.
+[  PASSED  ] 7 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_psbt_parse" classname="test_psbt_parse" time="0.00251443" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 4 test(s).
+[ RUN      ] test_psbt_parse_global_map
+[       OK ] test_psbt_parse_global_map
+[ RUN      ] test_psbt_parse_bad_magic
+[       OK ] test_psbt_parse_bad_magic
+[ RUN      ] test_base64_decode_basic
+[       OK ] test_base64_decode_basic
+[ RUN      ] test_base64_decode_invalid
+[       OK ] test_base64_decode_invalid
+[==========] tests: 4 test(s) run.
+[  PASSED  ] 4 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_get_preimage" classname="test_get_preimage" time="0.0195726" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 19 test(s).
+[ RUN      ] test_get_preimage_small
+[       OK ] test_get_preimage_small
+[ RUN      ] test_get_preimage_large
+[       OK ] test_get_preimage_large
+[ RUN      ] test_get_preimage_unknown_hash
+[       OK ] test_get_preimage_unknown_hash
+[ RUN      ] test_get_preimage_buffer_too_small
+[       OK ] test_get_preimage_buffer_too_small
+[ RUN      ] test_get_preimage_one_byte
+[       OK ] test_get_preimage_one_byte
+[ RUN      ] test_get_preimage_exact_fit
+[       OK ] test_get_preimage_exact_fit
+[ RUN      ] test_get_preimage_one_byte_overflow
+[       OK ] test_get_preimage_one_byte_overflow
+[ RUN      ] test_get_preimage_corrupted_data
+[       OK ] test_get_preimage_corrupted_data
+[ RUN      ] test_get_preimage_partial_len_overflow
+[       OK ] test_get_preimage_partial_len_overflow
+[ RUN      ] test_get_preimage_zero_len
+[       OK ] test_get_preimage_zero_len
+[ RUN      ] test_get_preimage_bad_element_size
+[       OK ] test_get_preimage_bad_element_size
+[ RUN      ] test_ge...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_get_merkle_preimage" classname="test_get_merkle_preimage" time="0.0214564" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 20 test(s).
+[ RUN      ] test_get_merkle_preimage_small
+[       OK ] test_get_merkle_preimage_small
+[ RUN      ] test_get_merkle_preimage_large
+[       OK ] test_get_merkle_preimage_large
+[ RUN      ] test_get_merkle_preimage_unknown_hash
+[       OK ] test_get_merkle_preimage_unknown_hash
+[ RUN      ] test_get_merkle_preimage_buffer_too_small
+[       OK ] test_get_merkle_preimage_buffer_too_small
+[ RUN      ] test_get_merkle_preimage_one_byte
+[       OK ] test_get_merkle_preimage_one_byte
+[ RUN      ] test_get_merkle_preimage_exact_fit
+[       OK ] test_get_merkle_preimage_exact_fit
+[ RUN      ] test_get_merkle_preimage_one_byte_overflow
+[       OK ] test_get_merkle_preimage_one_byte_overflow
+[ RUN      ] test_get_merkle_preimage_exact_buffer
+[       OK ] test_get_merkle_preimage_exact_buffer
+[ RUN      ] test_get_merkle_preimage_corrupted_data
+[       OK ] test_get_merkle_preimage_corrupted_data
+[ RUN      ] test_get_merkle_preimage_corrupted_continuation
+[       OK ] test_get_mer...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_extract_bip32_derivation" classname="test_extract_bip32_derivation" time="0.0272748" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 11 test(s).
+[ RUN      ] test_wpkh_input_bip32_derivation
+[       OK ] test_wpkh_input_bip32_derivation
+[ RUN      ] test_wpkh_output_bip32_derivation
+[       OK ] test_wpkh_output_bip32_derivation
+[ RUN      ] test_taproot_input_tap_bip32_derivation
+[       OK ] test_taproot_input_tap_bip32_derivation
+[ RUN      ] test_taproot_output_tap_bip32_derivation
+[       OK ] test_taproot_output_tap_bip32_derivation
+[ RUN      ] test_extract_nontap_too_long
+[       OK ] test_extract_nontap_too_long
+[ RUN      ] test_extract_tap_too_short
+[       OK ] test_extract_tap_too_short
+[ RUN      ] test_extract_tap_out_too_long
+[       OK ] test_extract_tap_out_too_long
+[ RUN      ] test_extract_tap_multi_chunk
+[       OK ] test_extract_tap_multi_chunk
+[ RUN      ] test_extract_empty_value
+[       OK ] test_extract_empty_value
+[ RUN      ] test_extract_huge_preimage_len
+[       OK ] test_extract_huge_preimage_len
+[ RUN      ] test_extract_tap_too_many_hashes
+[       OK ] test_extract_tap_too_many_h...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_check_merkle_tree_sorted" classname="test_check_merkle_tree_sorted" time="0.0179771" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 16 test(s).
+[ RUN      ] test_sorted_three_elements
+[       OK ] test_sorted_three_elements
+[ RUN      ] test_sorted_single_element
+[       OK ] test_sorted_single_element
+[ RUN      ] test_sorted_null_callback
+[       OK ] test_sorted_null_callback
+[ RUN      ] test_sorted_empty_tree
+[       OK ] test_sorted_empty_tree
+[ RUN      ] test_unsorted_descending
+[       OK ] test_unsorted_descending
+[ RUN      ] test_unsorted_duplicates
+[       OK ] test_unsorted_duplicates
+[ RUN      ] test_sorted_different_lengths
+[       OK ] test_sorted_different_lengths
+[ RUN      ] test_unsorted_prefix
+[       OK ] test_unsorted_prefix
+[ RUN      ] test_sorted_many_elements
+[       OK ] test_sorted_many_elements
+[ RUN      ] test_wrong_tree_size
+[       OK ] test_wrong_tree_size
+[ RUN      ] test_map_commitment_passed
+[       OK ] test_map_commitment_passed
+[ RUN      ] test_map_sorted_with_callback
+[       OK ] test_map_sorted_with_callback
+[ RUN      ] test_map_sorted_without_callback
+[       OK...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_get_merkle_leaf_element" classname="test_get_merkle_leaf_element" time="0.0160958" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 10 test(s).
+[ RUN      ] test_get_leaf_element_single
+[       OK ] test_get_leaf_element_single
+[ RUN      ] test_get_leaf_element_three_elements
+[       OK ] test_get_leaf_element_three_elements
+[ RUN      ] test_get_leaf_element_four_elements
+[       OK ] test_get_leaf_element_four_elements
+[ RUN      ] test_get_leaf_element_one_byte
+[       OK ] test_get_leaf_element_one_byte
+[ RUN      ] test_get_leaf_element_buffer_too_small
+[       OK ] test_get_leaf_element_buffer_too_small
+[ RUN      ] test_get_leaf_element_wrong_root
+[       OK ] test_get_leaf_element_wrong_root
+[ RUN      ] test_get_leaf_element_index_out_of_bounds
+[       OK ] test_get_leaf_element_index_out_of_bounds
+[ RUN      ] test_get_leaf_element_eight_elements
+[       OK ] test_get_leaf_element_eight_elements
+[ RUN      ] test_get_leaf_element_corrupted_proof
+[       OK ] test_get_leaf_element_corrupted_proof
+[ RUN      ] test_get_leaf_element_corrupted_preimage
+[       OK ] test_get_leaf_element_corrupted_preimag...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_get_merkle_leaf_hash" classname="test_get_merkle_leaf_hash" time="0.0240158" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 22 test(s).
+[ RUN      ] test_get_leaf_hash_single
+[       OK ] test_get_leaf_hash_single
+[ RUN      ] test_get_leaf_hash_three_elements
+[       OK ] test_get_leaf_hash_three_elements
+[ RUN      ] test_get_leaf_hash_four_elements
+[       OK ] test_get_leaf_hash_four_elements
+[ RUN      ] test_get_leaf_hash_five_elements
+[       OK ] test_get_leaf_hash_five_elements
+[ RUN      ] test_get_leaf_hash_eight_elements
+[       OK ] test_get_leaf_hash_eight_elements
+[ RUN      ] test_get_leaf_hash_one_byte_element
+[       OK ] test_get_leaf_hash_one_byte_element
+[ RUN      ] test_get_leaf_hash_wrong_root
+[       OK ] test_get_leaf_hash_wrong_root
+[ RUN      ] test_get_leaf_hash_two_elements
+[       OK ] test_get_leaf_hash_two_elements
+[ RUN      ] test_get_leaf_hash_corrupted_proof
+[       OK ] test_get_leaf_hash_corrupted_proof
+[ RUN      ] test_get_leaf_hash_corrupted_leaf
+[       OK ] test_get_leaf_hash_corrupted_leaf
+[ RUN      ] test_get_leaf_hash_proof_elements_overflow
+[       OK ] t...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_get_merkle_leaf_index" classname="test_get_merkle_leaf_index" time="0.0168802" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 13 test(s).
+[ RUN      ] test_get_leaf_index_single
+[       OK ] test_get_leaf_index_single
+[ RUN      ] test_get_leaf_index_three_elements
+[       OK ] test_get_leaf_index_three_elements
+[ RUN      ] test_get_leaf_index_four_elements
+[       OK ] test_get_leaf_index_four_elements
+[ RUN      ] test_get_leaf_index_five_elements
+[       OK ] test_get_leaf_index_five_elements
+[ RUN      ] test_get_leaf_index_unknown_hash
+[       OK ] test_get_leaf_index_unknown_hash
+[ RUN      ] test_get_leaf_index_wrong_root
+[       OK ] test_get_leaf_index_wrong_root
+[ RUN      ] test_get_leaf_index_two_elements
+[       OK ] test_get_leaf_index_two_elements
+[ RUN      ] test_get_leaf_index_eight_elements
+[       OK ] test_get_leaf_index_eight_elements
+[ RUN      ] test_get_leaf_index_wrong_index
+[       OK ] test_get_leaf_index_wrong_index
+[ RUN      ] test_get_leaf_index_oob_index
+[       OK ] test_get_leaf_index_oob_index
+[ RUN      ] test_get_leaf_index_initial_comm_failure
+[       OK ] test_get_...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_stream_preimage" classname="test_stream_preimage" time="0.0182493" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 20 test(s).
+[ RUN      ] test_stream_preimage_small
+[       OK ] test_stream_preimage_small
+[ RUN      ] test_stream_preimage_large
+[       OK ] test_stream_preimage_large
+[ RUN      ] test_stream_preimage_unknown_hash
+[       OK ] test_stream_preimage_unknown_hash
+[ RUN      ] test_stream_preimage_one_byte
+[       OK ] test_stream_preimage_one_byte
+[ RUN      ] test_stream_preimage_null_len_callback
+[       OK ] test_stream_preimage_null_len_callback
+[ RUN      ] test_stream_preimage_exact_fit
+[       OK ] test_stream_preimage_exact_fit
+[ RUN      ] test_stream_preimage_one_byte_overflow
+[       OK ] test_stream_preimage_one_byte_overflow
+[ RUN      ] test_stream_preimage_corrupted_data
+[       OK ] test_stream_preimage_corrupted_data
+[ RUN      ] test_stream_preimage_corrupted_continuation
+[       OK ] test_stream_preimage_corrupted_continuation
+[ RUN      ] test_stream_preimage_truncated_response
+[       OK ] test_stream_preimage_truncated_response
+[ RUN      ] test_stream_preim...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_stream_merkle_leaf_element" classname="test_stream_merkle_leaf_element" time="0.0153208" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 8 test(s).
+[ RUN      ] test_stream_leaf_element_single
+[       OK ] test_stream_leaf_element_single
+[ RUN      ] test_stream_leaf_element_three_elements
+[       OK ] test_stream_leaf_element_three_elements
+[ RUN      ] test_stream_leaf_element_four_elements
+[       OK ] test_stream_leaf_element_four_elements
+[ RUN      ] test_stream_leaf_element_one_byte
+[       OK ] test_stream_leaf_element_one_byte
+[ RUN      ] test_stream_leaf_element_wrong_root
+[       OK ] test_stream_leaf_element_wrong_root
+[ RUN      ] test_stream_leaf_element_index_out_of_bounds
+[       OK ] test_stream_leaf_element_index_out_of_bounds
+[ RUN      ] test_stream_leaf_element_eight_elements
+[       OK ] test_stream_leaf_element_eight_elements
+[ RUN      ] test_stream_leaf_element_null_len_callback
+[       OK ] test_stream_leaf_element_null_len_callback
+[==========] tests: 8 test(s) run.
+[  PASSED  ] 8 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_stream_merkleized_map_value" classname="test_stream_merkleized_map_value" time="0.0147752" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 6 test(s).
+[ RUN      ] test_stream_map_value_single
+[       OK ] test_stream_map_value_single
+[ RUN      ] test_stream_map_value_three_pairs
+[       OK ] test_stream_map_value_three_pairs
+[ RUN      ] test_stream_map_value_key_not_found
+[       OK ] test_stream_map_value_key_not_found
+[ RUN      ] test_stream_map_value_one_byte_value
+[       OK ] test_stream_map_value_one_byte_value
+[ RUN      ] test_stream_map_value_null_len_callback
+[       OK ] test_stream_map_value_null_len_callback
+[ RUN      ] test_stream_map_value_unsorted_keys
+[       OK ] test_stream_map_value_unsorted_keys
+[==========] tests: 6 test(s) run.
+[  PASSED  ] 6 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_get_merkleized_map" classname="test_get_merkleized_map" time="0.015999" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 10 test(s).
+[ RUN      ] test_get_map_single_outer_single_inner
+[       OK ] test_get_map_single_outer_single_inner
+[ RUN      ] test_get_map_multiple_outer
+[       OK ] test_get_map_multiple_outer
+[ RUN      ] test_get_map_with_callback
+[       OK ] test_get_map_with_callback
+[ RUN      ] test_get_map_empty_inner
+[       OK ] test_get_map_empty_inner
+[ RUN      ] test_get_map_outer_index_out_of_range
+[       OK ] test_get_map_outer_index_out_of_range
+[ RUN      ] test_get_map_truncated_commitment
+[       OK ] test_get_map_truncated_commitment
+[ RUN      ] test_get_map_empty_commitment
+[       OK ] test_get_map_empty_commitment
+[ RUN      ] test_get_map_commitment_missing_keys_root
+[       OK ] test_get_map_commitment_missing_keys_root
+[ RUN      ] test_get_map_inner_unsorted_keys
+[       OK ] test_get_map_inner_unsorted_keys
+[ RUN      ] test_get_map_corrupted_outer_proof
+[       OK ] test_get_map_corrupted_outer_proof
+[==========] tests: 10 test(s) run.
+[  PASSED  ] 10 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_get_merkleized_map_value" classname="test_get_merkleized_map_value" time="0.0137567" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 8 test(s).
+[ RUN      ] test_map_value_single
+[       OK ] test_map_value_single
+[ RUN      ] test_map_value_three_pairs
+[       OK ] test_map_value_three_pairs
+[ RUN      ] test_map_value_unsorted_input
+[       OK ] test_map_value_unsorted_input
+[ RUN      ] test_map_value_key_not_found
+[       OK ] test_map_value_key_not_found
+[ RUN      ] test_map_value_out_buffer_too_small
+[       OK ] test_map_value_out_buffer_too_small
+[ RUN      ] test_map_value_empty_value
+[       OK ] test_map_value_empty_value
+[ RUN      ] test_map_value_corrupted_value_proof
+[       OK ] test_map_value_corrupted_value_proof
+[ RUN      ] test_map_value_corrupted_value_data
+[       OK ] test_map_value_corrupted_value_data
+[==========] tests: 8 test(s) run.
+[  PASSED  ] 8 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_psbt_fields" classname="test_psbt_fields" time="0.0276679" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 37 test(s).
+[ RUN      ] test_sequence_present
+[       OK ] test_sequence_present
+[ RUN      ] test_sequence_absent
+[       OK ] test_sequence_absent
+[ RUN      ] test_sequence_wrong_length_is_error
+[       OK ] test_sequence_wrong_length_is_error
+[ RUN      ] test_sequence_too_long_is_error
+[       OK ] test_sequence_too_long_is_error
+[ RUN      ] test_fallback_locktime_present
+[       OK ] test_fallback_locktime_present
+[ RUN      ] test_fallback_locktime_absent
+[       OK ] test_fallback_locktime_absent
+[ RUN      ] test_fallback_locktime_wrong_length_is_error
+[       OK ] test_fallback_locktime_wrong_length_is_error
+[ RUN      ] test_fallback_locktime_over_buffer_is_error_not_absent
+[       OK ] test_fallback_locktime_over_buffer_is_error_not_absent
+[ RUN      ] test_required_time_locktime_present
+[       OK ] test_required_time_locktime_present
+[ RUN      ] test_required_time_locktime_absent
+[       OK ] test_required_time_locktime_absent
+[ RUN      ] test_required_time_lockti...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_crypto" classname="test_crypto" time="0.0106659" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 52 test(s).
+[ RUN      ] test_bip32_CKDpub_tv2_m_to_m0
+[       OK ] test_bip32_CKDpub_tv2_m_to_m0
+[ RUN      ] test_bip32_CKDpub_in_place
+[       OK ] test_bip32_CKDpub_in_place
+[ RUN      ] test_bip32_CKDpub_rejects_hardened
+[       OK ] test_bip32_CKDpub_rejects_hardened
+[ RUN      ] test_bip32_CKDpub_rejects_max_depth
+[       OK ] test_bip32_CKDpub_rejects_max_depth
+[ RUN      ] test_crypto_ripemd160_empty
+[       OK ] test_crypto_ripemd160_empty
+[ RUN      ] test_crypto_ripemd160_abc
+[       OK ] test_crypto_ripemd160_abc
+[ RUN      ] test_crypto_ripemd160_1000_a
+[       OK ] test_crypto_ripemd160_1000_a
+[ RUN      ] test_crypto_hash160_empty
+[       OK ] test_crypto_hash160_empty
+[ RUN      ] test_crypto_hash160_abc
+[       OK ] test_crypto_hash160_abc
+[ RUN      ] test_crypto_hash160_secp256k1_generator
+[       OK ] test_crypto_hash160_secp256k1_generator
+[ RUN      ] test_crypto_get_compressed_pubkey_02
+[       OK ] test_crypto_get_compressed_pubkey_02
+[ RUN      ] test_cryp...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_script" classname="test_script" time="0.00181279" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 5 test(s).
+[ RUN      ] test_get_push_script_size
+[       OK ] test_get_push_script_size
+[ RUN      ] test_get_script_type_valid
+[       OK ] test_get_script_type_valid
+[ RUN      ] test_get_script_type_invalid
+[       OK ] test_get_script_type_invalid
+[ RUN      ] test_format_opscript_script_valid
+[       OK ] test_format_opscript_script_valid
+[ RUN      ] test_format_opscript_script_invalid
+[       OK ] test_format_opscript_script_invalid
+[==========] tests: 5 test(s) run.
+[  PASSED  ] 5 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_bip322" classname="test_bip322" time="0.00200966" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 5 test(s).
+[ RUN      ] test_bip322_serialize_to_spend_layout
+[       OK ] test_bip322_serialize_to_spend_layout
+[ RUN      ] test_bip322_serialize_to_spend_rejects_long_script
+[       OK ] test_bip322_serialize_to_spend_rejects_long_script
+[ RUN      ] test_bip322_vectors_to_spend_txid
+vector 0: 
+vector 1: Hello World
+vector 2: UTF-8 support: öäüéàè 测试文本 😄
+[       OK ] test_bip322_vectors_to_spend_txid
+[ RUN      ] test_bip322_vectors_to_sign_txid
+[       OK ] test_bip322_vectors_to_sign_txid
+[ RUN      ] test_bip322_vectors_message_hash
+vector 0: 
+vector 1: Hello World
+vector 2: UTF-8 support: öäüéàè 测试文本 😄
+[       OK ] test_bip322_vectors_message_hash
+[==========] tests: 5 test(s) run.
+[  PASSED  ] 5 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_musig" classname="test_musig" time="0.0359288" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 10 test(s).
+[ RUN      ] test_key_sort
+[       OK ] test_key_sort
+[ RUN      ] test_key_agg_valid
+[       OK ] test_key_agg_valid
+[ RUN      ] test_key_agg_invalid_pubkey
+key_agg error case: Invalid public key
+key_agg error case: Public key exceeds field size
+key_agg error case: First byte of public key is not 2 or 3
+[       OK ] test_key_agg_invalid_pubkey
+[ RUN      ] test_key_agg_tweak_infinity
+[       OK ] test_key_agg_tweak_infinity
+[ RUN      ] test_nonce_gen
+[       OK ] test_nonce_gen
+[ RUN      ] test_nonce_agg
+nonce_agg case 0: 
+nonce_agg case 1: Sum of second points encoded in the nonces is point at infinity which is serialized as 33 zero bytes
+nonce_agg case 2: Public nonce from signer 1 is invalid due wrong tag, 0x04, in the first half
+nonce_agg case 3: Public nonce from signer 0 is invalid because the second half does not correspond to an X coordinate
+nonce_agg case 4: Public nonce from signer 0 is invalid because second half exceeds field size
+[       OK ] test_nonce...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_sighash" classname="test_sighash" time="0.00122152" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 4 test(s).
+[ RUN      ] test_classify_sighash
+[       OK ] test_classify_sighash
+[ RUN      ] test_sighash_commit_predicates
+[       OK ] test_sighash_commit_predicates
+[ RUN      ] test_sighash_commits_provided_outputs
+[       OK ] test_sighash_commits_provided_outputs
+[ RUN      ] test_tx_display_mode
+[       OK ] test_tx_display_mode
+[==========] tests: 4 test(s) run.
+[  PASSED  ] 4 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_locktime" classname="test_locktime" time="0.000637345" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 5 test(s).
+[ RUN      ] test_threshold_matches_the_spec
+[       OK ] test_threshold_matches_the_spec
+[ RUN      ] test_locktime_cases
+[       OK ] test_locktime_cases
+[ RUN      ] test_accumulates_over_many_inputs
+[       OK ] test_accumulates_over_many_inputs
+[ RUN      ] test_a_range_error_leaves_the_accumulator_untouched
+[       OK ] test_a_range_error_leaves_the_accumulator_untouched
+[ RUN      ] test_resolve_does_not_write_out_when_undetermined
+[       OK ] test_resolve_does_not_write_out_when_undetermined
+[==========] tests: 5 test(s) run.
+[  PASSED  ] 5 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_wallet" classname="test_wallet" time="0.00291254" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 30 test(s).
+[ RUN      ] test_parse_policy_map_singlesig_1
+[       OK ] test_parse_policy_map_singlesig_1
+[ RUN      ] test_parse_policy_map_singlesig_2
+[       OK ] test_parse_policy_map_singlesig_2
+[ RUN      ] test_parse_policy_map_singlesig_3
+[       OK ] test_parse_policy_map_singlesig_3
+[ RUN      ] test_parse_policy_map_multisig_1
+[       OK ] test_parse_policy_map_multisig_1
+[ RUN      ] test_parse_policy_map_multisig_2
+[       OK ] test_parse_policy_map_multisig_2
+[ RUN      ] test_parse_policy_map_multisig_3
+[       OK ] test_parse_policy_map_multisig_3
+[ RUN      ] test_parse_policy_tr
+[       OK ] test_parse_policy_tr
+[ RUN      ] test_parse_policy_tr_multisig
+[       OK ] test_parse_policy_tr_multisig
+[ RUN      ] test_parse_policy_tr_musig_scriptpath
+[       OK ] test_parse_policy_tr_musig_scriptpath
+[ RUN      ] test_parse_policy_tr_musig_keypath
+[       OK ] test_parse_policy_tr_musig_keypath
+[ RUN      ] test_parse_policy_tr_multi_a_musig
+[       OK ] test_parse_po...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_cleartext" classname="test_cleartext" time="0.00231187" status="run">
+		<properties/>
+		<system-out>[==========] tests: Running 5 test(s).
+[ RUN      ] test_ct_confusion_score
+[       OK ] test_ct_confusion_score
+[ RUN      ] test_ct_to_cleartext
+[       OK ] test_ct_to_cleartext
+[ RUN      ] test_ct_line_overflow
+[       OK ] test_ct_line_overflow
+[ RUN      ] test_ct_too_many_leaves
+[       OK ] test_ct_too_many_leaves
+[ RUN      ] test_ct_musig_in_multi_a_is_not_classified
+[       OK ] test_ct_musig_in_multi_a_is_not_classified
+[==========] tests: 5 test(s) run.
+[  PASSED  ] 5 test(s).
+</system-out>
+	</testcase>
+	<testcase name="test_get_wallet_address" classname="test_get_wallet_address" time="0.041116" status="run">
+		<properties/>
+		<system-out>[==========] get_wallet_address: Running 17 test(s).
+[ RUN      ] singlesig_legacy_recv_0
+[       OK ] singlesig_legacy_recv_0
+[ RUN      ] singlesig_legacy_change_15
+[       OK ] singlesig_legacy_change_15
+[ RUN      ] singlesig_wit_recv_0
+[       OK ] singlesig_wit_recv_0
+[ RUN      ] singlesig_wit_change_15
+[       OK ] singlesig_wit_change_15
+[ RUN      ] singlesig_sh_wit_recv_0
+[       OK ] singlesig_sh_wit_recv_0
+[ RUN      ] singlesig_sh_wit_change_15
+[       OK ] singlesig_sh_wit_change_15
+[ RUN      ] singlesig_taproot_recv_0
+[       OK ] singlesig_taproot_recv_0
+[ RUN      ] singlesig_taproot_recv_9
+[       OK ] singlesig_taproot_recv_9
+[ RUN      ] singlesig_taproot_change_0
+[       OK ] singlesig_taproot_change_0
+[ RUN      ] singlesig_taproot_change_9
+[       OK ] singlesig_taproot_change_9
+[ RUN      ] multisig_legacy_2of2
+[       OK ] multisig_legacy_2of2
+[ RUN      ] multisig_sh_wit_2of2
+[       OK ] multisig_sh_wit_2of2
+[ RUN      ] multisig_wit_2of2
+[       OK ] multisig_wit_2of2
+[ RUN      ...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_get_extended_pubkey" classname="test_get_extended_pubkey" time="0.0871139" status="run">
+		<properties/>
+		<system-out>[==========] get_extended_pubkey: Running 31 test(s).
+[ RUN      ] std_pkh_account0
+[       OK ] std_pkh_account0
+[ RUN      ] std_pkh_account10
+[       OK ] std_pkh_account10
+[ RUN      ] std_pkh_account2_recv_42
+[       OK ] std_pkh_account2_recv_42
+[ RUN      ] std_bip48_account4
+[       OK ] std_bip48_account4
+[ RUN      ] std_sh_wpkh_account1
+[       OK ] std_sh_wpkh_account1
+[ RUN      ] std_wpkh_account2
+[       OK ] std_wpkh_account2
+[ RUN      ] std_tr_account4
+[       OK ] std_tr_account4
+[ RUN      ] std_tr_8_steps
+[       OK ] std_tr_8_steps
+[ RUN      ] std_bip45_unchained_account0
+[       OK ] std_bip45_unchained_account0
+[ RUN      ] std_bip45_unchained_account0_chain1
+[       OK ] std_bip45_unchained_account0_chain1
+[ RUN      ] std_bip87
+[       OK ] std_bip87
+[ RUN      ] electrum_path
+[       OK ] electrum_path
+[ RUN      ] std_account_max
+[       OK ] std_account_max
+[ RUN      ] std_bip48_script_type_2
+[       OK ] std_bip48_script_type_2
+[ RUN      ] nonstd_bip45_unchained
+[       OK ] n...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_register_wallet" classname="test_register_wallet" time="0.0450541" status="run">
+		<properties/>
+		<system-out>[==========] register_wallet: Running 35 test(s).
+[ RUN      ] multisig_legacy_2of2
+[       OK ] multisig_legacy_2of2
+[ RUN      ] multisig_sh_wit_2of2
+[       OK ] multisig_sh_wit_2of2
+[ RUN      ] multisig_wit_2of2
+[       OK ] multisig_wit_2of2
+[ RUN      ] multisig_wit_2of2_long_name
+[       OK ] multisig_wit_2of2_long_name
+[ RUN      ] unusual_singlesig_legacy
+[       OK ] unusual_singlesig_legacy
+[ RUN      ] unusual_singlesig_nested_segwit
+[       OK ] unusual_singlesig_nested_segwit
+[ RUN      ] unusual_singlesig_native_segwit
+[       OK ] unusual_singlesig_native_segwit
+[ RUN      ] unusual_singlesig_taproot
+[       OK ] unusual_singlesig_taproot
+[ RUN      ] miniscript_long_policy
+[       OK ] miniscript_long_policy
+[ RUN      ] miniscript_minmax_relative_timelocks
+[       OK ] miniscript_minmax_relative_timelocks
+[ RUN      ] tr_script_pk
+[       OK ] tr_script_pk
+[ RUN      ] tr_nums_keypath
+[       OK ] tr_nums_keypath
+[ RUN      ] tr_script_sortedmulti_a
+[       OK ] tr_script_sortedmulti_a
+[ RU...
+[This part of the test output was removed since it exceeds the threshold of 1024 bytes.]
+</system-out>
+	</testcase>
+	<testcase name="test_sign_message" classname="test_sign_message" time="0.0206584" status="run">
+		<properties/>
+		<system-out>[==========] sign_message: Running 8 test(s).
+[ RUN      ] times_headline
+[       OK ] times_headline
+[ RUN      ] times_headline_with_eol
+[       OK ] times_headline_with_eol
+[ RUN      ] hello_world
+[       OK ] hello_world
+[ RUN      ] long_multileaf
+[       OK ] long_multileaf
+[ RUN      ] non_ascii_carriage_return
+[       OK ] non_ascii_carriage_return
+[ RUN      ] too_long_to_display
+[       OK ] too_long_to_display
+[ RUN      ] too_long_bip32_path
+[       OK ] too_long_bip32_path
+[ RUN      ] message_too_long
+[       OK ] message_too_long
+[==========] sign_message: 8 test(s) run.
+[  PASSED  ] 8 test(s).
+</system-out>
+	</testcase>
+</testsuite>

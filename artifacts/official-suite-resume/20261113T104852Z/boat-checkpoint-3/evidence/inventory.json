@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium",
+  "argv": [
+    "bash",
+    "-c",
+    "date -u; hostname; nproc; free -h; uname -a; command -v cargo rustc rustup cmake python3 docker; ls /usr/local/rustup/toolchains; git rev-parse HEAD; git status --short; sha256sum Cargo.lock; cat common/Cargo.toml; cat .gitmodules"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567257.1872056,
+  "exit": 1,
+  "ended": 1794567257.20343
+}

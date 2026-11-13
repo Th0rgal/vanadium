@@ -1,0 +1,3 @@
+apps/bitcoin/app/Cargo.lock a06a3367c8595ad3d0d650d7546d25ded405567d17131ca0b5ed0a92e9c51525
+apps/bitcoin/common/Cargo.lock 0102c2b3e5b8bd79baa4c93014be5021e6e5d2bb282cff67f8a3cbd6e31b3cbc
+patch /var/lib/orb-node/work/official-suite-resume/evidence/nested-lockfiles.patch 51076

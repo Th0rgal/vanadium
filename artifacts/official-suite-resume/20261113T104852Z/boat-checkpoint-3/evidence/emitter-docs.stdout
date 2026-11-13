@@ -1,0 +1,15 @@
+15676ea244a08d386f8047c4bbfe0416692d1089
+AGENTS.md
+LeanNative
+LeanNative.lean
+ShadowFixtures
+ShadowFixtures.lean
+TurboLean
+TurboLean.lean
+lake-manifest.json
+lakefile.lean
+lean-toolchain
+lean/lakefile.lean:25:-- Not a default target: built only by the CI self-test step (`lake build ShadowFixtures`).
+lean/lakefile.lean:36:lean_exe «turbo-lean-native» where
+lean/lakefile.lean:41:lean_exe «lean-native-core» where
+lean/lakefile.lean:46:lean_exe «lean-native» where

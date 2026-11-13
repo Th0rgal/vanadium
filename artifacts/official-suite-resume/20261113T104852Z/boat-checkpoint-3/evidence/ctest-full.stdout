@@ -1,0 +1,67 @@
+Test project /var/lib/orb-node/work/official-suite-resume/native-ctest
+      Start  1: test_bitvector
+ 1/31 Test  #1: test_bitvector .....................   Passed    0.00 sec
+      Start  2: test_buffer
+ 2/31 Test  #2: test_buffer ........................   Passed    0.00 sec
+      Start  3: test_display_utils
+ 3/31 Test  #3: test_display_utils .................   Passed    0.00 sec
+      Start  4: test_lean_bolos_kernels
+ 4/31 Test  #4: test_lean_bolos_kernels ............   Passed    0.00 sec
+      Start  5: test_parser
+ 5/31 Test  #5: test_parser ........................   Passed    0.00 sec
+      Start  6: test_psbt_parse
+ 6/31 Test  #6: test_psbt_parse ....................   Passed    0.00 sec
+      Start  7: test_get_preimage
+ 7/31 Test  #7: test_get_preimage ..................   Passed    0.02 sec
+      Start  8: test_get_merkle_preimage
+ 8/31 Test  #8: test_get_merkle_preimage ...........   Passed    0.02 sec
+      Start  9: test_extract_bip32_derivation
+ 9/31 Test  #9: test_extract_bip32_derivation ......   Passed    0.03 sec
+      Start 10: test_check_merkle_tree_sorted
+10/31 Test #10: test_check_merkle_tree_sorted ......   Passed    0.02 sec
+      Start 11: test_get_merkle_leaf_element
+11/31 Test #11: test_get_merkle_leaf_element .......   Passed    0.02 sec
+      Start 12: test_get_merkle_leaf_hash
+12/31 Test #12: test_get_merkle_leaf_hash ..........   Passed    0.02 sec
+      Start 13: test_get_merkle_leaf_index
+13/31 Test #13: test_get_merkle_leaf_index .........   Passed    0.02 sec
+      Start 14: test_stream_preimage
+14/31 Test #14: test_stream_preimage ...............   Passed    0.02 sec
+      Start 15: test_stream_merkle_leaf_element
+15/31 Test #15: test_stream_merkle_leaf_element ....   Passed    0.02 sec
+      Start 16: test_stream_merkleized_map_value
+16/31 Test #16: test_stream_merkleized_map_value ...   Passed    0.01 sec
+      Start 17: test_get_merkleized_map
+17/31 Test #17: test_get_merkleized_map ............   Passed    0.02 sec
+      Start 18: test_get_merkleized_map_value
+18/31 Test #18: test_get_merkleized_map_value ......   Passed    0.01 sec
+      Start 19: test_psbt_fields
+19/31 Test #19: test_psbt_fields ...................   Passed    0.03 sec
+      Start 20: test_crypto
+20/31 Test #20: test_crypto ........................   Passed    0.01 sec
+      Start 21: test_script
+21/31 Test #21: test_script ........................   Passed    0.00 sec
+      Start 22: test_bip322
+22/31 Test #22: test_bip322 ........................   Passed    0.00 sec
+      Start 23: test_musig
+23/31 Test #23: test_musig .........................   Passed    0.04 sec
+      Start 24: test_sighash
+24/31 Test #24: test_sighash .......................   Passed    0.00 sec
+      Start 25: test_locktime
+25/31 Test #25: test_locktime ......................   Passed    0.00 sec
+      Start 26: test_wallet
+26/31 Test #26: test_wallet ........................   Passed    0.00 sec
+      Start 27: test_cleartext
+27/31 Test #27: test_cleartext .....................   Passed    0.00 sec
+      Start 28: test_get_wallet_address
+28/31 Test #28: test_get_wallet_address ............   Passed    0.04 sec
+      Start 29: test_get_extended_pubkey
+29/31 Test #29: test_get_extended_pubkey ...........   Passed    0.09 sec
+      Start 30: test_register_wallet
+30/31 Test #30: test_register_wallet ...............   Passed    0.05 sec
+      Start 31: test_sign_message
+31/31 Test #31: test_sign_message ..................   Passed    0.02 sec
+
+100% tests passed, 0 tests failed out of 31
+
+Total Test time (real) =   0.52 sec

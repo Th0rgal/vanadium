@@ -1,0 +1,23 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "env",
+    "CMAKE_BUILD_PARALLEL_LEVEL=2",
+    "cmake",
+    "--build",
+    "native-ctest",
+    "--target",
+    "test_varint",
+    "-j2"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567808.567927,
+  "exit": 2,
+  "ended": 1794567808.5748868
+}

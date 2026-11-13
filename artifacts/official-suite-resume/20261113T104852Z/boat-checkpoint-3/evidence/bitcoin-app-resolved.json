@@ -1,0 +1,21 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/app",
+  "argv": [
+    "env",
+    "LEAN_NATIVE=/opt/orb/bin/lean-native",
+    "cargo",
+    "+stable",
+    "test",
+    "--locked"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567785.2194557,
+  "exit": 101,
+  "ended": 1794567809.8304496
+}

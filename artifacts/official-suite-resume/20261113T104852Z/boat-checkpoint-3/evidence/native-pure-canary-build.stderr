@@ -1,0 +1,8 @@
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_bitvector.c:8:10: fatal error: cmocka.h: No such file or directory
+    8 | #include <cmocka.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[3]: *** [CMakeFiles/test_bitvector.dir/build.make:79: CMakeFiles/test_bitvector.dir/test_bitvector.c.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:1569: CMakeFiles/test_bitvector.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:1576: CMakeFiles/test_bitvector.dir/rule] Error 2
+gmake: *** [Makefile:667: test_bitvector] Error 2

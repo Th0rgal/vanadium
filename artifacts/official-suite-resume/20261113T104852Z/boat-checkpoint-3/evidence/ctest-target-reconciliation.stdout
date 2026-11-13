@@ -1,0 +1,12 @@
+9392144b42faf6b53ed29cf9333d6f12df7796ca
+feat(option2): wire 45 freestanding Lean kernels across BOLOS app-bitcoin call sites
+d223be93d48cd45cb99e17e23bb62d32afe8ffdd
+Add unit tests for musig.c based on the BIP-327 test vectors
+2e1d265cbbc35d5c50c54cc16e537c86bf1f2a7d
+unit-tests: drive the BIP-322 tests from the BIP's pinned test vectors
+425c45611e8f2892c16850f455b70ada7bff8570
+bip322: add the BIP-322 primitives
+c1453b813f3b0f1628aaf7f98e7e5e83a1f2cd91
+Unit tests for PSBTv2 locktime fields, and nLocktime calculation
+acb931a7e74bc492c2340d501ce632c87a0b72a8
+Add typed accessors for the PSBT fields read while signing

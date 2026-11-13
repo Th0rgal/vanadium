@@ -1,0 +1,102 @@
+
+@pytest.fixture
+def enable_slow_tests(pytestconfig) -> int:
+    return pytestconfig.getoption("enable_slow_tests")
+
+
+@pytest.fixture
+def model(pytestconfig) -> str:
+    return pytestconfig.getoption("model")
+
+
+@pytest.fixture(scope='session', autouse=True)
+def root_directory(request):
+    return Path(str(request.config.rootdir))
+
+
+@pytest.fixture
+def comm(settings, root_directory, hid, headless, model, app_version: str) -> Union[TransportClient, SpeculosClient]:
+    if hid:
+        client = TransportClient("hid")
+    else:
+        # We set the app's name before running speculos in order to emulate the expected
+        # behavior of the SDK's GET_VERSION default APDU.
+        # The app name is 'Bitcoin' or 'Bitcoin Test' for mainnet/testnet respectively.
+        # We leave the speculos default 'app' to avoid relying on that value in tests.
+
+        if not os.getenv("SPECULOS_APPNAME"):
+            os.environ['SPECULOS_APPNAME'] = f'app:{app_version}'
+
+        app_binary = os.getenv("BITCOIN_APP_BINARY", str(
+            repo_root_path.joinpath("bin/app.elf")))
+
+        app_lib_binary = os.getenv("BITCOIN_APP_LIB_BINARY", None)
+        if app_lib_binary:
+            lib_params = ['-l', f"Bitcoin:{app_lib_binary}"]
+
+        else:
+            lib_params = []
+
+        client = SpeculosClient(
+            app_binary,
+            ['--model', model, '--seed', f'{settings["mnemonic"]}']
+            + ["--display", "qt" if not headless else "headless"]
+            + lib_params
+        )
+        client.start()
+
+        if settings["automation_file"]:
+            automation_file = root_directory.joinpath(
+                settings["automation_file"])
+            rules = json.load(open(automation_file))
+            client.set_automation_rules(rules)
+
+    yield client
+
+    client.stop()
+
+
+@pytest.fixture
+def is_speculos(comm: Union[TransportClient, SpeculosClient]) -> bool:
+    return isinstance(comm, SpeculosClient)
+
+
+@pytest.fixture
+def bitcoin_network() -> Union[Literal['main'], Literal['test']]:
+    network = os.getenv("BITCOIN_NETWORK", "test")
+    if network not in ["main", "test"]:
+        raise ValueError(
+            f'Invalid value for BITCOIN_NETWORK: {network}')
+    return network
+
+
+@pytest.fixture
+def client(bitcoin_network: str, comm: Union[TransportClient, SpeculosClient]) -> Client:
+    if bitcoin_network == "main":
+        chain = Chain.MAIN
+    elif bitcoin_network == "test":
+        chain = Chain.TEST
+    else:
+        raise ValueError(
+            f'Invalid value for BITCOIN_NETWORK: {bitcoin_network}')
+    return createClient(comm, chain=chain, debug=True)
+
+
+@pytest.fixture
+def speculos_globals(settings: dict, bitcoin_network: str) -> SpeculosGlobals:
+
+    return SpeculosGlobals(mnemonic=settings["mnemonic"], network=bitcoin_network)
+431:    # project_root_dir / conf.OPTIONAL.MAIN_APP_DIR. There should be only one subfolder in the path.
+432:    main_app_path = None
+433:    if conf.OPTIONAL.MAIN_APP_DIR is not None:
+434:        app_dir_content = list((project_root_dir / conf.OPTIONAL.MAIN_APP_DIR).iterdir())
+438:        main_app_path = find_application(app_dir_subdirectories[0], device_name, "c")
+449:        main_app_path = find_application(
+490:                            f"Could not find sideloaded app binary for '{subdir}': {e}",
+504:    return (main_app_path, {"args": speculos_args})
+533:        main_app_path, speculos_args = prepare_speculos_args(
+544:            main_app_path,
+556:# before trying to find the binary
+launcher
+vnc_server
+ad72692eacd8d961a42c95d5c4fda9d3573c2427

@@ -1,0 +1,199 @@
+//! build.rs — links the turbo-lean-emitted `lean-ledger-bitcoin` freestanding
+//! archive into the `llb-vanadium-ffi` crate:
+//!
+//! * `target_arch = "riscv32"` (Vanadium V-App, `riscv32imac-unknown-none-elf`):
+//!   `ffi/vanadium/build/riscv32imac/liblean_ledger_bitcoin.a`
+//! * any other (host) target — used by `cargo test` on the development host:
+//!   `ffi/vanadium/build/host/liblean_ledger_bitcoin.a`
+//!
+//! Both archives are produced by `scripts/build-freestanding.sh`; the script
+//! fails fast with a pointer to it when they are missing.
+
+use std::env;
+use std::path::PathBuf;
+use std::process::Command;
+
+const LIB_NAME: &str = "liblean_ledger_bitcoin";
+const LINK_NAME: &str = "lean_ledger_bitcoin";
+
+fn try_auto_emit(manifest_dir: &PathBuf, dir: &PathBuf, target: &str) {
+    let repo_root = manifest_dir.join("..").join("..");
+    let kernel = repo_root.join("BitcoinLedger").join("FreestandingKernels.lean");
+    if !kernel.is_file() {
+        return;
+    }
+
+    let lean_native = env::var("LEAN_NATIVE")
+        .ok()
+        .map(PathBuf::from)
+        .filter(|p| p.is_file())
+        .or_else(|| {
+            let sibling = repo_root
+                .join("..")
+                .join("turbo-lean")
+                .join("lean")
+                .join(".lake")
+                .join("build")
+                .join("bin")
+                .join("lean-native");
+            sibling.is_file().then_some(sibling)
+        })
+        .unwrap_or_else(|| {
+            let hub = env::var("LEDGER_HUB")
+                .unwrap_or_else(|_| "/var/lib/orb-node/work/caches/ledger-hub".to_string());
+            PathBuf::from(hub)
+                .join("turbo-lean")
+                .join("lean")
+                .join(".lake")
+                .join("build")
+                .join("bin")
+                .join("lean-native")
+        });
+    if !lean_native.is_file() {
+        return;
+    }
+
+    let _ = std::fs::create_dir_all(dir);
+    let emit_tag = if target.starts_with("riscv32") {
+        "riscv32imac"
+    } else {
+        "x86_64"
+    };
+    let archive = dir.join(format!("{}.a", LIB_NAME));
+    let _ = Command::new(&lean_native)
+        .current_dir(&repo_root)
+        .args([
+            "emit-freestanding-c-lib",
+            "--input",
+            "BitcoinLedger/FreestandingKernels.lean",
+            "--target",
+            emit_tag,
+            "--clang-bin",
+            "clang",
+            "-o",
+            archive.to_str().unwrap(),
+            "--json",
+        ])
+        .status();
+
+    // On RV32IMAC, re-compile the freestanding LLVM IR with `-Oz -ffunction-sections -fdata-sections`
+    // so `--gc-sections` / LTO discards unused BOLOS-only kernel symbols while keeping 0-byte frames.
+    if target.starts_with("riscv32") {
+        let ll = dir.join(format!("{}.ll", LIB_NAME));
+        let obj = dir.join(format!("{}.o", LIB_NAME));
+        if ll.is_file() {
+            let status = Command::new("clang")
+                .args([
+                    "--target=riscv32-unknown-none-elf",
+                    "-march=rv32imac",
+                    "-mabi=ilp32",
+                    "-Oz",
+                    "-ffunction-sections",
+                    "-fdata-sections",
+                    "-fno-unwind-tables",
+                    "-fno-asynchronous-unwind-tables",
+                    "-c",
+                    ll.to_str().unwrap(),
+                    "-o",
+                    obj.to_str().unwrap(),
+                ])
+                .status();
+            if matches!(status, Ok(s) if s.success()) {
+                let _ = std::fs::remove_file(&archive);
+                let ar_bin = if Command::new("llvm-ar").arg("--version").output().is_ok() {
+                    "llvm-ar"
+                } else {
+                    "ar"
+                };
+                let _ = Command::new(ar_bin)
+                    .args(["rcs", archive.to_str().unwrap(), obj.to_str().unwrap()])
+                    .status();
+            }
+        }
+    }
+}
+
+fn main() {
+    let manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").expect("CARGO_MANIFEST_DIR"));
+    let target = env::var("TARGET").unwrap_or_default();
+
+    // The 32-bit ILP32 Vanadium target links the riscv32imac freestanding
+    // archive; everything else (host tests) links the host emission.
+    let tag = if target.starts_with("riscv32") {
+        "riscv32imac"
+    } else {
+        "host"
+    };
+    let dir = manifest_dir.join("build").join(tag);
+    let archive = dir.join(format!("{}.a", LIB_NAME));
+
+    if !archive.is_file() {
+        try_auto_emit(&manifest_dir, &dir, &target);
+    } else if target.starts_with("riscv32") {
+        // Ensure existing RV32 archive uses -ffunction-sections -fno-unwind-tables if .ll is present
+        let ll = dir.join(format!("{}.ll", LIB_NAME));
+        let marker = dir.join(".oz_gc_built");
+        if ll.is_file() && !marker.is_file() {
+            try_auto_emit(&manifest_dir, &dir, &target);
+            let _ = std::fs::write(&marker, b"1");
+        }
+    }
+
+    if !archive.is_file() {
+        panic!(
+            "llb-vanadium-ffi: missing freestanding archive {} for target '{}'. \
+             Run scripts/build-freestanding.sh from the repository root first.",
+            archive.display(),
+            target
+        );
+    }
+
+    println!("cargo:rerun-if-changed={}", archive.display());
+    println!("cargo:rustc-link-search=native={}", dir.display());
+    println!("cargo:rustc-link-lib=static={}", LINK_NAME);
+}
+#!/usr/bin/env bash
+# build-freestanding.sh — Reproducible freestanding C99 emission for lean-ledger-bitcoin.
+#
+# Invokes the turbo-lean `lean-native emit-freestanding-c-lib` emitter on the
+# freestanding kernel module (default: BitcoinLedger/FreestandingKernels.lean)
+# for all three 32-bit ILP32 Ledger targets:
+#
+#   thumbv6m      (thumbv6m-none-eabi)        BOLOS — Nano X (Secure Element FW layout)
+#   thumbv8m.main (thumbv8m.main-none-eabi)   BOLOS — Nano S+ / Stax / Flex / Apex P
+#   riscv32imac   (riscv32imac-unknown-none-elf) Vanadium V-App (RISC-V RV32IMAC)
+#
+# plus a host (x86_64) freestanding emission used by the `ffi/bolos` and
+# `ffi/vanadium` host-side unit tests (`make -C ffi/bolos test`,
+# `cargo test --manifest-path ffi/vanadium/Cargo.toml`).
+#
+# For every target the script verifies, failing closed:
+#   * .ll / .h / .o / .a / .su artifacts all exist;
+#   * the freestanding C99 header only includes <stdint.h>/<stddef.h>/<stdbool.h>;
+#   * the archive has 0 undefined symbols (`llvm-nm`) and 0 malloc/lean_alloc_*/lean_*
+#     heap/runtime symbols (mirroring the emitter's own fail-closed audit);
+#   * worst-case kernel stack frame budget: every .su frame is < LLB_STACK_BUDGET
+#     bytes (default 1024), well within the 12 KB Nano X main stack.
+#
+# Environment overrides:
+#   LEAN_NATIVE       path to the lean-native driver
+#                     (default: hub cache turbo-lean/lean/.lake/build/bin/lean-native)
+#   LLB_KERNEL        kernel .lean module (default: BitcoinLedger/FreestandingKernels.lean)
+#   LLB_STACK_BUDGET  per-kernel-function worst-case frame budget in bytes (default: 1024)
+#   CLANG / LLVM_NM   tool overrides
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+HUB="${LEDGER_HUB:-/var/lib/orb-node/work/caches/ledger-hub}"
+if [ -z "${LEAN_NATIVE:-}" ]; then
+  if [ -x "${REPO_ROOT}/../turbo-lean/lean/.lake/build/bin/lean-native" ]; then
+    LEAN_NATIVE="${REPO_ROOT}/../turbo-lean/lean/.lake/build/bin/lean-native"
+  else
+    LEAN_NATIVE="${HUB}/turbo-lean/lean/.lake/build/bin/lean-native"
+  fi
+fi
+find_llvm_tool() {
+  local name="$1"

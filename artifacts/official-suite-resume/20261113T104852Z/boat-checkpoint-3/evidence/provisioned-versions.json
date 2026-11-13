@@ -1,0 +1,22 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "env",
+    "LD_LIBRARY_PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/x86_64-linux-gnu",
+    "bash",
+    "-c",
+    "prefix/usr/bin/clang-21 --version; venv/bin/pip freeze; git -C ledger-app-builder rev-parse HEAD; git -C ledger-secure-sdk rev-parse HEAD; git -C turbo-lean rev-parse HEAD; git -C native-ctest/_deps/speculos-src rev-parse HEAD; sha256sum vanadium/Cargo.lock vanadium/apps/bitcoin/app/Cargo.lock vanadium/apps/bitcoin/common/Cargo.lock; git -C vanadium status --short; git -C app-bitcoin status --short; git -C lean-ledger-bitcoin status --short"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568246.6968246,
+  "exit": 0,
+  "ended": 1794568247.0416133
+}
