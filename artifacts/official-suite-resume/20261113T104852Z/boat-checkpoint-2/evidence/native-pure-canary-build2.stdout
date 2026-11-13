@@ -1,0 +1,3 @@
+[  0%] Building C object CMakeFiles/test_bitvector.dir/test_bitvector.c.o
+[100%] Linking C executable test_bitvector
+[100%] Built target test_bitvector

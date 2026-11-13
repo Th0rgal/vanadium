@@ -1,0 +1,21 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "env",
+    "BITCOIN_CORE_INSTALL_PREFIX=/var/lib/orb-node/work/official-suite-resume/bitcoin-core",
+    "bash",
+    "tests/setup_script.sh"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794567862.7908556,
+  "exit": 0,
+  "ended": 1794567871.6040626
+}

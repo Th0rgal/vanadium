@@ -1,0 +1,108 @@
+{
+  "status": "IN_PROGRESS",
+  "fresh": true,
+  "suites": {
+    "common_canary": {
+      "status": "BLOCKED_BEFORE_COMPILATION",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": 101
+    },
+    "common_full": {
+      "status": "NOT_RUN",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": null
+    },
+    "bitcoin_rust_app": {
+      "status": "BLOCKED_FFI_BUILD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": 101
+    },
+    "bitcoin_rust_common": {
+      "status": "BLOCKED_FFI_BUILD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": 101
+    },
+    "ctest_full": {
+      "status": "COMPLETED",
+      "pass": 31,
+      "fail": 0,
+      "skip": 0,
+      "deselected": 0,
+      "collection_errors": 0,
+      "enumerated": 31,
+      "exit": 0
+    },
+    "ragger_tests_nanosp": {
+      "status": "NOT_RUN",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": null
+    },
+    "ragger_tests_nanox": {
+      "status": "NOT_RUN",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": null
+    },
+    "ragger_tests_mainnet_nanosp": {
+      "status": "NOT_RUN",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": null
+    },
+    "ragger_tests_mainnet_nanox": {
+      "status": "NOT_RUN",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "collection_errors": null,
+      "enumerated": null,
+      "exit": null
+    }
+  },
+  "ctest_expected_only": {
+    "upstream": 30,
+    "added": 1
+  },
+  "ctest_configure_exit": 1,
+  "docker_access_exit": 1,
+  "exclusions_added": [],
+  "lean_baseline": "f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb",
+  "new_private_locks": {
+    "app": "a06a3367c8595ad3d0d650d7546d25ded405567d17131ca0b5ed0a92e9c51525",
+    "common": "0102c2b3e5b8bd79baa4c93014be5021e6e5d2bb282cff67f8a3cbd6e31b3cbc"
+  }
+}

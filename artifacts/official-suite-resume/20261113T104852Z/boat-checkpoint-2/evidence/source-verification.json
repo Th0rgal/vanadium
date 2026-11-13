@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium",
+  "argv": [
+    "bash",
+    "-c",
+    "git -c credential.helper= -c core.askPass= ls-remote https://github.com/Th0rgal/vanadium.git refs/heads/test/official-resume-20261113; git -c credential.helper= -c core.askPass= ls-remote https://github.com/Th0rgal/app-bitcoin.git refs/heads/test/official-resume-20261113; git rev-parse HEAD; sha256sum Cargo.lock; git -C ../app-bitcoin rev-parse HEAD; find apps/bitcoin -name Cargo.toml -o -name Cargo.lock; cat apps/bitcoin/README.md"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567275.2171922,
+  "exit": 0,
+  "ended": 1794567275.9652753
+}

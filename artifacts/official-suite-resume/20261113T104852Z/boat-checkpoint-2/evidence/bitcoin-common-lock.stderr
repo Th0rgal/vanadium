@@ -1,0 +1,9 @@
+    Updating crates.io index
+    Blocking waiting for file lock on package cache
+     Locking 107 packages to highest compatible versions
+      Adding base58ck v0.1.101 (available: v0.5.0)
+      Adding base64 v0.22.1 (available: v0.23.1)
+      Adding bitcoin_hashes v0.14.101 (available: v1.2.0)
+      Adding crypto-common v0.1.6 (available: v0.1.7)
+      Adding hex-literal v0.4.1 (available: v1.1.0)
+      Adding secp256k1 v0.29.1 (available: v0.33.1)

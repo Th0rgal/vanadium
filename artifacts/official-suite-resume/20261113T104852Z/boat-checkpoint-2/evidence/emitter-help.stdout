@@ -1,0 +1,37 @@
+/opt/orb/bin/lean-native
+High-performance, distributed build, verification, and counterexample tooling for Lean 4
+
+Usage: turbo-lean [OPTIONS] <COMMAND>
+
+Commands:
+  build           Incremental two-level CAS build with automatic multi-agent Singleflight coalescing
+  check           Fast theorem-level or declaration-level check using PrefixEnv sharding & direct Lean env
+  fast-check      Run native (leanc -O3 Perceus/FBIP), GPU (CUDA), or Google Cloud TPU v5e (MLIR/XLA) fast counterexample search
+  cluster-status  Inspect local & federated multi-server cluster status, Law 15 route selection, and Lean C-ABI vs Rust speed audit
+  status          Show live machine-wide CAS, SQLite WAL, and Singleflight status
+  gc              Run Cost-Aware GDSF garbage collection and prune stale/deleted worktrees
+  export          Export deduplicated zstd CAS bundle (.tlpack) for CI or cross-machine sync
+  import          Import and BLAKE3-verify a .tlpack CAS bundle into local SQLite & CAS
+  sync            Bidirectional delta synchronization with another machine (via HTTP URL or SSH host:path)
+  serve           Run remote offload & CAS synchronization server (e.g., on DGX Spark)
+  ci-verify       CI verification gate with Trusted vs Untrusted PR sandboxing, axiom hygiene, and kernel attestation
+  seed-shards     Seed TheoremProofCAS with theorem shards from verified/hygienic project modules in a single SQLite transaction
+  verify-receipt  Verify a cryptographic CI verification receipt and detect any altered theorem statements in < 1 ms
+  pr-verify       Git-aware incremental PR verifier: diffs against `--base <git-ref>` and verifies only modified theorem proofs in isolation
+  agent-step      Unified sub-millisecond to few-millisecond agent verification funnel: Stage 0 (hygiene & cone cache) -> Stage 1 (spec vacuity & certified fast-check with hypothesis suggestion) -> Stage 2 (Zygote kernel verification) [alias: prove-step]
+  audit-spec      Audit theorem specifications for vacuous preconditions and postcondition tightness
+  eval            Deterministic fast evaluation of a Lean file (preserving all info/warning/error messages and stdout, drop-in for `lean <file.lean>`)
+  worktree-dedup  Deduplicate .lake/packages across multi-agent git worktrees via CAS hardlinks and purge .barrel/.git bloat
+  accelerators    List or test configured tactic & SIMD accelerators (built-in and external plugins)
+  mcp             Run the Model Context Protocol (MCP) JSON-RPC 2.0 server over stdio with token-compacting diagnostics & live /dev/shm agent analytics
+  analytics       Inspect or reset live multi-agent /dev/shm latency, bottleneck, and token-efficiency analytics
+  help            Print this message or the help of the given subcommand(s)
+
+Options:
+      --cache-dir <CACHE_DIR>          Optional custom CAS & SQLite directory (defaults to $TURBO_LEAN_HOME or ~/.cache/turbo-lean)
+      --json                           Output JSON results for agent/CI consumption
+      --max-memory-mb <MAX_MEMORY_MB>  Optional memory budget cap in MiB (sets TURBO_LEAN_MAX_MEMORY_MB for hardware-adaptive governor)
+  -h, --help                           Print help
+  -V, --version                        Print version
+-rwxr-xr-x 1 root root 230393624 Oct 21 23:26 /opt/orb/bin/lean-native
+/opt/orb/bin/lean-native

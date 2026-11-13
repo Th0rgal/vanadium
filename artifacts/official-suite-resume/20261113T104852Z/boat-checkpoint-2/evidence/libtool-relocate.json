@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "set -e; python3 - <<'PY'\nfrom pathlib import Path\np=Path(\"prefix/usr/bin/libtoolize\")\ns=p.read_text();s=s.replace(\"/usr/share/\",str(Path(\"prefix/usr/share\").resolve())+\"/\")\np.write_text(s)\nPY\nsha256sum prefix/usr/bin/libtoolize; prefix/usr/bin/libtoolize --version"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794567999.0553553,
+  "exit": 0,
+  "ended": 1794567999.1302695
+}

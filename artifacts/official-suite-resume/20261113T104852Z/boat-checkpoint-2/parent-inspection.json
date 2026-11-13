@@ -1,0 +1,18 @@
+{
+  "checkpoint_archive_sha256": "fbd892a81caa4aba8504b64b8dfc383d1dbba7ec56d593c6eea97796aaab47a8",
+  "ctest": {
+    "evidence_tier": "executable-reproduced",
+    "pass": 31,
+    "fail": 0,
+    "skip": 0,
+    "deselected": 0,
+    "count_unit": "CTest targets, not individual cmocka cases",
+    "exit": 0,
+    "enumeration_matches_executed_junit": true,
+    "added_target": "test_lean_bolos_kernels",
+    "full_cmocka_output": "requested LastTest.log, JUnit truncates stdout per test at1024bytes"
+  },
+  "other_suites": "not certified; Rust FFI compile failure101, Ragger prerequisite installation in progress",
+  "stale_worker_summary": "REPORT.md remains checkpoint1 text; counts.json and raw current command records supersede it",
+  "no_spec_change": true
+}

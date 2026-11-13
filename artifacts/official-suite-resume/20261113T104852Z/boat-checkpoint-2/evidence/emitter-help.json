@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "command -v lean-native; turbo-lean --help; ls -l /opt/orb/bin/lean-native; find /opt/orb /var/lib/orb-node/work/caches -name lean-native -type f 2>/dev/null"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567735.898761,
+  "exit": 0,
+  "ended": 1794567735.9157608
+}

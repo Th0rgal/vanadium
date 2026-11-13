@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS: checkpoint1 harvested; native public prerequisite provisioning resumed",
+  "status": "IN_PROGRESS: CTest31/31 verified; Rust FFI and Ragger prerequisites ongoing",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -26,5 +26,18 @@
   },
   "reviews_launched": 0,
   "checkpoint1_archive_sha256": "5ee48f98958b7ad5459cd118e8995de911b04ba63aa48d2aa33d5fd713ad9982",
-  "new_untracked_nested_locks": "Allowed to resolve and archive in private Boat trees, then --locked; EXISTING upstream locks unchanged"
+  "new_untracked_nested_locks": "Allowed to resolve and archive in private Boat trees, then --locked; EXISTING upstream locks unchanged",
+  "checkpoint2_archive_sha256": "fbd892a81caa4aba8504b64b8dfc383d1dbba7ec56d593c6eea97796aaab47a8",
+  "accepted_ctest": {
+    "evidence_tier": "executable-reproduced",
+    "pass": 31,
+    "fail": 0,
+    "skip": 0,
+    "deselected": 0,
+    "count_unit": "CTest targets, not individual cmocka cases",
+    "exit": 0,
+    "enumeration_matches_executed_junit": true,
+    "added_target": "test_lean_bolos_kernels",
+    "full_cmocka_output": "requested LastTest.log, JUnit truncates stdout per test at1024bytes"
+  }
 }

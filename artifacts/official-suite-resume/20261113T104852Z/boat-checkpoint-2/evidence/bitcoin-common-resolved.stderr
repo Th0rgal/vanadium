@@ -1,0 +1,65 @@
+ Downloading crates ...
+  Downloaded base58ck v0.1.101
+  Downloaded itoa v1.0.19
+  Downloaded bitcoin_hashes v0.14.101
+  Downloaded zmij v1.0.23
+  Downloaded secp256k1 v0.29.1
+  Downloaded serde_json v1.0.154
+  Downloaded bitcoin v0.32.102
+  Downloaded secp256k1-sys v0.10.1
+   Compiling serde_core v1.0.229
+   Compiling serde v1.0.229
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.15
+   Compiling cc v1.11.1
+   Compiling secp256k1-sys v0.10.1
+   Compiling serde_spanned v0.6.9
+   Compiling toml_datetime v0.6.11
+   Compiling toml_edit v0.22.27
+   Compiling bitcoin_hashes v0.14.101
+   Compiling toml v0.8.23
+   Compiling common v0.1.0 (/var/lib/orb-node/work/official-suite-resume/vanadium/common)
+   Compiling bitcoin v0.32.102
+   Compiling vanadium-app-sdk v0.1.0 (/var/lib/orb-node/work/official-suite-resume/vanadium/app-sdk)
+   Compiling bip388 v0.1.2
+   Compiling secp256k1 v0.29.1
+   Compiling base58ck v0.1.101
+   Compiling bitcoin-units v0.1.101
+   Compiling zmij v1.0.23
+   Compiling llb-vanadium-ffi v0.2.4 (/var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin/ffi/vanadium)
+error: failed to run custom build command for `llb-vanadium-ffi v0.2.4 (/var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin/ffi/vanadium)`
+
+Caused by:
+  process didn't exit successfully: `/var/lib/orb-node/work/official-suite-resume/target/debug/build/llb-vanadium-ffi/4a39ba75c962f7d6/out/build_script_build` (exit status: 101)
+  --- stdout
+  lean-native v0.5.0 — Formally Validated Lean 4 Optimizer, Segregated Plugin Engine, Superoptimizer, TV, FastCheck & Multi-Target Codegen
+
+  Usage: lean-native <command> [options]
+
+  Commands:
+    build-exe          Compile a .lean source file directly to a native executable (<file.lean> -o <bin>)
+    compile-llvm       Emit baseline or optimized LLVM 18 IR (--input <file>, --arch x86_64|arm64, --baseline, -o <path>)
+    compile-static-lib Emit C-ABI static library (.a) + C header (.h) for zero-copy FFI (--input <file>, -o <lib.a>, --header <lib.h>)
+    compile-mlir       Emit GPU MLIR module (--input <file>, -o <path>)
+    compile-ptx        Emit NVIDIA PTX 8.0 assembly (--input <file>, --sm sm_90, --fastcheck, -o <path>)
+    compile-metal      Emit Apple Metal Shading Language 3.0 (--input <file>, --fastcheck, -o <path>)
+    compile-fastcheck  Run Constraint-Propagating FastCheck or emit SIMD/PTX/Metal kernels (--samples N, --emit-llvm, --emit-ptx, --emit-metal, --json, -o <path>)
+    compile-hybrid     Partition module into CPU/GPU and emit hybrid host dispatch glue (--input <file>, -o <path>)
+    superopt           Run cost-guided enumerative superoptimizer (--target x86_64|arm64|cuda_ptx|apple_metal, --json, -o <path>)
+    plugins            Run segregated optimization plugins under Law 1 TV/Cost Gate (--target <arch>, --test-adversarial, --json)
+    pr-verify          Run Law 5 PR & Spec-Pinning Gate + Season 8 turbo-lean pr-verify/audit-spec (--base <ref>, --disallow-spec-changes, --json)
+    turbo-plugin       Run JSONL-stdio external accelerator plugin for turbo-lean (ExternalProcessAccelerator protocol)
+    verify-certs       Run optimization pipeline and verify translation certificates (--input <file>, --json, -o <path>)
+    validate-tv        Run Alive2-style symbolic translation validation (--input <file>, --json, -o <path>)
+    emit-lnir          Emit LNIR module in wire/JSON format (--wire, --json, --fastcheck, -o <path>)
+    audit-axioms       Run in-kernel transitive axiom audit over all 134 soundness theorems (--json)
+    turbo-status       Probe Turbo Lean integration, verify BLAKE3 vectors, and emit/verify receipt
+    self-test          Run end-to-end Core, Spec (Laws 1-5), Plugins, Codec, FastCheck, Superopt, SymbolicTV, LLVM/PTX/Metal self-tests
+    worker             Run persistent sub-millisecond JSON-RPC worker loop over stdin/stdout
+
+  --- stderr
+  Unknown command: emit-freestanding-c-lib
+
+  thread 'main' (55364) panicked at /var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin/ffi/vanadium/build.rs:143:9:
+  llb-vanadium-ffi: missing freestanding archive /var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin/ffi/vanadium/build/host/liblean_ledger_bitcoin.a for target 'x86_64-unknown-linux-gnu'. Run scripts/build-freestanding.sh from the repository root first.
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

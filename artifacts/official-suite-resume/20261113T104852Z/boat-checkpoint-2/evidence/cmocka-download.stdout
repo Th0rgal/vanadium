@@ -1,0 +1,3 @@
+Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 libcmocka-dev amd64 1.1.7-3 [17.5 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 libcmocka0 amd64 1.1.7-3 [23.0 kB]
+Fetched 40.5 kB in 0s (775 kB/s)

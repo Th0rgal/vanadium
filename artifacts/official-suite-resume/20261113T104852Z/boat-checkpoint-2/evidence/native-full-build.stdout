@@ -1,0 +1,7 @@
+[  1%] Building C object CMakeFiles/tomlc17.dir/libs/tomlc17.c.o
+[  2%] Building C object CMakeFiles/psbt_parse.dir/libs/psbt_parse.c.o
+[  3%] Linking C shared library libpsbt_parse.so
+[  3%] Built target psbt_parse
+[  4%] Compiling freestanding Lean 4 kernels (host x86_64)
+[  4%] Linking C static library libtomlc17.a
+[  4%] Built target tomlc17

@@ -1,0 +1,12 @@
+2aab2d6a7e4c21ce33462f8b52b972e2a8e4597e79b5add5502e2d1f3e543472  debs/binutils-arm-none-eabi_2.42-1ubuntu1+23_amd64.deb
+519a5d0e5292a4b4861f69ae96e8918149bfd1646072ca53451ccfb8c5a91948  debs/gcc-arm-none-eabi_15%3a13.2.rel1-2_amd64.deb
+81c4d1a39c770a21d04fd7cf8eb191b582950bff7e827860f2070f244b902d6e  debs/libcmocka-dev_1.1.7-3_amd64.deb
+a3bde8f6c1d4442e7788b64bfbe9991ef4b8fde460e2d8b977ec4956f1128e8b  debs/libcmocka0_1.1.7-3_amd64.deb
+9af508599193d07c9460897d01a36af46a2707765bd6941e27c6d0747859b0eb  debs/libnewlib-arm-none-eabi_4.4.0.20231231-2_all.deb
+f945b12c3abc844e76eebc28cf7d99e9aefd7caec39583116ef29556b3c52414  debs/libnewlib-dev_4.4.0.20231231-2_all.deb
+765aec7fc6c7c14aea8d10677c17617d71acc5103ad580f0e97bff903acccdaf  debs/libprotobuf32t64_3.21.12-8.2ubuntu0.4_amd64.deb
+a135645fed6c3c766cc0cf23f49e1fdf766a5611a3c80ac6f2e62f8ed6a17e45  debs/libprotoc32t64_3.21.12-8.2ubuntu0.4_amd64.deb
+3d6c169c2aad240df24da73c052b0c9546d76c5824b6692f2fb52c95c6afcc2b  debs/libstdc++-arm-none-eabi-dev_15%3a13.2.rel1-2+26_all.deb
+23959c8be74b4433d635c76e61a6c4bb62f10d3899362598c53173e8e57c0f8a  debs/libtool-bin_2.4.7-7build1_amd64.deb
+9d1d707179675d38e024bb13613b1d99e0d33fa6c45e5f3bcba19340781781d3  debs/libtool_2.4.7-7build1_all.deb
+10dc45fcc354dcddb50f35b73ec11ed67f55053476ddc8d3f520e2bfcfbc8016  debs/protobuf-compiler_3.21.12-8.2ubuntu0.4_amd64.deb

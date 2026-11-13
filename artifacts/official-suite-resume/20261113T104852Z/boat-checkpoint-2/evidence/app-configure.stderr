@@ -1,0 +1,4 @@
+CMake Error at CMakeLists.txt:35 (message):
+  BOLOS_SDK is not defined.
+
+

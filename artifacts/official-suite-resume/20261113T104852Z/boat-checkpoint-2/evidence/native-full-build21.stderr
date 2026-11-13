@@ -1,0 +1,846 @@
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/buffer_ext.c: In function ‘buffer_alloc’:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/buffer_ext.c:34:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   34 |         uint32_t d = (uint32_t) (buffer->ptr + buffer->offset) % 4;
+      |                      ^
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/parser_ext.c: In function ‘parser_run’:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/parser_ext.c:133:67: warning: ISO C forbids passing argument 1 of ‘pic_fn’ between function pointer and ‘void *’ [-Wpedantic]
+  133 |             pic_fn != NULL ? (parsing_step_t) pic_fn(parsing_steps[parser_context->cur_step])
+      |                                                      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/parser_ext.c:133:67: note: expected ‘void *’ but argument is of type ‘parsing_step_t’ {aka ‘int (*)(void *, buffer_t **)’}
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/parser_ext.c:133:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  133 |             pic_fn != NULL ? (parsing_step_t) pic_fn(parsing_steps[parser_context->cur_step])
+      |                              ^
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+warning: <unknown>:0:0: loop not vectorized: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering [-Wpass-failed=transform-warning]
+45 warnings generated.
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.c:13:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/xpub.h:18,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/xpub.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_sighash.c:13: warning: "SIGHASH_DEFAULT" redefined
+   13 | #define SIGHASH_DEFAULT      0x00000000
+      | 
+In file included from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/sighash.h:7,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_sighash.c:10:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/constants.h:94: note: this is the location of the previous definition
+   94 | #define SIGHASH_DEFAULT      0x00000000U
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_sighash.c:14: warning: "SIGHASH_ALL" redefined
+   14 | #define SIGHASH_ALL          0x00000001
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/constants.h:95: note: this is the location of the previous definition
+   95 | #define SIGHASH_ALL          0x00000001U
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_sighash.c:15: warning: "SIGHASH_NONE" redefined
+   15 | #define SIGHASH_NONE         0x00000002
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/constants.h:96: note: this is the location of the previous definition
+   96 | #define SIGHASH_NONE         0x00000002U
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_sighash.c:16: warning: "SIGHASH_SINGLE" redefined
+   16 | #define SIGHASH_SINGLE       0x00000003
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/constants.h:97: note: this is the location of the previous definition
+   97 | #define SIGHASH_SINGLE       0x00000003U
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_sighash.c:17: warning: "SIGHASH_ANYONECANPAY" redefined
+   17 | #define SIGHASH_ANYONECANPAY 0x00000080
+      | 
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/constants.h:98: note: this is the location of the previous definition
+   98 | #define SIGHASH_ANYONECANPAY 0x00000080U
+      | 
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/speculos_bridge.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/speculos_bridge.c:32:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/native-ctest/_deps/speculos-src/src/bolos/cx.h:33,
+                 from /var/lib/orb-node/work/official-suite-resume/native-ctest/_deps/speculos-src/src/bolos/cxlib.h:8,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/speculos_bridge.c:38:
+/var/lib/orb-node/work/official-suite-resume/native-ctest/_deps/speculos-src/src/bolos/cx_ec.h:283:18: warning: extra semicolon in struct or union specified [-Wpedantic]
+  283 |   CX_CURVE_HEADER;
+      |                  ^
+      |                  -
+/var/lib/orb-node/work/official-suite-resume/native-ctest/_deps/speculos-src/src/bolos/cxlib.h:146:1: warning: ISO C does not allow extra ‘;’ outside of a function [-Wpedantic]
+  146 | ;
+      | ^
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/crypto.c:22:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/wallet.h:12,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/wallet.c:5:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/crypto.c: In function ‘base58_encode_address’:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/crypto.c:386:9: warning: ‘tmp’ may be used uninitialized [-Wmaybe-uninitialized]
+  386 |         write_u16_be(tmp, 0, (uint16_t) version);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/crypto.h:12:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/write.h:17:6: note: by argument 1 of type ‘const uint8_t *’ {aka ‘const unsigned char *’} to ‘write_u16_be’ declared here
+   17 | void write_u16_be(const uint8_t *ptr, size_t offset, uint16_t value);
+      |      ^~~~~~~~~~~~
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/crypto.c:379:13: note: ‘tmp’ declared here
+  379 |     uint8_t tmp[4 + 20 + 4];  // version + max_in_len + checksum
+      |             ^~~
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/script.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/script.c:6:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/merkle.c:26:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/wallet.h:12,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/cleartext.h:7,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/cleartext.c:15:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/wallet.h:12,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/cleartext_match.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/cleartext_match.c:4:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/check_merkle_tree_sorted.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/check_merkle_tree_sorted.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/policy.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/policy.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/policy.c: In function ‘get_derived_pubkey’:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/policy.c:496:31: warning: invalid use of pointers to arrays with different qualifiers in ISO C before C2X [-Wpedantic]
+  496 |         if (0 > musig_key_agg(keys, musig_info->n, &musig_ctx)) {
+      |                               ^~~~
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_element.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_element.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_hash.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_hash.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_index.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_index.c:4:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_preimage.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_preimage.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/check_merkle_tree_sorted.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkleized_map.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkleized_map.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkleized_map_value.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkleized_map_value.c:3:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_preimage.c:6:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_merkle_leaf_element.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_merkle_leaf_element.c:2:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_merkleized_map_value.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_merkleized_map_value.c:1:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_preimage.h:4,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_preimage.c:4:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/extract_bip32_derivation.h:25,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/extract_bip32_derivation.c:22:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/psbt_fields.h:25,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/psbt_fields.c:20:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/sign_psbt_cache.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/sign_psbt_cache.c:18:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/musig/musig.c:6:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/musig/musig.c: In function ‘musig_get_session_values’:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/musig/musig.c:400:38: warning: invalid use of pointers to arrays with different qualifiers in ISO C before C2X [-Wpedantic]
+  400 |     if (0 > musig_key_agg(session_ctx->pubkeys, session_ctx->n_keys, &keyagg_ctx)) {
+      |                           ~~~~~~~~~~~^~~~~~~~~
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/musig/musig.c: In function ‘musig_get_session_key_agg_coeff’:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/musig/musig.c:473:36: warning: invalid use of pointers to arrays with different qualifiers in ISO C before C2X [-Wpedantic]
+  473 |     musig_key_agg_coeff(session_ctx->pubkeys, session_ctx->n_keys, pk, out);
+      |                         ~~~~~~~~~~~^~~~~~~~~
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/crypto_helpers.c:21:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_merkle_preimage.c:19:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_preimage.c:19:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_extract_bip32_derivation.c:21:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_check_merkle_tree_sorted.c:25:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_merkle_leaf_element.c:19:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_merkle_leaf_hash.c:18:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_merkle_leaf_index.c:19:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_stream_preimage.c:20:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_stream_merkle_leaf_element.c:19:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_stream_merkleized_map_value.c:19:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_merkleized_map.c:24:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_merkleized_map_value.c:19:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_psbt_fields.c:23:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/speculos_bridge.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_crypto.c:13:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/script.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_script.c:11:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/bip322.h:23,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_bip322.c:10:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/speculos_bridge.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_musig.c:29:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/bip322.h:23,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/bip322.c:20:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/wallet.h:12,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_wallet.c:13:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/common/wallet.h:12,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_cleartext.c:12:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_wallet.c:960:10: warning: "/*" within comment [-Wcomment]
+  960 | /** tr(@0/**,pk(@1/**)) — taproot with a single tapleaf. */
+      |           
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_wallet.c:960:19: warning: "/*" within comment [-Wcomment]
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_wallet.c:976:10: warning: "/*" within comment [-Wcomment]
+  976 | /** tr(@0/**,{pk(@1/**),pk(@2/**)}) — taproot with two tapleaves. */
+      |           
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_wallet.c:976:20: warning: "/*" within comment [-Wcomment]
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_wallet.c:976:30: warning: "/*" within comment [-Wcomment]
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_wallet.c:1040:51: warning: "/*" within comment [-Wcomment]
+ 1040 |  * that, a template as short as "wsh(nnn...n:pk(@0/**))" produces a policy
+      |                                                    
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_wallet_address.c:25:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_hash.h:44,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/lcx_sha256.h:36,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_endorsement.h:16,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os.h:26,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/boilerplate/dispatcher.h:5,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/libs/mock_dispatcher.h:35,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_get_extended_pubkey.c:34:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/get_extended_pubkey.c:27:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_register_wallet.c:37:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/register_wallet.c:23:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/test_sign_message.c:35:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/register_wallet.c: In function ‘confirm_and_register_wallet’:
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/register_wallet.c:221:44: warning: invalid use of pointers to arrays with different qualifiers in ISO C before C2X [-Wpedantic]
+  221 |                                            &cleartext_lines,
+      |                                            ^~~~~~~~~~~~~~~~
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/register_wallet.c:223:44: warning: invalid use of pointers to arrays with different qualifiers in ISO C before C2X [-Wpedantic]
+  223 |                                            &keys_info,
+      |                                            ^~~~~~~~~~
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/register_wallet.c:224:44: warning: invalid use of pointers to arrays with different qualifiers in ISO C before C2X [-Wpedantic]
+  224 |                                            &keys_type)) {
+      |                                            ^~~~~~~~~~
+In file included from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert_internals.h:6,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ledger_assert.h:3,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx_errors.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox_aes.h:66,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/ox.h:32,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_cxng/include/libcxng.h:31,
+                 from /var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/cx.h:21,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/unit-tests/../src/crypto.h:9,
+                 from /var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_message.c:26:
+/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/include/os_print.h:16: warning: "PRINTF" redefined
+   16 | #define PRINTF(...)
+      | 
+<command-line>: note: this is the location of the previous definition

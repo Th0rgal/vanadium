@@ -1,0 +1,5 @@
+Downloading https://bitcoincore.org/bin/bitcoin-core-32.1/bitcoin-32.1-x86_64-linux-gnu.tar.gz
+/var/lib/orb-node/work/official-suite-resume/tmp/tmp.yO3TEaOz4O/bitcoin-32.1-x86_64-linux-gnu.tar.gz: OK
+Bitcoin Core daemon version v32.1.0 bitcoind
+Add the binaries to your PATH with:
+  export PATH=/var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin:$PATH

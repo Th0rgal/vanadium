@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "git -C ledger-app-builder rev-parse HEAD; git -C ledger-secure-sdk rev-parse HEAD; sed -n \"1,95p\" ledger-secure-sdk/Makefile.target; rg -n \"BUILD_DIR|BUILD_APP|APP_BUILD|OBJ_DIR|BIN_DIR|SYSROOT|clang_rt|resource-dir\" ledger-secure-sdk/Makefile* app-bitcoin/Makefile; ls prefix/usr/lib/llvm-21/lib/clang/21/lib; ls prefix/usr/lib/arm-none-eabi; cat ledger-app-builder/lite/pip-constraints.txt; cat app-bitcoin/test_utils/fixtures.py | head -120"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794567934.1979892,
+  "exit": 0,
+  "ended": 1794567934.2089608
+}

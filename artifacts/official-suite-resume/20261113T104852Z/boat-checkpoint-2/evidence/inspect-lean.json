@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "git rev-parse HEAD; git status --short; rg --files -g AGENTS.md -g \"*README*\" -g \"*build*\" -g \"*Makefile*\" ffi; cat ffi/vanadium/Cargo.toml; ls -la ffi/vanadium; rg -n \"include|OUT_DIR|\\.a|\\.ll|generated|build\" ffi/vanadium; git ls-files ffi/vanadium"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567401.9445996,
+  "exit": 0,
+  "ended": 1794567401.9593625
+}

@@ -1,0 +1,190 @@
+[  2%] Built target psbt_parse
+[  3%] Built target tomlc17
+[  4%] Compiling freestanding Lean 4 kernels (host x86_64)
+[  4%] Building C object CMakeFiles/base58.dir/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/base58.c.o
+[  5%] Linking C shared library libbase58.so
+[  5%] Built target base58
+[  6%] Building C object CMakeFiles/bip32.dir/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/bip32.c.o
+[  6%] Linking C shared library libbip32.so
+[  6%] Built target bip32
+[  7%] Building C object CMakeFiles/buffer.dir/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/buffer.c.o
+[  8%] Linking C shared library libbuffer.so
+[  8%] Built target buffer
+[  8%] Building C object CMakeFiles/read.dir/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/read.c.o
+[  9%] Linking C shared library libread.so
+[  9%] Built target read
+[ 10%] Building C object CMakeFiles/varint.dir/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/varint.c.o
+[ 11%] Linking C shared library libvarint.so
+[ 11%] Built target varint
+[ 11%] Building C object CMakeFiles/write.dir/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/write.c.o
+[ 12%] Linking C shared library libwrite.so
+[ 12%] Built target write
+[ 12%] Building C object CMakeFiles/buffer_ext.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/buffer_ext.c.o
+[ 13%] Linking C shared library libbuffer_ext.so
+[ 13%] Built target buffer_ext
+[ 14%] Building C object CMakeFiles/parser.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/parser_ext.c.o
+[ 14%] Linking C shared library libparser.so
+[ 14%] Built target parser
+[ 15%] Built target test_bitvector
+[ 16%] Building C object CMakeFiles/test_buffer.dir/test_buffer.c.o
+[ 16%] Linking C executable test_buffer
+[ 16%] Built target test_buffer
+[ 17%] Building C object CMakeFiles/test_parser.dir/test_parser.c.o
+[ 17%] Linking C executable test_parser
+[ 17%] Built target test_parser
+[ 17%] Building C object CMakeFiles/test_psbt_parse.dir/test_psbt_parse.c.o
+[ 18%] Linking C executable test_psbt_parse
+[ 18%] Built target test_psbt_parse
+[ 19%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_bn.c.o
+[ 19%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_blake2b.c.o
+[ 19%] Built target lean_bolos_kernels_obj
+[ 19%] Building C object CMakeFiles/mock_dispatcher.dir/libs/mock_dispatcher.c.o
+[ 20%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_curve25519.c.o
+[ 21%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_ec.c.o
+[ 22%] Linking C static library libmock_dispatcher.a
+[ 22%] Built target mock_dispatcher
+[ 23%] Building C object CMakeFiles/xpub.dir/libs/xpub.c.o
+[ 24%] Linking C static library libxpub.a
+[ 24%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_ec_domain.c.o
+[ 24%] Built target xpub
+[ 25%] Linking C static library liblean_bolos_kernels.a
+[ 26%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_ecpoint.c.o
+[ 26%] Built target lean_bolos_kernels
+[ 27%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_ed25519.c.o
+[ 27%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_hash.c.o
+[ 28%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_hmac.c.o
+[ 29%] Building C object CMakeFiles/display_utils.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/ui/display_utils.c.o
+[ 30%] Linking C shared library libdisplay_utils.so
+[ 31%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_math.c.o
+[ 31%] Built target display_utils
+[ 32%] Building C object CMakeFiles/test_sighash.dir/test_sighash.c.o
+[ 33%] Linking C executable test_sighash
+[ 33%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_montgomery.c.o
+[ 33%] Built target test_sighash
+[ 34%] Building C object CMakeFiles/test_locktime.dir/test_locktime.c.o
+[ 35%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_mpi.c.o
+[ 36%] Linking C executable test_locktime
+[ 36%] Built target test_locktime
+[ 37%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_ripemd160.c.o
+[ 37%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_rng_rfc6979.c.o
+[ 38%] Building C object CMakeFiles/test_display_utils.dir/test_display_utils.c.o
+[ 39%] Linking C executable test_display_utils
+[ 40%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_scc.c.o
+[ 40%] Built target test_display_utils
+[ 41%] Building C object CMakeFiles/test_lean_bolos_kernels.dir/test_lean_bolos_kernels.c.o
+[ 42%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_sha256.c.o
+[ 42%] Linking C executable test_lean_bolos_kernels
+[ 42%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_sha3.c.o
+[ 42%] Built target test_lean_bolos_kernels
+[ 43%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_sha512.c.o
+[ 44%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_twisted_edwards.c.o
+[ 44%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_utils.c.o
+[ 45%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cx_weierstrass.c.o
+[ 46%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/cxlib.c.o
+[ 46%] Building C object CMakeFiles/speculos_bolos.dir/_deps/speculos-src/src/bolos/os_bip32.c.o
+[ 47%] Linking C static library libspeculos_bolos.a
+[ 47%] Built target speculos_bolos
+[ 48%] Building C object CMakeFiles/speculos_bridge.dir/libs/speculos_bridge.c.o
+[ 49%] Linking C static library libspeculos_bridge.a
+[ 49%] Built target speculos_bridge
+[ 49%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/crypto.c.o
+[ 50%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/secp256k1.c.o
+[ 51%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/wallet.c.o
+[ 51%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/script.c.o
+[ 52%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/segwit_addr.c.o
+[ 53%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/merkle.c.o
+[ 53%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/cleartext.c.o
+[ 54%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/cleartext_specs.c.o
+[ 55%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/cleartext_match.c.o
+[ 55%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/policy.c.o
+[ 56%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/check_merkle_tree_sorted.c.o
+[ 57%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_element.c.o
+[ 57%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_hash.c.o
+[ 58%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_leaf_index.c.o
+[ 59%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkle_preimage.c.o
+[ 59%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkleized_map.c.o
+[ 60%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_merkleized_map_value.c.o
+[ 61%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/get_preimage.c.o
+[ 61%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_merkle_leaf_element.c.o
+[ 62%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_merkleized_map_value.c.o
+[ 63%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/lib/stream_preimage.c.o
+[ 63%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/extract_bip32_derivation.c.o
+[ 64%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/psbt_fields.c.o
+[ 65%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_psbt/sign_psbt_cache.c.o
+[ 65%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/musig/musig.c.o
+[ 66%] Building C object CMakeFiles/app_crypto.dir/var/lib/orb-node/work/official-suite-resume/ledger-secure-sdk/lib_standard_app/crypto_helpers.c.o
+[ 67%] Linking C static library libapp_crypto.a
+[ 67%] Built target app_crypto
+[ 69%] Building C object CMakeFiles/test_get_preimage.dir/test_get_preimage.c.o
+[ 69%] Building C object CMakeFiles/test_get_merkle_preimage.dir/test_get_merkle_preimage.c.o
+[ 69%] Linking C executable test_get_merkle_preimage
+[ 69%] Linking C executable test_get_preimage
+[ 69%] Built target test_get_preimage
+[ 69%] Built target test_get_merkle_preimage
+[ 69%] Building C object CMakeFiles/test_extract_bip32_derivation.dir/test_extract_bip32_derivation.c.o
+[ 70%] Building C object CMakeFiles/test_check_merkle_tree_sorted.dir/test_check_merkle_tree_sorted.c.o
+[ 71%] Linking C executable test_extract_bip32_derivation
+[ 72%] Linking C executable test_check_merkle_tree_sorted
+[ 72%] Built target test_extract_bip32_derivation
+[ 73%] Building C object CMakeFiles/test_get_merkle_leaf_element.dir/test_get_merkle_leaf_element.c.o
+[ 73%] Built target test_check_merkle_tree_sorted
+[ 74%] Building C object CMakeFiles/test_get_merkle_leaf_hash.dir/test_get_merkle_leaf_hash.c.o
+[ 74%] Linking C executable test_get_merkle_leaf_element
+[ 75%] Linking C executable test_get_merkle_leaf_hash
+[ 75%] Built target test_get_merkle_leaf_element
+[ 75%] Building C object CMakeFiles/test_get_merkle_leaf_index.dir/test_get_merkle_leaf_index.c.o
+[ 75%] Built target test_get_merkle_leaf_hash
+[ 76%] Building C object CMakeFiles/test_stream_preimage.dir/test_stream_preimage.c.o
+[ 77%] Linking C executable test_get_merkle_leaf_index
+[ 77%] Built target test_get_merkle_leaf_index
+[ 77%] Building C object CMakeFiles/test_stream_merkle_leaf_element.dir/test_stream_merkle_leaf_element.c.o
+[ 78%] Linking C executable test_stream_preimage
+[ 79%] Linking C executable test_stream_merkle_leaf_element
+[ 79%] Built target test_stream_preimage
+[ 80%] Building C object CMakeFiles/test_stream_merkleized_map_value.dir/test_stream_merkleized_map_value.c.o
+[ 80%] Built target test_stream_merkle_leaf_element
+[ 80%] Linking C executable test_stream_merkleized_map_value
+[ 81%] Building C object CMakeFiles/test_get_merkleized_map.dir/test_get_merkleized_map.c.o
+[ 82%] Built target test_stream_merkleized_map_value
+[ 82%] Linking C executable test_get_merkleized_map
+[ 82%] Building C object CMakeFiles/test_get_merkleized_map_value.dir/test_get_merkleized_map_value.c.o
+[ 82%] Built target test_get_merkleized_map
+[ 83%] Linking C executable test_get_merkleized_map_value
+[ 84%] Building C object CMakeFiles/test_psbt_fields.dir/test_psbt_fields.c.o
+[ 84%] Built target test_get_merkleized_map_value
+[ 85%] Building C object CMakeFiles/test_crypto.dir/test_crypto.c.o
+[ 86%] Linking C executable test_psbt_fields
+[ 86%] Built target test_psbt_fields
+[ 87%] Building C object CMakeFiles/test_script.dir/test_script.c.o
+[ 87%] Linking C executable test_crypto
+[ 87%] Linking C executable test_script
+[ 87%] Built target test_crypto
+[ 87%] Building C object CMakeFiles/test_bip322.dir/test_bip322.c.o
+[ 87%] Built target test_script
+[ 87%] Building C object CMakeFiles/test_musig.dir/test_musig.c.o
+[ 88%] Building C object CMakeFiles/test_bip322.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/common/bip322.c.o
+[ 89%] Linking C executable test_bip322
+[ 90%] Linking C executable test_musig
+[ 90%] Built target test_bip322
+[ 90%] Building C object CMakeFiles/test_wallet.dir/test_wallet.c.o
+[ 90%] Built target test_musig
+[ 90%] Building C object CMakeFiles/test_cleartext.dir/test_cleartext.c.o
+[ 91%] Linking C executable test_cleartext
+[ 92%] Linking C executable test_wallet
+[ 92%] Built target test_cleartext
+[ 93%] Building C object CMakeFiles/test_get_wallet_address.dir/test_get_wallet_address.c.o
+[ 93%] Built target test_wallet
+[ 94%] Building C object CMakeFiles/test_get_extended_pubkey.dir/test_get_extended_pubkey.c.o
+[ 95%] Linking C executable test_get_wallet_address
+[ 95%] Building C object CMakeFiles/test_get_extended_pubkey.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/get_extended_pubkey.c.o
+[ 95%] Built target test_get_wallet_address
+[ 96%] Building C object CMakeFiles/test_register_wallet.dir/test_register_wallet.c.o
+[ 97%] Linking C executable test_get_extended_pubkey
+[ 97%] Built target test_get_extended_pubkey
+[ 97%] Building C object CMakeFiles/test_register_wallet.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/register_wallet.c.o
+[ 97%] Building C object CMakeFiles/test_sign_message.dir/test_sign_message.c.o
+[ 98%] Linking C executable test_register_wallet
+[ 99%] Building C object CMakeFiles/test_sign_message.dir/var/lib/orb-node/work/official-suite-resume/app-bitcoin/src/handler/sign_message.c.o
+[ 99%] Built target test_register_wallet
+[100%] Linking C executable test_sign_message
+[100%] Built target test_sign_message

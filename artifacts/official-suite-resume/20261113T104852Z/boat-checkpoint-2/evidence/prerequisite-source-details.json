@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+  "argv": [
+    "bash",
+    "-c",
+    "rg -n \"enable_slow|addoption|skip|deselect|ignore\" test_utils; sed -n \"92,120p\" tests/test_register_wallet.py; sed -n \"92,110p\" tests/test_register_wallet_v1.py; sed -n \"94,112p\" tests/instructions.py; rg -n \"lean-ledger-bitcoin|f68864d|rhai_codegen\" ../vanadium/artifacts ../vanadium/cargo-vnd/Cargo.toml ../vanadium/Cargo.lock; ls -l ../vanadium/apps/bitcoin/app/Cargo.lock ../vanadium/apps/bitcoin/common/Cargo.lock ../lean-ledger-bitcoin/ffi/vanadium/Cargo.toml"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567330.413954,
+  "exit": 2,
+  "ended": 1794567330.424961
+}

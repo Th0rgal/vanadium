@@ -1,0 +1,222 @@
+leanprover/lean4:v4.35.0
+{"version": "1.3.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"url": "https://github.com/Th0rgal/lean-sys.git",
+   "type": "git",
+   "subDir": null,
+   "scope": "",
+   "rev": "077775ba387f1eeb2976cb8763b4633b8d5ce313",
+   "name": "«lean-sys»",
+   "manifestFile": "lake-manifest.json",
+   "inputRev": "077775ba387f1eeb2976cb8763b4633b8d5ce313",
+   "inherited": false,
+   "configFile": "lakefile.lean"}],
+ "name": "«turbo-lean-proofs»",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}
+Incremental two-level CAS build with automatic multi-agent Singleflight coalescing
+
+Usage: turbo-lean build [OPTIONS] [TARGETS]...
+
+Arguments:
+  [TARGETS]...  Optional Lake targets to build
+
+Options:
+      --cache-dir <CACHE_DIR>          Optional custom CAS & SQLite directory (defaults to $TURBO_LEAN_HOME or ~/.cache/turbo-lean)
+      --project-dir <PROJECT_DIR>      Project root directory [default: .]
+      --json                           Output JSON results for agent/CI consumption
+      --trust-domain <TRUST_DOMAIN>    Trust domain ('trusted' or 'untrusted:<id>') [default: trusted]
+      --max-memory-mb <MAX_MEMORY_MB>  Optional memory budget cap in MiB (sets TURBO_LEAN_MAX_MEMORY_MB for hardware-adaptive governor)
+      --pin-level <PIN_LEVEL>          Pin built artifacts in CAS (0=normal, 1=main_branch, 2=toolchain) [default: 0]
+      --seed-shards                    Seed TheoremProofCAS with all verified theorem shards after build completes
+  -h, --help                           Print help
+name: turbo-lean CI (Self-Hosted CAS & Proof Verification)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  LEAN_NUM_THREADS: "4"
+  # Axiom-policy audit tests change process-wide environment variables.
+  RUST_TEST_THREADS: "1"
+  TURBO_LEAN_HOME: ${{ github.workspace }}/.turbo-cache
+
+jobs:
+  impact:
+    name: Fast inventory and impact gates
+    runs-on: ubuntu-latest
+    outputs:
+      run_lean_build: ${{ steps.plan.outputs.run_lean_build }}
+      impact_digest: ${{ steps.plan.outputs.impact_digest }}
+      inputs_unchanged: ${{ steps.plan.outputs.inputs_unchanged }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: |
+          python3 scripts/ci_impact_plan.py --self-test
+          python3 scripts/sync_docs_inventory.py --check
+          python3 scripts/emitter_mutants.py --unit-tests
+          python3 scripts/run_llvm_lli_diff.py --self-test
+          python3 scripts/run_alive2_tv.py --self-test
+          python3 scripts/check_lean_mlir_bridge_sync.py --self-test
+          python3 scripts/check_lean_mlir_bridge_sync.py
+          python3 scripts/run_target_ir_fuzz.py --self-test
+          python3 sdk/accelerator-template/validate.py
+      - id: plan
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before || github.sha }}
+        run: |
+          if [ "$BASE" = "0000000000000000000000000000000000000000" ]; then BASE=HEAD; fi
+          python3 scripts/ci_impact_plan.py --base "$BASE"
+
+  verify:
+    needs: impact
+    if: needs.impact.outputs.run_lean_build == 'true'
+    name: Build turbo-lean & Self-Verify Lean 4 Proofs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+
+      - name: Provision bubblewrap sandbox for untrusted PR verification
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends bubblewrap
+          if [ -f /proc/sys/kernel/apparmor_restrict_unprivileged_userns ]; then
+            sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+          fi
+          bwrap --unshare-all --new-session --die-with-parent --clearenv --setenv PATH /usr/bin:/bin --dev /dev --proc /proc --tmpfs /tmp --ro-bind /usr /usr --ro-bind /bin /bin --ro-bind /lib /lib --ro-bind /lib64 /lib64 --ro-bind /etc /etc true
+
+      - name: Cache Lean toolchain, Cargo registry, and build artifacts
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: |
+            ~/.elan
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+            lean/.lake/build
+          key: ${{ runner.os }}-ci-cargo-lean-${{ needs.impact.outputs.impact_digest }}
+          restore-keys: |
+            ${{ runner.os }}-ci-cargo-lean-
+            ${{ runner.os }}-roadmap-cargo-lean-
+
+      - name: Setup Lean 4 toolchain
+        run: |
+          set -euo pipefail
+          TOOLCHAIN="$(tr -d '[:space:]' < lean/lean-toolchain)"
+          BACKOFFS=(2 4 8 16 20)
+          READY=0
+          for ATTEMPT in 1 2 3 4 5 6; do
+            if { [ -x "$HOME/.elan/bin/elan" ] || { curl --retry 5 --retry-all-errors -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none; }; } \
+              && [ -x "$HOME/.elan/bin/elan" ] \
+              && { "$HOME/.elan/bin/elan" toolchain list | grep -Fq "$TOOLCHAIN" || "$HOME/.elan/bin/elan" toolchain install "$TOOLCHAIN"; }; then
+              READY=1
+              break
+            fi
+            rm -rf "$HOME/.elan/tmp"
+            if [ "$ATTEMPT" -lt 6 ]; then
+              DELAY="${BACKOFFS[$((ATTEMPT - 1))]}"
+              echo "elan setup attempt ${ATTEMPT}/6 failed; retrying in ${DELAY}s..." >&2
+              sleep "$DELAY"
+            fi
+          done
+          if [ "$READY" -ne 1 ]; then
+            echo "elan setup failed after 6 attempts for $TOOLCHAIN" >&2
+            exit 1
+          fi
+          "$HOME/.elan/bin/elan" default "$TOOLCHAIN"
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          echo "${GITHUB_WORKSPACE}/lean/.lake/build/bin" >> "$GITHUB_PATH"
+          (cd lean && "$HOME/.elan/bin/lean" --version)
+
+      - name: Restore turbo-lean portable CAS bundle (.tlpack)
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: .turbo-pack
+          key: turbo-lean-cas-${{ hashFiles('lean/lean-toolchain', 'lean/**/*.lean') }}
+../scripts/run_heapobj_abi_sanitizers.py:19:     - When `--core-bin` (`lean-native-core`) is supplied or present, emits a real C-ABI header via
+../scripts/run_heapobj_abi_sanitizers.py:57:DEFAULT_CORE_BIN = ROOT / "lean" / ".lake" / "build" / "bin" / "lean-native-core"
+../scripts/run_heapobj_abi_sanitizers.py:897:        bad = run_sanitizer_suite(core_bin_arg="/nonexistent/lean-native-core", require_tsan=False)
+../scripts/run_heapobj_abi_sanitizers.py:903:            mock_core = Path(tmp) / "mock-lean-native-core"
+../scripts/run_heapobj_abi_sanitizers.py:985:    parser.add_argument("--core-bin", default=None, help="Optional path to `lean-native-core` for live CAbiEmit + LLVM IR link")
+../scripts/test_p0_trust_boundary.py:27:     `lean-native emit-lnir` + `eval-lnir --batch-json`, and `compile-llvm` + `clang`) across ALL seeds
+../scripts/test_p0_trust_boundary.py:51:CORE_BIN = ROOT / "lean" / ".lake" / "build" / "bin" / "lean-native-core"
+../scripts/test_p0_trust_boundary.py:351:            override_core="/nonexistent/lean-native-core",
+../scripts/test_p0_trust_boundary.py:444:        good = {"schemaVersion": "lean-native-symbolic-tv-v2", "allPassed": True,
+../scripts/run_alive2_tv.py:6:   - `lean-native-core compile-llvm --canonical-benchmark -O0` vs `-O3` (including loop CFGs)
+../scripts/run_alive2_tv.py:7:   - `lean-native-core compile-llvm --fastcheck-sample -O0` vs `-O3`
+../scripts/run_alive2_tv.py:468:        default=str(ROOT_DIR / "lean" / ".lake" / "build" / "bin" / "lean-native-core"),
+../scripts/run_alive2_tv.py:498:        print(f"[FAIL] Missing lean-native-core binary at {core_bin}", file=sys.stderr)
+../scripts/emitter_mutants.py:6:default Lake target binaries (`lean-native`, `lean-native-core`,
+../scripts/emitter_mutants.py:7:`turbo-lean-native`, `turbo-zygote`) and `target/release/turbo-lean` are
+../scripts/emitter_mutants.py:43:    "lean/.lake/build/bin/lean-native",
+../scripts/emitter_mutants.py:44:    "lean/.lake/build/bin/lean-native-core",
+../scripts/emitter_mutants.py:45:    "lean/.lake/build/bin/turbo-lean-native",
+../scripts/emitter_mutants.py:55:    "lean/.lake/build/bin/lean-native",
+../scripts/emitter_mutants.py:56:    "lean/.lake/build/bin/lean-native-core",
+../scripts/emitter_mutants.py:57:    "lean/.lake/build/bin/turbo-lean-native",
+../scripts/emitter_mutants.py:709:                    hashes.get("lean/.lake/build/bin/lean-native-core") is not None
+../scripts/emitter_mutants.py:710:                    and hashes.get("lean/.lake/build/bin/lean-native-core")
+../scripts/emitter_mutants.py:711:                    != base_hashes.get("lean/.lake/build/bin/lean-native-core")
+../scripts/emitter_mutants.py:719:                    "baseline_lean_native_core_sha256": base_hashes.get("lean/.lake/build/bin/lean-native-core"),
+../scripts/emitter_mutants.py:720:                    "mutant_lean_native_core_sha256": hashes.get("lean/.lake/build/bin/lean-native-core"),
+../scripts/bench_rust_parity.py:4:Build lean-native-core first. Generated sources live in a temporary directory.
+../scripts/bench_rust_parity.py:18:CORE = ROOT / 'lean/.lake/build/bin/lean-native-core'
+../scripts/bench_rust_parity.py:103:        parser.error('missing checkout binaries; run (cd lean && lake build lean-native-core) '
+../scripts/fuzz_lcnf_conformance.py:8:     frontend (`lean-native emit-lnir --wire <FuzzerBatch.lean>`) and evaluates EVERY declaration
+../scripts/fuzz_lcnf_conformance.py:9:     with the formal operational interpreter (`lean-native-core eval-lnir --batch-json --opt`),
+../scripts/fuzz_lcnf_conformance.py:10:     plus the repository's symbolic translation validator (`lean-native-core validate-tv`).
+../scripts/fuzz_lcnf_conformance.py:12:     LLVM backend (`lean-native-core compile-llvm`) and `clang` into a native executable and runs it.
+../scripts/fuzz_lcnf_conformance.py:15:  - If ANY required engine (`lean`, `lean-native`, `lean-native-core`, `clang`) is missing or not
+../scripts/fuzz_lcnf_conformance.py:38:LEAN_NATIVE_CORE = ROOT / "lean" / ".lake" / "build" / "bin" / "lean-native-core"
+../scripts/fuzz_lcnf_conformance.py:39:LEAN_NATIVE_FULL = ROOT / "lean" / ".lake" / "build" / "bin" / "lean-native"
+../scripts/fuzz_lcnf_conformance.py:734:      (2) frontend lowering (`lean-native emit-lnir --wire`) + `lean-native-core eval-lnir --batch-json --opt` + `validate-tv`,
+../scripts/fuzz_lcnf_conformance.py:735:      (3) `lean-native-core compile-llvm` + `clang` binary execution.
+../scripts/fuzz_lcnf_conformance.py:841:        # 2. Engine 2: Frontend Lowering (`lean-native emit-lnir --wire`) + `eval-lnir --batch-json` + `validate-tv`
+../scripts/fuzz_lcnf_conformance.py:972:    if report.get("schemaVersion") != "lean-native-symbolic-tv-v2":
+../scripts/run_gpu_tpu_diff.py:1493:    ap.add_argument("--core-bin", type=Path, default=ROOT_DIR / "lean" / ".lake" / "build" / "bin" / "lean-native-core")
+../scripts/run_gpu_tpu_diff.py:1558:            print(f"[FAIL] Missing lean-native-core binary at {args.core_bin}", file=sys.stderr)
+../scripts/run_gpu_tpu_diff.py:1567:            print(f"[FAIL] `lean-native-core gpu-tpu-diff-suite` failed:\n{proc.stderr}", file=sys.stderr)
+../scripts/run_conformance_suite.py:9:conformance (`lean -c` + `leanc`, `lean-native emit-lnir --wire` + `eval-lnir`
+../scripts/run_conformance_suite.py:36:CORE = ROOT / "lean/.lake/build/bin/lean-native-core"
+../scripts/emitter_mutants.json:38:        "lean/.lake/build/bin/lean-native",
+../scripts/emitter_mutants.json:39:        "lean/.lake/build/bin/lean-native-core",
+../scripts/emitter_mutants.json:40:        "lean/.lake/build/bin/turbo-lean-native",
+../scripts/emitter_mutants.json:66:        "lean/.lake/build/bin/lean-native",
+../scripts/emitter_mutants.json:67:        "lean/.lake/build/bin/lean-native-core",
+../scripts/emitter_mutants.json:68:        "lean/.lake/build/bin/turbo-lean-native",
+../scripts/emitter_mutants.json:76:        "lean/.lake/build/bin/lean-native",
+../scripts/emitter_mutants.json:77:        "lean/.lake/build/bin/lean-native-core",
+../scripts/emitter_mutants.json:78:        "lean/.lake/build/bin/turbo-lean-native",
+../scripts/emitter_mutants.json:86:        "lean/.lake/build/bin/lean-native",
+../scripts/emitter_mutants.json:87:        "lean/.lake/build/bin/lean-native-core"
+../scripts/emitter_mutants.json:91:      "argv": ["bash", "-c", "cd lean && lake exe lean-native-core self-test"],
+../scripts/emitter_mutants.json:93:        "lean/.lake/build/bin/lean-native-core"
+../scripts/emitter_mutants.json:97:      "argv": ["bash", "-c", "cd lean && lake exe turbo-lean-native self-test"],
+../scripts/emitter_mutants.json:99:        "lean/.lake/build/bin/turbo-lean-native"
+../scripts/emitter_mutants.json:112:    "lean/.lake/build/bin/lean-native",
+../scripts/emitter_mutants.json:113:    "lean/.lake/build/bin/lean-native-core",
+../scripts/emitter_mutants.json:114:    "lean/.lake/build/bin/turbo-lean-native",
+../scripts/verify_roadmap_contract.sh:35:FULL_BIN="$ROOT_DIR/lean/.lake/build/bin/lean-native"
+../scripts/verify_roadmap_contract.sh:36:CORE_BIN="$ROOT_DIR/lean/.lake/build/bin/lean-native-core"
+Ubuntu clang version 18.1.3 (1ubuntu1)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin

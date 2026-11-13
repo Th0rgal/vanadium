@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "git -C ledger-app-builder rev-parse HEAD; cat ledger-app-builder/lite/Dockerfile; rg -n \"secure-sdk|SDK_BRANCH|NANOSP|NANOX|clang|gcc|sdk\" ledger-app-builder/scripts ledger-app-builder/lite; lean-native --help; lean-native emit-freestanding-c-lib --help; cmake --version; ls /usr/lib/x86_64-linux-gnu/libcmocka*; command -v apt-get dpkg-deb wget curl clang llvm-ar llvm-nm opt"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567747.5374722,
+  "exit": 0,
+  "ended": 1794567747.8809657
+}

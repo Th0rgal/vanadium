@@ -1,0 +1,18 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/turbo-lean",
+  "argv": [
+    "bash",
+    "-c",
+    "git rev-parse HEAD; rg --files -g AGENTS.md; rg -n \"emit-freestanding-c-lib|freestanding\" README* lean/README* docs | head -100; ls lean; rg -n \"lean-native|cargo build|lake build|build-exe\" lean/README* lean/Makefile lean/lakefile*"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0"
+  },
+  "started": 1794567788.7006464,
+  "exit": 2,
+  "ended": 1794567788.7168307
+}
