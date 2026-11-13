@@ -1,0 +1,14 @@
+{
+  "new_completed_results": [],
+  "partial_raw_markers": {
+    "nanosp": "86%;512FAILED;MuSig evictionPASSED",
+    "nanox": "78%;512FAILED;MuSig evictionPASSED"
+  },
+  "counts": null,
+  "exit": null,
+  "limits": "partialmarkers only; originalcauseunproven",
+  "completion_records": "harvest_not_foundboth",
+  "transfer_manifest": "harvest_not_found",
+  "runtime1345": "harvest_not_found",
+  "capture": "individualSHAverified noatomicarchive"
+}
