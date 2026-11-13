@@ -1,0 +1,9 @@
+{
+  "checkpoint": 37,
+  "both_full_partial_512": "PASSED",
+  "both_full_partial_4toMaxPlus1": "FAILED",
+  "currentcase": "MuSigsession_is_single_use59%",
+  "final_counts": null,
+  "exit": null,
+  "boat_expiry": 1794594147
+}
