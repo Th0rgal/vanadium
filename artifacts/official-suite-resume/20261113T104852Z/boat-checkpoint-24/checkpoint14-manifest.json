@@ -1,0 +1,174 @@
+{
+  "created_utc": "2026-11-13T14:12:00.718697+00:00",
+  "snapshot_filename": "checkpoint14.evidence.tar.gz",
+  "archive_bytes": 13615261,
+  "archive_sha256": "1a2369b629f0a90e7c1ea546506a93a8e38e9a49edc19022db2f32e3497ce12d",
+  "encoding": "existing lossless gzip tar, split into bytewise consecutive chunks",
+  "part_bytes_max": 524288,
+  "parts": [
+    {
+      "filename": "checkpoint14.part00",
+      "bytes": 524288,
+      "sha256": "9b06d8669baf81f74aa335be0c5bb84f7859d55ca6976eb1fbcaf690fbd9b7a1",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part00"
+    },
+    {
+      "filename": "checkpoint14.part01",
+      "bytes": 524288,
+      "sha256": "1557f79b0d7cf0395734e1a0383861095fe0c80a91b26acd614d0ce309f3ab6e",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part01"
+    },
+    {
+      "filename": "checkpoint14.part02",
+      "bytes": 524288,
+      "sha256": "8bf791990d89fd9dc15941dfec7cd5e5b06d8d7f3552816e9e3926ed931d6edf",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part02"
+    },
+    {
+      "filename": "checkpoint14.part03",
+      "bytes": 524288,
+      "sha256": "c627008de376bce88c5e5278e9d4af731e22dc86ed23bf1efa7eefcc298e697e",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part03"
+    },
+    {
+      "filename": "checkpoint14.part04",
+      "bytes": 524288,
+      "sha256": "aca27704657d0ae0e656c00f88c2926e2f96dc4a9d4dc3e83bc6604054e8ff63",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part04"
+    },
+    {
+      "filename": "checkpoint14.part05",
+      "bytes": 524288,
+      "sha256": "0f5fe4fa4fe5a803b2a7255f65c9ddbe58f3d32e2aada56cc51fb8a1c43ab2d4",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part05"
+    },
+    {
+      "filename": "checkpoint14.part06",
+      "bytes": 524288,
+      "sha256": "636e5f1cfdfb53f2660673830598b7f38548eb0a246ca5778d297d8841fcbf26",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part06"
+    },
+    {
+      "filename": "checkpoint14.part07",
+      "bytes": 524288,
+      "sha256": "87feca1664176bdc635b7ae2ac07b9bfdf9e17d63c3e192814b4b5d9ab03ff3b",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part07"
+    },
+    {
+      "filename": "checkpoint14.part08",
+      "bytes": 524288,
+      "sha256": "99514c9b0bcea76a7ee0907b9dea62b2f5128a453c2120e60f5fdae3e8688d03",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part08"
+    },
+    {
+      "filename": "checkpoint14.part09",
+      "bytes": 524288,
+      "sha256": "73a5d1d54c437077c7ee50126c09efe5b60ae25d0253a689d9aed91e9b8770ed",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part09"
+    },
+    {
+      "filename": "checkpoint14.part10",
+      "bytes": 524288,
+      "sha256": "7f9a5ec54e91b238aa64d47d6910e3f0762f6e32354498fcf87eda4c36910ad8",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part10"
+    },
+    {
+      "filename": "checkpoint14.part11",
+      "bytes": 524288,
+      "sha256": "bf7a5910c5d1dcfc50a9f44d5c62f0fda45c372d68e189072ef84096221b49e2",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part11"
+    },
+    {
+      "filename": "checkpoint14.part12",
+      "bytes": 524288,
+      "sha256": "d12c1bb8c769bfd699fa038b5708afbd78be0ce71a3c84e5283e9a2c29082f0d",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part12"
+    },
+    {
+      "filename": "checkpoint14.part13",
+      "bytes": 524288,
+      "sha256": "b04a0d97dcde65749b86db6bf226c032b9c7af4653f21a7aee3dd3233010ad83",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part13"
+    },
+    {
+      "filename": "checkpoint14.part14",
+      "bytes": 524288,
+      "sha256": "b4c6d43fb61851eb84cc8bb4fa14e9f4d1c4c60751a66c89b4983e537f88e7c4",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part14"
+    },
+    {
+      "filename": "checkpoint14.part15",
+      "bytes": 524288,
+      "sha256": "b22ea270151e2501f9a22d6bcee0002f06372a076428b372bfa06c74e06f15ef",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part15"
+    },
+    {
+      "filename": "checkpoint14.part16",
+      "bytes": 524288,
+      "sha256": "b62faec1cf98faf03277f4278e258faf2ceaf355f35438b8e25fe17595a18000",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part16"
+    },
+    {
+      "filename": "checkpoint14.part17",
+      "bytes": 524288,
+      "sha256": "c8ebf289d260bb6ab89824fefe40a2287967c5ff470fd87a5c3828ae035642a7",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part17"
+    },
+    {
+      "filename": "checkpoint14.part18",
+      "bytes": 524288,
+      "sha256": "dd083dd96f42493a86b1c115f529e1944df3ac3fdea9601f72dc063a2352b9c7",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part18"
+    },
+    {
+      "filename": "checkpoint14.part19",
+      "bytes": 524288,
+      "sha256": "9abdfdcfd7e93ed98491a756158e25f240d19eda575b882c3c24bcbe098e45a8",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part19"
+    },
+    {
+      "filename": "checkpoint14.part20",
+      "bytes": 524288,
+      "sha256": "0d8272f1a6f0d22933a3e4e55847261cdbb61555e30980d68271f58146647711",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part20"
+    },
+    {
+      "filename": "checkpoint14.part21",
+      "bytes": 524288,
+      "sha256": "e5f1195c9dbabf3066e597d2081fdda4ef69f64ceb4114ab9cfe75c1e505352b",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part21"
+    },
+    {
+      "filename": "checkpoint14.part22",
+      "bytes": 524288,
+      "sha256": "e5fd70446b36fbc0deef7b9b5095c6b6ebcafc0f375ec7ff5c312fd72918b2ea",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part22"
+    },
+    {
+      "filename": "checkpoint14.part23",
+      "bytes": 524288,
+      "sha256": "156977013e44fcb9936f742dfcd3bf389fef5ab9c7caa21d1bc990e220869bc3",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part23"
+    },
+    {
+      "filename": "checkpoint14.part24",
+      "bytes": 524288,
+      "sha256": "e651d5e3d9c58e8b6bc21192828fedc96ea6892155c79ca497f2a4b4f4cf2839",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part24"
+    },
+    {
+      "filename": "checkpoint14.part25",
+      "bytes": 508061,
+      "sha256": "856266c8c259e091e9bc8d79b8e3b738b4d752ae178d6fa6b6455ec61b3bd2e7",
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.part25"
+    }
+  ],
+  "reassemble": "Concatenate parts in manifest order; verify whole archive SHA256 before extraction.",
+  "root_common_evidence_index": "evidence/root-common-evidence-paths.json",
+  "source_archives_unchanged": true,
+  "status": "All full1800 reruns completed;280passed1failed1skip perdevice,exit1. No active suite.",
+  "limitations": "No old OOM cause inferred from current memory events. Historical crash cause unproven; diagnostic passes do not certify full suites.",
+  "snapshot_path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.evidence.tar.gz",
+  "transfer_root": "/var/lib/orb-node/work/official-suite-resume/transfer",
+  "original_manifest_preserved": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14.manifest.json"
+}

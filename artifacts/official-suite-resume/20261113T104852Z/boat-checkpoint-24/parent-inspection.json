@@ -1,0 +1,40 @@
+{
+  "archive_sha256": "1a2369b629f0a90e7c1ea546506a93a8e38e9a49edc19022db2f32e3497ce12d",
+  "archive_bytes": 13615261,
+  "parts_verified": 26,
+  "accepted_completed_testnet": {
+    "nanosp": {
+      "run": "ragger-tests-nanosp-1800-full-retry3",
+      "pass_count": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "raw_stdout_sha256": "39b8341b8b1d5d7425a59b58e72e4862aad2c1fb6ed93a05e3dfa935db4f8e37"
+    },
+    "nanox": {
+      "run": "ragger-tests-nanox-1800-full-retry3",
+      "pass_count": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "raw_stdout_sha256": "3b357d9604af857956ae7a59b3232b60ba21bddb349295e0bd7ce1ad14902b85"
+    }
+  },
+  "failure": "RemoteDisconnected POST/ticker while navigating512sign",
+  "cause": "UNKNOWN",
+  "global_pass": false
+}

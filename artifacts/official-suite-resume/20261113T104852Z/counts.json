@@ -191,7 +191,7 @@
     }
   },
   "pending_validation": {
-    "retry3_terminal_matching": "bothcompletedexit1 JUnit280p1f1skip each; stdoutgzipawaiting, nofinalacceptance"
+    "diagnosis": "single512RemoteDisconnectedcauseUNKNOWN; nofullPASS"
   },
   "diagnostics": {
     "musig_eviction_nanox": {
@@ -215,6 +215,38 @@
         "exit": 0
       },
       "scope": "separate fixture regression, not official full suite"
+    }
+  },
+  "completed_testnet_1800_retry3": {
+    "nanosp": {
+      "run": "ragger-tests-nanosp-1800-full-retry3",
+      "pass_count": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "raw_stdout_sha256": "39b8341b8b1d5d7425a59b58e72e4862aad2c1fb6ed93a05e3dfa935db4f8e37"
+    },
+    "nanox": {
+      "run": "ragger-tests-nanox-1800-full-retry3",
+      "pass_count": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "raw_stdout_sha256": "3b357d9604af857956ae7a59b3232b60ba21bddb349295e0bd7ce1ad14902b85"
     }
   }
 }
