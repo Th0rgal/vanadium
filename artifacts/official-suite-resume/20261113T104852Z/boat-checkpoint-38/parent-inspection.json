@@ -1,0 +1,90 @@
+{
+  "checkpoint": 38,
+  "completed_candidate_full": {
+    "nanosp": {
+      "run": "ragger-navigation-full-nanosp",
+      "pass": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "failure": "test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanosp-nanosp]",
+      "failure_kind": "golden screen mismatch00000.png",
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp]",
+      "case512_pass": true,
+      "started_utc": "2026-11-13T16:33:18.926111+00:00",
+      "ended_utc": "2026-11-13T17:08:25.446094+00:00",
+      "scope": "FULL_SELECTION_HOST_RUNTIME_CANDIDATE_NOT_BASELINE"
+    },
+    "nanox": {
+      "run": "ragger-navigation-full-nanox",
+      "pass": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "failure": "test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanox-nanox]",
+      "failure_kind": "golden screen mismatch00000.png",
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanox-nanox]",
+      "case512_pass": true,
+      "started_utc": "2026-11-13T16:33:18.926335+00:00",
+      "ended_utc": "2026-11-13T17:08:34.255238+00:00",
+      "scope": "FULL_SELECTION_HOST_RUNTIME_CANDIDATE_NOT_BASELINE"
+    }
+  },
+  "files": [
+    {
+      "file": "ragger-navigation-full-nanosp.json",
+      "bytes": 1796,
+      "sha256": "f132e96390b673bdae4c4d434301ebed9d085521988435437ed3addc04c6eba7"
+    },
+    {
+      "file": "ragger-navigation-full-nanox.json",
+      "bytes": 1790,
+      "sha256": "407c701e4487802fb6b44c74075b647ebc2ca9ed0d92f8904e977aa73ab474be"
+    },
+    {
+      "file": "ragger-navigation-full-nanosp.stdout",
+      "bytes": 575513,
+      "sha256": "85c4b42659f75b4a6bb9542783dd678edb75c42c0c2fd11c36bcdc5a620ad036"
+    },
+    {
+      "file": "ragger-navigation-full-nanox.stdout",
+      "bytes": 436422,
+      "sha256": "cc65d5e6c569e7b7277ea3fde6d5e99bcc8b8b57358b015d920f2d6e3386ab27"
+    },
+    {
+      "file": "ragger-navigation-full-nanosp.xml",
+      "bytes": 36443,
+      "sha256": "1a024bc7282ac2cde6226005ddd42a4fec14ee436516fb7f995ea4daf50f8002"
+    },
+    {
+      "file": "ragger-navigation-full-nanox.xml",
+      "bytes": 35917,
+      "sha256": "b93dd59ff2b537c4e4d8bbf956401b2ba4225e4744357485ae15b87ac81efb18"
+    },
+    {
+      "file": "navigation-fix-index.json",
+      "bytes": 14330,
+      "sha256": "cd4094dd4d653e4a61590f8aefc4059283c167e89a3f96d616635384e05fcc22"
+    },
+    {
+      "file": "navigation-full-runtime-status.json",
+      "bytes": 179,
+      "sha256": "8c32f9e30a461455c27e4c12e1115aaee5b84f33879461a647251b580334fa96"
+    }
+  ],
+  "atomic_archive": false
+}

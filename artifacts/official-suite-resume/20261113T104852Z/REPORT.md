@@ -1,6 +1,6 @@
 # Official Bitcoin full suites — parent assessment
 
-Status: IN_PROGRESS_WITH_FAILURES. Latest full testnet1800: both280pass/1fail/1upstreamskip/0error/0deselected exit1. Raw evidence independently inspected through checkpoint 29. No global PASS.
+Status: IN_PROGRESS_WITH_FAILURES. Latest full testnet1800: both280pass/1fail/1upstreamskip/0error/0deselected exit1. Raw evidence independently inspected through checkpoint 38. Candidate full BOTH280pass1screen-failure1upstreamskip exit1;512passes both. No global PASS.
 
 | Complete fresh run | Passed | Failed | Skipped/ignored | Deselected/filtered | Exit |
 |---|---:|---:|---:|---:|---:|
@@ -127,3 +127,7 @@ Freshpartialstdout BOTH shows4toMaxPlus1FAILED at37%, thenlarge_amountPASSED, cu
 Checkpoint37: executorhealthyactive, Boatready actualexpiry18:22:27Z verified, budgetAPI0.05/50 accountingdiscontinuity retained. BOTHfullcandidate rawstdout now512to256PASSED38%, progressedtoMuSigsession_is_single_use59%. 4toMaxPlus1FAILED37% bothretained, nofinaltraceback/counts/exit/JUnit yet. These are partialmarkers, not fullsuiteacceptance or combinedcounts. Preserveactivefullcompletion andfrozenimports; no duplicates/restarts.
 
 Actualnewindex transfer/navigation-full-live-index.json acquired (stopreaskingmissingnavigation-full-index). Runtime status/index records old17:22expiry; actualparent18:22confirmed; advisoryrecordonlyneversignals. Worker sourceinspection of exceptionpolicy ongoing, no diagnosisaccepteduntilactualtraceback/regression. Latestcompletebaselineboth280pass1fail1upstreamskip0error0deselectedexit1 remainsdistinctfromactivecandidate. No Lean spec/assertion/skipchange warranted; no globalPASS.
+
+Checkpoint38: executor healthy active; Boat ready actual expiry18:22:27Z verified. BudgetAPI0.05/50, prior accounting discontinuity retained. BOTH candidate FULL runs COMPLETED FAIL exit1:280pass1fail1upstreamskip0error0deselected,282cases entire dot slow2 timeout1800. Parent independently matched exactargv, terminal, completion and JUnit. NanoS+2104.46s/NanoX2113.36s. 512to256 PASSED both. Single4toMaxPlus1 failure is golden-screen mismatch00000.png in navigator comparison; specific cause unproven. Upstream skip unchanged. Baseline full280p1f1skip with512failure remains separately preserved.
+
+Executor actively investigates separate navigation-resume trees/narrow diagnostics; no new fix accepted. Require minimal patch, before/after regressions, frozen in-pytest imports/plugin and guest ELF hashes before full same-selection both and updated mainnet without overlap. No golden/UI/assertion/skip weakening or Lean change. Eight small harvested files secured with SHA manifest; not atomicarchive. No globalPASS.

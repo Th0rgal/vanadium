@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS_WITH_FAILURES: official full1800 completed FAIL both; guest exit255 diagnosis active",
+  "status": "IN_PROGRESS_WITH_FAILURES: candidate full complete FAIL both; screen navigation diagnosis active",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -161,7 +161,7 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 37,
+  "latest_parent_checkpoint": 38,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
   "runtime_monitor_deadline": "retry3receiptended13:58:11; noactive monitorasserted",
   "durable_workspace_probe": {

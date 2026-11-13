@@ -191,7 +191,7 @@
     }
   },
   "pending_validation": {
-    "diagnosis": "single512RemoteDisconnectedcauseUNKNOWN; nofullPASS"
+    "diagnosis": "candidate full both4toMaxPlus1 screen mismatch; separate navigation-resume diagnosis active; full both and updated mainnet pending"
   },
   "diagnostics": {
     "musig_eviction_nanox": {
@@ -265,6 +265,50 @@
       "terminal_junit_argv_exit_matched": true,
       "verdict": "FAIL",
       "raw_stdout_sha256": "3b357d9604af857956ae7a59b3232b60ba21bddb349295e0bd7ce1ad14902b85"
+    }
+  },
+  "completed_testnet_navigation_candidate_v1": {
+    "nanosp": {
+      "run": "ragger-navigation-full-nanosp",
+      "pass": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "failure": "test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanosp-nanosp]",
+      "failure_kind": "golden screen mismatch00000.png",
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp]",
+      "case512_pass": true,
+      "started_utc": "2026-11-13T16:33:18.926111+00:00",
+      "ended_utc": "2026-11-13T17:08:25.446094+00:00",
+      "scope": "FULL_SELECTION_HOST_RUNTIME_CANDIDATE_NOT_BASELINE"
+    },
+    "nanox": {
+      "run": "ragger-navigation-full-nanox",
+      "pass": 280,
+      "fail": 1,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "slow": 2,
+      "timeout_seconds": 1800,
+      "terminal_junit_argv_exit_matched": true,
+      "verdict": "FAIL",
+      "failure": "test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanox-nanox]",
+      "failure_kind": "golden screen mismatch00000.png",
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanox-nanox]",
+      "case512_pass": true,
+      "started_utc": "2026-11-13T16:33:18.926335+00:00",
+      "ended_utc": "2026-11-13T17:08:34.255238+00:00",
+      "scope": "FULL_SELECTION_HOST_RUNTIME_CANDIDATE_NOT_BASELINE"
     }
   }
 }
