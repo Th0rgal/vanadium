@@ -110,6 +110,22 @@
         ],
         "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common"
       }
+    },
+    "vanadium_root_common_private_overlay": {
+      "scope": "Vanadium root common, PRIVATE single-edge lock overlay; original --locked failure retained",
+      "pass": 66,
+      "fail": 0,
+      "ignored": 0,
+      "filtered_out": 0,
+      "doc_pass": 0,
+      "exit": 0,
+      "run": "root-common-overlay-full",
+      "original_lock_sha256": "139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546",
+      "private_overlay_sha256": "c5b183fda05b625d50581e943e52f280c9ca46ee13a590e0252c8034789785d6",
+      "only_lock_delta": "cargo-vnd dependencies: add existing rhai_codegen3.1.0; no package/version/checksum changes",
+      "cargo": "nightly-2025-03-01, -Zunstable-options --lockfile-path PRIVATE --locked",
+      "rustc": "private stable1.100 via explicitRUSTC",
+      "independent_toml_and_unified_diff_check": true
     }
   },
   "uncompleted": {
@@ -175,7 +191,18 @@
     }
   },
   "pending_validation": {
-    "testnet_full_budget_nanosp": "same fullselection validation after failurediagnosis",
-    "testnet_full_budget_nanox": "same fullselection validation after failurediagnosis"
+    "testnet_full_budget_nanosp": "RUNNING entire282 slow2 timeout1800, finalcounts/exitnull",
+    "testnet_full_budget_nanox": "RUNNING entire282 slow2 timeout1800, finalcounts/exitnull"
+  },
+  "diagnostics": {
+    "musig_eviction_nanox": {
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "deselected": 0,
+      "exit": 0,
+      "duration_seconds": 69.85,
+      "scope": "one exact diagnostic; no fullsuitePASS or originalcauseproof"
+    }
   }
 }

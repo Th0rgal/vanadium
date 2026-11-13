@@ -1,0 +1,76 @@
+
+running 66 tests
+test accumulator::tests::test_out_of_bounds_proof_generation ... ok
+test accumulator::tests::test_new_requires_power_of_two_size - should panic ... ok
+test accumulator::tests::test_out_of_bounds_update ... ok
+test accumulator::tests::test_root_computer_overfeed - should panic ... ok
+test accumulator::tests::test_merkle_accumulator ... ok
+test accumulator::tests::test_root_computer_matches_merkle_root ... ok
+test accumulator::tests::test_root_computer_requires_non_zero - should panic ... ok
+test accumulator::tests::test_root_computer_requires_power_of_two - should panic ... ok
+test accumulator::tests::test_root_computer_root_before_complete - should panic ... ok
+test accumulator::tests::test_root_computer_single_leaf ... ok
+test accumulator::tests::test_size1_accumulator ... ok
+test accumulator::tests::test_verify_incorrect_proof ... ok
+test constants::tests::test_default_stack_constants ... ok
+test accumulator::tests::test_update_proof_with_incorrect_values ... ok
+test ecall_validation::tests::test_classify_point ... ok
+test ecall_validation::tests::test_cmp_be ... ok
+test ecall_validation::tests::test_modulus ... ok
+test ecall_validation::tests::test_parse_der ... ok
+test ecall_validation::tests::test_parse_hash_identifier ... ok
+test ecall_validation::tests::test_parse_slip21_labels ... ok
+test ecall_validation::tests::test_reduce_secp256k1_scalar ... ok
+test ecall_validation::tests::test_scalars_and_keys ... ok
+test ecall_validation::tests::test_schnorr_signature_range ... ok
+test ux::types::tests::test_confirm_reject_page ... ok
+test ux::types::tests::test_deserialize_full_extra_bytes ... ok
+test ux::types::tests::test_generic_page ... ok
+test ux::types::tests::test_home_page ... ok
+test ux::types::tests::test_icon_page ... ok
+test ux::types::tests::test_invalid_tag ... ok
+test ux::types::tests::test_navigation_info ... ok
+test ux::types::tests::test_page_content_confirmation_button ... ok
+test ux::types::tests::test_page_content_confirmation_long_press ... ok
+test ux::types::tests::test_page_content_tag_value_list ... ok
+test ux::types::tests::test_page_content_text_subtext ... ok
+test ux::types::tests::test_spinner_page ... ok
+test ux::types::tests::test_too_short ... ok
+test ux::types::tests::test_truncated_data ... ok
+test vm::tests::test_decode_atomic_instructions ... ok
+test vm::tests::test_decode_atomic_with_aq_rl_bits ... ok
+test vm::tests::test_exec_amo_unaligned_address ... ok
+test vm::tests::test_exec_amoadd ... ok
+test vm::tests::test_exec_amoadd_wrapping ... ok
+test vm::tests::test_exec_amoand ... ok
+test vm::tests::test_exec_amomax_signed ... ok
+test vm::tests::test_exec_amomaxu_unsigned ... ok
+test vm::tests::test_exec_amomin_signed ... ok
+test vm::tests::test_exec_amominu_unsigned ... ok
+test vm::tests::test_exec_amoor ... ok
+test vm::tests::test_exec_amoswap ... ok
+test vm::tests::test_exec_amoxor ... ok
+test vm::tests::test_exec_lr_sc_success ... ok
+test vm::tests::test_exec_sc_invalidated_by_byte_store_in_word ... ok
+test vm::tests::test_exec_sc_invalidated_by_store ... ok
+test vm::tests::test_exec_sc_not_invalidated_by_store_to_different_word ... ok
+test vm::tests::test_exec_sc_without_reservation ... ok
+test vm::tests::test_memory_segment_contains ... ok
+test vm::tests::test_memory_segment_read ... ok
+test vm::tests::test_memory_segment_new ... ok
+test vm::tests::test_memory_segment_write ... ok
+test vm::tests::test_memory_segment_write_buffer_multiple_pages ... ok
+test vm::tests::test_memory_segment_write_buffer_single_page ... ok
+test vm::tests::test_memory_segment_write_read_empty_buffer ... ok
+test vm::tests::test_vec_memory_get_page ... ok
+test vm::tests::test_vec_memory_modify_page ... ok
+test vm::tests::test_vec_memory_new ... ok
+test vm::tests::test_memory_segment_write_buffer_cross_page_boundary ... ok
+
+test result: ok. 66 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

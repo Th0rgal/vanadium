@@ -1,0 +1,4 @@
+cargo 1.87.0-nightly (2622e844b 2025-02-28)
+rustc 1.87.0-nightly (287487624 2025-02-28)
+rustc 1.100.0 (0ef1bc386 2026-11-09)
+96b5de7a42549101c9d259bc851aa21a01ebb32f1bbecb68f48e0790a19fd648  /usr/local/rustup/toolchains/nightly-2025-03-01-x86_64-unknown-linux-gnu/bin/cargo

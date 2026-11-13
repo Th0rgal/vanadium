@@ -1,0 +1,158 @@
+[
+  {
+    "original_path": "root-common-overlay-full.json",
+    "stored_path": "evidence-delta/root-common-overlay-full.json",
+    "encoding": "identity",
+    "sha256": "12896a43a461b504f3eab319ad7b8b95e7b2d2f23d39aece87dedde12fc6d172"
+  },
+  {
+    "original_path": "root-common-overlay-full.stdout",
+    "stored_path": "evidence-delta/root-common-overlay-full.stdout",
+    "encoding": "identity",
+    "sha256": "39c94b99e60817f08b1840646c25b993ef663de2f8d8bfd90febb06ea7e850d3"
+  },
+  {
+    "original_path": "root-common-overlay-full.stderr",
+    "stored_path": "evidence-delta/root-common-overlay-full.stderr",
+    "encoding": "identity",
+    "sha256": "bedc1b7d0f74c6dc3c10a4734a328df91527af6c9193fc600e19a6a558303a64"
+  },
+  {
+    "original_path": "create-private-root-lock-overlay.json",
+    "stored_path": "evidence-delta/create-private-root-lock-overlay.json",
+    "encoding": "identity",
+    "sha256": "96f1b3316d42d3525921fe2c33ec64f537720bc07b0dcc2a462ba3299ac31659"
+  },
+  {
+    "original_path": "create-private-root-lock-overlay.stdout",
+    "stored_path": "evidence-delta/create-private-root-lock-overlay.stdout",
+    "encoding": "identity",
+    "sha256": "be402013ff4d85a0a3b39e800350cab9a7b79d041853cf17ddfb03fc2d45051e"
+  },
+  {
+    "original_path": "overlay-root-lock-preservation.json",
+    "stored_path": "evidence-delta/overlay-root-lock-preservation.json",
+    "encoding": "identity",
+    "sha256": "a82e58dd6cf6baef710075e826c002ec2b0065ed71c8a6363076998616cdc8bd"
+  },
+  {
+    "original_path": "overlay-root-lock-preservation.stdout",
+    "stored_path": "evidence-delta/overlay-root-lock-preservation.stdout",
+    "encoding": "identity",
+    "sha256": "dab86974a89ce1b8b6b234d2af380463787cc76f9103dab4cc45ef5ada9b74bb"
+  },
+  {
+    "original_path": "root-overlay-inventory.stdout",
+    "stored_path": "evidence-delta/root-overlay-inventory.stdout",
+    "encoding": "identity",
+    "sha256": "ce83249e14b36459069503a7ff4d78a618c0a541c99a46b1cd880f2f35ab9551"
+  },
+  {
+    "original_path": "ragger-tests-nanosp-1800-full.active.json",
+    "stored_path": "evidence-delta/ragger-tests-nanosp-1800-full.active.json",
+    "encoding": "identity",
+    "sha256": "df7a147d904e698ecc6234586c364d97d8554fc4d0dce17ab94536e8160710c4"
+  },
+  {
+    "original_path": "ragger-tests-nanox-1800-full.active.json",
+    "stored_path": "evidence-delta/ragger-tests-nanox-1800-full.active.json",
+    "encoding": "identity",
+    "sha256": "2206f9b9e012642d90e0407b8b6c22dcc774a3125c5c1b876e51b615b58cfd7f"
+  },
+  {
+    "original_path": "runtime-monitor.py",
+    "stored_path": "evidence-delta/runtime-monitor.py",
+    "encoding": "identity",
+    "sha256": "e106a0a7fb676e6542a7c0e791ff565fe210facd452dc8a9cb9a6eea394483f4"
+  },
+  {
+    "original_path": "diagnostic-eviction-nanox.xml",
+    "stored_path": "evidence-delta/diagnostic-eviction-nanox.xml",
+    "encoding": "identity",
+    "sha256": "0eb206742d072c64aa691eb03eaf51a583b887b84693b2d04b620b5e93ef7f79"
+  },
+  {
+    "original_path": "root-common-overlay.Cargo.lock",
+    "stored_path": "evidence-delta/root-common-overlay.Cargo.lock",
+    "encoding": "identity",
+    "sha256": "c5b183fda05b625d50581e943e52f280c9ca46ee13a590e0252c8034789785d6"
+  },
+  {
+    "original_path": "root-common-overlay.patch",
+    "stored_path": "evidence-delta/root-common-overlay.patch",
+    "encoding": "identity",
+    "sha256": "df2f77f68c78f5994e0b3f8cb7276cc96989a2aebd0f32a0a2fa109c208174e8"
+  },
+  {
+    "original_path": "root-common-overlay-canary.json",
+    "stored_path": "evidence-delta/root-common-overlay-canary.json",
+    "encoding": "identity",
+    "sha256": "d4591e38a3e356b1645b06878881bc2bf6ef8756b6da9d346ad9022ce7b1dc99"
+  },
+  {
+    "original_path": "root-common-overlay-canary.stdout",
+    "stored_path": "evidence-delta/root-common-overlay-canary.stdout",
+    "encoding": "identity",
+    "sha256": "81c154de9f522ae1ee2516db7351dce2c85f723c83c6d7ef409743002537237a"
+  },
+  {
+    "original_path": "root-overlay-cargo-toolchain.stdout",
+    "stored_path": "evidence-delta/root-overlay-cargo-toolchain.stdout",
+    "encoding": "identity",
+    "sha256": "01bf18308e6729282f50fa11b6cfe6df9b9c4593c93fcdc4de480383abfa6713"
+  },
+  {
+    "original_path": "monitor-extension-active.json",
+    "stored_path": "evidence-delta/monitor-extension-active.json",
+    "encoding": "identity",
+    "sha256": "1e210a90aede76024a5cac51aa15f2974ed3c74bd330920d939a7c16ce5d6361"
+  },
+  {
+    "original_path": "runtime-monitor-extension.stdout",
+    "stored_path": "evidence-delta/runtime-monitor-extension.stdout",
+    "encoding": "identity",
+    "sha256": "ba60b4cdc07f090e79f3c07e20e69627f280c918cb7d084246c320bc820e56a5"
+  },
+  {
+    "original_path": "ragger-tests-nanosp-1800-full.stdout",
+    "stored_path": "evidence-delta/ragger-tests-nanosp-1800-full.stdout",
+    "encoding": "identity",
+    "sha256": "2b771197e5a9635ab894d85bcaf5ae303f9f4a3a70cafc4c86176ad364ea4c69"
+  },
+  {
+    "original_path": "ragger-tests-nanox-1800-full.stdout",
+    "stored_path": "evidence-delta/ragger-tests-nanox-1800-full.stdout",
+    "encoding": "identity",
+    "sha256": "9a5dcaeaee6a85abed1a2539b54e5e43dc9eeea5fe4795de58c8690e24b4a5c7"
+  },
+  {
+    "original_path": "diagnostic-eviction-nanox.stdout",
+    "stored_path": "evidence-delta/diagnostic-eviction-nanox.stdout.gz",
+    "encoding": "gzip",
+    "sha256": "bc79af4e6ca1ddf1c258d914c8ba9c70c3e73c9ad74f5d1c8f54a9b355ddcd64"
+  },
+  {
+    "original_path": "diagnostic-eviction-nanox.stderr",
+    "stored_path": "evidence-delta/diagnostic-eviction-nanox.stderr",
+    "encoding": "identity",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "original_path": "counts.json",
+    "stored_path": "evidence-delta/counts.json",
+    "encoding": "identity",
+    "sha256": "5399fb6d2b083c8747398a1c442d965894fbe221739873f2ce1992f4fa29ed23"
+  },
+  {
+    "original_path": "diagnostic-eviction-nanox.json",
+    "stored_path": "evidence-delta/diagnostic-eviction-nanox.json",
+    "encoding": "identity",
+    "sha256": "a7497721030413298046f1959b91105d2b9d2fdaa483e83e60d2b1934ef26095"
+  },
+  {
+    "original_path": "active-suite-resource-limits.stdout",
+    "stored_path": "evidence-delta/active-suite-resource-limits.stdout",
+    "encoding": "identity",
+    "sha256": "959af7243470feb787ae2fc575d1e763ce329061d8524c1e64fd3c71c058dd92"
+  }
+]

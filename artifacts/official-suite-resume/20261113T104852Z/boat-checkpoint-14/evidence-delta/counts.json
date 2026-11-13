@@ -1,0 +1,1607 @@
+{
+  "status": "IN_PROGRESS",
+  "time": "2026-11-13T12:26:06.005083+00:00",
+  "selected_runs": {
+    "ctest_full": {
+      "exit": 0,
+      "pass": 31,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 31,
+      "execution_complete": true,
+      "log": "ctest-full"
+    },
+    "mainnet_nanosp": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2,
+      "terminal_summary": "============================== 2 passed in 2.41s ===============================",
+      "execution_complete": true,
+      "suite_complete": true,
+      "log": "mainnet-nanosp"
+    },
+    "mainnet_nanox": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2,
+      "terminal_summary": "============================== 2 passed in 2.36s ===============================",
+      "execution_complete": true,
+      "suite_complete": true,
+      "log": "mainnet-nanox2"
+    },
+    "testnet_nanosp": {
+      "status": "NO_COMPLETION_RECORD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "ragger-tests-nanosp-1800-full"
+    },
+    "testnet_nanox": {
+      "status": "NO_COMPLETION_RECORD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "ragger-tests-nanox-1800-full"
+    },
+    "testnet_nanosp_300": {
+      "exit": 1,
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 282,
+      "terminal_summary": "===== 2 failed, 279 passed, 1 skipped, 273 warnings in 1699.90s (0:28:19) ======",
+      "execution_complete": true,
+      "suite_complete": true,
+      "log": "ragger-tests-nanosp-final2"
+    },
+    "testnet_nanox_300": {
+      "exit": 1,
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 282,
+      "terminal_summary": "===== 2 failed, 279 passed, 1 skipped, 273 warnings in 1698.33s (0:28:18) ======",
+      "execution_complete": true,
+      "suite_complete": true,
+      "log": "ragger-tests-nanox-final"
+    },
+    "initial_testnet_nanosp": {
+      "status": "NO_COMPLETION_RECORD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "ragger-tests-nanosp3"
+    },
+    "initial_testnet_nanox": {
+      "status": "NO_COMPLETION_RECORD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "ragger-tests-nanox"
+    },
+    "bitcoin_rust_app": {
+      "exit": 0,
+      "pass": 90,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          90,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "execution_complete": true,
+      "log": "bitcoin-app-with-ffi"
+    },
+    "bitcoin_rust_common": {
+      "exit": 0,
+      "pass": 85,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          81,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "execution_complete": true,
+      "log": "bitcoin-common-with-ffi"
+    },
+    "root_common_canary": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false,
+      "log": "common-canary"
+    },
+    "root_common_overlay_canary": {
+      "exit": 0,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 65,
+      "rust_result_groups": [
+        [
+          1,
+          0,
+          0,
+          0,
+          65
+        ]
+      ],
+      "execution_complete": true,
+      "log": "root-common-overlay-canary"
+    },
+    "root_common_overlay_full": {
+      "exit": 0,
+      "pass": 66,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          66,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "execution_complete": true,
+      "log": "root-common-overlay-full"
+    },
+    "testnet_nanosp_long": {
+      "exit": 2,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "=================== 1 passed, 3 warnings in 60.30s (0:01:00) ===================",
+      "execution_complete": false,
+      "suite_complete": false,
+      "log": "ragger-tests-nanosp-long"
+    },
+    "testnet_nanox_long": {
+      "exit": 2,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 5,
+      "terminal_summary": "======================== 4 passed, 7 warnings in 59.21s ========================",
+      "execution_complete": false,
+      "suite_complete": false,
+      "log": "ragger-tests-nanox-long"
+    },
+    "diagnostic_512_nanosp": {
+      "status": "NO_COMPLETION_RECORD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "diagnostic-512-nanosp"
+    },
+    "diagnostic_512_nanox": {
+      "status": "NO_COMPLETION_RECORD",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "diagnostic-512-nanox"
+    },
+    "testnet_nanosp_final": {
+      "exit": 1,
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 282,
+      "terminal_summary": "===== 2 failed, 279 passed, 1 skipped, 273 warnings in 1699.90s (0:28:19) ======",
+      "execution_complete": true,
+      "suite_complete": true,
+      "log": "ragger-tests-nanosp-final2"
+    },
+    "testnet_nanox_final": {
+      "exit": 1,
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 282,
+      "terminal_summary": "===== 2 failed, 279 passed, 1 skipped, 273 warnings in 1698.33s (0:28:18) ======",
+      "execution_complete": true,
+      "suite_complete": true,
+      "log": "ragger-tests-nanox-final"
+    },
+    "diagnostic_512_nanosp_retry": {
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "================== 1 failed, 2 warnings in 1801.20s (0:30:01) ==================",
+      "execution_complete": true,
+      "suite_complete": false,
+      "log": "diagnostic-512-nanosp-retry"
+    },
+    "diagnostic_512_nanox_retry": {
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "================== 1 failed, 2 warnings in 1801.02s (0:30:01) ==================",
+      "execution_complete": true,
+      "suite_complete": false,
+      "log": "diagnostic-512-nanox-retry"
+    },
+    "diagnostic_eviction_nanox": {
+      "exit": 0,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "=================== 1 passed, 2 warnings in 69.85s (0:01:09) ===================",
+      "execution_complete": true,
+      "suite_complete": false,
+      "log": "diagnostic-eviction-nanox"
+    }
+  },
+  "attempts": {
+    "compatible-emitter-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "clone-lean": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "emitter-public-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ragger-runner-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true,
+      "suite_complete": false
+    },
+    "ctest-full": {
+      "exit": 0,
+      "pass": 31,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 31,
+      "execution_complete": true
+    },
+    "newlib-sysroot": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "native-canary": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ffi-prerequisite-check": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "clone-builder": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-app-lock": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "root-common-overlay-full": {
+      "exit": 0,
+      "pass": 66,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          66,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "execution_complete": true
+    },
+    "emitter-rejection-details": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "functional-failure-runtime-state": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "patch-index-initialize": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "diagnostic-isolation": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-app-with-ffi": {
+      "exit": 0,
+      "pass": 90,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          90,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "execution_complete": true
+    },
+    "provisioned-versions": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "native-full-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "emitter-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ctest-enumeration": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "final-artifact-integrity": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "libtool-relocate": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "extension-provenance-followups": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-common-lock": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "clone-slow-diagnostic": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "app-configure": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "toolchain": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ctest-target-reconciliation": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "patch-pristine-head-check": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "inspect-lean": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ragger-tests-nanosp": {
+      "exit": 1,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "errors": 279,
+      "deselected": 0,
+      "reported_cases": 282,
+      "terminal_summary": "================== 3 passed, 1 warning, 279 errors in 15.75s ===================",
+      "execution_complete": true,
+      "suite_complete": true
+    },
+    "locked-source-state-after-rust": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "pin-lean": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "native-pure-canary-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "root-overlay-cargo-toolchain": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "device-testnet-nanox-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ragger-tests-nanox-long": {
+      "exit": 2,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 5,
+      "terminal_summary": "======================== 4 passed, 7 warnings in 59.21s ========================",
+      "execution_complete": false,
+      "suite_complete": false
+    },
+    "emit-baseline-host": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "native-pure-canary-build2": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "device-build-inspection": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "common-canary": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "device-worktrees": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "diagnostic-512-nanosp-retry": {
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "================== 1 failed, 2 warnings in 1801.20s (0:30:01) ==================",
+      "execution_complete": true,
+      "suite_complete": false
+    },
+    "isolate-test-process": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "emitter-public-ref": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ragger-tests-nanox-final": {
+      "exit": 1,
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 282,
+      "terminal_summary": "===== 2 failed, 279 passed, 1 skipped, 273 warnings in 1698.33s (0:28:18) ======",
+      "execution_complete": true,
+      "suite_complete": true
+    },
+    "app-instructions": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "mainnet-nanox": {
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 1,
+      "deselected": 0,
+      "reported_cases": 2,
+      "terminal_summary": "========================== 1 failed, 1 error in 0.18s ==========================",
+      "execution_complete": true,
+      "suite_complete": true
+    },
+    "device-testnet-nanosp-build3": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ctest-full-detail-archive": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "device-mainnet-nanox-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "stage-testnet-artifacts": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "native-canary-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "ragger-tests-nanosp-final2": {
+      "exit": 1,
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 282,
+      "terminal_summary": "===== 2 failed, 279 passed, 1 skipped, 273 warnings in 1699.90s (0:28:19) ======",
+      "execution_complete": true,
+      "suite_complete": true
+    },
+    "clone-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "root-common-overlay-canary": {
+      "exit": 0,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 65,
+      "rust_result_groups": [
+        [
+          1,
+          0,
+          0,
+          0,
+          65
+        ]
+      ],
+      "execution_complete": true
+    },
+    "pin-compatible-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "embit-native-inspection": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "emit-compatible-baseline-host": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "llvm21-provision": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-app-pinned": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "cmocka-extract": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "python-venv": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "root-overlay-inventory": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "python-dependencies": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "slow-runtime-prerequisites": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "mainnet-nanosp": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2,
+      "terminal_summary": "============================== 2 passed in 2.41s ===============================",
+      "execution_complete": true,
+      "suite_complete": true
+    },
+    "python-dependencies2": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "create-private-root-lock-overlay": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "stop-long-for-ttl": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ragger-tests-nanosp-long": {
+      "exit": 2,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "=================== 1 passed, 3 warnings in 60.30s (0:01:00) ===================",
+      "execution_complete": false,
+      "suite_complete": false
+    },
+    "ctest-native-configure": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "python-dependencies3": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ffi-authentic-artifact-audit": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "prerequisites": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "native-full-build21": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "final-provenance-completed-suites": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "clone-app": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "source-verification": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "emitter-build-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ragger-tests-nanosp2": {
+      "exit": 2,
+      "pass": 9,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 11,
+      "terminal_summary": "============= 1 failed, 9 passed, 13 warnings in 66.20s (0:01:06) ==============",
+      "execution_complete": false,
+      "suite_complete": false
+    },
+    "preserve-ctest-log-layout": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "final-inventory": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "lockfile-patch": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "native-tool-debs": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "docker-access": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "ffi-artifacts": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "runner-details": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "root-overlay-prerequisites": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "device-testnet-nanosp-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "diagnostic-eviction-nanox": {
+      "exit": 0,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "=================== 1 passed, 2 warnings in 69.85s (0:01:09) ===================",
+      "execution_complete": true,
+      "suite_complete": false
+    },
+    "lockfile-patch-check": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "final-source-state": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "ctest-llvm21-configure": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-core-install": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "cmocka-download": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "inspect-flat-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "inventory": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "mainnet-nanox2": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2,
+      "terminal_summary": "============================== 2 passed in 2.36s ===============================",
+      "execution_complete": true,
+      "suite_complete": true
+    },
+    "final-provenance-snapshot": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "device-testnet-nanosp-build2": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "prerequisite-source-details": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "bitcoin-app-resolved": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "stop-nanosp-leftover-node": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "emitter-docs": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "ragger-tests-nanosp-final": {
+      "exit": 2,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "=================== 1 passed, 3 warnings in 75.11s (0:01:15) ===================",
+      "execution_complete": false,
+      "suite_complete": false
+    },
+    "authentic-emitter-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-common-pinned": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "clone-sdk": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "final-provenance-frozen": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "emitter-public-branches": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "overlay-root-lock-preservation": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-common-resolved": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "native-prerequisite-plan": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "tool-extract": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "runner-prerequisites": {
+      "exit": 127,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "device-python-tools": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "speculos-native-deps": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "lockfile-patch-verify-existing": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-common-with-ffi": {
+      "exit": 0,
+      "pass": 85,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          81,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "execution_complete": true
+    },
+    "diagnostic-512-nanox-retry": {
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 1,
+      "terminal_summary": "================== 1 failed, 2 warnings in 1801.02s (0:30:01) ==================",
+      "execution_complete": true,
+      "suite_complete": false
+    },
+    "speculos-qemu-extract": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "bitcoin-rust": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": false
+    },
+    "mainnet-runner-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true,
+      "suite_complete": false
+    },
+    "ctest-target-delta": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "device-mainnet-nanosp-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    },
+    "fetch-flat-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "execution_complete": true
+    }
+  },
+  "ctest_enumerated": 31,
+  "exclusions_added": [],
+  "notes": [
+    "Source worktree attempt failed Ragger .git-directory discovery; moved to exact standalone clone without editing tests.",
+    "Default-port overlapping testnet attempt interrupted after mainnet collision; full isolated reruns supersede it, all raw results retained.",
+    "Mainnet suite is legacy Speculos fixtures in tests_mainnet, not Ragger plugin; both devices still ran full directory slow=2.",
+    "Tests pure checks may pass even when session backend setup fails; never certify whole suite from those passes."
+  ]
+}

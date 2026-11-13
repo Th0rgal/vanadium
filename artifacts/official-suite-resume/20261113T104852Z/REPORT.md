@@ -1,6 +1,6 @@
 # Official Bitcoin full suites — parent assessment
 
-Status: IN_PROGRESS_WITH_FAILURES. Raw evidence independently inspected through checkpoint 13. No global PASS.
+Status: IN_PROGRESS_WITH_FAILURES. Raw evidence independently inspected through checkpoint 14. No global PASS.
 
 | Complete fresh run | Passed | Failed | Skipped/ignored | Deselected/filtered | Exit |
 |---|---:|---:|---:|---:|---:|
@@ -9,6 +9,7 @@ Status: IN_PROGRESS_WITH_FAILURES. Raw evidence independently inspected through 
 | Entire official tests_mainnet directory, NanoX, slow=2 | 2 | 0 | 0 | 0 | 0 |
 | Separate Bitcoin Rust app workspace | 90 | 0 | 0 | 0 | 0 |
 | Separate Bitcoin Rust common workspace | 81 unit + 4 integration | 0 | 0 | 0 | 0 |
+| Root Vanadium common, PRIVATE minimal lock overlay | 66 | 0 | 0 | 0 | 0 |
 | Entire official testnet tests directory, NanoS+, slow=2, timeout=300 | 279 | 2 | 1 | 0 | 1 |
 | Entire official testnet tests directory, NanoX, slow=2, timeout=300 | 279 | 2 | 1 | 0 | 1 |
 
@@ -19,13 +20,13 @@ CTest counts executable targets, not individual CMocka cases. Full LastTest.log 
 ## Observed failures and pending validation
 
 1. `test_sign_psbt_singlesig_wpkh_512to256`: both full runs hit `Failed: Timeout >300.0s` during host Python fixture construction in txmaker/key.py, before client.sign_psbt. Separate exact-case diagnostics with timeout=1800 also exit1 on both devices, now inside select.select waiting for APDU during signing. Those narrow diagnostics do not certify the full suite or establish a device bug.
-2. `test_sign_psbt_musig2_evicts_oldest_session`: both full runs report requests.ConnectionError, connection refused at Speculos API ports5001/5101. Why Speculos disappears is not yet established. An isolated NanoX diagnostic is running; its partial output is not PASS.
+2. `test_sign_psbt_musig2_evicts_oldest_session`: both full runs report requests.ConnectionError, connection refused at Speculos API ports5001/5101. Why Speculos disappears is not yet established. An isolated exact NanoX diagnostic passes1 with exit0 in69.85s; this is not full-suite acceptance or proof of the original cause.
 
 The single upstream skip is `test_get_extended_pubkey_non_standard_reject_early`, instructions.py:105. Nano devices can reject only at the last step; the early-rejection test does not apply. Upstream skip rules are unchanged. No added exclusions or weakened assertions.
 
 Continue diagnosis of one failure at a time, followed by complete same-selection validation with a measured runtime budget. Narrow diagnostics and longer time limits do not imply success. Original overlapped0x6901 failure remains preserved; the case passes in the fresh isolated full run, but its original cause is unproven.
 
-Root Vanadium common is distinct from Bitcoin common. Its original exact --locked canary exits101 before execution: the existing workspace lock lacks cargo-vnd→rhai_codegen dependency metadata. Original Cargo.lock SHA256 remains139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546. A minimal private nightly --lockfile-path overlay investigation remains pending; do not rewrite the original or silently remove --locked. Any overlay result must be labelled separately.
+Root Vanadium common is distinct from Bitcoin common. Its original exact --locked canary exits101 before execution: the existing workspace lock lacks cargo-vnd→rhai_codegen dependency metadata. Original Cargo.lock SHA256 remains139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546. The authorized PRIVATE nightly --lockfile-path overlay adds exactly the missing edge to the already locked rhai_codegen3.1.0 package, no other changes. Parent independently verified actual lock bytes/TOML/diff and the full66pass/doc0,0fail/ignored/filtered,exit0. Private overlaySHA c5b183fda05b625d50581e943e52f280c9ca46ee13a590e0252c8034789785d6; original frozen --locked failure remains unchanged and separately labelled.
 
 ## Pins and operational evidence
 
@@ -38,3 +39,5 @@ All four original monitored runs completed before12:20Z. The monitor logs all co
 Every prior interrupted, failed or prerequisite attempt remains distinct. Initial Docker/SDK/Python/emitter errors were resolved through authentic public native provisioning without rights changes or stubs. Large checkpoint13 raw logs use reproducible gzip; delta-manifest.json provides original paths, byte counts and SHA256. Full uncompressed snapshots remain in parent artifacts.
 
 Only new owned trees and private Boat output are writable. No shared/site/RAM edits, source/spec changes, extra reviewers, merge or deployment. Progress is signed and pushed to public Th0rgal/vanadium evidence branch after LedgerHQ403, with remote SHA verification.
+
+Checkpoint14: both identical-selection full282 slow2 reruns with timeout1800 are active, currently512case; no finalcounts/exit. New monitorPID625880 active deadline14:20Z,started12:21:02Z,signals[] independently observed; Boat14:22:27Z. Fullarchive transfer failed twice with transport_unavailable; SHA-verified individualfiles secured instead, splitimmutablearchive requested. Currentjob4.16GiB cgroup haszeroOOM events, not proof ofhistoricalcause. No spec changes.

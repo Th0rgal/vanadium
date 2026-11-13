@@ -1,0 +1,21 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import hashlib,tomllib,difflib,json; r=Path.cwd(); src=r/\"vanadium/Cargo.lock\"; data=src.read_text(); old=tomllib.loads(data); block=data.index(\"name = \\\"cargo-vnd\\\"\"); pos=data.index(\" \\\"git2\\\",\\n\",block)+len(\" \\\"git2\\\",\\n\"); out=data[:pos]+\" \\\"rhai_codegen\\\",\\n\"+data[pos:]; new=tomllib.loads(out); expected=tomllib.loads(data); pkg=next(x for x in expected[\"package\"] if x[\"name\"]==\"cargo-vnd\"); pkg[\"dependencies\"].append(\"rhai_codegen\"); pkg[\"dependencies\"].sort(); assert expected==new; assert hashlib.sha256(src.read_bytes()).hexdigest()==\"139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546\"; d=r/\"root-lock-overlay\";d.mkdir(exist_ok=True);p=d/\"Cargo.lock\";p.write_text(out);(r/\"evidence/root-common-overlay.Cargo.lock\").write_text(out);patch=\"\".join(difflib.unified_diff(data.splitlines(True),out.splitlines(True),fromfile=\"upstream/Cargo.lock\",tofile=\"private-overlay/Cargo.lock\"));(r/\"evidence/root-common-overlay.patch\").write_text(patch);print(patch);print(json.dumps({\"original_sha256\":hashlib.sha256(src.read_bytes()).hexdigest(),\"overlay_sha256\":hashlib.sha256(p.read_bytes()).hexdigest(),\"change\":\"one dependency edge cargo-vnd -> existing rhai_codegen3.1.0; no package/version/checksum changes\",\"overlay_path\":str(p)},indent=2))"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794572636.237514,
+  "child_pid": 644262,
+  "exit": 0,
+  "ended": 1794572636.3010676
+}

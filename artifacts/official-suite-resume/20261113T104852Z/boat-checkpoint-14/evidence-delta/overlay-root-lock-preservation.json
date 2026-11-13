@@ -1,0 +1,21 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "set -e; sha256sum vanadium/Cargo.lock root-lock-overlay/Cargo.lock evidence/root-common-overlay.Cargo.lock; git -C vanadium diff --exit-code; git -C app-bitcoin diff --exit-code; git -C ledger-secure-sdk diff --exit-code; git -C turbo-lean rev-parse HEAD; sha256sum turbo-lean/lean/.lake/build/bin/lean-native; cat evidence/monitor-extension-active.json"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794572744.4899359,
+  "child_pid": 662049,
+  "exit": 0,
+  "ended": 1794572744.6395411
+}

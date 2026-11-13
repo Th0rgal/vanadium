@@ -1,0 +1,17 @@
+--- upstream/Cargo.lock
++++ private-overlay/Cargo.lock
+@@ -345,6 +345,7 @@
+  "common",
+  "env_logger",
+  "git2",
++ "rhai_codegen",
+  "tokio",
+  "vanadium-client-sdk",
+  "which",
+
+{
+  "original_sha256": "139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546",
+  "overlay_sha256": "c5b183fda05b625d50581e943e52f280c9ca46ee13a590e0252c8034789785d6",
+  "change": "one dependency edge cargo-vnd -> existing rhai_codegen3.1.0; no package/version/checksum changes",
+  "overlay_path": "/var/lib/orb-node/work/official-suite-resume/root-lock-overlay/Cargo.lock"
+}

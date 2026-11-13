@@ -1,0 +1,10 @@
+--- upstream/Cargo.lock
++++ private-overlay/Cargo.lock
+@@ -345,6 +345,7 @@
+  "common",
+  "env_logger",
+  "git2",
++ "rhai_codegen",
+  "tokio",
+  "vanadium-client-sdk",
+  "which",

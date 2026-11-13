@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS_WITH_FAILURES: completedfulltestnet279pass2fail1skip perdevice exit1; diagnosis continues",
+  "status": "IN_PROGRESS_WITH_FAILURES: full1800both active; rootcommon PRIVATEoverlay66pass; originalfull300failures retained",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -161,9 +161,9 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 13,
+  "latest_parent_checkpoint": 14,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
-  "runtime_monitor_deadline": "all4 originalwatchedruns completed before12:20; monitorlog12:17:23 allcompleted, codebreak beforedeadline branch; no replacement/PIDabsence claim",
+  "runtime_monitor_deadline": "active newmonitorPID625880 deadline14:20Z proofstart12:21:02/logs signals[]",
   "durable_workspace_probe": {
     "job_id": "4d39a8a1-c75e-4b62-8f3d-49c2fa1f1b36",
     "tool_reported": "completed",
@@ -232,5 +232,39 @@
       "skip_location": "instructions.py:105",
       "upstream_skip_reason": "Nano devices can reject only at last step; early rejection does not apply"
     }
+  },
+  "checkpoint14_capture": "individual SHA-verified harvests; full archive transport unavailable",
+  "accepted_root_common_private_overlay": {
+    "scope": "Vanadium root common, PRIVATE single-edge lock overlay; original --locked failure retained",
+    "pass": 66,
+    "fail": 0,
+    "ignored": 0,
+    "filtered_out": 0,
+    "doc_pass": 0,
+    "exit": 0,
+    "run": "root-common-overlay-full",
+    "original_lock_sha256": "139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546",
+    "private_overlay_sha256": "c5b183fda05b625d50581e943e52f280c9ca46ee13a590e0252c8034789785d6",
+    "only_lock_delta": "cargo-vnd dependencies: add existing rhai_codegen3.1.0; no package/version/checksum changes",
+    "cargo": "nightly-2025-03-01, -Zunstable-options --lockfile-path PRIVATE --locked",
+    "rustc": "private stable1.100 via explicitRUSTC",
+    "independent_toml_and_unified_diff_check": true
+  },
+  "active_full1800": {
+    "nanosp": "282 collected, entire directory slow2, currently512case",
+    "nanox": "282 collected, entire directory slow2, currently512case",
+    "counts": null,
+    "exit": null
+  },
+  "monitor_extension_active": {
+    "pid": 625880,
+    "started_utc": "2026-11-13T12:21:02.961299+00:00",
+    "active_deadline_utc": "2026-11-13T14:20:00+00:00",
+    "expiry_epoch": 1794579747,
+    "runs": [
+      "ragger-tests-nanosp-1800-full",
+      "ragger-tests-nanox-1800-full"
+    ],
+    "signals_sent": []
   }
 }
