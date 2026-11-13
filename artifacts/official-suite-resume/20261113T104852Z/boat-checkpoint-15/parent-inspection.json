@@ -1,0 +1,80 @@
+{
+  "archive_sha256": null,
+  "capture": "individualfiles SHAverified; no atomicarchiveclaim",
+  "new_completed_suite_results": [],
+  "same_nightly_original_lock_canary": {
+    "exit": 101,
+    "argv": [
+      "env",
+      "RUSTC=/var/lib/orb-node/work/official-suite-resume/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc",
+      "RUSTDOC=/var/lib/orb-node/work/official-suite-resume/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustdoc",
+      "/usr/local/rustup/toolchains/nightly-2025-03-01-x86_64-unknown-linux-gnu/bin/cargo",
+      "test",
+      "--locked",
+      "-p",
+      "common",
+      "vm::tests::test_vec_memory_new",
+      "--",
+      "--exact"
+    ],
+    "exact_error": "error: the lock file /var/lib/orb-node/work/official-suite-resume/vanadium/Cargo.lock needs to be updated but --locked was passed to prevent this\nIf you want to try to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.\n",
+    "scope": "original existing lock, no privateoverlay; distinct fromacceptedprivate66"
+  },
+  "active_full1800": {
+    "nanosp": "282collected, slow2, still512case",
+    "nanox": "282collected, slow2, still512case",
+    "counts": null,
+    "exit": null
+  },
+  "read_only_screen_observation": {
+    "utc": "2026-11-13T12:38:08.028081+00:00",
+    "method": "GET only; no buttons, navigation, APDU or configuration mutation",
+    "screens": [
+      {
+        "device": "nanosp",
+        "url": "http://127.0.0.1:5501/events?currentscreenonly=true",
+        "http_status": 200,
+        "json": {
+          "events": [
+            {
+              "text": "Loading transaction",
+              "x": 12,
+              "y": 34,
+              "w": 103,
+              "h": 14,
+              "clear": false
+            }
+          ]
+        }
+      },
+      {
+        "device": "nanox",
+        "url": "http://127.0.0.1:5601/events?currentscreenonly=true",
+        "http_status": 200,
+        "json": {
+          "events": [
+            {
+              "text": "Loading transaction",
+              "x": 12,
+              "y": 34,
+              "w": 103,
+              "h": 14,
+              "clear": false
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "monitor_last_observation": "2026-11-13T12:41:41.601800+00:00",
+  "monitor_active_deadline": "2026-11-13T14:20:00+00:00",
+  "monitor_signals_sent": [],
+  "transfer_manifest_error": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14-manifest.json",
+    "code": "harvest_rejected",
+    "message": "harvest_not_found",
+    "remediation": "worker asked again to split immutable snapshot <=512KiB and publish exact manifestpath"
+  },
+  "diagnosis_limit": "API200/loading screen and liveprocesses do not prove forwardAPDUprogress/eventualpass or historicalSpeculosfailurecause",
+  "spec_changes": []
+}

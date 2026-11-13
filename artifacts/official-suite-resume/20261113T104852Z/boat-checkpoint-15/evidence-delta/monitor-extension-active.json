@@ -1,0 +1,11 @@
+{
+  "pid": 625880,
+  "started_utc": "2026-11-13T12:21:02.961299+00:00",
+  "active_deadline_utc": "2026-11-13T14:20:00+00:00",
+  "expiry_epoch": 1794579747,
+  "runs": [
+    "ragger-tests-nanosp-1800-full",
+    "ragger-tests-nanox-1800-full"
+  ],
+  "signals_sent": []
+}

@@ -1,0 +1,29 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium",
+  "argv": [
+    "env",
+    "RUSTC=/var/lib/orb-node/work/official-suite-resume/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc",
+    "RUSTDOC=/var/lib/orb-node/work/official-suite-resume/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustdoc",
+    "/usr/local/rustup/toolchains/nightly-2025-03-01-x86_64-unknown-linux-gnu/bin/cargo",
+    "test",
+    "--locked",
+    "-p",
+    "common",
+    "vm::tests::test_vec_memory_new",
+    "--",
+    "--exact"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794573443.0692558,
+  "child_pid": 785591,
+  "exit": 101,
+  "ended": 1794573443.1082318
+}

@@ -1,6 +1,6 @@
 # Official Bitcoin full suites — parent assessment
 
-Status: IN_PROGRESS_WITH_FAILURES. Raw evidence independently inspected through checkpoint 14. No global PASS.
+Status: IN_PROGRESS_WITH_FAILURES. Raw evidence independently inspected through checkpoint 15. No global PASS.
 
 | Complete fresh run | Passed | Failed | Skipped/ignored | Deselected/filtered | Exit |
 |---|---:|---:|---:|---:|---:|
@@ -41,3 +41,5 @@ Every prior interrupted, failed or prerequisite attempt remains distinct. Initia
 Only new owned trees and private Boat output are writable. No shared/site/RAM edits, source/spec changes, extra reviewers, merge or deployment. Progress is signed and pushed to public Th0rgal/vanadium evidence branch after LedgerHQ403, with remote SHA verification.
 
 Checkpoint14: both identical-selection full282 slow2 reruns with timeout1800 are active, currently512case; no finalcounts/exit. New monitorPID625880 active deadline14:20Z,started12:21:02Z,signals[] independently observed; Boat14:22:27Z. Fullarchive transfer failed twice with transport_unavailable; SHA-verified individualfiles secured instead, splitimmutablearchive requested. Currentjob4.16GiB cgroup haszeroOOM events, not proof ofhistoricalcause. No spec changes.
+
+Checkpoint15: no new completed result; full1800 reruns still512case at12:41:41. Both APIs respond200 with Loading transaction (read-only12:38 snapshot); no inference of forwardprogress or eventualpass. Exact original-lock canary also exits101 on same nightlyCargo as acceptedprivateoverlay. Requested splitmanifest missing (harvest_not_found); individualproofs secured and splittransfer request reiterated.
