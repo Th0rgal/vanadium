@@ -1,0 +1,13 @@
+{
+  "status": "INCOMPLETE_PROCESS_LOSS",
+  "observed_utc": "2026-11-13T13:01:39.373316+00:00",
+  "full1800_counts": null,
+  "full1800_exit": null,
+  "stdout_observation": "both512FAILED38%; ends MuSig eviction61%; no final summary",
+  "stderr_bytes": 0,
+  "last_monitor_utc": "2026-11-13T12:57:17.311135+00:00",
+  "cause": "UNKNOWN",
+  "completion_records": "both harvest_not_found",
+  "transfer_manifest": "harvest_not_found",
+  "capture": "individualfiles with SHAverified harvestreceipts; noatomicarchive"
+}

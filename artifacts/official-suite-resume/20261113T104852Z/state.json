@@ -161,9 +161,9 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 17,
+  "latest_parent_checkpoint": 18,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
-  "runtime_monitor_deadline": "active newmonitorPID625880 deadline14:20Z proofstart12:21:02/logs signals[]",
+  "runtime_monitor_deadline": "lastobserved12:57:17 deadline14:20, PIDabsent13:01:39; no longer confirmedactive",
   "durable_workspace_probe": {
     "job_id": "4d39a8a1-c75e-4b62-8f3d-49c2fa1f1b36",
     "tool_reported": "completed",
@@ -251,10 +251,12 @@
     "independent_toml_and_unified_diff_check": true
   },
   "active_full1800": {
-    "nanosp": "282collected slow2 still512case at12:41:41",
-    "nanox": "282collected slow2 still512case at12:41:41",
+    "status": "INCOMPLETE_PROCESS_LOSS",
+    "nanosp": "512FAILEDmarker then MuSig61%, no summary",
+    "nanox": "512FAILEDmarker then MuSig61%, no summary",
     "counts": null,
-    "exit": null
+    "exit": null,
+    "cause": "UNKNOWN"
   },
   "monitor_extension_active": {
     "pid": 625880,

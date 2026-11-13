@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-11-13T13:01:39.373316+00:00",
+  "previous_last_monitor_utc": "2026-11-13T12:57:17Z",
+  "missing_pids": [
+    625880,
+    626268,
+    626269,
+    626271,
+    626272
+  ],
+  "all_pytest_Core_Speculos_absent": true,
+  "cause": "UNKNOWN; no executor signal sent; no completion receipts; not a test result",
+  "counts": null,
+  "exit": null
+}

@@ -191,8 +191,8 @@
     }
   },
   "pending_validation": {
-    "testnet_full_budget_nanosp": "RUNNING entire282 slow2 timeout1800, finalcounts/exitnull",
-    "testnet_full_budget_nanox": "RUNNING entire282 slow2 timeout1800, finalcounts/exitnull"
+    "testnet_full_budget_nanosp": "INCOMPLETE_PROCESS_LOSS; counts/exitnull, raw512FAILEDmarker",
+    "testnet_full_budget_nanox": "INCOMPLETE_PROCESS_LOSS; counts/exitnull, raw512FAILEDmarker"
   },
   "diagnostics": {
     "musig_eviction_nanox": {
