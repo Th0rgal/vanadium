@@ -1,0 +1,37 @@
+[
+  {
+    "error": {
+      "accepted": "no",
+      "code": "harvest_rejected",
+      "message": "harvest_not_found",
+      "retryable": false
+    }
+  },
+  {
+    "bytes": 7796,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/a51ba8a6-7055-4590-9df4-c91a737e4378/navigation-full-index.json",
+    "sha256": "31e2a091f890e62b6888cfdb455cc4af4c7ce1ceb0532b47e29de388f9fbb175",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/transfer/navigation-full-index.json"
+  },
+  {
+    "bytes": 27150,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/79952cc9-7a8b-42c8-8e7a-6ef5908f1d68/ragger-navigation-resume-full-nanosp.stdout",
+    "sha256": "ac41b5ac268a2d75ef7871f63f9bea82ebadb9fcd448592ce7dead94e2fc8d0b",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp.stdout"
+  },
+  {
+    "bytes": 26505,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/54aa2004-0103-44c1-81a5-2e22b074c2c9/ragger-navigation-resume-full-nanox.stdout",
+    "sha256": "209a538e5bfc2d82864560f2703d7c0685eea32c06f9537d37379bdcf4a12222",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox.stdout"
+  }
+]
