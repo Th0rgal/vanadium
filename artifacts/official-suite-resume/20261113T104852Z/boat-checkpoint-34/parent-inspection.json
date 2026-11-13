@@ -1,0 +1,11 @@
+{
+  "checkpoint": 34,
+  "last_raw_utc": "2026-11-13T16:26:45.275Z",
+  "APDUrequests": 53558,
+  "APDUresponses": 53557,
+  "completion": null,
+  "exit": null,
+  "lateE000_followed_by_continuation_observed": true,
+  "official_counts_unchanged": true,
+  "boat_expiry": 1794590547
+}

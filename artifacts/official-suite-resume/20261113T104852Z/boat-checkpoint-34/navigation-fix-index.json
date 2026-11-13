@@ -1,0 +1,277 @@
+{
+  "utc": "2026-11-13T15:54:25.425808+00:00",
+  "classification": "HOST_NAVIGATION_CANDIDATE_UNDER_NARROW_VALIDATION_NOT_OFFICIAL_PASS",
+  "baseline_guest_unchanged": true,
+  "candidate_runtime": "Speculos callback candidate retained; Raggerv1.47.4 tickerfinally and app adapter policy/cursor changes; not LeanCandidateA",
+  "actual_expiry_utc": "2026-11-13T16:22:27Z",
+  "files": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/bitcoin-navigation-interruption.patch",
+      "bytes": 7010,
+      "sha256": "ffa6a221aa45b5defaa212e8423fef0d52b2f1ba00adada02c584d6ef71e5e2b"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-ticker-finally.patch",
+      "bytes": 9301,
+      "sha256": "f5c0a6c70378759da3ca4637cfed55db1fb20480426e876042e3d8194dc956eb"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/test_navigation_late_response.py",
+      "bytes": 5022,
+      "sha256": "a6e8f44481a4b12554b397ea0e93efd5081e4801a3170100fc957a92501798f2"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix.active.json",
+      "bytes": 1825,
+      "sha256": "7ec73e666bca0757961645a85903d13e85691df5cb657adfee8eed4e5f1e8ce5"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/guest-caller-final-index.json",
+      "bytes": 2221,
+      "sha256": "9113d42fd142cf95b89b08eedb6bad8eec11023a53b503096a8a069aaa22cd64"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-before.json",
+      "bytes": 641,
+      "sha256": "070ae47897168ccbe769e4000f6bf2c150ec870f55b57b496a518d1067cb7901"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-before.stdout",
+      "bytes": 7080,
+      "sha256": "277e4965bac1ef2915bf4eec3d1cda521da4751021df09b255f4ce7e45d86392"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-before.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-before.xml",
+      "bytes": 7453,
+      "sha256": "199cf94672381312087429eb087a54fc700035c82ff0c55ae532205ea8ffb410"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-after.json",
+      "bytes": 718,
+      "sha256": "771f5964c6e9e1b22b750358135bf16b232a8e5b3ac42ed84a16275a11f81cbe"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-after.stdout",
+      "bytes": 211,
+      "sha256": "0f573a314ffa91318629e30c1da147d6fb33f7ebc7b470a32bac9d2abedf8231"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-after.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v2-after.xml",
+      "bytes": 1088,
+      "sha256": "67311c6d55bd3e2701860ce1672023571bcb0803018b05546db1779b0143f112"
+    }
+  ],
+  "regression_v3": "Real Ragger backend response-check path: original3fail3pass, candidate6pass; no mandatory review weakening",
+  "latest_regression_files": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/test_navigation_late_response.py",
+      "bytes": 5022,
+      "sha256": "a6e8f44481a4b12554b397ea0e93efd5081e4801a3170100fc957a92501798f2"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.json",
+      "bytes": 641,
+      "sha256": "c5d14eb03db1eced150a7da676c405b2cf3c7f9b08364b1ec8a2fc1ab3fb038f"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.stdout",
+      "bytes": 6373,
+      "sha256": "bcca594aedce72ec03624255eed99055d0784db9ecc1ffb35451ed01405ff096"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.xml",
+      "bytes": 6855,
+      "sha256": "7ebdfaba4f94e962c75597839be239ae823644ccb73183562c10a85d12abe12d"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.json",
+      "bytes": 718,
+      "sha256": "93b1f8064aa65ff8ac5ac63967ea421eeb3f89bbf4f44969c6c5fa1980d8a319"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.stdout",
+      "bytes": 211,
+      "sha256": "4561b3695f7e68beb72621c7bb61900e29a518531d71c72f4af0bff85e6c3dc7"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.xml",
+      "bytes": 1088,
+      "sha256": "72aebd04deca90f157ca474365769184e6e4c154ccd5f222d48dbb424ad2c123"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-candidate.json",
+      "bytes": 559,
+      "sha256": "4f67d5b26f14c7b0b77cbffe8b725acba78ba4b8184a7c1c02d581a3dc39b691"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-candidate.stdout",
+      "bytes": 1056,
+      "sha256": "a2b205d4443b2b9e6c96a29c41e43f83d761a6cbfd9fa38d097f408393292f91"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-candidate.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-candidate.xml",
+      "bytes": 4568,
+      "sha256": "8d7fa7371fa001eba21ae3f456d6fd06f28f32cebb61131c3d39be62da024080"
+    }
+  ],
+  "implementation_and_regression_patch": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/bitcoin-navigation-interruption-with-regression.patch",
+    "bytes": 12368,
+    "sha256": "49a3e593daf07380bf3dba24050ce1719b5443c3a0e48a1ed9746954c492746a"
+  },
+  "new_regression_source_path": "/var/lib/orb-node/work/official-suite-resume/app-navigation-fix/tests_unit/test_navigation_late_response.py",
+  "import_provenance_files": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-import-provenance.json",
+      "bytes": 1319,
+      "sha256": "dacffac7fad41f12e0ff42b2a7871851b945eeabb8c645ee1119b993e684cd64"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-import-provenance.stdout",
+      "bytes": 818,
+      "sha256": "bdcd07a929524f24cd3fabd1779c84e87b1ddca5977ae7f87a099ffbdf2afb9b"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-import-provenance.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "ragger_implementation_and_regression_patch": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-ticker-with-regression.patch",
+    "bytes": 10698,
+    "sha256": "a338799237112b52b3bc5664c0a7fa9b12a303911c07ee802602b48f9e90c61d"
+  },
+  "ragger_new_regression_results": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.json",
+      "bytes": 565,
+      "sha256": "a89b1d2354bf65f1c8da20d52825fd8a2987b524fb8e1169d706a714f0d403d4"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.stdout",
+      "bytes": 1062,
+      "sha256": "0cc1bfd57ce3d09fbb5f48b4dcc2d942b076cd88ab2cfa1d94cb74d8c58d8eef"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.xml",
+      "bytes": 4703,
+      "sha256": "9002fe4e6fba8e9d97108020b61d17cb00d6219188463052b6c549aeb9c68757"
+    }
+  ],
+  "notes": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-fix-notes.md",
+    "bytes": 1915,
+    "sha256": "4ad08958478c2d3911e23bf8bf012aa05fc6c815b17255919c22a7be4d782ba6"
+  },
+  "index_refreshed_utc": "2026-11-13T16:02:36.341060+00:00",
+  "placement_correction": {
+    "utc": "2026-11-13T16:04:35.880239+00:00",
+    "classification": "FAILED_PARTIAL_CANDIDATE_WRONG_ADAPTER_IMPORT",
+    "exit": 1,
+    "pass": 0,
+    "fail": 1,
+    "duration_pytest_seconds": 604.5,
+    "actual_adapter": "app-bitcoin/ragger_bitcoin/ragger_bitcoin.py unchanged baseline per pytesttraceback",
+    "actual_navigator": "ragger-navigation-fix/src/ragger/navigator/navigator.py patchedtickerfinally",
+    "cause": "pytest package-root insertion overrode PYTHONPATH for appadapter; independent pythonimportprovenance not representative of pytest",
+    "not_validation_of_complete_candidate": true,
+    "remediation": "run unchanged trackedtests from newappclone whosebuild symlinks identicalbaselineELF, assert modulepaths insidepytestsessionstart",
+    "verified_candidate_active": "diagnostic-512-nanox-navigation-fix-verified",
+    "plugin_assertions": "moduleprovenanceonly; no testassertionsweakened"
+  },
+  "verified_run_files": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-placement-correction.json",
+      "bytes": 895,
+      "sha256": "547344a5886a02bc07eacb8db24703e51cca5a890aee5cab1013a60d7d6440df"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation_candidate_provenance.py",
+      "bytes": 1235,
+      "sha256": "28650115fa1ccc27a4060f5c716f13741bcaf2a963d8cd995f430f31b69fc385"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-pytest-provenance.json",
+      "bytes": 1153,
+      "sha256": "3dd64b996dcd807b0330ea84de7b1ec0e4b22d708e5c370332d704918d364331"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.active.json",
+      "bytes": 1962,
+      "sha256": "1b34030128d16591f939dbc872af8766acfeff46d3e8c40faea427f1194aed21"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix.json",
+      "bytes": 2098,
+      "sha256": "90608885cad81b40698e96f76e2b33340674d56bb3efc91740cea056538fba68"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix.xml",
+      "bytes": 8612,
+      "sha256": "d11ae573679bb7baec1d642c10aadd382496cf263268e316e46242ad7629ab68"
+    }
+  ],
+  "latest_runtime_observed_utc": "2026-11-13T16:08:56.653410+00:00",
+  "verified_candidate_progress": {
+    "utc": "2026-11-13T16:18:45.034573+00:00",
+    "log_progress": {
+      "requests": 43872,
+      "responses": 43871,
+      "last_request_utc": "2026-11-13T16:18:44.812390+00:00",
+      "last_response_utc": "2026-11-13T16:18:44.811735+00:00",
+      "lines": 133612
+    },
+    "early_async_responses": 59,
+    "complete": false,
+    "exit": null,
+    "classification": "PASSED_PRIOR_FAILURE_POINT_CONTINUATIONS_OBSERVED_NOT_TEST_PASS"
+  },
+  "prepared_not_run_full_commands": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-full-prepared-commands.json",
+    "bytes": 3832,
+    "sha256": "745fa9f756a3fd8e5438d1c819b8d1bcfe68db1cd9124906b3810a95ef1df285"
+  },
+  "measured_handoff_files": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-first-successful-handoff.txt",
+      "bytes": 2700,
+      "sha256": "9b43cf9ce30990f2981077cb47a2803f8490df5eb575a583195570416dcc4189"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-live-handoff.json",
+      "bytes": 370,
+      "sha256": "2449f4e44fa5bb0b265dd5babc16098558fccf32b5f69c431198bd8002297c8d"
+    }
+  ]
+}

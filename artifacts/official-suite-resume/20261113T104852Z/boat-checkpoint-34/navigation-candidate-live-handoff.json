@@ -1,0 +1,7 @@
+{
+  "classification": "MEASURED_HANDOFF_PROGRESS_NOT_PASS",
+  "requests_exceed_prior43047": true,
+  "early_async_responses": 46,
+  "evidence_path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-first-successful-handoff.txt",
+  "note": "Following lateE000, host issues continuation APDU instead of ticker-only loop; fullsigning incomplete"
+}

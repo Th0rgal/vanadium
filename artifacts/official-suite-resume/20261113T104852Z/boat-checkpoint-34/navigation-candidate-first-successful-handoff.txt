@@ -1,0 +1,22 @@
+ransaction' in current screen
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "GET /events?currentscreenonly=true HTTP/1.1" 200 -
+[2026-11-13 16:17:10,037][DEBUG] ragger.logger - Candidate event text 'To (2/2)'
+[2026-11-13 16:17:10,039][DEBUG] ragger.logger - Candidate event text 'me8g55'
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "POST /button/right HTTP/1.1" 200 -
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "GET /screenshot HTTP/1.1" 200 -
+[2026-11-13 16:17:10,120][INFO] ragger.logger - [Ragger] Early async data available, retrieving it now.
+[2026-11-13 16:17:10,122][INFO] ragger.apdu_logger - <= 4112f6cfe021935e9f14a430a959be96f72fb36935a1f492c1145a2418ef7671fbfd000108e000
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "[32mPOST /ticker HTTP/1.1[0m" 308 -
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "POST /ticker/ HTTP/1.1" 200 -
+[2026-11-13 16:17:10,143][INFO] ragger.apdu_logger - => f8010001e275c2750b07f29f49733818f1e622fcb1223c2eb2449ae34d0a1ecfa37ddad8d80806763578e67ada176bcd421deb537695ca1f74e0f30f3d394806e77a36316f20534cea26e22c270b040467467e9e22bd7b8ff775fcb60626bbe257cc08e7dcd9a9294533dda9b8753128c5c49a70f7165927f7cbc0a1322be6b3fd2233d6d5a1bf34c8a1d5af5be069f3993acc11907d3f5986bff85d2308688624f9806e604cb256a2dd77495d742dd47a21b93fed584acdef2f9a0ac94e72cfe090b2700d32e08909b2457d6cb49310ed5b83c69d5d6e89c050dd05959d4d25ec5813af631cf7
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "POST /apdu HTTP/1.1" 200 -
+[2026-11-13 16:17:10,156][INFO] ragger.apdu_logger - <= a0e000
+[2026-11-13 16:17:10,157][INFO] ragger.apdu_logger - => f8010001420220e27f96c7eff289553b247312f1670787be92a00360083355e4fcebb76dec46947b8cdf9bed502d34107c22bab1a835186f6dd7b5a60b5d57a618ad4f5753be43
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "POST /apdu HTTP/1.1" 200 -
+[2026-11-13 16:17:10,167][INFO] ragger.apdu_logger - <= 400075c2750b07f29f49733818f1e622fcb1223c2eb2449ae34d0a1ecfa37ddad8d8e000
+[2026-11-13 16:17:10,171][INFO] ragger.apdu_logger - => f8010001444242000278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d3e5e755a718689cad98c78df4a564b129c71c14bba0e9f4320ecd575120ea5d1
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "POST /apdu HTTP/1.1" 200 -
+[2026-11-13 16:17:10,187][INFO] ragger.apdu_logger - <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0200e000
+[2026-11-13 16:17:10,188][INFO] ragger.apdu_logger - => f801000142583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d01014f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
+werkzeug: 127.0.0.1 - - [13/Nov/2026 16:17:10] "POST /apdu HTTP/1.1" 200 -
+[2026-11-13 16:17:10,218][INFO] ragger.apdu_logger - <= 4000583c7dfb7b3055d99465544032a571e10a134b1b6f
