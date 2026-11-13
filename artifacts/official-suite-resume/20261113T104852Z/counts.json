@@ -191,8 +191,8 @@
     }
   },
   "pending_validation": {
-    "testnet_full_budget_nanosp": "INCOMPLETE_PROCESS_LOSS; counts/exitnull, raw512FAILEDmarker",
-    "testnet_full_budget_nanox": "INCOMPLETE_PROCESS_LOSS; counts/exitnull, raw512FAILEDmarker"
+    "testnet_full_budget_nanosp": "retry3 full1800baseline incomplete counts/exitnull",
+    "testnet_full_budget_nanox": "retry3 full1800baseline incomplete counts/exitnull"
   },
   "diagnostics": {
     "musig_eviction_nanox": {
@@ -203,6 +203,19 @@
       "exit": 0,
       "duration_seconds": 69.85,
       "scope": "one exact diagnostic; no fullsuitePASS or originalcauseproof"
+    },
+    "permanent_core_fixture_regression": {
+      "before": {
+        "pass": 2,
+        "fail": 1,
+        "exit": 1
+      },
+      "after": {
+        "pass": 3,
+        "fail": 0,
+        "exit": 0
+      },
+      "scope": "separate fixture regression, not official full suite"
     }
   }
 }

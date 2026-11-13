@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-6.2.5, py-1.11.0, pluggy-1.7.0 -- /var/lib/orb-node/work/official-suite-resume/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /var/lib/orb-node/work/official-suite-resume/app-fixture-fix/tests, configfile: setup.cfg
+plugins: timeout-2.2.0, benchmark-4.0.0
+collecting ... collected 3 items
+
+test_node_setup.py::test_setup_node_propagates_permanent_wallet_error PASSED [ 33%]
+test_node_setup.py::test_setup_node_retries_transient_startup_error[error0] PASSED [ 66%]
+test_node_setup.py::test_setup_node_retries_transient_startup_error[error1] PASSED [100%]
+
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-after.xml -
+============================== 3 passed in 0.02s ===============================

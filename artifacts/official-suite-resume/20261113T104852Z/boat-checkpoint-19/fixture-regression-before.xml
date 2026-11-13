@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="0.170" timestamp="2026-11-13T13:08:37.853534" hostname="box-node-7fabc707450cea8d"><testcase classname="test_node_setup" name="test_setup_node_propagates_permanent_wallet_error" time="0.002"><failure message="AssertionError: retried permanent error">test_node_setup.py:19: in test_setup_node_propagates_permanent_wallet_error
+    node_setup.setup_node()
+conftest.py:101: in setup_node
+    print(rpc.createwallet(wallet_name="test_wallet", descriptors=True))
+/usr/lib/python3.12/unittest/mock.py:1134: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.12/unittest/mock.py:1138: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+/usr/lib/python3.12/unittest/mock.py:1197: in _execute_mock_call
+    raise result
+E   AssertionError: retried permanent error</failure></testcase><testcase classname="test_node_setup" name="test_setup_node_retries_transient_startup_error[error0]" time="0.001" /><testcase classname="test_node_setup" name="test_setup_node_retries_transient_startup_error[error1]" time="0.002" /></testsuite></testsuites>

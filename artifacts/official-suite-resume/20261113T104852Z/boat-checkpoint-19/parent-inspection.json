@@ -1,0 +1,23 @@
+{
+  "capture": "individualSHAverified",
+  "new_official_completed_suites": [],
+  "fixture_regression": {
+    "before": {
+      "pass": 2,
+      "fail": 1,
+      "exit": 1
+    },
+    "after": {
+      "pass": 3,
+      "fail": 0,
+      "exit": 0
+    },
+    "independently_matched_stdout_exit_junit": true,
+    "signed_app_sha": "702ca8c41b35bf9f6b018a28d569965a37329281"
+  },
+  "retry3": "launch receipts plus fresh incomplete stdout; no counts/exit",
+  "prior_process_loss_cause": "UNKNOWN",
+  "generated_inventory": "extension-provenance-followups.stdout",
+  "split_manifest": "harvest_not_found",
+  "spec_changes": []
+}

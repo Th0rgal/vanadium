@@ -1,0 +1,146 @@
+[
+  {
+    "bytes": 2317,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/4b48da1e-73ca-42b1-9349-1c1f8b357810/core-setup-permanent-error.patch",
+    "sha256": "d03d4218feabfbadb9c795aed950203ed64c7d4685d068b08725bf26349d464c",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/core-setup-permanent-error.patch"
+  },
+  {
+    "bytes": 676,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/934e0943-f1ff-4a83-aef4-61f888229a49/fixture-fix-notes.md",
+    "sha256": "091373f9a81f56ab73c94963360ac8183c0243261e40e0d5a91d55030bee28f8",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/fixture-fix-notes.md"
+  },
+  {
+    "bytes": 1040,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/d87d87b9-8dce-4877-82e9-975837e3578a/fixture-regression-before.json",
+    "sha256": "1b9bf75f2e9de176d5a64fba4427d8aaac088691a8c211078eefce431b1cd18e",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-before.json"
+  },
+  {
+    "bytes": 1088,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/ea6e8e13-bdba-45fe-b80b-9d6a5585e483/fixture-regression-after.json",
+    "sha256": "67d4bf993b9369c2d66ab26c0dfd1df129373dcca6c78ac4ab943eaea064f492",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-after.json"
+  },
+  {
+    "bytes": 8024,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/f52cf044-d199-4f86-8816-50dfaa9ab0d4/fixture-regression-before.stdout",
+    "sha256": "83b4aea2a1f37ac7ad916735751370ffd5fd3f99e757fbcab9e7eb1349b5b321",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-before.stdout"
+  },
+  {
+    "bytes": 1043,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/73b7ebba-567e-44be-90aa-da63bcb506ad/fixture-regression-after.stdout",
+    "sha256": "d3e3f7325e96c85011a592e7fc5ac0c4bdff61bad994f8022caac2402f672f39",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-after.stdout"
+  },
+  {
+    "bytes": 1196,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/852906e5-0ec1-4e6c-b584-d9bc8d3b3ffd/fixture-regression-before.xml",
+    "sha256": "cc65af9cb6a3bcb2fb28c58242d1ef3ed804c78421f44f6d9c35bcd1f1ca4c8e",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-before.xml"
+  },
+  {
+    "bytes": 577,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/b5572275-4077-4172-8a81-58c9d144deee/fixture-regression-after.xml",
+    "sha256": "eb761a53f3d5eb91b1f2bc3186c844eb79726cbe358d53c4b8e9e64bb0e9a1ab",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-after.xml"
+  },
+  {
+    "bytes": 59095,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/1c9582e7-fb4c-4e53-a18c-d4833e74d459/extension-provenance-followups.stdout",
+    "sha256": "29e76eb31fa1072b906c95e770ecd19de3b62e4a1d533a9174b31d77719e85b4",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/extension-provenance-followups.stdout"
+  },
+  {
+    "bytes": 281,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/0c902962-a990-452f-8eaa-cdeacdfce0aa/monitor-retry3-active.json",
+    "sha256": "f14e776aa88a2ae16af5d065d0bd114bc4f252c5e41d9c4b68aab864adb61cdb",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/monitor-retry3-active.json"
+  },
+  {
+    "bytes": 1494,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/b0ef1f65-dc98-4ad4-b3e2-aad04c644151/ragger-tests-nanosp-1800-full-retry3.active.json",
+    "sha256": "7f6808363d692c1b6614d266c6ffc7045567ab983bae4b521e6c38b83d57cec4",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanosp-1800-full-retry3.active.json"
+  },
+  {
+    "bytes": 1489,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/2e06769f-5a0e-4d5d-b7e8-24479e7626bd/ragger-tests-nanox-1800-full-retry3.active.json",
+    "sha256": "79c1307080e2ccaf20356d5567f2333753f5f75349f9f8b88222244e4884fdb2",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanox-1800-full-retry3.active.json"
+  },
+  {
+    "bytes": 10254,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/76c5c096-da9a-436e-9feb-bdab6609aea2/ragger-tests-nanosp-1800-full-retry3.stdout",
+    "sha256": "a7b2a7e179b1d7b3efbd46d20ed16de19c2a1982e57ef6075684f3146681e26e",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanosp-1800-full-retry3.stdout"
+  },
+  {
+    "bytes": 10085,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/a69b0c79-0598-444c-af47-e5c636690de8/ragger-tests-nanox-1800-full-retry3.stdout",
+    "sha256": "96532cd64ccd736a183fb5cc0be839acee1a12cf8d09f550868f51e8d8d244df",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanox-1800-full-retry3.stdout"
+  },
+  {
+    "bytes": 14680,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/33e8c8ba-fbac-4427-96ed-bcffee5928a4/live-checkpoint.py",
+    "sha256": "d4069b78486faf21dcb1d8048e7ac6cac3cbf0e533b7c2da4328395bf518f90d",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/live-checkpoint.py"
+  },
+  {
+    "bytes": 17636,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/06be9d6a-36e2-40e5-b0db-fa9edf9af883/REPORT.md",
+    "sha256": "6a0cd4dddbdf0efd4e534faecb5028c41e6fc81dda84d00192edf79aa00283d7",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/REPORT.md"
+  }
+]

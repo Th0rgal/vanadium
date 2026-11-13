@@ -1,0 +1,32 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-fixture-fix/tests",
+  "argv": [
+    "env",
+    "PYTHONPATH=/var/lib/orb-node/work/official-suite-resume/app-fixture-fix",
+    "PYTHONWARNINGS=ignore::DeprecationWarning",
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    "test_node_setup.py",
+    "--device",
+    "nanosp",
+    "--model",
+    "nanosp",
+    "-v",
+    "--tb=short",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-after.xml"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794575327.9289265,
+  "child_pid": 958044,
+  "exit": 0,
+  "ended": 1794575328.7994592
+}

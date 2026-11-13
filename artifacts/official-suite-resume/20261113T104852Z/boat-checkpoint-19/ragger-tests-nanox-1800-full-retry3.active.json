@@ -1,0 +1,38 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests",
+  "argv": [
+    "env",
+    "PATH=/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "BITCOIND=/var/lib/orb-node/work/official-suite-resume/evidence/bitcoind-nanox-1800-fresh3.sh",
+    "BITCOIN_DIRNAME=/var/lib/orb-node/work/official-suite-resume/core-1800-fresh3-nanox",
+    "BTC_RPC_PORT=26443",
+    "PYTHONPATH=/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+    "PYTHONWARNINGS=ignore::DeprecationWarning",
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    ".",
+    "--device",
+    "nanox",
+    "--model",
+    "nanox",
+    "--speculos_port=5601",
+    "--enable_slow_tests=2",
+    "--timeout=1800",
+    "-ra",
+    "-v",
+    "--tb=short",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanox-1800-full-retry3.xml"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794575232.855815,
+  "child_pid": 945843
+}

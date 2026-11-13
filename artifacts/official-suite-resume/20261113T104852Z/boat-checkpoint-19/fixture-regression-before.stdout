@@ -1,0 +1,105 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-6.2.5, py-1.11.0, pluggy-1.7.0 -- /var/lib/orb-node/work/official-suite-resume/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /var/lib/orb-node/work/official-suite-resume/app-fixture-fix/tests, configfile: setup.cfg
+plugins: timeout-2.2.0, benchmark-4.0.0
+collecting ... collected 3 items
+
+test_node_setup.py::test_setup_node_propagates_permanent_wallet_error FAILED [ 33%]
+test_node_setup.py::test_setup_node_retries_transient_startup_error[error0] PASSED [ 66%]
+test_node_setup.py::test_setup_node_retries_transient_startup_error[error1] PASSED [100%]
+
+=================================== FAILURES ===================================
+______________ test_setup_node_propagates_permanent_wallet_error _______________
+test_node_setup.py:19: in test_setup_node_propagates_permanent_wallet_error
+    node_setup.setup_node()
+conftest.py:101: in setup_node
+    print(rpc.createwallet(wallet_name="test_wallet", descriptors=True))
+/usr/lib/python3.12/unittest/mock.py:1134: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.12/unittest/mock.py:1138: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+/usr/lib/python3.12/unittest/mock.py:1197: in _execute_mock_call
+    raise result
+E   AssertionError: retried permanent error
+=============================== warnings summary ===============================
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:958: 10 warnings
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:958: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    inlocs = ast.Compare(ast.Str(name.id), [ast.In()], [locs])
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:961: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    expr = ast.IfExp(test, self.display(name), ast.Str(name.id))
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1071: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    syms.append(ast.Str(sym))
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:1073: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    expls.append(ast.Str(expl))
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:823: 24 warnings
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:823: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    keys = [ast.Str(key) for key in current.keys()]
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:983
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:983
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:983
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:983
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:983: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    expl_format = self.pop_format_context(ast.Str(expl))
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:995
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:995
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:995
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:995: DeprecationWarning: ast.Num is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    expl_template = self.helper("_format_boolop", expl_list, ast.Num(is_or))
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:933: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    assertmsg = ast.Str("")
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:935: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    template = ast.BinOp(assertmsg, ast.Add(), ast.Str(explanation))
+
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947
+../../venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:947: DeprecationWarning: ast.NameConstant is deprecated and will be removed in Python 3.14; use ast.Constant instead
+    clear = ast.Assign(variables, ast.NameConstant(None))
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/fixture-regression-before.xml -
+=========================== short test summary info ============================
+FAILED test_node_setup.py::test_setup_node_propagates_permanent_wallet_error
+=================== 1 failed, 2 passed, 76 warnings in 0.18s ===================
