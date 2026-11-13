@@ -1,0 +1,224 @@
+{
+  "utc": "2026-11-13T16:32:05.398579+00:00",
+  "classification": "NARROW_NANOX512_PASS_FULL_BOTH_DEVICES_PENDING",
+  "public_ragger": {
+    "url": "https://github.com/LedgerHQ/ragger.git",
+    "tag": "v1.47.4",
+    "head": "75a33226dc92d9af964c676a96bb99183bc38f5b",
+    "tag_source_pin": "75a33226dc92d9af964c676a96bb99183bc38f5b"
+  },
+  "baseline_app_head": "afe126fea70c8c7d6091948bb8a8ae529ea89a60",
+  "sdk_head": "9ea0fae9b40bb91e7c4f94bb0e9b8cf22df36306",
+  "baseline_guest_and_launcher_hashes_only_no_binaries_archived": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf",
+      "bytes": 247904,
+      "sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf",
+      "bytes": 247812,
+      "sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/app-navigation-fix/build/nanox/bin/app.elf",
+      "bytes": 247904,
+      "sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/app-navigation-fix/build/nanos2/bin/app.elf",
+      "bytes": 247812,
+      "sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime/speculos/resources/launcher",
+      "bytes": 2135612,
+      "sha256": "cd414754882b5dff5bd2265f920d044ca1145c1abf191c0ebdaa624cabf79a93"
+    }
+  ],
+  "build_placement": {
+    "new_private_build_path": "/var/lib/orb-node/work/official-suite-resume/app-navigation-fix/build",
+    "symlink_target": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build",
+    "no_guest_rebuild_or_mutation": true
+  },
+  "regression_guarantees": [
+    "LateE000 uses actual backend response-check path",
+    "unfinished partial-review substep resumes without replay/skipping",
+    "nonE0006985 propagates",
+    "prior responsepolicy restored after success/interruption/error",
+    "whitelist remains unchanged",
+    "successwithout requiredreview stillrejected",
+    "both navigationmethods restore ticker in finally"
+  ],
+  "v3_before": {
+    "pass": 3,
+    "fail": 3,
+    "exit": 1
+  },
+  "v3_after": {
+    "pass": 6,
+    "fail": 0,
+    "exit": 0
+  },
+  "ragger_navigator_including_added_regression": {
+    "pass": 34,
+    "fail": 0,
+    "exit": 0
+  },
+  "verified_narrow": {
+    "port": 6301,
+    "pass": 1,
+    "fail": 0,
+    "skip": 0,
+    "errors": 0,
+    "deselected": 0,
+    "exit": 0,
+    "seconds": 1421.42,
+    "signing_yields": 512,
+    "input_indices": "0..511 monotonic",
+    "requests": 58018,
+    "responses": 58018
+  },
+  "earlier_port6201": "FAILED_PARTIAL_CANDIDATE_WRONG_ADAPTER_IMPORT; preserved; notfullcandidatevalidation",
+  "files": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-pytest-provenance.json",
+      "bytes": 1153,
+      "sha256": "3dd64b996dcd807b0330ea84de7b1ec0e4b22d708e5c370332d704918d364331"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.json",
+      "bytes": 2235,
+      "sha256": "46a253f7c8d37175bf3a64a19f5cfc1f386ce1fe0d086b10051e86a5df712487"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.stdout",
+      "bytes": 2531,
+      "sha256": "380075359ab7842a0f393ae630960dd15e8789a14b64a449bee1be6f03bafe08"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix-verified.xml",
+      "bytes": 352,
+      "sha256": "ee6ee751cbd5f61df73b6a5511a97d1933bb8ea4592238412a4c7af3ccc3424e"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-terminal-analysis.json",
+      "bytes": 350,
+      "sha256": "a8e06a5f1df693fadf57a0aaec2341a3c20a9b9713569898a49d3f5577b9511d"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-placement-correction.json",
+      "bytes": 895,
+      "sha256": "547344a5886a02bc07eacb8db24703e51cca5a890aee5cab1013a60d7d6440df"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/test_navigation_late_response.py",
+      "bytes": 5022,
+      "sha256": "a6e8f44481a4b12554b397ea0e93efd5081e4801a3170100fc957a92501798f2"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/bitcoin-navigation-interruption-with-regression.patch",
+      "bytes": 12368,
+      "sha256": "49a3e593daf07380bf3dba24050ce1719b5443c3a0e48a1ed9746954c492746a"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-ticker-with-regression.patch",
+      "bytes": 10698,
+      "sha256": "a338799237112b52b3bc5664c0a7fa9b12a303911c07ee802602b48f9e90c61d"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-full-prepared-commands.json",
+      "bytes": 3901,
+      "sha256": "636d64f3d8d8898c0e6d18c7d8dccecb3ca0d07e6ee9a1ca3033d4e4878ea46a"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/source-status-navigation-final.json",
+      "bytes": 1232,
+      "sha256": "da727541fbc6cf4dede665cbf0dd9f2225342995c8dd97d0ed8241d785eeddf6"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/navigation-verified-candidate-rawgzip-manifest.json",
+      "bytes": 4482,
+      "sha256": "70d7b735651ea938436064b0739f5dd015fd30a182861a6a24773d1db037c511"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/navigation-terminal-evidence-manifest.json",
+      "bytes": 821,
+      "sha256": "94171bb88062ed5bf7a96d8547389b32f9c12102f2e0da176a89caf794dc56bb"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/guest-caller-index.json",
+      "bytes": 13393,
+      "sha256": "d1570aa06954eeb788dc457d0462304bbc62bb633490cf8f88a53c2fa96535ef"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/speculos-runtime-candidate-final-provenance.json",
+      "bytes": 34614,
+      "sha256": "6a2c6125a3d5640aa4fc26b423832968275065efe51ca0a5257d87753393cdd5"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.json",
+      "bytes": 641,
+      "sha256": "c5d14eb03db1eced150a7da676c405b2cf3c7f9b08364b1ec8a2fc1ab3fb038f"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.stdout",
+      "bytes": 6373,
+      "sha256": "bcca594aedce72ec03624255eed99055d0784db9ecc1ffb35451ed01405ff096"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.xml",
+      "bytes": 6855,
+      "sha256": "7ebdfaba4f94e962c75597839be239ae823644ccb73183562c10a85d12abe12d"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.json",
+      "bytes": 718,
+      "sha256": "93b1f8064aa65ff8ac5ac63967ea421eeb3f89bbf4f44969c6c5fa1980d8a319"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.stdout",
+      "bytes": 211,
+      "sha256": "4561b3695f7e68beb72621c7bb61900e29a518531d71c72f4af0bff85e6c3dc7"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-after.xml",
+      "bytes": 1088,
+      "sha256": "72aebd04deca90f157ca474365769184e6e4c154ccd5f222d48dbb424ad2c123"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.json",
+      "bytes": 565,
+      "sha256": "a89b1d2354bf65f1c8da20d52825fd8a2987b524fb8e1169d706a714f0d403d4"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.stdout",
+      "bytes": 1062,
+      "sha256": "0cc1bfd57ce3d09fbb5f48b4dcc2d942b076cd88ab2cfa1d94cb74d8c58d8eef"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-with-regression.xml",
+      "bytes": 4703,
+      "sha256": "9002fe4e6fba8e9d97108020b61d17cb00d6219188463052b6c549aeb9c68757"
+    }
+  ],
+  "active_suites": 0,
+  "full_both_devices": "NOT_RUN; preparedsamefull282selection slow2, screenshots/assertions/upstreamskips unchanged",
+  "last_confirmed_expiry_utc": "2026-11-13T16:22:27Z",
+  "parent_new_expiry_confirmation_needed": true
+}

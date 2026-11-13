@@ -1,0 +1,12 @@
+{
+  "checkpoint": 36,
+  "fullcandidate_start": "2026-11-13T16:33:18.926Z",
+  "selection": ". slow2 timeout1800",
+  "collected_per_device": 282,
+  "partial_failure": "4toMaxPlus1 bothdevices",
+  "currentcase": "512to256",
+  "final_counts": null,
+  "exit": null,
+  "boat_expiry": 1794594147,
+  "stale_NOT_RUN_index_superseded": true
+}
