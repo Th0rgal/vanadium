@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS: previous testnet attempts interrupted; fresh full300 attempts active; full1800 required if measured budget insufficient",
+  "status": "IN_PROGRESS: full300 bothdevices progressed past512 failure markers; exacttraceback/finalcounts pending, Boat extended14:22:27Z",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -7,7 +7,7 @@
   "app_pushed_sha": "afe126fea70c8c7d6091948bb8a8ae529ea89a60",
   "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
   "node_id": "managed-af55be7b-51a1-45a9-8d79-04e836758cd7",
-  "machine_expires_at_sec": 1794572547,
+  "machine_expires_at_sec": 1794579747,
   "executor_mission_id": "819a0cd5-1d6d-4c3d-9e48-0acfc0c62e23",
   "requested_backend": "codex",
   "effective_backend": "codex",
@@ -160,12 +160,20 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 9,
+  "latest_parent_checkpoint": 11,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
-  "runtime_monitor_deadline": "12:20Z hardcoded, must update after extension",
+  "runtime_monitor_deadline": "12:20Z still in harvested script; newexpiry delivered via resume action but actual active monitor correction unverified",
   "durable_workspace_probe": {
     "job_id": "4d39a8a1-c75e-4b62-8f3d-49c2fa1f1b36",
     "tool_reported": "completed",
     "verification": "harvest durable-placement-probe.json failed harvest_rejected/harvest_not_found; remote placement NOT proven"
+  },
+  "checkpoint10_archive_sha256": "0b95d53a544a02c893b2a6a89e4da41c000155c07a046bca00892a18b5ac1f05",
+  "checkpoint11_archive_sha256": "9f27e317017e02ca195ef86610c92d5192ae431ab7f097dfce5f1894c31ec510",
+  "boat_extension": {
+    "minutes": 120,
+    "budget_checked": true,
+    "increment_max_usd": 0.144,
+    "new_expiry_utc": "2026-11-13T14:22:27Z"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "archive_sha256": "0b95d53a544a02c893b2a6a89e4da41c000155c07a046bca00892a18b5ac1f05",
+  "new_completed_suites": [],
+  "observed_partial_runs": {
+    "ragger-tests-nanosp-final2": {
+      "collected": [
+        "282"
+      ],
+      "failure_markers": [],
+      "skip_markers": [
+        "test_get_extended_pubkey.py::test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp] SKIPPED [ 12%]"
+      ],
+      "completion_record_exists": false,
+      "last_line": "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp] "
+    },
+    "ragger-tests-nanox-final": {
+      "collected": [
+        "282"
+      ],
+      "failure_markers": [],
+      "skip_markers": [
+        "test_get_extended_pubkey.py::test_get_extended_pubkey_non_standard_reject_early[nanox-nanox] SKIPPED [ 12%]"
+      ],
+      "completion_record_exists": false,
+      "last_line": "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanox-nanox] "
+    }
+  },
+  "counts": null,
+  "accepted_suites_unchanged": true,
+  "boat_extension": {
+    "old_expiry": 1794572547,
+    "new_expiry": 1794579747,
+    "new_expiry_utc": "2026-11-13T14:22:27Z",
+    "added_minutes": 120,
+    "increment_max_usd": 0.144,
+    "budget_daily_spent_usd": 33.27,
+    "daily_cap_usd": 50,
+    "mission_specific_cap": null
+  },
+  "monitor_deadline_status": "12:20Z still in harvested script; resume_mission18fcf7bc-03c9-4217-a6da-7a3e38be3dab succeeded active, application NOT verified; must confirm replacement/reload before12:20",
+  "pending": [
+    "exact512failure traceback",
+    "completed full300 summaries and -ra skipreasons",
+    "full1800 same-selection reruns if runtime exceeds300",
+    "emitter executablehash",
+    "rootcommon private minimal overlay",
+    "untracked tests/tests inventory"
+  ],
+  "spec_changes": []
+}
