@@ -1,0 +1,17 @@
+COMMAND ["gh", "api", "repos/Th0rgal/vanadium", "--jq", "{full_name,visibility}"]
+{"full_name":"Th0rgal/vanadium","visibility":"public"}
+
+EXIT 0
+COMMAND ["git", "push", "https://github.com/Th0rgal/vanadium.git", "HEAD:refs/heads/test/official-resume-20261113"]
+remote: 
+remote: Create a pull request for 'test/official-resume-20261113' on GitHub by visiting:        
+remote:      https://github.com/Th0rgal/vanadium/pull/new/test/official-resume-20261113        
+remote: 
+To https://github.com/Th0rgal/vanadium.git
+ * [new branch]      HEAD -> test/official-resume-20261113
+
+EXIT 0
+COMMAND ["git", "ls-remote", "https://github.com/Th0rgal/vanadium.git", "refs/heads/test/official-resume-20261113"]
+abbc0aa2be8a038b3965ed94f26d9dd554190a56	refs/heads/test/official-resume-20261113
+
+EXIT 0

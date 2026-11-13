@@ -17,3 +17,7 @@ Run Bitcoin Rust tests from their own apps/bitcoin workspace, separately from Va
 ## Safe remediation
 
 Use a dedicated Boat VM after budget/catalog inventory, with public source and no credentials; provision authentic SDK, Speculos, CMake, pytest/Ragger and device build tooling there. Do not change socket permissions or create SDK stubs. Resolve the lock discrepancy in a separately justified, reviewed dependency step, or select the matching pinned toolchain if it demonstrably preserves the upstream lock. Do not remove --locked silently. No semantic spec relaxation is justified by these environment failures. Before cloud build, establish an anonymous public path to these exact commits; original origin points at LedgerHQ, while the local custom branch is not advertised there.
+
+## Continuation
+
+Local prerequisite gates remain BLOCKED. A dedicated Boat large executor is active; see state.json. Budget inventory completed before rental ($0.072/h, 90min). Public forks created after original LedgerHQ push403; both pinned source refs remotely verified. Requested/effective backend codex/codex, effective model gpt-6.1-sol. No reviewer launched. Remote test evidence has not yet been accepted.

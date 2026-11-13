@@ -1,0 +1,24 @@
+COMMAND ["git", "push", "-u", "origin", "test/official-resume-20261113"]
+remote: Permission to LedgerHQ/vanadium.git denied to Th0rgal.
+fatal: unable to access 'https://github.com/LedgerHQ/vanadium.git/': The requested URL returned error: 403
+
+EXIT 128
+COMMAND ["git", "ls-remote", "origin", "refs/heads/test/official-resume-20261113"]
+
+EXIT 0
+COMMAND ["git", "rev-parse", "HEAD"]
+abbc0aa2be8a038b3965ed94f26d9dd554190a56
+
+EXIT 0
+COMMAND ["git", "verify-commit", "HEAD"]
+gpg: Signature made Fri Nov 13 11:51:36 2026 CET
+gpg:                using EDDSA key 30EAE29B6766A7A70A4DEB4BF480B9A3F84BE648
+gpg: Good signature from "Thomas Marchand (agent) <agent@thomas.md>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 30EA E29B 6766 A7A7 0A4D  EB4B F480 B9A3 F84B E648
+
+EXIT 0
+COMMAND ["git", "status", "--short"]
+
+EXIT 0

@@ -1,0 +1,13 @@
+COMMAND ["git", "push", "https://github.com/Th0rgal/app-bitcoin.git", "HEAD:refs/heads/test/official-resume-20261113"]
+remote: 
+remote: Create a pull request for 'test/official-resume-20261113' on GitHub by visiting:        
+remote:      https://github.com/Th0rgal/app-bitcoin/pull/new/test/official-resume-20261113        
+remote: 
+To https://github.com/Th0rgal/app-bitcoin.git
+ * [new branch]      HEAD -> test/official-resume-20261113
+
+EXIT 0
+COMMAND ["git", "ls-remote", "https://github.com/Th0rgal/app-bitcoin.git", "refs/heads/test/official-resume-20261113"]
+afe126fea70c8c7d6091948bb8a8ae529ea89a60	refs/heads/test/official-resume-20261113
+
+EXIT 0
