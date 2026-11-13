@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS_WITH_FAILURES: candidate full complete FAIL both; screen navigation diagnosis active",
+  "status": "IN_PROGRESS_WITH_FAILURES: new full navigation-resume both active nofinalcounts",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -161,7 +161,7 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 38,
+  "latest_parent_checkpoint": 39,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
   "runtime_monitor_deadline": "retry3receiptended13:58:11; noactive monitorasserted",
   "durable_workspace_probe": {
@@ -314,8 +314,36 @@
     "maxincrementUSD": 0.072
   },
   "navigation_full": {
-    "status": "bothactiveMuSig59%;512PASSEDmarkers4toMaxPlus1FAILEDmarkers",
-    "counts": null,
-    "exit": null
+    "historical_candidate_v1": "completedFAIL280p1f1skip both",
+    "current_resume_full": {
+      "nanosp": {
+        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
+        "started_utc": "2026-11-13T17:21:33.235695+00:00",
+        "pid": 2317166,
+        "collected": 282,
+        "slow": 2,
+        "timeout": 1800,
+        "selection": ".",
+        "counts": null,
+        "exit": null,
+        "guest_sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2",
+        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
+        "harvested_modules_match_loaded_hashes": true
+      },
+      "nanox": {
+        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
+        "started_utc": "2026-11-13T17:21:33.236053+00:00",
+        "pid": 2317167,
+        "collected": 282,
+        "slow": 2,
+        "timeout": 1800,
+        "selection": ".",
+        "counts": null,
+        "exit": null,
+        "guest_sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02",
+        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
+        "harvested_modules_match_loaded_hashes": true
+      }
+    }
   }
 }

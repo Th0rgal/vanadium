@@ -1,0 +1,87 @@
+{
+  "utc": "2026-11-13T17:19:40.286247+00:00",
+  "actual_expiry_epoch": 1794590547,
+  "actual_expiry_utc": "2026-11-13T17:22:27Z",
+  "historic_plugin_versions": [
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation_candidate_provenance.py",
+      "frozen_path": "/var/lib/orb-node/work/official-suite-resume/evidence/frozen-2eec7d790aa1639cc5bbb478dc9f597172c1bc3e6bf37d05a64369f492437a9b-navigation_candidate_provenance.py",
+      "sha256": "2eec7d790aa1639cc5bbb478dc9f597172c1bc3e6bf37d05a64369f492437a9b",
+      "frozen_utc": "2026-11-13T17:19:40.286247+00:00",
+      "limitation": "Frozen now from present bytes; historical exact plugin bytes are not retroactively proven. Historical session receipts recorded actual module hashes but asserted paths only."
+    },
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation_resume_provenance.py",
+      "frozen_path": "/var/lib/orb-node/work/official-suite-resume/evidence/frozen-37f079dce9b3a48be30e0584693df9b5fd1207aecaf5d6d29b1cf90c1b79faf0-navigation_resume_provenance.py",
+      "sha256": "37f079dce9b3a48be30e0584693df9b5fd1207aecaf5d6d29b1cf90c1b79faf0",
+      "frozen_utc": "2026-11-13T17:19:40.286247+00:00",
+      "limitation": "Frozen now from present bytes; historical exact plugin bytes are not retroactively proven. Historical session receipts recorded actual module hashes but asserted paths only."
+    }
+  ],
+  "future_v2_plugin": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation_resume_provenance_v2.py",
+    "sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d"
+  },
+  "frozen_expected_manifest": "/var/lib/orb-node/work/official-suite-resume/transfer/navigation-resume-frozen-runtime-v2.json",
+  "guest_mappings": [
+    {
+      "device": "nanosp",
+      "build_device": "nanos2",
+      "path": "/var/lib/orb-node/work/official-suite-resume/app-navigation-resume/build/nanos2/bin/app.elf",
+      "resolved_path": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf",
+      "baseline_path": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf",
+      "sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2",
+      "baseline_sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2",
+      "build_symlink": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build"
+    },
+    {
+      "device": "nanox",
+      "build_device": "nanox",
+      "path": "/var/lib/orb-node/work/official-suite-resume/app-navigation-resume/build/nanox/bin/app.elf",
+      "resolved_path": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf",
+      "baseline_path": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf",
+      "sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02",
+      "baseline_sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02",
+      "build_symlink": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build"
+    }
+  ],
+  "partial_attempt": {
+    "classification": "FAILED_PARTIAL_RUNTIME_WRONG_ADAPTER_IMPORT",
+    "exit": 1,
+    "junit_cases": 1,
+    "fail": 1,
+    "raw_manifest": "/var/lib/orb-node/work/official-suite-resume/transfer/navigation-partial-candidate-rawgzip-manifest.json",
+    "lossless_verification": [
+      {
+        "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix.stdout.gz",
+        "original_sha256": "c1b80f15b0cae4db887da890778154061386b02145b46f754c24f81432fdeb58",
+        "verified": true
+      },
+      {
+        "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix.stderr.gz",
+        "original_sha256": "cb1a2cad61983061d989aaa8ad717741cdf5be896ff61868863bee2f344a31ba",
+        "verified": true
+      },
+      {
+        "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-navigation-fix.process.trace.gz",
+        "original_sha256": "efe163d57d89c51210443eb122a90038141fde0083be1423471cbf8bb143dfa3",
+        "verified": true
+      }
+    ],
+    "completion": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix.json",
+    "junit": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-navigation-fix.xml",
+    "original_claim_and_correction_preserved": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-candidate-placement-correction.json"
+  },
+  "latest_full_terminal_index": "/var/lib/orb-node/work/official-suite-resume/transfer/navigation-full-terminal-index.json",
+  "newest_runtime_index": "/var/lib/orb-node/work/official-suite-resume/transfer/navigation-resume-index.json",
+  "active_suites": [],
+  "newest_runtime_full": "NOT_RUN; pending adequate confirmed parentexpiry",
+  "plugin_version_audit": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-plugin-version-audit.json",
+  "recovered_historical_plugin_diff": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-plugin-historical-change.diff",
+  "v2_collection_check": {
+    "json": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-provenance-v2-collect.json",
+    "stdout": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-provenance-v2-collect.stdout",
+    "stderr": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-provenance-v2-collect.stderr"
+  },
+  "v2_assertion_receipt": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation-provenance-v2-collect-asserted.json"
+}

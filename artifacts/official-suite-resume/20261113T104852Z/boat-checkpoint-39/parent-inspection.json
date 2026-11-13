@@ -1,0 +1,122 @@
+{
+  "checkpoint": 39,
+  "active_runs": {
+    "nanosp": {
+      "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
+      "started_utc": "2026-11-13T17:21:33.235695+00:00",
+      "pid": 2317166,
+      "collected": 282,
+      "slow": 2,
+      "timeout": 1800,
+      "selection": ".",
+      "counts": null,
+      "exit": null,
+      "guest_sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2",
+      "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
+      "harvested_modules_match_loaded_hashes": true
+    },
+    "nanox": {
+      "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
+      "started_utc": "2026-11-13T17:21:33.236053+00:00",
+      "pid": 2317167,
+      "collected": 282,
+      "slow": 2,
+      "timeout": 1800,
+      "selection": ".",
+      "counts": null,
+      "exit": null,
+      "guest_sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02",
+      "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
+      "harvested_modules_match_loaded_hashes": true
+    }
+  },
+  "files": [
+    {
+      "file": "navigation-full-live-index.json",
+      "sha256": "92a66a67548190c282aabb23d93530691ca4323d32774de18380c5af977aa217",
+      "bytes": 1886
+    },
+    {
+      "file": "navigation-resume-full-runtime-status.json",
+      "sha256": "c697a2736a1722006b96080713bc8fc36f72a58895406bfede025b74866fdbef",
+      "bytes": 318
+    },
+    {
+      "file": "update-navigation-full-index.py",
+      "sha256": "59358b85312c856e74bebf383715a7a95cf66adb0348ce4baa81a1b77b88e0d5",
+      "bytes": 1632
+    },
+    {
+      "file": "snapshot-navigation-resume-runtime.py",
+      "sha256": "20e60ea40959be2fbbd4d0afd50d072109c62679bd521f59ce136c42dbee921d",
+      "bytes": 1632
+    },
+    {
+      "file": "ragger-navigation-resume-full-nanosp.active.json",
+      "sha256": "8e54bc47f53b2bad43eac7ee8e1c15f622f8aafda5c574c59375a176d2373a28",
+      "bytes": 2019
+    },
+    {
+      "file": "ragger-navigation-resume-full-nanox.active.json",
+      "sha256": "a99e76e268af8c5b89ea6c5e12ae1e1f296d04f709087643123085d1248f685a",
+      "bytes": 2013
+    },
+    {
+      "file": "ragger-navigation-resume-full-nanosp.stdout",
+      "sha256": "a2b268028856251752fb7869400646014a9e472d667eb6ed407e416841fa03da",
+      "bytes": 12279
+    },
+    {
+      "file": "ragger-navigation-resume-full-nanox.stdout",
+      "sha256": "7aca6845ed7961b7a92abce15ef947dfe5c64a1a5cae2e81e7eeccd8c5b38a97",
+      "bytes": 12198
+    },
+    {
+      "file": "navigation-full-index.json",
+      "sha256": "e2c5bc7bb7679823fec5c96816a069d3ee31ea822bfa656d7621019635d09137",
+      "bytes": 7798
+    },
+    {
+      "file": "navigation-resume-runtime-latest.json",
+      "sha256": "8fa3dca88d690b41d7f3f005b0300ce46913ef8cbee765a795df4b0dbaaeee4d",
+      "bytes": 1832
+    },
+    {
+      "file": "navigation_resume_provenance_full_20261113_1721.py",
+      "sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
+      "bytes": 4939
+    },
+    {
+      "file": "ragger_bitcoin.py",
+      "sha256": "02618dd652e52ee7f03c70df740fae37317450850abb2eaa08feb1139014ac03",
+      "bytes": 11181
+    },
+    {
+      "file": "speculos.py",
+      "sha256": "841bf5510ae875dd3df0e122a18741f30e1487ec9135600b561b06af883e8580",
+      "bytes": 19588
+    },
+    {
+      "file": "navigator.py",
+      "sha256": "108edc9ae3b84d5a7ad401573aa0c07ef19f5e6900980fff106e92210585232f",
+      "bytes": 27523
+    },
+    {
+      "file": "test_navigation_deferred_loading.py",
+      "sha256": "62714a07d99d378532f726ac5548d9817322ab5156020226a1c599063fcebf70",
+      "bytes": 3027
+    },
+    {
+      "file": "navigation-placement-provenance-final-index.json",
+      "sha256": "ccf40308770ec52ebde35a1163003fb6bfd4b6ad87422889c6536aac922461b2",
+      "bytes": 5692
+    },
+    {
+      "file": "seproxyhal.py",
+      "sha256": "b4ff75b8a9e3b99f2e32623bfb73ad760d906fe90bf466a1877c1590b6dac127",
+      "bytes": 22487
+    }
+  ],
+  "new_screen_fix_accepted": false,
+  "atomic_archive": false
+}

@@ -1,0 +1,11 @@
+{
+  "utc": "2026-11-13T17:28:23.270251+00:00",
+  "confirmed_expiry_epoch": 1794594147,
+  "advisory_deadline_utc": "2026-11-13T18:20:00Z",
+  "deadline_action": "record only; never signal tests",
+  "completed": [],
+  "active": [
+    "ragger-navigation-resume-full-nanosp",
+    "ragger-navigation-resume-full-nanox"
+  ]
+}

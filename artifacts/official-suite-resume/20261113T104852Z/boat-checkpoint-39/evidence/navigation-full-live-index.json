@@ -1,0 +1,32 @@
+{
+  "utc": "2026-11-13T16:59:58.710262+00:00",
+  "actual_expiry_epoch": 1794590547,
+  "advisory_action": "record only; never signal tests",
+  "classification": "FULL_RUNNING_BOTH512_PASSED_EARLIER_4toMaxPlus1_FAILED",
+  "runs": {
+    "nanosp": {
+      "status": "RUNNING",
+      "observed_512_pass": true,
+      "observed_failed_nodes": [
+        "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanosp-nanosp] FAILED [ 37%]"
+      ],
+      "tail": "ip322.py::test_sign_bip322_wrong_message[nanosp-nanosp] PASSED [ 47%]\ntest_sign_psbt_bip322.py::test_sign_bip322_wrong_prevout_index[nanosp-nanosp] PASSED [ 47%]\ntest_sign_psbt_bip322.py::test_sign_bip322_nonzero_amount[nanosp-nanosp] PASSED [ 48%]\ntest_sign_psbt_bip322.py::test_sign_bip322_opreturn_with_data[nanosp-nanosp] PASSED [ 48%]\ntest_sign_psbt_bip322.py::test_sign_bip322_extra_output[nanosp-nanosp] PASSED [ 48%]\ntest_sign_psbt_bip322.py::test_sign_bip322_wrong_tx_version[nanosp-nanosp] ",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "exit": null
+    },
+    "nanox": {
+      "status": "RUNNING",
+      "observed_512_pass": true,
+      "observed_failed_nodes": [
+        "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanox-nanox] FAILED [ 37%]"
+      ],
+      "tail": "ED     [ 45%]\ntest_sign_psbt_bip322.py::test_sign_bip322_multisig[nanox-nanox] PASSED  [ 45%]\ntest_sign_psbt_bip322.py::test_sign_bip322_long_message[nanox-nanox] PASSED [ 45%]\ntest_sign_psbt_bip322.py::test_sign_bip322_empty_message[nanox-nanox] PASSED [ 46%]\ntest_sign_psbt_bip322.py::test_sign_bip322_nonprintable_message[nanox-nanox] PASSED [ 46%]\ntest_sign_psbt_bip322.py::test_sign_bip322_change_address[nanox-nanox] PASSED [ 46%]\ntest_sign_psbt_bip322.py::test_sign_bip322_reject[nanox-nanox] ",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "exit": null
+    }
+  }
+}

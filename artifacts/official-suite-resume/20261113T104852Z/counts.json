@@ -191,7 +191,38 @@
     }
   },
   "pending_validation": {
-    "diagnosis": "candidate full both4toMaxPlus1 screen mismatch; separate navigation-resume diagnosis active; full both and updated mainnet pending"
+    "navigation_resume_full": {
+      "nanosp": {
+        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
+        "started_utc": "2026-11-13T17:21:33.235695+00:00",
+        "pid": 2317166,
+        "collected": 282,
+        "slow": 2,
+        "timeout": 1800,
+        "selection": ".",
+        "counts": null,
+        "exit": null,
+        "guest_sha256": "3945811830d98b332c2f0fbe8c2ac4d01cbd046ca782f6f0f5ff04191fd455b2",
+        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
+        "harvested_modules_match_loaded_hashes": true
+      },
+      "nanox": {
+        "status": "ACTIVE_FULL_NO_FINAL_COUNTS",
+        "started_utc": "2026-11-13T17:21:33.236053+00:00",
+        "pid": 2317167,
+        "collected": 282,
+        "slow": 2,
+        "timeout": 1800,
+        "selection": ".",
+        "counts": null,
+        "exit": null,
+        "guest_sha256": "14e1549c6d4c6c397f3ef2e32d67aeb39e0de00335ecee45c0b61afe80888e02",
+        "plugin_sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d",
+        "harvested_modules_match_loaded_hashes": true
+      }
+    },
+    "new_screen_fix_regressions": "not yet independently verified",
+    "updated_mainnet": "queued after full"
   },
   "diagnostics": {
     "musig_eviction_nanox": {
