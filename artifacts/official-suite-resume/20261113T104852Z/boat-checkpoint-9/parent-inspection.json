@@ -1,0 +1,29 @@
+{
+  "archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
+  "new_completed_suites": [],
+  "testnet_complete": false,
+  "testnet_counts": null,
+  "upstream_skip_reasons": "empty so far; full terminal -ra pending, not proof ofzero skips",
+  "partial_counts_correction": {
+    "run": "ragger-tests-nanox-long",
+    "exit": 2,
+    "terminal_pass": 4,
+    "junit_reported_cases": 5,
+    "acceptance": "interrupted, not full suite"
+  },
+  "ctest_log_requested_layout": "byte-identical LastTest.log under native-ctest/Testing/Temporary",
+  "runtime_monitor_deadline": "12:20Z hardcoded SIGINT observed; parent requested update when Boat extended",
+  "durable_workspace_probe": {
+    "job_id": "4d39a8a1-c75e-4b62-8f3d-49c2fa1f1b36",
+    "tool_reported": "completed",
+    "verification": "harvest durable-placement-probe.json failed harvest_rejected/harvest_not_found; remote placement NOT proven"
+  },
+  "budget": {
+    "spent_daily_usd": 33.27,
+    "cap_usd": 50,
+    "mission_specific_cap": null
+  },
+  "emitter_hash": "pending",
+  "root_common_overlay": "pending",
+  "spec_changes": []
+}

@@ -1,6 +1,6 @@
 # Official Bitcoin suite resume — current parent assessment
 
-Status: IN_PROGRESS. Evidence reviewed through checkpoint8. No global PASS.
+Status: IN_PROGRESS. Evidence reviewed through checkpoint9. No global PASS.
 
 | Complete fresh suite | Passed | Failed | Skipped/ignored | Deselected/filtered | Exit |
 |---|---:|---:|---:|---:|---:|
@@ -25,3 +25,5 @@ Vanadium source6ee1f9545e2efaed439d463a02187c73a9d6d1b4, public evidence/contrac
 Initial failures (Dockerdenied,CMakeSDKmissing,Pythondependencies,staleemitter) are preserved as individual raw records; public native provisioning resolved them without socket/group changes or stubs. They are not Bitcoin bugs. Original phase1 report/counts preserved as initial-PHASE1 files. Worker REPORT.md through checkpoint6 was stale; checkpoint7/8 current report now preserves interruptions explicitly. Parent assessment remains authoritative.
 
 Only NEW owned integration/test trees used; no shared/site/RAM edits. No specs/tests/assertions weakened or changed, no added exclusions or reviewers, no merge/deploy. Exact commands/stdout/stderr/exits in checkpoint records; remote evidence branchtest/official-resume-evidence-20261113 signed and pushed to publicTh0rgal/vanadium after LedgerHQ403. Machine/executor IDs,TTL12:22Z and ownership in state.json.
+
+Checkpoint9 corrects partial NanoX1800 retry to terminal4passed/exit2; JUnit5 includes unfinished case. Full testnet counts remain null. Monitors still have12:20Z cutoff; parent requested updating after extension. Durable workspace probe remote placement failed verification (expected artifact harvest_not_found), so do not rely on its reported completed status.
