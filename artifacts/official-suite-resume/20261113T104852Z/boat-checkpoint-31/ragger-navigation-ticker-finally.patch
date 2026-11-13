@@ -1,0 +1,208 @@
+diff --git a/src/ragger/navigator/navigator.py b/src/ragger/navigator/navigator.py
+index 2713239..1c21768 100644
+--- a/src/ragger/navigator/navigator.py
++++ b/src/ragger/navigator/navigator.py
+@@ -250,51 +250,51 @@ class Navigator(ABC):  # noqa: B024
+         """
+ 
+         self._backend.pause_ticker()
++        try:
++            # Navigation initialization: no-op instruction to:
++            # - wait for screen change depending on screen_change_before_first_instruction.
++            #   this is necessary:
++            #   - when an APDU was just sent and we want to make sure the screen already
++            #     displays the first review page.
++            #   - when called to finish the execution of a navigate_until_text() call.
++            # - compare the initial screen content with the golden reference if path and
++            #   test_case_name are valid.
++            self._run_instruction(
++                NavIns(NavInsID.WAIT, (0,)),
++                timeout,
++                wait_for_screen_change=screen_change_before_first_instruction,
++                path=path,
++                test_case_name=test_case_name,
++                snap_idx=snap_start_idx,
++            )
+ 
+-        # Navigation initialization: no-op instruction to:
+-        # - wait for screen change depending on screen_change_before_first_instruction.
+-        #   this is necessary:
+-        #   - when an APDU was just sent and we want to make sure the screen already
+-        #     displays the first review page.
+-        #   - when called to finish the execution of a navigate_until_text() call.
+-        # - compare the initial screen content with the golden reference if path and
+-        #   test_case_name are valid.
+-        self._run_instruction(
+-            NavIns(NavInsID.WAIT, (0,)),
+-            timeout,
+-            wait_for_screen_change=screen_change_before_first_instruction,
+-            path=path,
+-            test_case_name=test_case_name,
+-            snap_idx=snap_start_idx,
+-        )
+-
+-        for idx, instruction in enumerate(instructions, start=1):
+-            if idx != len(instructions) or screen_change_after_last_instruction:
+-                # Nominal case, either:
+-                # - middle instruction
+-                # - last instruction but with screen_change_after_last_instruction=True
+-                # => wait_for_screen_change()
+-                # => screenshot comparison if path and test_case_name are valid
+-                self._run_instruction(
+-                    instruction,
+-                    timeout,
+-                    wait_for_screen_change=True,
+-                    path=path,
+-                    test_case_name=test_case_name,
+-                    snap_idx=snap_start_idx + idx,
+-                )
+-            else:
+-                # Last instruction case with screen_change_after_last_instruction=False
+-                # => no wait_for_screen_change()
+-                # => no screenshot comparison
+-                self._run_instruction(
+-                    instruction,
+-                    timeout,
+-                    wait_for_screen_change=False,
+-                    snap_idx=snap_start_idx + idx,
+-                )
+-
+-        self._backend.resume_ticker()
++            for idx, instruction in enumerate(instructions, start=1):
++                if idx != len(instructions) or screen_change_after_last_instruction:
++                    # Nominal case, either:
++                    # - middle instruction
++                    # - last instruction but with screen_change_after_last_instruction=True
++                    # => wait_for_screen_change()
++                    # => screenshot comparison if path and test_case_name are valid
++                    self._run_instruction(
++                        instruction,
++                        timeout,
++                        wait_for_screen_change=True,
++                        path=path,
++                        test_case_name=test_case_name,
++                        snap_idx=snap_start_idx + idx,
++                    )
++                else:
++                    # Last instruction case with screen_change_after_last_instruction=False
++                    # => no wait_for_screen_change()
++                    # => no screenshot comparison
++                    self._run_instruction(
++                        instruction,
++                        timeout,
++                        wait_for_screen_change=False,
++                        snap_idx=snap_start_idx + idx,
++                    )
++        finally:
++            self._backend.resume_ticker()
+ 
+     def navigate(
+         self,
+@@ -504,58 +504,58 @@ class Navigator(ABC):  # noqa: B024
+                 timeout = 200
+ 
+         self._backend.pause_ticker()
++        try:
++            # Navigation initialization: no-op instruction to:
++            # - wait for screen change depending on screen_change_before_first_instruction.
++            #   this is necessary when an APDU was just sent and we want to make sure the
++            #   screen already displays the first review page.
++            # - compare the initial screen content with the golden reference if path and
++            #   test_case_name are valid.
++            self._run_instruction(
++                NavIns(NavInsID.WAIT, (0,)),
++                timeout,
++                wait_for_screen_change=screen_change_before_first_instruction,
++                path=path,
++                test_case_name=test_case_name,
++                snap_idx=idx,
++            )
+ 
+-        # Navigation initialization: no-op instruction to:
+-        # - wait for screen change depending on screen_change_before_first_instruction.
+-        #   this is necessary when an APDU was just sent and we want to make sure the
+-        #   screen already displays the first review page.
+-        # - compare the initial screen content with the golden reference if path and
+-        #   test_case_name are valid.
+-        self._run_instruction(
+-            NavIns(NavInsID.WAIT, (0,)),
+-            timeout,
+-            wait_for_screen_change=screen_change_before_first_instruction,
+-            path=path,
+-            test_case_name=test_case_name,
+-            snap_idx=idx,
+-        )
+-
+-        # Navigate until the text specified in argument is found.
+-        while True:
+-            if self._backend.compare_screen_with_text(text):
+-                # Validation screen text found, exit the loop
+-                break
+-            else:
+-                # Global navigation loop timeout in case the text is never found.
++            # Navigate until the text specified in argument is found.
++            while True:
++                if self._backend.compare_screen_with_text(text):
++                    # Validation screen text found, exit the loop
++                    break
++                else:
++                    # Global navigation loop timeout in case the text is never found.
++                    remaining = timeout - (time() - start)
++                    if remaining < 0:
++                        raise TimeoutError(f"Timeout waiting for text {text}")
++
++                    # Go to the next screen.
++                    idx += 1
++                    self._run_instruction(
++                        navigate_instruction,
++                        remaining,
++                        wait_for_screen_change=True,
++                        path=path,
++                        test_case_name=test_case_name,
++                        snap_idx=idx,
++                    )
++
++            # Perform navigation validation instructions in an "navigate_and_compare" way.
++            if validation_instructions:
+                 remaining = timeout - (time() - start)
+-                if remaining < 0:
+-                    raise TimeoutError(f"Timeout waiting for text {text}")
+-
+-                # Go to the next screen.
+-                idx += 1
+-                self._run_instruction(
+-                    navigate_instruction,
+-                    remaining,
+-                    wait_for_screen_change=True,
+-                    path=path,
+-                    test_case_name=test_case_name,
+-                    snap_idx=idx,
++                self.navigate_and_compare(
++                    path,
++                    test_case_name,
++                    validation_instructions,
++                    timeout=remaining,
++                    screen_change_before_first_instruction=False,
++                    screen_change_after_last_instruction=screen_change_after_last_instruction,
++                    snap_start_idx=idx,
+                 )
+-
+-        # Perform navigation validation instructions in an "navigate_and_compare" way.
+-        if validation_instructions:
+-            remaining = timeout - (time() - start)
+-            self.navigate_and_compare(
+-                path,
+-                test_case_name,
+-                validation_instructions,
+-                timeout=remaining,
+-                screen_change_before_first_instruction=False,
+-                screen_change_after_last_instruction=screen_change_after_last_instruction,
+-                snap_start_idx=idx,
+-            )
+-
+-        self._backend.resume_ticker()
++        finally:
++            self._backend.resume_ticker()
+ 
+     def navigate_until_text(
+         self,

@@ -1,0 +1,15 @@
+{
+  "checkpoint": 31,
+  "raw9parts_gzip_original_SHA_verified": true,
+  "guest_exception": 5,
+  "guest_caller": "io_event interruptionticker timeout -> process_interruption -> signing display",
+  "guest_requested_exit": 255,
+  "observer_error": "stackread0x50007000;gdbexit1",
+  "navigation_regression": {
+    "before": "3fail3pass exit1",
+    "after": "6pass exit0",
+    "navigator_unit": "33pass exit0"
+  },
+  "navigation_exact512": "active receipt; no finalexit/counts",
+  "official_counts_unchanged": true
+}

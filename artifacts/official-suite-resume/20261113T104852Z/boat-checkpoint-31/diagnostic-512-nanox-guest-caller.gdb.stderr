@@ -1,0 +1,3 @@
+warning: BFD: warning: system-supplied DSO at 0x40810000 has a corrupt string table index
+/var/lib/orb-node/work/official-suite-resume/evidence/guest-exit-caller.gdb:44: Error in sourced command file:
+Cannot access memory at address 0x50007000

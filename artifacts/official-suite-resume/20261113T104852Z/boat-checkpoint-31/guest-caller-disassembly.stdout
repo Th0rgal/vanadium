@@ -1,0 +1,88 @@
+
+/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+c0df3010 <io_event>:
+c0df3010:	b5b0      	push	{r4, r5, r7, lr}
+c0df3012:	4d2f      	ldr	r5, [pc, #188]	@ (c0df30d0 <io_event+0xc0>)
+c0df3014:	f819 0005 	ldrb.w	r0, [r9, r5]
+c0df3018:	280e      	cmp	r0, #14
+c0df301a:	d015      	beq.n	c0df3048 <io_event+0x38>
+c0df301c:	2805      	cmp	r0, #5
+c0df301e:	d148      	bne.n	c0df30b2 <io_event+0xa2>
+c0df3020:	2001      	movs	r0, #1
+c0df3022:	f000 fad1 	bl	c0df35c8 <ux_forward_event>
+c0df3026:	4604      	mov	r4, r0
+c0df3028:	f7ed f88c 	bl	c0de0144 <nbgl_objAllowDrawing>
+c0df302c:	2c00      	cmp	r4, #0
+c0df302e:	d045      	beq.n	c0df30bc <io_event+0xac>
+c0df3030:	4828      	ldr	r0, [pc, #160]	@ (c0df30d4 <io_event+0xc4>)
+c0df3032:	2164      	movs	r1, #100	@ 0x64
+c0df3034:	4448      	add	r0, r9
+c0df3036:	6b40      	ldr	r0, [r0, #52]	@ 0x34
+c0df3038:	4341      	muls	r1, r0
+c0df303a:	eb09 0005 	add.w	r0, r9, r5
+c0df303e:	78c0      	ldrb	r0, [r0, #3]
+c0df3040:	0840      	lsrs	r0, r0, #1
+c0df3042:	f7ed f8d4 	bl	c0de01ee <nbgl_buttonsHandler>
+c0df3046:	e030      	b.n	c0df30aa <io_event+0x9a>
+c0df3048:	4c22      	ldr	r4, [pc, #136]	@ (c0df30d4 <io_event+0xc4>)
+c0df304a:	eb09 0004 	add.w	r0, r9, r4
+c0df304e:	8a41      	ldrh	r1, [r0, #18]
+c0df3050:	3101      	adds	r1, #1
+c0df3052:	8241      	strh	r1, [r0, #18]
+c0df3054:	7840      	ldrb	r0, [r0, #1]
+c0df3056:	0782      	lsls	r2, r0, #30
+c0df3058:	d50e      	bpl.n	c0df3078 <io_event+0x68>
+c0df305a:	eb09 0204 	add.w	r2, r9, r4
+c0df305e:	8ad2      	ldrh	r2, [r2, #22]
+c0df3060:	1a89      	subs	r1, r1, r2
+c0df3062:	b289      	uxth	r1, r1
+c0df3064:	290a      	cmp	r1, #10
+c0df3066:	d307      	bcc.n	c0df3078 <io_event+0x68>
+c0df3068:	eb09 0504 	add.w	r5, r9, r4
+c0df306c:	f000 00fd 	and.w	r0, r0, #253	@ 0xfd
+c0df3070:	7068      	strb	r0, [r5, #1]
+c0df3072:	f7ed fe37 	bl	c0de0ce4 <ioe_show_processing_screen>
+c0df3076:	7868      	ldrb	r0, [r5, #1]
+c0df3078:	07c1      	lsls	r1, r0, #31
+c0df307a:	d007      	beq.n	c0df308c <io_event+0x7c>
+c0df307c:	eb09 0104 	add.w	r1, r9, r4
+c0df3080:	8a8a      	ldrh	r2, [r1, #20]
+c0df3082:	8a49      	ldrh	r1, [r1, #18]
+c0df3084:	1a89      	subs	r1, r1, r2
+c0df3086:	b289      	uxth	r1, r1
+c0df3088:	2932      	cmp	r1, #50	@ 0x32
+c0df308a:	d218      	bcs.n	c0df30be <io_event+0xae>
+c0df308c:	eb09 0004 	add.w	r0, r9, r4
+c0df3090:	6b41      	ldr	r1, [r0, #52]	@ 0x34
+c0df3092:	3101      	adds	r1, #1
+c0df3094:	6341      	str	r1, [r0, #52]	@ 0x34
+c0df3096:	2001      	movs	r0, #1
+c0df3098:	f000 fa96 	bl	c0df35c8 <ux_forward_event>
+c0df309c:	4604      	mov	r4, r0
+c0df309e:	f7ed f851 	bl	c0de0144 <nbgl_objAllowDrawing>
+c0df30a2:	b15c      	cbz	r4, c0df30bc <io_event+0xac>
+c0df30a4:	2064      	movs	r0, #100	@ 0x64
+c0df30a6:	f7ed f866 	bl	c0de0176 <nbgl_screenHandler>
+c0df30aa:	e8bd 40b0 	ldmia.w	sp!, {r4, r5, r7, lr}
+c0df30ae:	f7ed b83f 	b.w	c0de0130 <nbgl_refresh>
+c0df30b2:	2000      	movs	r0, #0
+c0df30b4:	e8bd 40b0 	ldmia.w	sp!, {r4, r5, r7, lr}
+c0df30b8:	f000 ba86 	b.w	c0df35c8 <ux_forward_event>
+c0df30bc:	bdb0      	pop	{r4, r5, r7, pc}
+c0df30be:	eb09 0104 	add.w	r1, r9, r4
+c0df30c2:	f000 00fe 	and.w	r0, r0, #254	@ 0xfe
+c0df30c6:	7048      	strb	r0, [r1, #1]
+c0df30c8:	2005      	movs	r0, #5
+c0df30ca:	f000 fafc 	bl	c0df36c6 <os_longjmp>
+c0df30ce:	bf00      	nop
+c0df30d0:	00000cec 	.word	0x00000cec
+c0df30d4:	00000f10 	.word	0x00000f10
+
+c0df30d8 <app_exit>:
+c0df30d8:	20ff      	movs	r0, #255	@ 0xff
+c0df30da:	f000 fdff 	bl	c0df3cdc <os_sched_exit>
+	...

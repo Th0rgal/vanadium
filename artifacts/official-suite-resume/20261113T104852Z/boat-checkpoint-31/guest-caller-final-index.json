@@ -1,0 +1,51 @@
+{
+  "utc": "2026-11-13T15:47:57.553311+00:00",
+  "classification": "DIAGNOSTIC_FAILED_GUEST_CALLER_CAPTURED",
+  "files": [
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.json",
+      "bytes": 2569,
+      "sha256": "c7aa6bb33fe72f3d2d2939cf15230c5d570687288d63243e347ec81472bae345"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.xml",
+      "bytes": 5029,
+      "sha256": "14fe8d74a03fe3240b111700affdfdc32700755e6d54900e89a5819627c3ffe1"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.gdb.stdout",
+      "bytes": 16688,
+      "sha256": "55e5089c407ba5085cfde397024f231039ad881c987baaa3100174c9a6d0414e"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.gdb.stderr",
+      "bytes": 244,
+      "sha256": "fc4b271b88dc8c70cbaa09485757337a1baa6a9bb471d213db9c559f74a53899"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/guest-caller-diagnosis.json",
+      "bytes": 1186,
+      "sha256": "e5c998cdc5e03de6e456158ac2660065d1d5495cb77e2bb87e7a0d85a8ff7c22"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/guest-caller-disassembly.stdout",
+      "bytes": 3551,
+      "sha256": "2451cdf40dc60386880a719e8acf4d9548622494692e6fff8187f7be5e1a3779"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/evidence/guest-caller-disassembly.json",
+      "bytes": 342,
+      "sha256": "f8ebefce275b0a44b948462593c3e59cbfb17300235adf7725650f304c13038a"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/guest-caller-rawgzip-manifest.json",
+      "bytes": 6033,
+      "sha256": "457071ce361d89777024f70f405e1ebbad31065bed6756cde90ff87e38996b42"
+    },
+    {
+      "path": "/var/lib/orb-node/work/official-suite-resume/transfer/speculos-runtime-candidate-final-provenance.json",
+      "bytes": 34614,
+      "sha256": "6a2c6125a3d5640aa4fc26b423832968275065efe51ca0a5257d87753393cdd5"
+    }
+  ]
+}

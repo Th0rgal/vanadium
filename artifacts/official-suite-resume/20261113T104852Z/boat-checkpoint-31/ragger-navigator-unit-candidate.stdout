@@ -1,0 +1,17 @@
+.................................                                        [100%]
+=============================== warnings summary ===============================
+../venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1233
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1233: PytestConfigWarning: Unknown config option: pythonpath
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/unit/navigator/test_nano_navigator.py: 2 warnings
+tests/unit/navigator/test_navigation_scenario.py: 4 warnings
+tests/unit/navigator/test_navigator.py: 25 warnings
+tests/unit/navigator/test_touch_navigator.py: 2 warnings
+  /usr/lib/python3.12/unittest/case.py:580: RuntimeWarning: TestResult has no addDuration method
+    warnings.warn("TestResult has no addDuration method",
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-candidate.xml -
+33 passed, 34 warnings in 0.42s

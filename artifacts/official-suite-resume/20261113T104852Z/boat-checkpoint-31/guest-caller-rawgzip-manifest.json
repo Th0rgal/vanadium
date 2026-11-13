@@ -1,0 +1,111 @@
+{
+  "created_utc": "2026-11-13T15:47:39.909164+00:00",
+  "compression": "lossless gzip; original and gzip SHA256 plus all512KiB parts; decompression independently verified",
+  "files": [
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.stdout",
+      "original_bytes": 27375428,
+      "original_sha256": "2f7722baf279f525e7364aa32b3c29da92ab9060a89298388796c4224205686b",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stdout.gz",
+      "gzip_bytes": 1291395,
+      "gzip_sha256": "9b6cef0dfacc7c67c98f057c5ac78ebd70ee31414a9f9c0de35a2997c735184d",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stdout.gz.part000",
+          "bytes": 524288,
+          "sha256": "af3896d9f616772ab2197f46ca3a70d1deb424881f9acf012a570749186da9a9"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stdout.gz.part001",
+          "bytes": 524288,
+          "sha256": "ce7e0253139dcb9a088223fc384194e6cb80f5619995d9d0c3960e5ef01c2393"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stdout.gz.part002",
+          "bytes": 242819,
+          "sha256": "9e844344b53efb9a616a211c108e9f1ee199e61397fe8a8b78d861c39269a39b"
+        }
+      ],
+      "decompression_independently_verified": true
+    },
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.stderr",
+      "original_bytes": 18044895,
+      "original_sha256": "05d3ad0fd6975a6cc0c8282c43eca4c5fb8133ee3a28359b8db90cd56d351384",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stderr.gz",
+      "gzip_bytes": 1536143,
+      "gzip_sha256": "3743fbbc9625c0552c128de6f41a50a071007027c5a3466f719ce5764c3e9a6c",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stderr.gz.part000",
+          "bytes": 524288,
+          "sha256": "03a9201d7c4ff56d48b73a67c75568b329d1a2a7b6642f7bb4a65bec8fea6614"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stderr.gz.part001",
+          "bytes": 524288,
+          "sha256": "3d8dd5ca22796a2c00714d59c8eb7dd737873ce6897d0b46cfd1495b5881cc4d"
+        },
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.stderr.gz.part002",
+          "bytes": 487567,
+          "sha256": "543d1384768777bed6b29dc059fe93ff9dc00699d3827ce5255ff21686823bf4"
+        }
+      ],
+      "decompression_independently_verified": true
+    },
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.process.trace",
+      "original_bytes": 2013926,
+      "original_sha256": "7cbeda606bc25f8165c3a511556c624ec93c7c0f61313a0353a47f7e608b4d48",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.process.trace.gz",
+      "gzip_bytes": 312382,
+      "gzip_sha256": "28c848f3d24ab3270fdf5fc4617e121b443f4fecd052d961fdac01f6125b5ccd",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.process.trace.gz.part000",
+          "bytes": 312382,
+          "sha256": "28c848f3d24ab3270fdf5fc4617e121b443f4fecd052d961fdac01f6125b5ccd"
+        }
+      ],
+      "decompression_independently_verified": true
+    },
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.gdb.stdout",
+      "original_bytes": 16688,
+      "original_sha256": "55e5089c407ba5085cfde397024f231039ad881c987baaa3100174c9a6d0414e",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.gdb.stdout.gz",
+      "gzip_bytes": 2691,
+      "gzip_sha256": "3da5db08beb6459c5aca186e75a4e33ab63a492b86fde0c03e5480f8e557cd6e",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.gdb.stdout.gz.part000",
+          "bytes": 2691,
+          "sha256": "3da5db08beb6459c5aca186e75a4e33ab63a492b86fde0c03e5480f8e557cd6e"
+        }
+      ],
+      "decompression_independently_verified": true
+    },
+    {
+      "original_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-guest-caller.gdb.stderr",
+      "original_bytes": 244,
+      "original_sha256": "fc4b271b88dc8c70cbaa09485757337a1baa6a9bb471d213db9c559f74a53899",
+      "gzip_path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.gdb.stderr.gz",
+      "gzip_bytes": 207,
+      "gzip_sha256": "086a012fb0ac3b43f4ac9c468982efcb91928a10645524bbe763bddd3a1cd94a",
+      "parts": [
+        {
+          "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic-512-nanox-guest-caller.gdb.stderr.gz.part000",
+          "bytes": 207,
+          "sha256": "086a012fb0ac3b43f4ac9c468982efcb91928a10645524bbe763bddd3a1cd94a"
+        }
+      ],
+      "decompression_independently_verified": true
+    }
+  ],
+  "protocol_progress_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic512-timeout-protocol-progress.json",
+  "classification_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic512-classification-current.json",
+  "exit_evidence_path": "/var/lib/orb-node/work/official-suite-resume/evidence/candidate512-terminal-diagnosis.json",
+  "guest_caller_stack": "captured exception5 from io_event pending process_interruption, then app_exit requests255; debugger later stack-read error, not native255 process-exit reproduction",
+  "no_new_runs": true
+}

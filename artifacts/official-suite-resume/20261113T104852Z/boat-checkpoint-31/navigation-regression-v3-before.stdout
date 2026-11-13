@@ -1,0 +1,120 @@
+F.FF..                                                                   [100%]
+=================================== FAILURES ===================================
+____________ test_late_protocol_response_resumes_unfinished_review _____________
+
+    def test_late_protocol_response_resumes_unfinished_review():
+        c,t,i = client_and_instructions(); nav=Screens(t); interpreter=Mock()
+        interpreter.execute.return_value=b'proof'
+>       result=c._make_request_with_navigation(nav,dict(cla=0xe1,ins=4,p1=0,p2=0,data=b''),interpreter,'case',i)
+
+evidence/test_navigation_late_response.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app-bitcoin/ragger_bitcoin/ragger_bitcoin.py:128: in _make_request_with_navigation
+    sw, response, index = self.ragger_navigate(
+app-bitcoin/ragger_bitcoin/ragger_bitcoin.py:112: in ragger_navigate
+    navigator.navigate_until_text(instr_next,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_navigation_late_response.Screens object at 0x72597e012ab0>
+args = (1, [2], 'second')
+kwargs = {'screen_change_after_last_instruction': False, 'screen_change_before_first_instruction': True}
+text = 'second'
+SpeculosBackend = <class 'ragger.backend.speculos.SpeculosBackend'>
+ApduException = <class 'speculos.client.ApduException'>
+backend = <ragger.backend.speculos.SpeculosBackend object at 0x725972d87dd0>
+response = <Mock id='125728504446464'>
+
+    def navigate_until_text(self, *args, **kwargs):
+        text = args[2]
+        if self.transport.round == 1 and text == 'second':
+            from ragger.backend.speculos import SpeculosBackend
+            from speculos.client import ApduException
+            backend=SpeculosBackend.__new__(SpeculosBackend)
+            backend.raise_policy=self.transport.raise_policy
+            backend.whitelisted_status=self.transport.whitelisted_status
+            backend._last_async_response=None
+            response=Mock();response.receive.side_effect=ApduException(self.status,b'proof request')
+            backend._pending_async_response=response
+            backend.apdu_logger=Mock();backend.logger=Mock()
+            with patch('ragger.backend.speculos.has_data_available',return_value=True):
+                backend._check_async_error()
+>           raise RuntimeError('protocol response ignored; guest timeout')
+E           RuntimeError: protocol response ignored; guest timeout
+
+evidence/test_navigation_late_response.py:39: RuntimeError
+______ test_ticker_restored_when_navigation_unwinds[navigate_and_compare] ______
+
+method = 'navigate_and_compare'
+
+    @pytest.mark.parametrize('method', ['navigate_and_compare','navigate_until_text_and_compare'])
+    def test_ticker_restored_when_navigation_unwinds(method):
+        nav=Navigator.__new__(Navigator); backend=Mock(); nav._backend=backend
+        nav._run_instruction=Mock(side_effect=ExceptionRAPDU(0xE000,b'proof'))
+        if method=='navigate_and_compare':
+            args=(None,None,[])
+        else:
+            args=(1,[2],'Approve')
+        with pytest.raises(ExceptionRAPDU):
+            getattr(nav,method)(*args)
+        backend.pause_ticker.assert_called_once_with()
+>       backend.resume_ticker.assert_called_once_with()
+
+evidence/test_navigation_late_response.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Mock name='mock.resume_ticker' id='125728656224672'>, args = ()
+kwargs = {}, msg = "Expected 'resume_ticker' to be called once. Called 0 times."
+
+    def assert_called_once_with(self, /, *args, **kwargs):
+        """assert that the mock was called exactly once and that that call was
+        with the specified arguments."""
+        if not self.call_count == 1:
+            msg = ("Expected '%s' to be called once. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'resume_ticker' to be called once. Called 0 times.
+
+/usr/lib/python3.12/unittest/mock.py:955: AssertionError
+_ test_ticker_restored_when_navigation_unwinds[navigate_until_text_and_compare] _
+
+method = 'navigate_until_text_and_compare'
+
+    @pytest.mark.parametrize('method', ['navigate_and_compare','navigate_until_text_and_compare'])
+    def test_ticker_restored_when_navigation_unwinds(method):
+        nav=Navigator.__new__(Navigator); backend=Mock(); nav._backend=backend
+        nav._run_instruction=Mock(side_effect=ExceptionRAPDU(0xE000,b'proof'))
+        if method=='navigate_and_compare':
+            args=(None,None,[])
+        else:
+            args=(1,[2],'Approve')
+        with pytest.raises(ExceptionRAPDU):
+            getattr(nav,method)(*args)
+        backend.pause_ticker.assert_called_once_with()
+>       backend.resume_ticker.assert_called_once_with()
+
+evidence/test_navigation_late_response.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Mock name='mock.resume_ticker' id='125728504682816'>, args = ()
+kwargs = {}, msg = "Expected 'resume_ticker' to be called once. Called 0 times."
+
+    def assert_called_once_with(self, /, *args, **kwargs):
+        """assert that the mock was called exactly once and that that call was
+        with the specified arguments."""
+        if not self.call_count == 1:
+            msg = ("Expected '%s' to be called once. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'resume_ticker' to be called once. Called 0 times.
+
+/usr/lib/python3.12/unittest/mock.py:955: AssertionError
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.xml -
+=========================== short test summary info ============================
+FAILED evidence/test_navigation_late_response.py::test_late_protocol_response_resumes_unfinished_review
+FAILED evidence/test_navigation_late_response.py::test_ticker_restored_when_navigation_unwinds[navigate_and_compare]
+FAILED evidence/test_navigation_late_response.py::test_ticker_restored_when_navigation_unwinds[navigate_until_text_and_compare]
+3 failed, 3 passed in 0.48s

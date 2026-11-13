@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "/var/lib/orb-node/work/official-suite-resume/evidence/test_navigation_late_response.py",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/navigation-regression-v3-before.xml"
+  ],
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "env": {
+    "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+    "PYTHONWARNINGS": "ignore::DeprecationWarning"
+  },
+  "started_utc": "2026-11-13T15:54:00.562461+00:00",
+  "exit": 1,
+  "ended_utc": "2026-11-13T15:54:01.372318+00:00"
+}

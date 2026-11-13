@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/unit/navigator",
+    "-q",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigator-unit-candidate.xml"
+  ],
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/ragger-navigation-fix",
+  "env": {
+    "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/ragger-navigation-fix/src"
+  },
+  "started_utc": "2026-11-13T15:53:30.039722+00:00",
+  "exit": 0,
+  "ended_utc": "2026-11-13T15:53:30.838432+00:00"
+}
