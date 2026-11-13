@@ -1,0 +1,15 @@
+{
+  "new_completed_results": [],
+  "diagnostic_complete": false,
+  "last_snapshot_utc": "2026-11-13T14:47:42.648187+00:00",
+  "requests": 32760,
+  "responses": 32759,
+  "counts_scope": "log-based APDU events diagnostic only",
+  "limitations": [
+    "instrumentationtiming",
+    "not eventualPASS",
+    "not monotonictransactionprogress",
+    "historicalcausesnotproved"
+  ],
+  "boat_expiry": 1794583347
+}
