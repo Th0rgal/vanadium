@@ -1,0 +1,439 @@
+diff --git a/src/ragger/backend/speculos.py b/src/ragger/backend/speculos.py
+index f08787d..f5801ca 100644
+--- a/src/ragger/backend/speculos.py
++++ b/src/ragger/backend/speculos.py
+@@ -151,13 +151,27 @@ class SpeculosBackend(BackendInterface):
+     def apdu_timeout(self, value: float) -> None:
+         self._apdu_timeout = value
+ 
+-    def _check_async_error(self) -> None:
++    def _check_async_error(self, defer_interruption: bool = False) -> None:
+         """Check for async APDU errors and raise if present."""
++        if getattr(self, "_deferred_interruption", None) is not None:
++            if defer_interruption:
++                return
++            response = self._deferred_interruption
++            self._deferred_interruption = None
++            raise response
+         if self._pending_async_response is not None and self._last_async_response is None:
+             if has_data_available(self._pending_async_response, timeout=0):
+                 self.logger.info("[Ragger] Early async data available, retrieving it now.")
+                 # This will raise ExceptionRAPDU immediately if status != 9000
+-                self._last_async_response = self._get_last_async_response(self._pending_async_response)
++                try:
++                    self._last_async_response = self._get_last_async_response(self._pending_async_response)
++                except ExceptionRAPDU as response:
++                    if not defer_interruption or response.status != 0xE000:
++                        raise
++                    # First expose the changed loading screen to its snapshot assertion.
++                    # The next wait hands control to the protocol interpreter before ticking.
++                    self._last_async_response = RAPDU(response.status, response.data)
++                    self._deferred_interruption = response
+ 
+     def _retrieve_client_screen_content(self) -> dict:
+         raw_content = self._client.get_current_screen_content()
+@@ -247,6 +261,9 @@ class SpeculosBackend(BackendInterface):
+         self.apdu_logger.info("=> %s", data.hex())
+         # Reset state for this new async exchange
+         self._last_async_response = None
++        self._deferred_interruption = None
++        self._interruption_screen_ticks = 0
++        self._interruption_screen_observed = False
+         with self._client.apdu_exchange_nowait(cla=data[0], ins=data[1], p1=data[2], p2=data[3], data=data[5:]) as response:
+             self._pending_async_response = response
+             try:
+@@ -348,14 +365,22 @@ class SpeculosBackend(BackendInterface):
+             if not screenshot_equal(screenshot, self._last_screenshot):
+                 # An application answers an APDU before displaying its status screen: check the
+                 # answer here too, or an error would be missed when the new screen is seen first.
+-                self._check_async_error()
++                self._check_async_error(defer_interruption=True)
++                if getattr(self, "_deferred_interruption", None) is not None:
++                    self._interruption_screen_observed = True
+                 break
+ 
+             # Check for async APDU errors before sending a tick. This ensures that if the
+             # application has already refused the APDU (e.g., due to an error), we detect and raise
+             # the error immediately instead of waiting for a screen change that will never occur.
+             # This makes navigation robust and prevents hanging.
+-            self._check_async_error()
++            if getattr(self, "_deferred_interruption", None) is not None:
++                ticks = getattr(self, "_interruption_screen_ticks", 0)
++                self.logger.info("Pending interruption screen flush tick %d", ticks)
++                if getattr(self, "_interruption_screen_observed", False) or ticks >= 10:
++                    self._check_async_error()
++                self._interruption_screen_ticks = ticks + 1
++            self._check_async_error(defer_interruption=True)
+ 
+             # Send a ticker event and let the app process it
+             self.send_tick()
+diff --git a/src/ragger/navigator/navigator.py b/src/ragger/navigator/navigator.py
+index 2713239..a679ec7 100644
+--- a/src/ragger/navigator/navigator.py
++++ b/src/ragger/navigator/navigator.py
+@@ -147,7 +147,10 @@ class Navigator(ABC):  # noqa: B024
+         path: Path | None = None,
+         test_case_name: Path | str | None = None,
+         snap_idx: int = 0,
++        resume_state: dict | None = None,
+     ) -> None:
++        if resume_state is None:
++            resume_state = {}
+         if isinstance(instruction, BaseNavInsID):
+             instruction = NavIns(instruction)
+         if instruction.id not in self._callbacks:
+@@ -184,7 +187,9 @@ class Navigator(ABC):  # noqa: B024
+ 
+         else:
+             # Call instruction callback
+-            self._callbacks[instruction.id](*instruction.args, **instruction.kwargs)
++            if not resume_state.get("callback_done", False):
++                self._callbacks[instruction.id](*instruction.args, **instruction.kwargs)
++                resume_state["callback_done"] = True
+ 
+             # Wait for screen change unless explicitly specify otherwise
+             if wait_for_screen_change:
+@@ -220,6 +225,7 @@ class Navigator(ABC):  # noqa: B024
+         screen_change_before_first_instruction: bool = True,
+         screen_change_after_last_instruction: bool = True,
+         snap_start_idx: int = 0,
++        resume_state: dict | None = None,
+     ) -> None:
+         """
+         Navigate on the device according to a set of navigation instructions
+@@ -249,52 +255,33 @@ class Navigator(ABC):  # noqa: B024
+         :rtype: NoneType
+         """
+ 
++        if resume_state is None:
++            resume_state = {}
+         self._backend.pause_ticker()
+-
+-        # Navigation initialization: no-op instruction to:
+-        # - wait for screen change depending on screen_change_before_first_instruction.
+-        #   this is necessary:
+-        #   - when an APDU was just sent and we want to make sure the screen already
+-        #     displays the first review page.
+-        #   - when called to finish the execution of a navigate_until_text() call.
+-        # - compare the initial screen content with the golden reference if path and
+-        #   test_case_name are valid.
+-        self._run_instruction(
+-            NavIns(NavInsID.WAIT, (0,)),
+-            timeout,
+-            wait_for_screen_change=screen_change_before_first_instruction,
+-            path=path,
+-            test_case_name=test_case_name,
+-            snap_idx=snap_start_idx,
+-        )
+-
+-        for idx, instruction in enumerate(instructions, start=1):
+-            if idx != len(instructions) or screen_change_after_last_instruction:
+-                # Nominal case, either:
+-                # - middle instruction
+-                # - last instruction but with screen_change_after_last_instruction=True
+-                # => wait_for_screen_change()
+-                # => screenshot comparison if path and test_case_name are valid
+-                self._run_instruction(
+-                    instruction,
+-                    timeout,
+-                    wait_for_screen_change=True,
+-                    path=path,
+-                    test_case_name=test_case_name,
+-                    snap_idx=snap_start_idx + idx,
+-                )
+-            else:
+-                # Last instruction case with screen_change_after_last_instruction=False
+-                # => no wait_for_screen_change()
+-                # => no screenshot comparison
+-                self._run_instruction(
+-                    instruction,
+-                    timeout,
+-                    wait_for_screen_change=False,
+-                    snap_idx=snap_start_idx + idx,
+-                )
+-
+-        self._backend.resume_ticker()
++        try:
++            # Navigation initialization: no-op instruction to:
++            # - wait for screen change depending on screen_change_before_first_instruction.
++            #   this is necessary:
++            #   - when an APDU was just sent and we want to make sure the screen already
++            #     displays the first review page.
++            #   - when called to finish the execution of a navigate_until_text() call.
++            # - compare the initial screen content with the golden reference if path and
++            #   test_case_name are valid.
++            steps = [(NavIns(NavInsID.WAIT, (0,)), screen_change_before_first_instruction)]
++            steps.extend((instruction, idx != len(instructions) or screen_change_after_last_instruction)
++                         for idx, instruction in enumerate(instructions, start=1))
++            while resume_state.get("step", 0) < len(steps):
++                idx = resume_state.get("step", 0)
++                instruction, wait = steps[idx]
++                checkpoint = resume_state.setdefault("instruction", {})
++                self._run_instruction(instruction, timeout, wait_for_screen_change=wait,
++                                      path=path if wait or idx == 0 else None,
++                                      test_case_name=test_case_name if wait or idx == 0 else None,
++                                      snap_idx=snap_start_idx + idx, resume_state=checkpoint)
++                resume_state.pop("instruction", None)
++                resume_state["step"] = idx + 1
++        finally:
++            self._backend.resume_ticker()
+ 
+     def navigate(
+         self,
+@@ -457,6 +444,7 @@ class Navigator(ABC):  # noqa: B024
+         screen_change_before_first_instruction: bool = True,
+         screen_change_after_last_instruction: bool = True,
+         snap_start_idx: int = 0,
++        resume_state: dict | None = None,
+     ) -> None:
+         """
+         Navigate until some text is found on the screen content displayed then
+@@ -495,7 +483,9 @@ class Navigator(ABC):  # noqa: B024
+         :return: None
+         :rtype: NoneType
+         """
+-        idx = snap_start_idx
++        if resume_state is None:
++            resume_state = {}
++        idx = resume_state.setdefault("idx", snap_start_idx)
+         start = time()
+         if not isinstance(self._backend, SpeculosBackend):
+             # Update timeout default value for other backends. User needs time to
+@@ -504,58 +494,41 @@ class Navigator(ABC):  # noqa: B024
+                 timeout = 200
+ 
+         self._backend.pause_ticker()
+-
+-        # Navigation initialization: no-op instruction to:
+-        # - wait for screen change depending on screen_change_before_first_instruction.
+-        #   this is necessary when an APDU was just sent and we want to make sure the
+-        #   screen already displays the first review page.
+-        # - compare the initial screen content with the golden reference if path and
+-        #   test_case_name are valid.
+-        self._run_instruction(
+-            NavIns(NavInsID.WAIT, (0,)),
+-            timeout,
+-            wait_for_screen_change=screen_change_before_first_instruction,
+-            path=path,
+-            test_case_name=test_case_name,
+-            snap_idx=idx,
+-        )
+-
+-        # Navigate until the text specified in argument is found.
+-        while True:
+-            if self._backend.compare_screen_with_text(text):
+-                # Validation screen text found, exit the loop
+-                break
+-            else:
+-                # Global navigation loop timeout in case the text is never found.
+-                remaining = timeout - (time() - start)
+-                if remaining < 0:
+-                    raise TimeoutError(f"Timeout waiting for text {text}")
+-
+-                # Go to the next screen.
+-                idx += 1
+-                self._run_instruction(
+-                    navigate_instruction,
+-                    remaining,
+-                    wait_for_screen_change=True,
+-                    path=path,
+-                    test_case_name=test_case_name,
+-                    snap_idx=idx,
+-                )
+-
+-        # Perform navigation validation instructions in an "navigate_and_compare" way.
+-        if validation_instructions:
+-            remaining = timeout - (time() - start)
+-            self.navigate_and_compare(
+-                path,
+-                test_case_name,
+-                validation_instructions,
+-                timeout=remaining,
+-                screen_change_before_first_instruction=False,
+-                screen_change_after_last_instruction=screen_change_after_last_instruction,
+-                snap_start_idx=idx,
+-            )
+-
+-        self._backend.resume_ticker()
++        try:
++            if resume_state.get("phase", "initial") == "initial":
++                self._run_instruction(NavIns(NavInsID.WAIT, (0,)), timeout,
++                                      wait_for_screen_change=screen_change_before_first_instruction,
++                                      path=path, test_case_name=test_case_name, snap_idx=idx,
++                                      resume_state=resume_state.setdefault("instruction", {}))
++                resume_state.pop("instruction", None)
++                resume_state["phase"] = "search"
++            if resume_state["phase"] == "search":
++                while True:
++                    # Finish an interrupted click/wait/snapshot before inspecting the next screen.
++                    if "instruction" in resume_state:
++                        self._run_instruction(navigate_instruction, timeout - (time() - start),
++                                              wait_for_screen_change=True, path=path,
++                                              test_case_name=test_case_name, snap_idx=resume_state["idx"],
++                                              resume_state=resume_state["instruction"])
++                        resume_state.pop("instruction")
++                    if self._backend.compare_screen_with_text(text):
++                        break
++                    remaining = timeout - (time() - start)
++                    if remaining < 0:
++                        raise TimeoutError(f"Timeout waiting for text {text}")
++                    resume_state["idx"] += 1
++                    resume_state["instruction"] = {}
++                resume_state["phase"] = "validation"
++            if resume_state["phase"] == "validation" and validation_instructions:
++                self.navigate_and_compare(path, test_case_name, validation_instructions,
++                                          timeout=timeout - (time() - start),
++                                          screen_change_before_first_instruction=False,
++                                          screen_change_after_last_instruction=screen_change_after_last_instruction,
++                                          snap_start_idx=resume_state["idx"],
++                                          resume_state=resume_state.setdefault("validation", {}))
++            resume_state["phase"] = "done"
++        finally:
++            self._backend.resume_ticker()
+ 
+     def navigate_until_text(
+         self,
+@@ -566,6 +539,7 @@ class Navigator(ABC):  # noqa: B024
+         screen_change_before_first_instruction: bool = True,
+         screen_change_after_last_instruction: bool = True,
+         snap_start_idx: int = 0,
++        resume_state: dict | None = None,
+     ) -> None:
+         """
+         Navigate until some text is found on the screen content displayed.
+@@ -609,4 +583,5 @@ class Navigator(ABC):  # noqa: B024
+             screen_change_before_first_instruction,
+             screen_change_after_last_instruction,
+             snap_start_idx=snap_start_idx,
++            resume_state=resume_state,
+         )
+diff --git a/tests/unit/navigation_resume/test_navigation_deferred_loading.py b/tests/unit/navigation_resume/test_navigation_deferred_loading.py
+new file mode 100644
+index 0000000..5023005
+--- /dev/null
++++ b/tests/unit/navigation_resume/test_navigation_deferred_loading.py
+@@ -0,0 +1,55 @@
++from unittest.mock import Mock,patch
++from inspect import signature
++import pytest
++from ragger.backend.speculos import SpeculosBackend
++from ragger.backend.interface import RaisePolicy
++from ragger.error import ExceptionRAPDU
++from speculos.client import ApduException
++
++def backend(status):
++    b=SpeculosBackend.__new__(SpeculosBackend)
++    b._pending_async_response=Mock();b._pending_async_response.receive.side_effect=ApduException(status,b'proof')
++    b._last_async_response=None;b.raise_policy=RaisePolicy.RAISE_ALL_BUT_0x9000
++    b.apdu_logger=Mock();b.logger=Mock()
++    return b
++
++def test_loading_screen_observable_before_interruption_but_before_any_next_tick():
++    b=backend(0xE000)
++    kwargs={'defer_interruption':True} if 'defer_interruption' in signature(b._check_async_error).parameters else {}
++    with patch('ragger.backend.speculos.has_data_available',return_value=True):
++        b._check_async_error(**kwargs)
++        assert b._last_async_response.status==0xE000
++        # The loading screenshot is compared between the changed-screen return and next wait.
++        with pytest.raises(ExceptionRAPDU) as ex:b._check_async_error()
++    assert ex.value.status==0xE000 and ex.value.data==b'proof'
++    b._pending_async_response.receive.assert_called_once_with()
++
++def test_unrelated_error_never_deferred_on_changed_screen():
++    b=backend(0x6985)
++    kwargs={'defer_interruption':True} if 'defer_interruption' in signature(b._check_async_error).parameters else {}
++    with patch('ragger.backend.speculos.has_data_available',return_value=True),pytest.raises(ExceptionRAPDU) as ex:
++        b._check_async_error(**kwargs)
++    assert ex.value.status==0x6985
++
++def test_pending_loading_flushes_before_comparison_then_unwinds_before_next_tick():
++    from io import BytesIO
++    b=backend(0xE000);b._last_screenshot=BytesIO(b'old');b._client=Mock()
++    visible=[b'old'];b._client.get_screenshot.side_effect=lambda:visible[0]
++    b.send_tick=Mock(side_effect=lambda:visible.__setitem__(0,b'loading'))
++    equal=lambda a,z:a.getvalue()==z.getvalue()
++    with patch('ragger.backend.speculos.has_data_available',return_value=True),patch('ragger.backend.speculos.screenshot_equal',side_effect=equal):
++        b.wait_for_screen_change()
++        assert b._last_screenshot.getvalue()==b'loading'
++        assert b.send_tick.call_count==1
++        with pytest.raises(ExceptionRAPDU) as ex:b.wait_for_screen_change()
++        assert ex.value.status==0xE000
++        assert b.send_tick.call_count==1
++
++def test_pending_response_without_changed_screen_is_bounded_below_guest50_ticks():
++    from io import BytesIO
++    b=backend(0xE000);b._last_screenshot=BytesIO(b'old');b._client=Mock()
++    b._client.get_screenshot.return_value=b'old';b.send_tick=Mock()
++    with patch('ragger.backend.speculos.has_data_available',return_value=True),patch('ragger.backend.speculos.screenshot_equal',return_value=True),pytest.raises(ExceptionRAPDU) as ex:
++        b.wait_for_screen_change()
++    assert ex.value.status==0xE000
++    assert b.send_tick.call_count<=11
+diff --git a/tests/unit/navigation_resume/test_navigation_snapshot_resume.py b/tests/unit/navigation_resume/test_navigation_snapshot_resume.py
+new file mode 100644
+index 0000000..65e4377
+--- /dev/null
++++ b/tests/unit/navigation_resume/test_navigation_snapshot_resume.py
+@@ -0,0 +1,37 @@
++from pathlib import Path
++from inspect import signature
++from unittest.mock import Mock
++import pytest
++from ragger.navigator import Navigator, NavInsID
++from ragger.error import ExceptionRAPDU
++
++@pytest.mark.parametrize('method', ['navigate_until_text_and_compare', 'navigate_and_compare'])
++def test_interrupted_wait_preserves_every_snapshot_and_click(method):
++    nav=Navigator.__new__(Navigator)
++    page=[0]; interrupted=[False]; compared=[]; clicks=[]
++    backend=Mock(); nav._backend=backend
++    def click():
++        page[0]+=1; clicks.append(page[0])
++    def wait(timeout):
++        if page[0]==2 and not interrupted[0]:
++            interrupted[0]=True
++            raise ExceptionRAPDU(0xE000,b'next output proof')
++    backend.wait_for_screen_change.side_effect=wait
++    backend.compare_screen_with_text.side_effect=lambda text:page[0]==3
++    nav._callbacks={NavInsID.WAIT:lambda *a:None,NavInsID.RIGHT_CLICK:click}
++    nav._init_snaps_temp_dir=lambda *a:Path('actual')
++    nav._check_snaps_dir_path=lambda *a:Path('reference')
++    nav._get_snaps_dir_path=lambda *a:Path('actual')
++    def compare(actual,reference,index):
++        assert index==page[0],f'Expected snapshot {index}, actual review page {page[0]}'
++        compared.append(index)
++    nav._compare_snap=compare
++    fn=getattr(nav,method);state={}
++    kwargs={'resume_state':state} if 'resume_state' in signature(fn).parameters else {}
++    args=(NavInsID.RIGHT_CLICK,[], 'Approve',Path('.'),'case') if method=='navigate_until_text_and_compare' else (Path('.'),'case',[NavInsID.RIGHT_CLICK]*3)
++    with pytest.raises(ExceptionRAPDU):fn(*args,**kwargs)
++    fn(*args,**kwargs)
++    assert clicks==[1,2,3]
++    assert compared==[0,1,2,3]
++    assert backend.pause_ticker.call_count==2
++    assert backend.resume_ticker.call_count==2
+diff --git a/tests/unit/navigator/test_navigator.py b/tests/unit/navigator/test_navigator.py
+index c4e7d81..64fb7aa 100644
+--- a/tests/unit/navigator/test_navigator.py
++++ b/tests/unit/navigator/test_navigator.py
+@@ -315,3 +315,21 @@ class TestNavigator(TestCase):
+         with patch("ragger.navigator.navigator.LAST_SCREEN_UPDATE_TIMEOUT", 0):
+             with self.assertRaises(TimeoutError):
+                 self.navigator.navigate_until_snap(NavInsID.WAIT, NavInsID.WAIT, Path(), Path(), "", "", timeout=0)
++
++
++class TestTickerCleanup(TestCase):
++    def test_response_unwind_restores_ticker(self):
++        from ragger.error import ExceptionRAPDU
++        for method, args in [
++            ('navigate_and_compare', (None, None, [])),
++            ('navigate_until_text_and_compare', (NavInsID.RIGHT_CLICK, [NavInsID.BOTH_CLICK], 'Approve')),
++        ]:
++            with self.subTest(method=method):
++                backend = MagicMock()
++                navigator = Navigator.__new__(Navigator)
++                navigator._backend = backend
++                navigator._run_instruction = MagicMock(side_effect=ExceptionRAPDU(0xE000, b'proof'))
++                with self.assertRaises(ExceptionRAPDU):
++                    getattr(navigator, method)(*args)
++                backend.pause_ticker.assert_called_once_with()
++                backend.resume_ticker.assert_called_once_with()

@@ -222,7 +222,8 @@
       }
     },
     "new_screen_fix_regressions": "not yet independently verified",
-    "updated_mainnet": "queued after full"
+    "updated_mainnet": "queued after full",
+    "latest_observation": "fullboth4toMaxPlus1PASSmarker,512active; no completedcounts"
   },
   "diagnostics": {
     "musig_eviction_nanox": {

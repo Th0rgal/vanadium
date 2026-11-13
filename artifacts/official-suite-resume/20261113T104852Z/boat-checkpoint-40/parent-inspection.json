@@ -1,0 +1,45 @@
+{
+  "checkpoint": 40,
+  "both_4toMaxPlus1_partial_pass": true,
+  "full_counts": null,
+  "full_exit": null,
+  "new_regression_counts_accepted": false,
+  "files": [
+    {
+      "file": "navigation-full-index.json",
+      "sha256": "391a7279c6ddc1c0c17675d0da1b54a550b984e4ecfda4ae3164dbe67fdbe2c3",
+      "bytes": 7798
+    },
+    {
+      "file": "navigation-resume-fix-notes.md",
+      "sha256": "c2b34c9556c5a5c539fba1a6355028179b780ad424f48be8f1957b0536813708",
+      "bytes": 3738
+    },
+    {
+      "file": "navigation-resume-runtime-latest.json",
+      "sha256": "25f4a7e792852c0b3ac72d2da5d23f4d8b7eeac1fe8d4af7b0318ef63951abaf",
+      "bytes": 1466
+    },
+    {
+      "file": "ragger-navigation-resume-full-nanosp.stdout",
+      "sha256": "7bc4ec686eb2e731fc8c89992f6b892d786844227d1a85d11a02b9744ddc9c0f",
+      "bytes": 12635
+    },
+    {
+      "file": "ragger-navigation-resume-full-nanox.stdout",
+      "sha256": "0d7d41efbf21743050e7025769b8bebfb6e026510dc351571acabf9b64689dac",
+      "bytes": 12455
+    },
+    {
+      "file": "bitcoin-navigation-resume-with-regression.patch",
+      "sha256": "eb088c4219cf5c5abd6421498e203d46fe4f4574da8fd0a877d62fa09343fe83",
+      "bytes": 12874
+    },
+    {
+      "file": "ragger-navigation-resume-with-regression.patch",
+      "sha256": "1090ae25b23f624865add682c60ab761000e9ff55ac221a1e15d725983c85d0c",
+      "bytes": 22586
+    }
+  ],
+  "atomic_archive": false
+}

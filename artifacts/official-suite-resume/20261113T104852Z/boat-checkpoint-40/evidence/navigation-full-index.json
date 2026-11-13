@@ -1,0 +1,127 @@
+{
+  "utc": "2026-11-13T17:40:05.341765+00:00",
+  "classification": "FULL_SAME_SELECTION_BOTH_RUNNING_NOT_PASS",
+  "actual_expiry_epoch": 1794594147,
+  "actual_expiry_utc": "2026-11-13T18:22:27Z",
+  "advisory_utc": "2026-11-13T18:20:00Z",
+  "deadline_action": "record only; never signal tests",
+  "runs": {
+    "nanosp": {
+      "status": "RUNNING",
+      "receipt": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp.active.json",
+      "pid": 2317166,
+      "argv": [
+        "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+        "-m",
+        "pytest",
+        "-p",
+        "navigation_resume_provenance_full_20261113_1721",
+        ".",
+        "--device",
+        "nanosp",
+        "--model",
+        "nanosp",
+        "--speculos_port=7601",
+        "--enable_slow_tests=2",
+        "--timeout=1800",
+        "-ra",
+        "-v",
+        "--tb=short",
+        "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp.xml"
+      ],
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/app-navigation-resume/tests",
+      "env": {
+        "PATH": "/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+        "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/evidence:/var/lib/orb-node/work/official-suite-resume/ragger-navigation-resume/src:/var/lib/orb-node/work/official-suite-resume/app-navigation-resume:/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime",
+        "BITCOIND": "/var/lib/orb-node/work/official-suite-resume/evidence/bitcoind-navigation-resume-full-nanosp.sh",
+        "BITCOIN_DIRNAME": "/var/lib/orb-node/work/official-suite-resume/core-navigation-resume-full-nanosp",
+        "BTC_RPC_PORT": "29443",
+        "PYTHONWARNINGS": "ignore::DeprecationWarning",
+        "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+        "NAV_PROVENANCE_FILE": "ragger-navigation-resume-full-nanosp-provenance.json"
+      },
+      "started_utc": "2026-11-13T17:21:33.235695+00:00",
+      "stdout": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp.stdout",
+      "stderr": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp.stderr",
+      "junit": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp.xml",
+      "completion": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp.json",
+      "provenance": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanosp-provenance.json",
+      "frozen_plugin": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation_resume_provenance_full_20261113_1721.py",
+        "sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d"
+      },
+      "counts": {
+        "pass": null,
+        "fail": null,
+        "skip": null,
+        "errors": null,
+        "deselected": null,
+        "exit": null
+      },
+      "tail": "t_1to2_sighash_all[nanosp-nanosp] PASSED [ 35%]\ntest_sign_psbt.py::test_sign_psbt_taproot_1to2_sighash_default[nanosp-nanosp] PASSED [ 36%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4to3[nanosp-nanosp] PASSED [ 36%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMax[nanosp-nanosp] PASSED [ 36%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMax_go_back[nanosp-nanosp] PASSED [ 37%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanosp-nanosp] PASSED [ 37%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_large_amount[nanosp-nanosp] PASSED [ 37%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp] ",
+      "stdout_bytes": 12635,
+      "observed_failure_markers": [],
+      "observed_512_pass": false
+    },
+    "nanox": {
+      "status": "RUNNING",
+      "receipt": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox.active.json",
+      "pid": 2317167,
+      "argv": [
+        "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+        "-m",
+        "pytest",
+        "-p",
+        "navigation_resume_provenance_full_20261113_1721",
+        ".",
+        "--device",
+        "nanox",
+        "--model",
+        "nanox",
+        "--speculos_port=7701",
+        "--enable_slow_tests=2",
+        "--timeout=1800",
+        "-ra",
+        "-v",
+        "--tb=short",
+        "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox.xml"
+      ],
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/app-navigation-resume/tests",
+      "env": {
+        "PATH": "/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+        "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/evidence:/var/lib/orb-node/work/official-suite-resume/ragger-navigation-resume/src:/var/lib/orb-node/work/official-suite-resume/app-navigation-resume:/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime",
+        "BITCOIND": "/var/lib/orb-node/work/official-suite-resume/evidence/bitcoind-navigation-resume-full-nanox.sh",
+        "BITCOIN_DIRNAME": "/var/lib/orb-node/work/official-suite-resume/core-navigation-resume-full-nanox",
+        "BTC_RPC_PORT": "30443",
+        "PYTHONWARNINGS": "ignore::DeprecationWarning",
+        "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+        "NAV_PROVENANCE_FILE": "ragger-navigation-resume-full-nanox-provenance.json"
+      },
+      "started_utc": "2026-11-13T17:21:33.236053+00:00",
+      "stdout": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox.stdout",
+      "stderr": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox.stderr",
+      "junit": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox.xml",
+      "completion": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox.json",
+      "provenance": "/var/lib/orb-node/work/official-suite-resume/evidence/ragger-navigation-resume-full-nanox-provenance.json",
+      "frozen_plugin": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/navigation_resume_provenance_full_20261113_1721.py",
+        "sha256": "eb66acad1921df0b319df862863d39c081309e23c91b4c2142a0021a2f6e516d"
+      },
+      "counts": {
+        "pass": null,
+        "fail": null,
+        "skip": null,
+        "errors": null,
+        "deselected": null,
+        "exit": null
+      },
+      "tail": "sign_psbt_taproot_1to2_sighash_all[nanox-nanox] PASSED [ 35%]\ntest_sign_psbt.py::test_sign_psbt_taproot_1to2_sighash_default[nanox-nanox] PASSED [ 36%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4to3[nanox-nanox] PASSED [ 36%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMax[nanox-nanox] PASSED [ 36%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMax_go_back[nanox-nanox] PASSED [ 37%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanox-nanox] PASSED [ 37%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_large_amount[nanox-nanox] PASSED [ 37%]\ntest_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanox-nanox] ",
+      "stdout_bytes": 12455,
+      "observed_failure_markers": [],
+      "observed_512_pass": false
+    }
+  },
+  "rawgzip_manifest": null,
+  "rawgzip_note": "Immutable lossless logs with original/gzip/partSHA produced after terminal completion, active files remain mutable",
+  "mainnet": "QUEUED_AFTER_FULLS; earlierbaseline2each and previoushostruntime2each retained"
+}

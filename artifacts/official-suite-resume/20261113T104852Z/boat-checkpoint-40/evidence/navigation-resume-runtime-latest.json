@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-13T17:40:05.471905+00:00",
+  "classification": "READ_ONLY_PROCESS_CURRENT_CAPTURE_SNAPSHOT_NOT_TERMINAL_COUNTS",
+  "counts_scope": "Current pytest capture only; resets per test; never sum replay or resets",
+  "rows": [
+    {
+      "device": "nanosp",
+      "pid": 2317166,
+      "completed": false,
+      "state": "S",
+      "utime_ticks": 43331,
+      "stime_ticks": 1282,
+      "starttime_ticks": 2694729,
+      "capture_bytes": 13188777,
+      "capture_sha256": "afcecbf6efb20b52a05a80b7dc4a4851e19f3e9261dbe0a4105299cb8029d71b",
+      "current_capture_requests": 44892,
+      "current_capture_responses": 44891,
+      "last_request": "f801000125232300512050629a0cfd516d42e164d6c211ef6410610e975493ec0af55c89ed0a00b8be5f",
+      "last_response": "4000b60e5e11e75010c567b8b75650774e3462c2067afc93627c9b881deeb1cc2bd4e000"
+    },
+    {
+      "device": "nanox",
+      "pid": 2317167,
+      "completed": false,
+      "state": "S",
+      "utime_ticks": 43536,
+      "stime_ticks": 1302,
+      "starttime_ticks": 2694729,
+      "capture_bytes": 13211542,
+      "capture_sha256": "97aa864e21e2b5499765bc4663b8ff8fd39fa33fb7094f892bbfbaae096d916b",
+      "current_capture_requests": 44967,
+      "current_capture_responses": 44966,
+      "last_request": "f8010001252323005120c8269ea2ace787f8b864ea63fd46eb65888bbcc58b216b0657e961a683864a1e",
+      "last_response": "400070e02b250224f531484f886848a82f8b5a90c6fb04d4cbc9f13a84336bc5039be000"
+    }
+  ]
+}
