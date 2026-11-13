@@ -1,0 +1,94 @@
+Fri Nov 13 12:16:13 UTC 2026
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       3.2Gi       3.9Gi       7.4Mi       8.9Gi        12Gi
+Swap:          2.0Gi          0B       2.0Gi
+    PID    PPID   RSS     ELAPSED COMMAND
+  24574       1 809284   01:23:44 /var/lib/ascii-lazy-bin/ascii-lazyfs --config /var/lib/ascii-lazy/config.json
+ 320314       1 513116      28:12 /var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin/bitcoind -rpcport=22443 -port=22444 --datadir=/var/lib/orb-node/work/official-suite-resume/core-nanosp-final2
+ 317030  317029 220132      29:08 /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5301 --enable_slow_tests=2 --timeout=1800 -ra -v --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-retry.xml
+ 316913  316909 219720      29:09 /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanosp --model nanosp --speculos_port=5201 --enable_slow_tests=2 --timeout=1800 -ra -v --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanosp-retry.xml
+ 319986  319983 175488      28:18 /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest . --device nanosp --model nanosp --speculos_port=5001 --enable_slow_tests=2 --timeout=300 -ra -v --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanosp-final2.xml
+ 304216  304204 174392      35:11 /opt/sandboxed-tools/codex/0.163.0/vendor/x86_64-unknown-linux-musl/bin/codex -c mcp_servers.sandboxed.command="/opt/orb/bin/sandboxed-mcp" -c mcp_servers.sandboxed.args=["--api-url","https://agent-backend.thomas.md","--token-file","/tmp/sandboxed-mcp-nN8iQ6/credential","--mission-id","819a0cd5-1d6d-4c3d-9e48-0acfc0c62e23","--profile","executor"] -c mcp_servers.sandboxed.startup_timeout_sec=30 -c mcp_servers.sandboxed.tool_timeout_sec=60 -c mcp_servers.sandboxed.enabled=true -c mcp_servers.sandboxed.default_tools_approval_mode="approve" exec --json --dangerously-bypass-approvals-and-sandbox --skip-git-repo-check -c model_provider="sandboxed" -c model_providers.sandboxed.name="Sandboxed" -c model_providers.sandboxed.base_url="https://orbrouter.thomas.md/v1" -c model_providers.sandboxed.wire_api="responses" -c model_providers.sandboxed.env_key="SANDBOXED_PROXY_API_KEY" resume 01a1d48a-9578-77d1-9f7e-97cc68c93b9f -
+   4864    4862 145064   02:23:25 /opt/ascii-agent/ascii-agents-server
+  28055       1 136132   01:23:36 /usr/bin/sunshine
+ 317087  317030 134700      29:07 /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5301 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5302 --display headless /var/lib/orb-node/work/official-suite-resume/app-slow-diagnostic/build/nanox/bin/app.elf
+ 317023  316913 131200      29:08 /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5201 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanosp --apdu-port 5202 --display headless /var/lib/orb-node/work/official-suite-resume/app-slow-diagnostic/build/nanos2/bin/app.elf
+   1355       1 92152    02:23:37 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+    signer_1.generate_public_nonces(psbt)
+    signer_2.generate_public_nonces(psbt)
+
+    # round 2 with a MUSIG2_SESSION_ID for which round 1 was never executed
+    other_psbt = PSBT()
+    other_psbt.deserialize(psbt.serialize())
+    other_psbt.musig2_session_id = b"\x02" * 32
+    with pytest.raises(ExceptionRAPDU) as e:
+        signer_1.generate_partial_signatures(other_psbt)
+    assert DeviceException.exc.get(e.value.status) == BadStateError
+    assert int.from_bytes(e.value.data, byteorder='big') == EC_SIGN_PSBT_MUSIG2_SESSION_NOT_FOUND
+    assert len(other_psbt.inputs[0].musig2_partial_sigs) == 0
+
+    # the session of the first psbt is unaffected, and round 2 completes after the review
+    signer_1_with_review = LedgerMusig2Cosigner(client, wallet_policy, wallet_hmac,
+                                                navigator=navigator, instructions=sign_psbt_instruction_approve(firmware, save_screenshot=False, has_spend_from_wallet=True, has_feewarning=True), testname=test_name)
+    run_musig2_test(wallet_policy, psbt,
+                    [Round2OnlyCosigner(signer_1_with_review), Round2OnlyCosigner(signer_2)], KEYPATH_SIGHASHES)
+
+
+MAX_N_MUSIG_SESSIONS = 32
+
+
+def test_sign_psbt_musig2_evicts_oldest_session(navigator: Navigator, firmware: Firmware, client: RaggerClient, test_name: str, speculos_globals: SpeculosGlobals, enable_slow_tests: int):
+    # The device stores at most MAX_N_MUSIG_SESSIONS sessions; when the storage is full, round 1
+    # evicts the oldest session, regardless of the slot it occupies.
+
+    # slow test (it fills the whole storage), only run it if --enable_slow_tests is set to a value
+    # greater than 0
+    if enable_slow_tests < 1:
+        pytest.skip()
+
+    wallet_policy, wallet_hmac = keypath_wallet_policy(speculos_globals)
+
+    signer_1 = LedgerMusig2Cosigner(client, wallet_policy, wallet_hmac,
+                                    navigator=navigator, instructions=sign_psbt_instruction_approve(firmware, save_screenshot=False, has_spend_from_wallet=True, has_feewarning=True), testname=test_name)
+
+    # Execute round 1 for MAX_N_MUSIG_SESSIONS + 2 sessions, that only differ in the
+    # MUSIG2_SESSION_ID. Any session left in storage by previous tests is older, hence evicted first.
+    n_sessions = MAX_N_MUSIG_SESSIONS + 2
+    psbts: List[PSBT] = []
+    hot_signers: List[HotMusig2Cosigner] = []
+    for i in range(n_sessions):
+        psbt = PSBT()
+        psbt.deserialize(KEYPATH_PSBT_B64)
+        psbt.musig2_session_id = bytes([i + 1])
+        # the hot cosigner identifies its sessions by the transaction, so each psbt needs its own
+        hot_signer = HotMusig2Cosigner(wallet_policy, KEYPATH_COSIGNER_2_XPRIV)
+        signer_1.generate_public_nonces(psbt)
+        hot_signer.generate_public_nonces(psbt)
+        psbts.append(psbt)
+        hot_signers.append(hot_signer)
+
+    # The two oldest sessions were evicted
+    for psbt in psbts[:2]:
+        with pytest.raises(ExceptionRAPDU) as e:
+            signer_1.generate_partial_signatures(psbt)
+        assert DeviceException.exc.get(e.value.status) == BadStateError
+        assert int.from_bytes(e.value.data, byteorder='big') == EC_SIGN_PSBT_MUSIG2_SESSION_NOT_FOUND
+
+    # The others are still there. Storing the second to last session must not have evicted the one
+    # stored right before it, nor the last one the second to last.
+    for i in [2, n_sessions - 3, n_sessions - 2, n_sessions - 1]:
+        run_musig2_test(wallet_policy, psbts[i],
+                        [Round2OnlyCosigner(signer_1), Round2OnlyCosigner(hot_signers[i])], KEYPATH_SIGHASHES)
+#                               DEBUG                               #
+#####################################################################
+
+ifneq ($(DEBUG), 0)
+    ifneq ($(DEBUG_OVER_USB), 0)
+        $(error Can't set both DEBUG & DEBUG_OVER_USB)
+    endif
+    DEFINES += HAVE_PRINTF
+endif
+
+ifeq ($(DEBUG_OS_STACK_CONSUMPTION), 1)
+    DEFINES += DEBUG_OS_STACK_CONSUMPTION=1
+endif

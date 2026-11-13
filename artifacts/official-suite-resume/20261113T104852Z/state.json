@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS: full300 bothdevices progressed past512 failure markers; exacttraceback/finalcounts pending, Boat extended14:22:27Z",
+  "status": "IN_PROGRESS_WITH_FAILURES: completedfulltestnet279pass2fail1skip perdevice exit1; diagnosis continues",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -83,7 +83,8 @@
     "requested": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
     "action": "explicit baseline checkout and executable hash requested before Rust acceptance",
     "observed_checkout": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
-    "pinned_build_gate": "source8c3503 and baselineFFI verified; executable hash still missing"
+    "pinned_build_gate": "source8c3503 baselineFFI/executableSHAverified",
+    "executable_sha256": "e0fdcc83ac1273c077da6be968e8a4287851ba7756173e53c5a85a669c21cc98"
   },
   "checkpoint4_archive_sha256": "56a7fcfa9eab46eed138683556519846b341087ec7f39029b18fbd7f50eb2b70",
   "checkpoint5_archive_sha256": "3b999127b82710d9d900f72098110c0f333feb2f7da18a27a9c5a4081b16113c",
@@ -160,9 +161,9 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 12,
+  "latest_parent_checkpoint": 13,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
-  "runtime_monitor_deadline": "old12:20 cutoff still in checkpoint12 snapshot; narrowly scoped implementation helper active, actual repair unverified",
+  "runtime_monitor_deadline": "all4 originalwatchedruns completed before12:20; monitorlog12:17:23 allcompleted, codebreak beforedeadline branch; no replacement/PIDabsence claim",
   "durable_workspace_probe": {
     "job_id": "4d39a8a1-c75e-4b62-8f3d-49c2fa1f1b36",
     "tool_reported": "completed",
@@ -190,6 +191,46 @@
     ],
     "exclusive_process": "exact obsolete runtime-monitor.py monitor only",
     "test_source_lock_ownership": "original executor unchanged",
-    "no_pytest_or_group_signals": true
+    "no_pytest_or_group_signals": true,
+    "status": "cancelled; nativehealthverified; no observed actions"
+  },
+  "checkpoint13_archive_sha256": "895550b166c345014d3d8823c01790f051136bcc7d1c46e9af09a86d4d0ee2d7",
+  "completed_testnet": {
+    "nanosp": {
+      "run": "ragger-tests-nanosp-final2",
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "suite_complete": true,
+      "verdict": "FAIL",
+      "runner_timeout_seconds": 300,
+      "slow": 2,
+      "junit_matches_terminal": true,
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp]",
+      "skip_location": "instructions.py:105",
+      "upstream_skip_reason": "Nano devices can reject only at last step; early rejection does not apply"
+    },
+    "nanox": {
+      "run": "ragger-tests-nanox-final",
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "suite_complete": true,
+      "verdict": "FAIL",
+      "runner_timeout_seconds": 300,
+      "slow": 2,
+      "junit_matches_terminal": true,
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanox-nanox]",
+      "skip_location": "instructions.py:105",
+      "upstream_skip_reason": "Nano devices can reject only at last step; early rejection does not apply"
+    }
   }
 }

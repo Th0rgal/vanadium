@@ -1,0 +1,30 @@
+{
+  "ragger-tests-nanosp-final2": [
+    {
+      "name": {
+        "classname": "test_get_extended_pubkey",
+        "name": "test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp]",
+        "time": "0.535"
+      },
+      "reason_attributes": {
+        "type": "pytest.skip",
+        "message": "Skipped"
+      },
+      "text": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests/instructions.py:105: Skipped"
+    }
+  ],
+  "ragger-tests-nanox-final": [
+    {
+      "name": {
+        "classname": "test_get_extended_pubkey",
+        "name": "test_get_extended_pubkey_non_standard_reject_early[nanox-nanox]",
+        "time": "0.671"
+      },
+      "reason_attributes": {
+        "type": "pytest.skip",
+        "message": "Skipped"
+      },
+      "text": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests/instructions.py:105: Skipped"
+    }
+  ]
+}

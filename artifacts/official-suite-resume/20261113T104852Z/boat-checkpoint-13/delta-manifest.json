@@ -1,0 +1,184 @@
+[
+  {
+    "original_path": "CURRENT.md",
+    "stored_path": "evidence-delta/CURRENT.md",
+    "encoding": "identity",
+    "original_bytes": 9434,
+    "sha256": "6c5340b52fbe543cd2f128ddb748342bebe6de798334d0799c8feb5f2b57619a"
+  },
+  {
+    "original_path": "REPORT.md",
+    "stored_path": "evidence-delta/REPORT.md",
+    "encoding": "identity",
+    "original_bytes": 9434,
+    "sha256": "6c5340b52fbe543cd2f128ddb748342bebe6de798334d0799c8feb5f2b57619a"
+  },
+  {
+    "original_path": "counts.json",
+    "stored_path": "evidence-delta/counts.json",
+    "encoding": "identity",
+    "original_bytes": 32105,
+    "sha256": "ae92d850fd2170b77347ee5c2a38e34c71b03f7a36686a2fdc02b4e000e690cd"
+  },
+  {
+    "original_path": "diagnostic-512-nanosp-retry.json",
+    "stored_path": "evidence-delta/diagnostic-512-nanosp-retry.json",
+    "encoding": "identity",
+    "original_bytes": 1571,
+    "sha256": "1489b69ae81030b738bc2992362923da9b60b45f2fe6350472f122b071cec887"
+  },
+  {
+    "original_path": "diagnostic-512-nanosp-retry.stdout",
+    "stored_path": "evidence-delta/diagnostic-512-nanosp-retry.stdout.gz",
+    "encoding": "gzip",
+    "original_bytes": 24434645,
+    "sha256": "133af4ff78a56c1e175dcc8447f66c7144bd0e460b60769a77b0ea79fbe5b43f"
+  },
+  {
+    "original_path": "diagnostic-512-nanosp-retry.xml",
+    "stored_path": "evidence-delta/diagnostic-512-nanosp-retry.xml",
+    "encoding": "identity",
+    "original_bytes": 1606,
+    "sha256": "f8e10c6fefb08b942365df931ed8a4cc211bff399793e1b0089c73567b3338ed"
+  },
+  {
+    "original_path": "diagnostic-512-nanox-retry.json",
+    "stored_path": "evidence-delta/diagnostic-512-nanox-retry.json",
+    "encoding": "identity",
+    "original_bytes": 1564,
+    "sha256": "258baf3633d85efd5d1252350db8cb527d3be146148f39001052dee6fbe5df9f"
+  },
+  {
+    "original_path": "diagnostic-512-nanox-retry.stdout",
+    "stored_path": "evidence-delta/diagnostic-512-nanox-retry.stdout.gz",
+    "encoding": "gzip",
+    "original_bytes": 24506320,
+    "sha256": "d056a410bd61fafd7f232f1f4704720b0710b5e7314b51af5a52f62ae0954490"
+  },
+  {
+    "original_path": "diagnostic-512-nanox-retry.xml",
+    "stored_path": "evidence-delta/diagnostic-512-nanox-retry.xml",
+    "encoding": "identity",
+    "original_bytes": 1604,
+    "sha256": "348bd91f771a01a5eed0c0fe21dfd009c882b3ea335b05f126aaae527507fd0c"
+  },
+  {
+    "original_path": "diagnostic-eviction-nanox.stderr",
+    "stored_path": "evidence-delta/diagnostic-eviction-nanox.stderr",
+    "encoding": "identity",
+    "original_bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "original_path": "diagnostic-eviction-nanox.stdout",
+    "stored_path": "evidence-delta/diagnostic-eviction-nanox.stdout",
+    "encoding": "identity",
+    "original_bytes": 912586,
+    "sha256": "361a23ca90a6bd1ff1a0874b931f215b1c90a5f45aeb0303a4edfebf8235217f"
+  },
+  {
+    "original_path": "final-provenance-completed-suites.json",
+    "stored_path": "evidence-delta/final-provenance-completed-suites.json",
+    "encoding": "identity",
+    "original_bytes": 1612,
+    "sha256": "d711174b78a360dd1f82b4b3ea69d1092a4fb8944c9b3872f594d5a96280cd90"
+  },
+  {
+    "original_path": "final-provenance-completed-suites.stderr",
+    "stored_path": "evidence-delta/final-provenance-completed-suites.stderr",
+    "encoding": "identity",
+    "original_bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "original_path": "final-provenance-completed-suites.stdout",
+    "stored_path": "evidence-delta/final-provenance-completed-suites.stdout",
+    "encoding": "identity",
+    "original_bytes": 3336,
+    "sha256": "4037984d790727e16cba2aa6413d0878328e16bfa8225ba5d443b3283c8bdc11"
+  },
+  {
+    "original_path": "functional-failure-runtime-state.json",
+    "stored_path": "evidence-delta/functional-failure-runtime-state.json",
+    "encoding": "identity",
+    "original_bytes": 887,
+    "sha256": "7dfc702e7c7da3b480e865ffd743fd2221cdf7a7c08ee63fbfac574f8c6eafb7"
+  },
+  {
+    "original_path": "functional-failure-runtime-state.stderr",
+    "stored_path": "evidence-delta/functional-failure-runtime-state.stderr",
+    "encoding": "identity",
+    "original_bytes": 119,
+    "sha256": "5e2c3e2987d8ef471535861f06c9979784bb1a9e3887e1f41ee8ae782482e034"
+  },
+  {
+    "original_path": "functional-failure-runtime-state.stdout",
+    "stored_path": "evidence-delta/functional-failure-runtime-state.stdout",
+    "encoding": "identity",
+    "original_bytes": 7653,
+    "sha256": "ca81dda632171d44db8fc6bc201789e9c9ba3bb16c34fb73f09a45254bab8410"
+  },
+  {
+    "original_path": "launch-diagnostic-eviction-nanox.json",
+    "stored_path": "evidence-delta/launch-diagnostic-eviction-nanox.json",
+    "encoding": "identity",
+    "original_bytes": 1053,
+    "sha256": "8b62f8bb1eca88750151f3fa9ea43b226f058e527fbd935f6d487f5b8d4b0c2d"
+  },
+  {
+    "original_path": "ragger-tests-nanosp-final2.json",
+    "stored_path": "evidence-delta/ragger-tests-nanosp-final2.json",
+    "encoding": "identity",
+    "original_bytes": 1495,
+    "sha256": "2586cca68f37404b995507b9075d358e6b8d93e85d9d34eadd36223b54c764c0"
+  },
+  {
+    "original_path": "ragger-tests-nanosp-final2.stdout",
+    "stored_path": "evidence-delta/ragger-tests-nanosp-final2.stdout",
+    "encoding": "identity",
+    "original_bytes": 101263,
+    "sha256": "ae21f969fd056c8da3fb47c49fd74aa27b3e8471e1a736c5b5be78901964b166"
+  },
+  {
+    "original_path": "ragger-tests-nanosp-final2.xml",
+    "stored_path": "evidence-delta/ragger-tests-nanosp-final2.xml",
+    "encoding": "identity",
+    "original_bytes": 40518,
+    "sha256": "d0fd1a76aa22dc08118fbacc85b796863bd3b05cb05cc9b42d153a859b993d60"
+  },
+  {
+    "original_path": "ragger-tests-nanox-final.json",
+    "stored_path": "evidence-delta/ragger-tests-nanox-final.json",
+    "encoding": "identity",
+    "original_bytes": 1480,
+    "sha256": "ff99510ee3014991b6d4e1f10365c19355de6dce16ca5165f791c5a5db4d191f"
+  },
+  {
+    "original_path": "ragger-tests-nanox-final.stdout",
+    "stored_path": "evidence-delta/ragger-tests-nanox-final.stdout.gz",
+    "encoding": "gzip",
+    "original_bytes": 2639156,
+    "sha256": "e592dfd97c72318dbbcb5d2f4d649fb723ff549ab9aed208d7dc5e51987d1fb8"
+  },
+  {
+    "original_path": "ragger-tests-nanox-final.xml",
+    "stored_path": "evidence-delta/ragger-tests-nanox-final.xml",
+    "encoding": "identity",
+    "original_bytes": 39743,
+    "sha256": "a1bf5b60da22ce7922b69ed73144ddd60d36002ffb3822dae8057951fb9a7351"
+  },
+  {
+    "original_path": "runtime-monitor.stdout",
+    "stored_path": "evidence-delta/runtime-monitor.stdout",
+    "encoding": "identity",
+    "original_bytes": 87700,
+    "sha256": "026e6ea7d6c740c8653a7e2d25399dbbd0ccce16ccab6c95bd1842872656d4c6"
+  },
+  {
+    "original_path": "skip-reasons.json",
+    "stored_path": "evidence-delta/skip-reasons.json",
+    "encoding": "identity",
+    "original_bytes": 878,
+    "sha256": "eeac6b585a15fbdff53a0e98107a41b7e950a9ede379dd2f536647b338360d09"
+  }
+]

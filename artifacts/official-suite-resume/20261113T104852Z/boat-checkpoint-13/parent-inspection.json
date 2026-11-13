@@ -1,0 +1,74 @@
+{
+  "archive_sha256": "895550b166c345014d3d8823c01790f051136bcc7d1c46e9af09a86d4d0ee2d7",
+  "completed_full_testnet": {
+    "nanosp": {
+      "run": "ragger-tests-nanosp-final2",
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "suite_complete": true,
+      "verdict": "FAIL",
+      "runner_timeout_seconds": 300,
+      "slow": 2,
+      "junit_matches_terminal": true,
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp]",
+      "skip_location": "instructions.py:105",
+      "upstream_skip_reason": "Nano devices can reject only at last step; early rejection does not apply"
+    },
+    "nanox": {
+      "run": "ragger-tests-nanox-final",
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "suite_complete": true,
+      "verdict": "FAIL",
+      "runner_timeout_seconds": 300,
+      "slow": 2,
+      "junit_matches_terminal": true,
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanox-nanox]",
+      "skip_location": "instructions.py:105",
+      "upstream_skip_reason": "Nano devices can reject only at last step; early rejection does not apply"
+    }
+  },
+  "independent_failures": {
+    "nanosp": [
+      {
+        "name": "test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp]",
+        "message": "Failed: Timeout >300.0s",
+        "traceback": "test_sign_psbt.py:707: in test_sign_psbt_singlesig_wpkh_512to256\n    psbt = txmaker.createPsbt(\n../test_utils/txmaker.py:458: in createPsbt\n    prevout, idx, is_change, addr_idx = createFakeWalletTransaction(\n../test_utils/txmaker.py:212: in createFakeWalletTransaction\n    if Script(getScriptPubkeyFromWallet(wallet, 0, 0)).script_type in [\"p2wpkh\", \"p2wsh\", \"p2tr\"]:\n../test_utils/txmaker.py:134: in getScriptPubkeyFromWallet\n    internal_key = _derive_key(desc_tmpl.key)[1:]  # x-only (drop parity byte)\n../test_utils/txmaker.py:131: in _derive_key\n    return root_pubkey.derive_pub_path(der_subpath).pubkey\n../bitcoin_client/ledger_bitcoin/key.py:328: in derive_pub_path\n    key = key.derive_pub(i)\n../bitcoin_client/ledger_bitcoin/key.py:301: in derive_pub\n    child_pubkey = point_add(point_mul(G, Il_int), bytes_to_point(self.pubkey))\n../bitcoin_client/ledger_bitcoin/key.py:78: in point_mul\n    p = point_add(p, p)\n../bitcoin_client/ledger_bitcoin/key.py:66: in point_add\n    lam = (3 * p1[0] * p1[0] * pow(2 * p1[1], p - 2, p)) % p\nE   Failed: Timeout >300.0s"
+      },
+      {
+        "name": "test_sign_psbt_musig2_evicts_oldest_session[nanosp-nanosp]",
+        "message": "requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /apdu (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=5001): Failed to establish a new connection: [Errno 111] Connection refused\"))",
+        "traceback": "../../venv/lib/python3.12/site-packages/urllib3/connection.py:239: in _new_conn\n    sock = connection.create_connection(\n../../venv/lib/python3.12/site-packages/urllib3/util/connection.py:85: in create_connection\n    raise err\n../../venv/lib/python3.12/site-packages/urllib3/util/connection.py:73: in create_connection\n    sock.connect(sa)\nE   ConnectionRefusedError: [Errno 111] Connection refused\n\nThe above exception was the direct cause of the following exception:\n../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:793: in urlopen\n    response = self._make_request(\n../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:499: in _make_request\n    conn.request(\n../../venv/lib/python3.12/site-packages/urllib3/connection.py:567: in request\n    self.endheaders()\n/usr/lib/python3.12/http/client.py:1360: in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n/usr/lib/python3.12/http/client.py:1120: in _send_output\n    self.send(msg)\n/usr/lib/python3.12/http/client.py:1064: in send\n    self.connect()\n../../venv/lib/python3.12/site-packages/urllib3/connection.py:398: in connect\n    self.sock = self._new_conn()\n../../venv/lib/python3.12/site-packages/urllib3/connection.py:254: in _new_conn\n    raise NewConnectionError(\nE   urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=5001): Failed to establish a new connection: [Errno 111] Connection refused\n\nThe above exception was the direct cause of the following exception:\n../../venv/lib/python3.12/site-packages/requests/adapters.py:696: in send\n    resp = conn.urlopen(\n../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:847: in urlopen\n    retries = retries.increment(\n../../venv/lib/python3.12/site-packages/urllib3/util/retry.py:555: in increment\n    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]\nE   urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /apdu (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=5001): Failed to establish a new connection: [Errno 111] Connection refused\"))\n\nDuring handling of the above exception, another exception occurred:\ntest_sign_psbt_musig.py:698: in test_sign_psbt_musig2_evicts_oldest_session\n    signer_1.generate_public_nonces(psbt)\ntest_sign_psbt_musig.py:81: in generate_public_nonces\n    res = self.client.sign_psbt(psbt, self.wallet_policy, self.wallet_hmac)\n../ragger_bitcoin/ragger_bitcoin.py:195: in sign_psbt\n    result = NewClient.sign_psbt(self, psbt, wallet, wallet_hmac)\n../bitcoin_client/ledger_bitcoin/client.py:341: in sign_psbt\n    sw, _ = self._make_request(\n../ragger_bitcoin/ragger_bitcoin.py:59: in _make_request\n    sw, response = NewClient._make_request(\n../bitcoin_client/ledger_bitcoin/client.py:198: in _make_request\n    sw, response = self._apdu_exchange(\n../ragger_bitcoin/ragger_bitcoin.py:34: in _apdu_exchange\n    response = self.transport_client.exchange(\n../../venv/lib/python3.12/site-packages/ragger/backend/interface.py:231: in exchange\n    return self.exchange_raw(pack_APDU(cla, ins, p1, p2, data), tick_timeout=tick_timeout)\n../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:67: in decoration\n    rapdu: RAPDU = function(self, *args, **kwargs)\n../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:238: in exchange_raw\n    self._client._apdu_exchange(data, tick_timeout=tick_timeout),\n../../venv/lib/python3.12/site-packages/speculos/client.py:188: in _apdu_exchange\n    with self.session.post(f\"{self.api_url}/apdu\", json=data_payload) as response:\n../../venv/lib/python3.12/site-packages/requests/sessions.py:712: in post\n    return self.request(\"POST\", url, data=data, json=json, **kwargs)\n../../venv/lib/python3.12/site-packages/requests/sessions.py:651: in request\n    resp = self.send(prep, **send_kwargs)\n../../venv/lib/python3.12/site-packages/requests/sessions.py:784: in send\n    r = adapter.send(request, **kwargs)\n../../venv/lib/python3.12/site-packages/requests/adapters.py:729: in send\n    raise ConnectionError(e, request=request)\nE   requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /apdu (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=5001): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ],
+    "nanox": [
+      {
+        "name": "test_sign_psbt_singlesig_wpkh_512to256[nanox-nanox]",
+        "message": "Failed: Timeout >300.0s",
+        "traceback": "test_sign_psbt.py:707: in test_sign_psbt_singlesig_wpkh_512to256\n    psbt = txmaker.createPsbt(\n../test_utils/txmaker.py:458: in createPsbt\n    prevout, idx, is_change, addr_idx = createFakeWalletTransaction(\n../test_utils/txmaker.py:190: in createFakeWalletTransaction\n    scriptPubKey: bytes = getScriptPubkeyFromWallet(\n../test_utils/txmaker.py:140: in getScriptPubkeyFromWallet\n    _, output_key = taproot_tweak_pubkey(internal_key, taptree_hash)\n../bitcoin_client/ledger_bitcoin/key.py:123: in taproot_tweak_pubkey\n    Q = point_add(lift_x(int_from_bytes(pubkey)), point_mul(G, t))\n../bitcoin_client/ledger_bitcoin/key.py:78: in point_mul\n    p = point_add(p, p)\n../bitcoin_client/ledger_bitcoin/key.py:66: in point_add\n    lam = (3 * p1[0] * p1[0] * pow(2 * p1[1], p - 2, p)) % p\nE   Failed: Timeout >300.0s"
+      },
+      {
+        "name": "test_sign_psbt_musig2_evicts_oldest_session[nanox-nanox]",
+        "message": "requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5101): Max retries exceeded with url: /apdu (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=5101): Failed to establish a new connection: [Errno 111] Connection refused\"))",
+        "traceback": "../../venv/lib/python3.12/site-packages/urllib3/connection.py:239: in _new_conn\n    sock = connection.create_connection(\n../../venv/lib/python3.12/site-packages/urllib3/util/connection.py:85: in create_connection\n    raise err\n../../venv/lib/python3.12/site-packages/urllib3/util/connection.py:73: in create_connection\n    sock.connect(sa)\nE   ConnectionRefusedError: [Errno 111] Connection refused\n\nThe above exception was the direct cause of the following exception:\n../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:793: in urlopen\n    response = self._make_request(\n../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:499: in _make_request\n    conn.request(\n../../venv/lib/python3.12/site-packages/urllib3/connection.py:567: in request\n    self.endheaders()\n/usr/lib/python3.12/http/client.py:1360: in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n/usr/lib/python3.12/http/client.py:1120: in _send_output\n    self.send(msg)\n/usr/lib/python3.12/http/client.py:1064: in send\n    self.connect()\n../../venv/lib/python3.12/site-packages/urllib3/connection.py:398: in connect\n    self.sock = self._new_conn()\n../../venv/lib/python3.12/site-packages/urllib3/connection.py:254: in _new_conn\n    raise NewConnectionError(\nE   urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=5101): Failed to establish a new connection: [Errno 111] Connection refused\n\nThe above exception was the direct cause of the following exception:\n../../venv/lib/python3.12/site-packages/requests/adapters.py:696: in send\n    resp = conn.urlopen(\n../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:847: in urlopen\n    retries = retries.increment(\n../../venv/lib/python3.12/site-packages/urllib3/util/retry.py:555: in increment\n    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]\nE   urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5101): Max retries exceeded with url: /apdu (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=5101): Failed to establish a new connection: [Errno 111] Connection refused\"))\n\nDuring handling of the above exception, another exception occurred:\ntest_sign_psbt_musig.py:698: in test_sign_psbt_musig2_evicts_oldest_session\n    signer_1.generate_public_nonces(psbt)\ntest_sign_psbt_musig.py:81: in generate_public_nonces\n    res = self.client.sign_psbt(psbt, self.wallet_policy, self.wallet_hmac)\n../ragger_bitcoin/ragger_bitcoin.py:195: in sign_psbt\n    result = NewClient.sign_psbt(self, psbt, wallet, wallet_hmac)\n../bitcoin_client/ledger_bitcoin/client.py:341: in sign_psbt\n    sw, _ = self._make_request(\n../ragger_bitcoin/ragger_bitcoin.py:59: in _make_request\n    sw, response = NewClient._make_request(\n../bitcoin_client/ledger_bitcoin/client.py:198: in _make_request\n    sw, response = self._apdu_exchange(\n../ragger_bitcoin/ragger_bitcoin.py:34: in _apdu_exchange\n    response = self.transport_client.exchange(\n../../venv/lib/python3.12/site-packages/ragger/backend/interface.py:231: in exchange\n    return self.exchange_raw(pack_APDU(cla, ins, p1, p2, data), tick_timeout=tick_timeout)\n../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:67: in decoration\n    rapdu: RAPDU = function(self, *args, **kwargs)\n../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:238: in exchange_raw\n    self._client._apdu_exchange(data, tick_timeout=tick_timeout),\n../../venv/lib/python3.12/site-packages/speculos/client.py:188: in _apdu_exchange\n    with self.session.post(f\"{self.api_url}/apdu\", json=data_payload) as response:\n../../venv/lib/python3.12/site-packages/requests/sessions.py:712: in post\n    return self.request(\"POST\", url, data=data, json=json, **kwargs)\n../../venv/lib/python3.12/site-packages/requests/sessions.py:651: in request\n    resp = self.send(prep, **send_kwargs)\n../../venv/lib/python3.12/site-packages/requests/sessions.py:784: in send\n    r = adapter.send(request, **kwargs)\n../../venv/lib/python3.12/site-packages/requests/adapters.py:729: in send\n    raise ConnectionError(e, request=request)\nE   requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5101): Max retries exceeded with url: /apdu (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=5101): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+      }
+    ]
+  },
+  "diagnostic512": "both narrow1800attempts exit1 Timeout>1800s in select.select APDUwait, not fullsuite evidence",
+  "emitter_executable_sha256": "e0fdcc83ac1273c077da6be968e8a4287851ba7756173e53c5a85a669c21cc98",
+  "provenance": "12:17:16Z pins match, tracked diffs empty, rootlock unchanged",
+  "monitor": "all4 originalwatchedruns completed before12:20; monitorlog12:17:23 allcompleted, codebreak beforedeadline branch; no replacement/PIDabsence claim",
+  "helper": "cancelled nativehealth verified, no observed actions",
+  "active_work": "isolated diagnostic-eviction-nanox incomplete",
+  "spec_changes": []
+}

@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS",
+  "status": "IN_PROGRESS_WITH_FAILURES",
   "accepted": {
     "ctest": {
       "evidence_tier": "executable-reproduced",
@@ -113,22 +113,6 @@
     }
   },
   "uncompleted": {
-    "testnet_nanosp": {
-      "pass": null,
-      "fail": null,
-      "skip": null,
-      "deselected": null,
-      "exit": null,
-      "status": "RUNNING; full result required"
-    },
-    "testnet_nanox": {
-      "pass": null,
-      "fail": null,
-      "skip": null,
-      "deselected": null,
-      "exit": null,
-      "status": "RUNNING; full result required"
-    },
     "vanadium_root_common": {
       "pass": null,
       "fail": null,
@@ -151,5 +135,47 @@
     "NanoX": "53/2 subset"
   },
   "fresh_attempts": "See each boat-checkpoint-N/evidence or evidence-delta; aborted/failed runs retained separately; no summing across retries",
-  "spec_changes": []
+  "spec_changes": [],
+  "completed_testnet": {
+    "nanosp": {
+      "run": "ragger-tests-nanosp-final2",
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "suite_complete": true,
+      "verdict": "FAIL",
+      "runner_timeout_seconds": 300,
+      "slow": 2,
+      "junit_matches_terminal": true,
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp]",
+      "skip_location": "instructions.py:105",
+      "upstream_skip_reason": "Nano devices can reject only at last step; early rejection does not apply"
+    },
+    "nanox": {
+      "run": "ragger-tests-nanox-final",
+      "pass": 279,
+      "fail": 2,
+      "skip": 1,
+      "errors": 0,
+      "deselected": 0,
+      "collected": 282,
+      "exit": 1,
+      "suite_complete": true,
+      "verdict": "FAIL",
+      "runner_timeout_seconds": 300,
+      "slow": 2,
+      "junit_matches_terminal": true,
+      "skip_case": "test_get_extended_pubkey_non_standard_reject_early[nanox-nanox]",
+      "skip_location": "instructions.py:105",
+      "upstream_skip_reason": "Nano devices can reject only at last step; early rejection does not apply"
+    }
+  },
+  "pending_validation": {
+    "testnet_full_budget_nanosp": "same fullselection validation after failurediagnosis",
+    "testnet_full_budget_nanox": "same fullselection validation after failurediagnosis"
+  }
 }

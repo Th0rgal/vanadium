@@ -1,0 +1,929 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-6.2.5, py-1.11.0, pluggy-1.7.0 -- /var/lib/orb-node/work/official-suite-resume/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests, configfile: setup.cfg
+plugins: timeout-2.2.0, benchmark-4.0.0
+timeout: 300.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 282 items
+
+test_dashboard.py::test_dashboard[nanosp-nanosp] PASSED                  [  0%]
+test_e2e_miniscript.py::test_e2e_miniscript_one_of_two_1[nanosp-nanosp] PASSED [  0%]
+test_e2e_miniscript.py::test_e2e_miniscript_one_of_two_2[nanosp-nanosp] PASSED [  1%]
+test_e2e_miniscript.py::test_e2e_miniscript_2fa[nanosp-nanosp] PASSED    [  1%]
+test_e2e_miniscript.py::test_e2e_miniscript_decaying_3of3[nanosp-nanosp] PASSED [  1%]
+test_e2e_miniscript.py::test_e2e_miniscript_bolt3_offered_htlc[nanosp-nanosp] PASSED [  2%]
+test_e2e_miniscript.py::test_e2e_miniscript_bolt3_received_htlc[nanosp-nanosp] PASSED [  2%]
+test_e2e_miniscript.py::test_e2e_miniscript_me_or_3of5[nanosp-nanosp] PASSED [  2%]
+test_e2e_miniscript.py::test_e2e_miniscript_me_large_vault[nanosp-nanosp] PASSED [  3%]
+test_e2e_miniscript.py::test_e2e_miniscript_me_and_bob_or_me_and_carl_1[nanosp-nanosp] PASSED [  3%]
+test_e2e_miniscript.py::test_e2e_miniscript_policy_with_a[nanosp-nanosp] PASSED [  3%]
+test_e2e_miniscript.py::test_invalid_miniscript[nanosp-nanosp] PASSED    [  4%]
+test_e2e_multisig.py::test_e2e_multisig_2_of_2[nanosp-nanosp] PASSED     [  4%]
+test_e2e_multisig.py::test_e2e_multisig_multiple_internal_keys[nanosp-nanosp] PASSED [  4%]
+test_e2e_multisig.py::test_e2e_multisig_15keys[nanosp-nanosp] PASSED     [  5%]
+test_e2e_musig2.py::test_e2e_musig2_keypath[nanosp-nanosp] PASSED        [  5%]
+test_e2e_musig2.py::test_e2e_musig2_keypath2[nanosp-nanosp] PASSED       [  6%]
+test_e2e_musig2.py::test_e2e_musig2_scriptpath[nanosp-nanosp] PASSED     [  6%]
+test_e2e_musig2.py::test_e2e_musig2_multi_a_scriptpath[nanosp-nanosp] PASSED [  6%]
+test_e2e_musig2.py::test_e2e_musig2_3of3keypath_decaying_scriptpath[nanosp-nanosp] PASSED [  7%]
+test_e2e_musig2.py::test_e2e_musig2_5of5[nanosp-nanosp] PASSED           [  7%]
+test_e2e_tapscripts.py::test_e2e_tapscript_one_of_two_keypath[nanosp-nanosp] PASSED [  7%]
+test_e2e_tapscripts.py::test_e2e_tapscript_one_of_two_scriptpath[nanosp-nanosp] PASSED [  8%]
+test_e2e_tapscripts.py::test_e2e_tapscript_one_of_three_keypath[nanosp-nanosp] PASSED [  8%]
+test_e2e_tapscripts.py::test_e2e_tapscript_one_of_three_scriptpath[nanosp-nanosp] PASSED [  8%]
+test_e2e_tapscripts.py::test_e2e_tapscript_multi_a_2of2[nanosp-nanosp] PASSED [  9%]
+test_e2e_tapscripts.py::test_e2e_tapscript_maxdepth[nanosp-nanosp] PASSED [  9%]
+test_e2e_tapscripts.py::test_e2e_tapscript_large[nanosp-nanosp] PASSED   [  9%]
+test_e2e_tapscripts.py::test_e2e_tapminiscript_keypath_or_decaying_3of3[nanosp-nanosp] PASSED [ 10%]
+test_e2e_tapscripts.py::test_e2e_tapminiscript_with_hash256[nanosp-nanosp] PASSED [ 10%]
+test_e2e_tapscripts.py::test_e2e_tapminiscript_mixed_leaves[nanosp-nanosp] PASSED [ 10%]
+test_e2e_tapscripts.py::test_invalid_tapminiscript[nanosp-nanosp] PASSED [ 11%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_standard_display[nanosp-nanosp] PASSED [ 11%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_nonstandard_display[nanosp-nanosp] PASSED [ 12%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_non_standard[nanosp-nanosp] PASSED [ 12%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_non_standard_reject_early[nanosp-nanosp] SKIPPED [ 12%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_non_standard_reject[nanosp-nanosp] PASSED [ 13%]
+test_get_wallet_address.py::test_get_wallet_address_with_register_complex_policy[nanosp-nanosp] PASSED [ 13%]
+test_get_wallet_address_v1.py::test_get_wallet_address_singlesig_legacy_v1_ui[nanosp-nanosp] PASSED [ 13%]
+test_get_wallet_address_v1.py::test_get_wallet_address_multisig_legacy_v1_ui[nanosp-nanosp] PASSED [ 14%]
+test_register_wallet.py::test_register_wallet_accept_legacy[nanosp-nanosp] PASSED [ 14%]
+test_register_wallet.py::test_register_wallet_accept_sh_wit[nanosp-nanosp] PASSED [ 14%]
+test_register_wallet.py::test_register_wallet_accept_wit[nanosp-nanosp] PASSED [ 15%]
+test_register_wallet.py::test_register_wallet_accept_wit_2of3[nanosp-nanosp] PASSED [ 15%]
+test_register_wallet.py::test_register_wallet_with_long_name[nanosp-nanosp] PASSED [ 15%]
+test_register_wallet.py::test_register_wallet_reject_header[nanosp-nanosp] PASSED [ 16%]
+test_register_wallet.py::test_register_wallet_invalid_pubkey_version[nanosp-nanosp] PASSED [ 16%]
+test_register_wallet.py::test_register_wallet_invalid_names[nanosp-nanosp] PASSED [ 17%]
+test_register_wallet.py::test_register_wallet_unsupported_policy[nanosp-nanosp] PASSED [ 17%]
+test_register_wallet.py::test_register_miniscript_long_policy[nanosp-nanosp] PASSED [ 17%]
+test_register_wallet.py::test_register_wallet_minmax_relative_timelocks[nanosp-nanosp] PASSED [ 18%]
+test_register_wallet.py::test_register_wallet_not_sane_policy[nanosp-nanosp] PASSED [ 18%]
+test_register_wallet.py::test_register_unusual_singlesig_accounts[nanosp-nanosp] PASSED [ 18%]
+test_register_wallet.py::test_register_wallet_tr_script_pk[nanosp-nanosp] PASSED [ 19%]
+test_register_wallet.py::test_register_wallet_tr_with_nums_keypath[nanosp-nanosp] PASSED [ 19%]
+test_register_wallet.py::test_register_wallet_tr_script_sortedmulti[nanosp-nanosp] PASSED [ 19%]
+test_register_wallet.py::test_register_wallet_tr_script_multi_leaf[nanosp-nanosp] PASSED [ 20%]
+test_register_wallet.py::test_register_wallet_max_derivation_steps[nanosp-nanosp] PASSED [ 20%]
+test_register_wallet.py::test_register_wallet_too_many_derivation_steps[nanosp-nanosp] PASSED [ 20%]
+test_register_wallet.py::test_register_wallet_max_depth[nanosp-nanosp] PASSED [ 21%]
+test_register_wallet_v1.py::test_register_wallet_accept_legacy_v1[nanosp-nanosp] PASSED [ 21%]
+test_register_wallet_v1.py::test_register_wallet_accept_sh_wit_v1[nanosp-nanosp] PASSED [ 21%]
+test_register_wallet_v1.py::test_register_wallet_accept_wit_v1[nanosp-nanosp] PASSED [ 22%]
+test_register_wallet_v1.py::test_register_wallet_reject_header_v1[nanosp-nanosp] PASSED [ 22%]
+test_register_wallet_v1.py::test_register_wallet_invalid_names_v1[nanosp-nanosp] PASSED [ 23%]
+test_register_wallet_v1.py::test_register_wallet_unsupported_policy_v1[nanosp-nanosp] PASSED [ 23%]
+test_sighash_setting.py::test_sighash_none_rejected_by_default[nanosp-nanosp] PASSED [ 23%]
+test_sighash_setting.py::test_sighash_single_rejected_by_default[nanosp-nanosp] PASSED [ 24%]
+test_sighash_setting.py::test_sighash_anyonecanpay_all_rejected_by_default[nanosp-nanosp] PASSED [ 24%]
+test_sighash_setting.py::test_sighash_anyonecanpay_none_rejected_by_default[nanosp-nanosp] PASSED [ 24%]
+test_sighash_setting.py::test_sighash_anyonecanpay_single_rejected_by_default[nanosp-nanosp] PASSED [ 25%]
+test_sighash_setting.py::test_sighash_segwitv0_sighash2_rejected_by_default[nanosp-nanosp] PASSED [ 25%]
+test_sighash_setting.py::test_sighash_all_always_allowed[nanosp-nanosp] PASSED [ 25%]
+test_sighash_setting.py::test_sighash_unsupported_still_rejected_with_setting_enabled[nanosp-nanosp] PASSED [ 26%]
+test_sighash_setting.py::test_sighash_none_allowed_after_enabling_setting[nanosp-nanosp] PASSED [ 26%]
+test_sighash_setting.py::test_sighash_single_allowed_after_enabling_setting[nanosp-nanosp] PASSED [ 26%]
+test_sighash_setting.py::test_sighash_anyonecanpay_all_allowed_after_enabling_setting[nanosp-nanosp] PASSED [ 27%]
+test_sighash_setting.py::test_sighash_segwitv0_sighash2_allowed_after_enabling_setting[nanosp-nanosp] PASSED [ 27%]
+test_sign_message.py::test_sign_message[nanosp-nanosp] PASSED            [ 28%]
+test_sign_message.py::test_sign_message_eol[nanosp-nanosp] PASSED        [ 28%]
+test_sign_message.py::test_sign_message_64bytes[nanosp-nanosp] PASSED    [ 28%]
+test_sign_message.py::test_sign_message_accept[nanosp-nanosp] PASSED     [ 29%]
+test_sign_message.py::test_sign_message_accept_long[nanosp-nanosp] PASSED [ 29%]
+test_sign_message.py::test_sign_message_reject[nanosp-nanosp] PASSED     [ 29%]
+test_sign_message.py::test_sign_message_accept_non_ascii[nanosp-nanosp] PASSED [ 30%]
+test_sign_message.py::test_sign_message_accept_too_long[nanosp-nanosp] PASSED [ 30%]
+test_sign_message.py::test_sign_message_hash_reject[nanosp-nanosp] PASSED [ 30%]
+test_sign_message.py::test_sign_message_with_max_bip32_path[nanosp-nanosp] PASSED [ 31%]
+test_sign_message.py::test_sign_message_fail_too_long_bip32_path[nanosp-nanosp] PASSED [ 31%]
+test_sign_psbt.py::test_sign_psbt_singlesig_pkh_1to1[nanosp-nanosp] PASSED [ 31%]
+test_sign_psbt.py::test_sign_psbt_singlesig_sh_wpkh_1to2[nanosp-nanosp] PASSED [ 32%]
+test_sign_psbt.py::test_sign_psbt_highfee[nanosp-nanosp] PASSED          [ 32%]
+test_sign_psbt.py::test_sign_psbt_then_sign_message_no_stale_review_state[nanosp-nanosp] PASSED [ 32%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_1to2[nanosp-nanosp] PASSED [ 33%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_2to2[nanosp-nanosp] PASSED [ 33%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_2to2_missing_nonwitnessutxo[nanosp-nanosp] PASSED [ 34%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_selftransfer[nanosp-nanosp] PASSED [ 34%]
+test_sign_psbt.py::test_sign_psbt_multisig_wsh[nanosp-nanosp] PASSED     [ 34%]
+test_sign_psbt.py::test_sign_psbt_multisig_sh_wsh[nanosp-nanosp] PASSED  [ 35%]
+test_sign_psbt.py::test_sign_psbt_multisig_sh_wsh_missing_nonwitnessutxo[nanosp-nanosp] PASSED [ 35%]
+test_sign_psbt.py::test_sign_psbt_taproot_1to2_sighash_all[nanosp-nanosp] PASSED [ 35%]
+test_sign_psbt.py::test_sign_psbt_taproot_1to2_sighash_default[nanosp-nanosp] PASSED [ 36%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4to3[nanosp-nanosp] PASSED [ 36%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMax[nanosp-nanosp] PASSED [ 36%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMax_go_back[nanosp-nanosp] PASSED [ 37%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_4toMaxPlus1[nanosp-nanosp] PASSED [ 37%]
+test_sign_psbt.py::test_sign_psbt_singlesig_large_amount[nanosp-nanosp] PASSED [ 37%]
+test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp] FAILED [ 38%]
+test_sign_psbt.py::test_sign_psbt_fail_11_changes[nanosp-nanosp] PASSED  [ 38%]
+test_sign_psbt.py::test_sign_psbt_fail_wrong_non_witness_utxo[nanosp-nanosp] PASSED [ 39%]
+test_sign_psbt.py::test_sign_psbt_with_max_derivation_path[nanosp-nanosp] PASSED [ 39%]
+test_sign_psbt.py::test_sign_psbt_with_opreturn[nanosp-nanosp] PASSED    [ 39%]
+test_sign_psbt.py::test_sign_psbt_with_naked_opreturn[nanosp-nanosp] PASSED [ 40%]
+test_sign_psbt.py::test_sign_psbt_with_segwit_v16[nanosp-nanosp] PASSED  [ 40%]
+test_sign_psbt.py::test_sign_psbt_with_external_inputs[nanosp-nanosp] PASSED [ 40%]
+test_sign_psbt.py::test_sign_psbt_with_external_inputs_net_receive[nanosp-nanosp] PASSED [ 41%]
+test_sign_psbt.py::test_sign_psbt_external_input_unverified_segwitv0_net_only[nanosp-nanosp] PASSED [ 41%]
+test_sign_psbt.py::test_sign_psbt_external_input_unverified_taproot_full[nanosp-nanosp] PASSED [ 41%]
+test_sign_psbt.py::test_sign_psbt_miniscript_multikey[nanosp-nanosp] PASSED [ 42%]
+test_sign_psbt.py::test_sign_psbt_singlesig_pkh_1to1_other_encodings[nanosp-nanosp] PASSED [ 42%]
+test_sign_psbt.py::test_sign_psbt_tr_script_pk_sighash_all[nanosp-nanosp] PASSED [ 42%]
+test_sign_psbt.py::test_sign_psbt_against_wrong_tapleaf_hash[nanosp-nanosp] PASSED [ 43%]
+test_sign_psbt.py::test_sign_psbt_multiple_derivation_paths[nanosp-nanosp] PASSED [ 43%]
+test_sign_psbt.py::test_sign_psbt_musig_round1_and_other_sig[nanosp-nanosp] PASSED [ 43%]
+test_sign_psbt_bip322.py::test_sign_bip322_p2wpkh[nanosp-nanosp] PASSED  [ 44%]
+test_sign_psbt_bip322.py::test_sign_bip322_p2tr[nanosp-nanosp] PASSED    [ 44%]
+test_sign_psbt_bip322.py::test_sign_bip322_p2pkh[nanosp-nanosp] PASSED   [ 45%]
+test_sign_psbt_bip322.py::test_sign_bip322_multisig[nanosp-nanosp] PASSED [ 45%]
+test_sign_psbt_bip322.py::test_sign_bip322_long_message[nanosp-nanosp] PASSED [ 45%]
+test_sign_psbt_bip322.py::test_sign_bip322_empty_message[nanosp-nanosp] PASSED [ 46%]
+test_sign_psbt_bip322.py::test_sign_bip322_nonprintable_message[nanosp-nanosp] PASSED [ 46%]
+test_sign_psbt_bip322.py::test_sign_bip322_change_address[nanosp-nanosp] PASSED [ 46%]
+test_sign_psbt_bip322.py::test_sign_bip322_reject[nanosp-nanosp] PASSED  [ 47%]
+test_sign_psbt_bip322.py::test_sign_bip322_wrong_message[nanosp-nanosp] PASSED [ 47%]
+test_sign_psbt_bip322.py::test_sign_bip322_wrong_prevout_index[nanosp-nanosp] PASSED [ 47%]
+test_sign_psbt_bip322.py::test_sign_bip322_nonzero_amount[nanosp-nanosp] PASSED [ 48%]
+test_sign_psbt_bip322.py::test_sign_bip322_opreturn_with_data[nanosp-nanosp] PASSED [ 48%]
+test_sign_psbt_bip322.py::test_sign_bip322_extra_output[nanosp-nanosp] PASSED [ 48%]
+test_sign_psbt_bip322.py::test_sign_bip322_wrong_tx_version[nanosp-nanosp] PASSED [ 49%]
+test_sign_psbt_bip322.py::test_sign_bip322_locktime_unsupported[nanosp-nanosp] PASSED [ 49%]
+test_sign_psbt_bip322.py::test_sign_bip322_p2tr_explicit_sighash_all[nanosp-nanosp] PASSED [ 50%]
+test_sign_psbt_bip322.py::test_sign_bip322_nondefault_sighash_setting_disabled[nanosp-nanosp] PASSED [ 50%]
+test_sign_psbt_bip322.py::test_sign_bip322_nondefault_sighash_setting_enabled[nanosp-nanosp] PASSED [ 50%]
+test_sign_psbt_bip322.py::test_sign_bip322_proof_of_funds[nanosp-nanosp] PASSED [ 51%]
+test_sign_psbt_bip322.py::test_sign_bip322_proof_of_funds_p2tr[nanosp-nanosp] PASSED [ 51%]
+test_sign_psbt_bip322.py::test_sign_bip322_proof_of_funds_witness_only_to_spend[nanosp-nanosp] PASSED [ 51%]
+test_sign_psbt_bip322.py::test_sign_bip322_pof_unverified_input[nanosp-nanosp] PASSED [ 52%]
+test_sign_psbt_bip322.py::test_sign_bip322_pof_external_input[nanosp-nanosp] PASSED [ 52%]
+test_sign_psbt_bip322.py::test_sign_bip322_pof_missing_challenge[nanosp-nanosp] PASSED [ 52%]
+test_sign_psbt_bip322.py::test_sign_bip322_pof_final_sequences[nanosp-nanosp] PASSED [ 53%]
+test_sign_psbt_bip322.py::test_sign_bip322_pof_relative_timelock_unsupported[nanosp-nanosp-2] PASSED [ 53%]
+test_sign_psbt_bip322.py::test_sign_bip322_challenge_sequence_unsupported[nanosp-nanosp] PASSED [ 53%]
+test_sign_psbt_bip322.py::test_sign_bip322_musig_keypath[nanosp-nanosp] PASSED [ 54%]
+test_sign_psbt_bip322.py::test_sign_bip322_musig_scriptpath[nanosp-nanosp] PASSED [ 54%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-no_fields_no_fallback] PASSED [ 54%]
+test_sign_psbt_locktime.py::test_locktime_oracle_rejects_the_wrong_locktime[nanosp-nanosp] PASSED [ 55%]
+test_sign_psbt_locktime.py::test_locktime_undeterminable[nanosp-nanosp] PASSED [ 55%]
+test_sign_psbt_locktime.py::test_locktime_undeterminable_reversed[nanosp-nanosp] PASSED [ 56%]
+test_sign_psbt_locktime.py::test_locktime_undeterminable_not_rescued_by_a_fallback[nanosp-nanosp] PASSED [ 56%]
+test_sign_psbt_locktime.py::test_locktime_undeterminable_not_rescued_by_a_third_input[nanosp-nanosp] PASSED [ 56%]
+test_sign_psbt_locktime.py::test_locktime_out_of_range[nanosp-nanosp-height_zero] PASSED [ 57%]
+test_sign_psbt_locktime.py::test_locktime_required_field_of_wrong_length[nanosp-nanosp] PASSED [ 57%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_keypath[nanosp-nanosp] PASSED [ 57%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_scriptpath[nanosp-nanosp] PASSED [ 58%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_round1_on_another_transaction[nanosp-nanosp] PASSED [ 58%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_scriptpath_round1_on_another_transaction[nanosp-nanosp] PASSED [ 58%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_round1_twice_replaces_session[nanosp-nanosp-None] PASSED [ 59%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_policies_with_same_keys[nanosp-nanosp] PASSED [ 59%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_wrong_pubnonce[nanosp-nanosp] PASSED [ 59%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_session_is_single_use[nanosp-nanosp] PASSED [ 60%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_parallel_sessions[nanosp-nanosp] PASSED [ 60%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_session_id_must_not_change[nanosp-nanosp-None] PASSED [ 60%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_invalid_session_id[nanosp-nanosp-] PASSED [ 61%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_missing_session_fails_before_review[nanosp-nanosp] PASSED [ 61%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_evicts_oldest_session[nanosp-nanosp] FAILED [ 62%]
+test_sign_psbt_v1.py::test_sign_psbt_singlesig_pkh_1to1_v1[nanosp-nanosp] PASSED [ 62%]
+test_sign_psbt_v1.py::test_sign_psbt_singlesig_sh_wpkh_1to2_v1[nanosp-nanosp] PASSED [ 62%]
+test_sign_psbt_v1.py::test_sign_psbt_singlesig_wpkh_1to2_v1[nanosp-nanosp] PASSED [ 63%]
+test_sign_psbt_v1.py::test_sign_psbt_singlesig_wpkh_2to2_v1[nanosp-nanosp] PASSED [ 63%]
+test_sign_psbt_v1.py::test_sign_psbt_multisig_wsh_v1[nanosp-nanosp] PASSED [ 63%]
+test_sign_psbt_v1.py::test_sign_psbt_taproot_1to2_v1[nanosp-nanosp] PASSED [ 64%]
+test_sign_psbt_v1.py::test_sign_psbt_with_opreturn_v1[nanosp-nanosp] PASSED [ 64%]
+test_sign_psbt_v1.py::test_sign_psbt_with_segwit_v16_v1[nanosp-nanosp] PASSED [ 64%]
+test_sign_psbt_with_sighash_types.py::test_sighash_all_sign_psbt[nanosp-nanosp] PASSED [ 65%]
+test_sign_psbt_with_sighash_types.py::test_sighash_all_input_modified[nanosp-nanosp] PASSED [ 65%]
+test_sign_psbt_with_sighash_types.py::test_sighash_all_output_modified[nanosp-nanosp] PASSED [ 65%]
+test_sign_psbt_with_sighash_types.py::test_sighash_none_sign_psbt[nanosp-nanosp] PASSED [ 66%]
+test_sign_psbt_with_sighash_types.py::test_sighash_none_input_modified[nanosp-nanosp] PASSED [ 66%]
+test_sign_psbt_with_sighash_types.py::test_sighash_none_output_modified[nanosp-nanosp] PASSED [ 67%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_sign_psbt[nanosp-nanosp] PASSED [ 67%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_input_modified[nanosp-nanosp] PASSED [ 67%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_output_same_index_modified[nanosp-nanosp] PASSED [ 68%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_output_different_index_modified[nanosp-nanosp] PASSED [ 68%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_3_ins_2_out[nanosp-nanosp] PASSED [ 68%]
+test_sign_psbt_with_sighash_types.py::test_sighash_all_anyone_sign[nanosp-nanosp] PASSED [ 69%]
+test_sign_psbt_with_sighash_types.py::test_sighash_all_anyone_input_changed[nanosp-nanosp] PASSED [ 69%]
+test_sign_psbt_with_sighash_types.py::test_sighash_all_anyone_output_changed[nanosp-nanosp] PASSED [ 69%]
+test_sign_psbt_with_sighash_types.py::test_sighash_none_anyone_sign[nanosp-nanosp] PASSED [ 70%]
+test_sign_psbt_with_sighash_types.py::test_sighash_none_anyone_input_changed[nanosp-nanosp] PASSED [ 70%]
+test_sign_psbt_with_sighash_types.py::test_sighash_none_anyone_output_changed[nanosp-nanosp] PASSED [ 70%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_anyone_sign[nanosp-nanosp] PASSED [ 71%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_anyone_input_changed[nanosp-nanosp] PASSED [ 71%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_anyone_output_changed[nanosp-nanosp] PASSED [ 71%]
+test_sign_psbt_with_sighash_types.py::test_sighash_anyonecanpay_negative_fee_shows_receive[nanosp-nanosp] PASSED [ 72%]
+test_sign_psbt_with_sighash_types.py::test_negative_fee_rejected_default_sighash[nanosp-nanosp] PASSED [ 72%]
+test_sign_psbt_with_sighash_types.py::test_sighash_unsupported[nanosp-nanosp] PASSED [ 73%]
+test_sign_psbt_with_sighash_types.py::test_sighash_unsupported_for_segwitv0[nanosp-nanosp] PASSED [ 73%]
+test_sign_psbt_with_sighash_types.py::test_sighash_segwitv0_sighash1[nanosp-nanosp] PASSED [ 73%]
+test_sign_psbt_with_sighash_types.py::test_sighash_segwitv0_sighash2[nanosp-nanosp] PASSED [ 74%]
+test_sign_psbt_with_sighash_types.py::test_sighash_segwitv0_sighash3[nanosp-nanosp] PASSED [ 74%]
+test_sign_psbt_with_sighash_types.py::test_sighash_segwitv0_sighash81[nanosp-nanosp] PASSED [ 74%]
+test_sign_psbt_with_sighash_types.py::test_sighash_segwitv0_sighash82[nanosp-nanosp] PASSED [ 75%]
+test_sign_psbt_with_sighash_types.py::test_sighash_segwitv0_sighash83[nanosp-nanosp] PASSED [ 75%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_1in1out_spent_only[nanosp-nanosp] PASSED [ 75%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_anyonecanpay_1in1out_spent_only[nanosp-nanosp] PASSED [ 76%]
+test_sign_psbt_with_sighash_types.py::test_sighash_registered_wallet_spent_only[nanosp-nanosp] PASSED [ 76%]
+test_sign_psbt_with_sighash_types.py::test_sighash_two_outputs_full[nanosp-nanosp] PASSED [ 76%]
+test_sign_psbt_with_sighash_types.py::test_sighash_two_outputs_anyonecanpay_net_only[nanosp-nanosp] PASSED [ 77%]
+test_sign_psbt_with_sighash_types.py::test_sighash_single_external_inputs_net_only[nanosp-nanosp] PASSED [ 77%]
+test_sign_psbt_with_sighash_types.py::test_sighash_all_anyonecanpay_external_inputs_net_only[nanosp-nanosp] PASSED [ 78%]
+test_sign_psbt_with_sighash_types.py::test_sighash_mixed_across_inputs_unavailable[nanosp-nanosp] PASSED [ 78%]
+test_e2e_musig2.py::test_e2e_musig_invalid[nanosp] PASSED                [ 78%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_standard_nodisplay[nanosp] PASSED [ 79%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_exception_nodisplay[nanosp] PASSED [ 79%]
+test_get_extended_pubkey.py::test_get_extended_pubkey_nonstandard_nodisplay[nanosp] PASSED [ 79%]
+test_get_master_fingerprint.py::test_get_master_fingerprint[nanosp] PASSED [ 80%]
+test_get_version.py::test_get_version[nanosp] PASSED                     [ 80%]
+test_get_wallet_address.py::test_get_wallet_address_singlesig_legacy[nanosp] PASSED [ 80%]
+test_get_wallet_address.py::test_get_wallet_address_singlesig_wit[nanosp] PASSED [ 81%]
+test_get_wallet_address.py::test_get_wallet_address_singlesig_sh_wit[nanosp] PASSED [ 81%]
+test_get_wallet_address.py::test_get_wallet_address_singlesig_taproot[nanosp] PASSED [ 81%]
+test_get_wallet_address.py::test_get_wallet_address_fail_nonstandard[nanosp] PASSED [ 82%]
+test_get_wallet_address.py::test_get_wallet_address_multisig_legacy[nanosp] PASSED [ 82%]
+test_get_wallet_address.py::test_get_wallet_address_multisig_sh_wit[nanosp] PASSED [ 82%]
+test_get_wallet_address.py::test_get_wallet_address_multisig_wit[nanosp] PASSED [ 83%]
+test_get_wallet_address.py::test_get_wallet_address_tr_script_pk[nanosp] PASSED [ 83%]
+test_get_wallet_address.py::test_get_wallet_address_tr_script_sortedmulti[nanosp] PASSED [ 84%]
+test_get_wallet_address.py::test_get_wallet_address_tr_musig_keypath[nanosp] PASSED [ 84%]
+test_get_wallet_address.py::test_get_wallet_address_tr_musig_scriptpath[nanosp] PASSED [ 84%]
+test_get_wallet_address.py::test_get_wallet_address_large_addr_index[nanosp] PASSED [ 85%]
+test_get_wallet_address.py::test_get_wallet_address_miniscript_all_fragments[nanosp] PASSED [ 85%]
+test_get_wallet_address_v1.py::test_get_wallet_address_singlesig_legacy_v1[nanosp] PASSED [ 85%]
+test_get_wallet_address_v1.py::test_get_wallet_address_singlesig_wit_v1[nanosp] PASSED [ 86%]
+test_get_wallet_address_v1.py::test_get_wallet_address_singlesig_sh_wit_v1[nanosp] PASSED [ 86%]
+test_get_wallet_address_v1.py::test_get_wallet_address_singlesig_taproot_v1[nanosp] PASSED [ 86%]
+test_get_wallet_address_v1.py::test_get_wallet_address_default_fail_wrongkeys_v1[nanosp] PASSED [ 87%]
+test_get_wallet_address_v1.py::test_get_wallet_address_multisig_legacy_v1[nanosp] PASSED [ 87%]
+test_get_wallet_address_v1.py::test_get_wallet_address_multisig_sh_wit_v1[nanosp] PASSED [ 87%]
+test_get_wallet_address_v1.py::test_get_wallet_address_multisig_wit_v1[nanosp] PASSED [ 88%]
+test_protocol.py::test_high_p1_allowed[nanosp] PASSED                    [ 88%]
+test_protocol.py::test_p2_too_high[nanosp] PASSED                        [ 89%]
+test_register_wallet.py::test_register_wallet_missing_key[nanosp] PASSED [ 89%]
+test_register_wallet.py::test_register_wallet_musig_multiple_internal_keys[nanosp] PASSED [ 89%]
+test_register_wallet.py::test_register_wallet_too_many_internal_key_expressions[nanosp] PASSED [ 90%]
+test_register_wallet.py::test_register_wallet_deep_wrapper_chain[nanosp] PASSED [ 90%]
+test_sighash_setting.py::test_sighash_rejected_status_not_dismissed_by_next_command[nanosp] PASSED [ 90%]
+test_musig2.py::test_musig2_hotsigner_keypath PASSED                     [ 91%]
+test_musig2.py::test_musig2_hotsigner_scriptpath PASSED                  [ 91%]
+test_sign_psbt_bip322.py::test_sign_bip322_pof_relative_timelock_unsupported[nanosp-nanosp-0] PASSED [ 91%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-fallback_only] PASSED [ 92%]
+test_sign_psbt_locktime.py::test_locktime_out_of_range[nanosp-nanosp-height_at_the_threshold] PASSED [ 92%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_round1_twice_replaces_session[nanosp-nanosp-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB] PASSED [ 92%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_session_id_must_not_change[nanosp-nanosp-\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01] PASSED [ 93%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_invalid_session_id[nanosp-nanosp-\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01\x01] PASSED [ 93%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-height_and_bare_input] PASSED [ 93%]
+test_sign_psbt_locktime.py::test_locktime_out_of_range[nanosp-nanosp-height_max_u32] PASSED [ 94%]
+test_sign_psbt_musig.py::test_sign_psbt_musig2_session_id_must_not_change[nanosp-nanosp-\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02\x02] PASSED [ 94%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-two_heights_take_the_max] PASSED [ 95%]
+test_sign_psbt_locktime.py::test_locktime_out_of_range[nanosp-nanosp-time_below_the_threshold] PASSED [ 95%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-height_and_an_input_with_both] PASSED [ 95%]
+test_sign_psbt_locktime.py::test_locktime_out_of_range[nanosp-nanosp-time_zero] PASSED [ 96%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-both_types_everywhere_height_wins] PASSED [ 96%]
+test_sign_psbt_locktime.py::test_locktime_out_of_range[nanosp-nanosp-bad_height_next_to_a_good_time] PASSED [ 96%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-a_time_only_input_forces_time] PASSED [ 97%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-a_time_only_input_forces_time_reversed] PASSED [ 97%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-bare_input_and_a_time] PASSED [ 97%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-fallback_larger_is_ignored] PASSED [ 98%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-fallback_smaller_is_ignored] PASSED [ 98%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-fallback_ignored_for_times] PASSED [ 98%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-smallest_valid_time] PASSED [ 99%]
+test_sign_psbt_locktime.py::test_locktime_determination[nanosp-nanosp-largest_valid_height] PASSED [ 99%]
+test_status_word.py::test_status_word PASSED                             [100%]
+
+=================================== FAILURES ===================================
+____________ test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp] _____________
+test_sign_psbt.py:707: in test_sign_psbt_singlesig_wpkh_512to256
+    psbt = txmaker.createPsbt(
+../test_utils/txmaker.py:458: in createPsbt
+    prevout, idx, is_change, addr_idx = createFakeWalletTransaction(
+../test_utils/txmaker.py:212: in createFakeWalletTransaction
+    if Script(getScriptPubkeyFromWallet(wallet, 0, 0)).script_type in ["p2wpkh", "p2wsh", "p2tr"]:
+../test_utils/txmaker.py:134: in getScriptPubkeyFromWallet
+    internal_key = _derive_key(desc_tmpl.key)[1:]  # x-only (drop parity byte)
+../test_utils/txmaker.py:131: in _derive_key
+    return root_pubkey.derive_pub_path(der_subpath).pubkey
+../bitcoin_client/ledger_bitcoin/key.py:328: in derive_pub_path
+    key = key.derive_pub(i)
+../bitcoin_client/ledger_bitcoin/key.py:301: in derive_pub
+    child_pubkey = point_add(point_mul(G, Il_int), bytes_to_point(self.pubkey))
+../bitcoin_client/ledger_bitcoin/key.py:78: in point_mul
+    p = point_add(p, p)
+../bitcoin_client/ledger_bitcoin/key.py:66: in point_add
+    lam = (3 * p1[0] * p1[0] * pow(2 * p1[1], p - 2, p)) % p
+E   Failed: Timeout >300.0s
+---------------------------- Captured stdout setup -----------------------------
+
+---------------------------- Captured stderr setup -----------------------------
+[INFO] ragger.logger - Speculos binary: '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+[INFO] ragger.logger - SDK Library: 'nbgl'
+[INFO] ragger.logger - Speculos options: '--api-port 5001 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanosp --apdu-port 5002'
+[INFO] ragger.logger - Starting SpeculosBackend stream
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+speculos: Api level detected from metadata: 27
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+speculos: Found C_nbgl_fonts in sharedlib nanosp-api-level-shared-27.elf at 0x812E3C (12 bytes)
+
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+apdu: Server started on 0.0.0.0:5002
+[*] speculos launcher revision: 
+[*] using API_LEVEL version 27 on nanosp
+[*] loading CXLIB from "/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanosp-api-level-shared-27.elf"
+[*] patching svc instruction at 0x8125e4
+[*] patching svc instruction at 0x80f184
+[*] Seed initialized from environment
+[*] Env app name: 'Bitcoin Test'
+[*] Env app version: '2.6.0'
+------------------------------ Captured log setup ------------------------------
+INFO     ragger.logger:speculos.py:131 Speculos binary: '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+INFO     ragger.logger:speculos.py:132 SDK Library: 'nbgl'
+INFO     ragger.logger:speculos.py:133 Speculos options: '--api-port 5001 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanosp --apdu-port 5002'
+INFO     ragger.logger:speculos.py:192 Starting SpeculosBackend stream
+INFO     speculos-client:client.py:239 starting speculos with command: /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5001 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanosp --apdu-port 5002 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf
+---------------------------- Captured log teardown -----------------------------
+INFO     speculos-client:client.py:244 stopping speculos
+__________ test_sign_psbt_musig2_evicts_oldest_session[nanosp-nanosp] __________
+../../venv/lib/python3.12/site-packages/urllib3/connection.py:239: in _new_conn
+    sock = connection.create_connection(
+../../venv/lib/python3.12/site-packages/urllib3/util/connection.py:85: in create_connection
+    raise err
+../../venv/lib/python3.12/site-packages/urllib3/util/connection.py:73: in create_connection
+    sock.connect(sa)
+E   ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:793: in urlopen
+    response = self._make_request(
+../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:499: in _make_request
+    conn.request(
+../../venv/lib/python3.12/site-packages/urllib3/connection.py:567: in request
+    self.endheaders()
+/usr/lib/python3.12/http/client.py:1360: in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+/usr/lib/python3.12/http/client.py:1120: in _send_output
+    self.send(msg)
+/usr/lib/python3.12/http/client.py:1064: in send
+    self.connect()
+../../venv/lib/python3.12/site-packages/urllib3/connection.py:398: in connect
+    self.sock = self._new_conn()
+../../venv/lib/python3.12/site-packages/urllib3/connection.py:254: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: HTTPConnection(host='127.0.0.1', port=5001): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+../../venv/lib/python3.12/site-packages/requests/adapters.py:696: in send
+    resp = conn.urlopen(
+../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:847: in urlopen
+    retries = retries.increment(
+../../venv/lib/python3.12/site-packages/urllib3/util/retry.py:555: in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+E   urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /apdu (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5001): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+test_sign_psbt_musig.py:698: in test_sign_psbt_musig2_evicts_oldest_session
+    signer_1.generate_public_nonces(psbt)
+test_sign_psbt_musig.py:81: in generate_public_nonces
+    res = self.client.sign_psbt(psbt, self.wallet_policy, self.wallet_hmac)
+../ragger_bitcoin/ragger_bitcoin.py:195: in sign_psbt
+    result = NewClient.sign_psbt(self, psbt, wallet, wallet_hmac)
+../bitcoin_client/ledger_bitcoin/client.py:341: in sign_psbt
+    sw, _ = self._make_request(
+../ragger_bitcoin/ragger_bitcoin.py:59: in _make_request
+    sw, response = NewClient._make_request(
+../bitcoin_client/ledger_bitcoin/client.py:198: in _make_request
+    sw, response = self._apdu_exchange(
+../ragger_bitcoin/ragger_bitcoin.py:34: in _apdu_exchange
+    response = self.transport_client.exchange(
+../../venv/lib/python3.12/site-packages/ragger/backend/interface.py:231: in exchange
+    return self.exchange_raw(pack_APDU(cla, ins, p1, p2, data), tick_timeout=tick_timeout)
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:67: in decoration
+    rapdu: RAPDU = function(self, *args, **kwargs)
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:238: in exchange_raw
+    self._client._apdu_exchange(data, tick_timeout=tick_timeout),
+../../venv/lib/python3.12/site-packages/speculos/client.py:188: in _apdu_exchange
+    with self.session.post(f"{self.api_url}/apdu", json=data_payload) as response:
+../../venv/lib/python3.12/site-packages/requests/sessions.py:712: in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+../../venv/lib/python3.12/site-packages/requests/sessions.py:651: in request
+    resp = self.send(prep, **send_kwargs)
+../../venv/lib/python3.12/site-packages/requests/sessions.py:784: in send
+    r = adapter.send(request, **kwargs)
+../../venv/lib/python3.12/site-packages/requests/adapters.py:729: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /apdu (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5001): Failed to establish a new connection: [Errno 111] Connection refused"))
+---------------------------- Captured stdout setup -----------------------------
+
+---------------------------- Captured stderr setup -----------------------------
+[INFO] ragger.logger - Speculos binary: '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+[INFO] ragger.logger - SDK Library: 'nbgl'
+[INFO] ragger.logger - Speculos options: '--api-port 5001 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanosp --apdu-port 5002'
+[INFO] ragger.logger - Starting SpeculosBackend stream
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+speculos: Api level detected from metadata: 27
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+speculos: Found C_nbgl_fonts in sharedlib nanosp-api-level-shared-27.elf at 0x812E3C (12 bytes)
+
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+root: Parsing binary '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+apdu: Server started on 0.0.0.0:5002
+[*] speculos launcher revision: 
+[*] using API_LEVEL version 27 on nanosp
+[*] loading CXLIB from "/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanosp-api-level-shared-27.elf"
+[*] patching svc instruction at 0x8125e4
+[*] patching svc instruction at 0x80f184
+[*] Seed initialized from environment
+[*] Env app name: 'Bitcoin Test'
+[*] Env app version: '2.6.0'
+------------------------------ Captured log setup ------------------------------
+INFO     ragger.logger:speculos.py:131 Speculos binary: '/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf'
+INFO     ragger.logger:speculos.py:132 SDK Library: 'nbgl'
+INFO     ragger.logger:speculos.py:133 Speculos options: '--api-port 5001 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanosp --apdu-port 5002'
+INFO     ragger.logger:speculos.py:192 Starting SpeculosBackend stream
+INFO     speculos-client:client.py:239 starting speculos with command: /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5001 --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanosp --apdu-port 5002 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanos2/bin/app.elf
+----------------------------- Captured stdout call -----------------------------
+=> e105000100
+<= f5acc2fd9000
+PSBT before nonce generation: cHNidP8BAIACAAAAAdF2HhQ2XCgTpd3Sel7VkS5FvESbwo1rgeuG4tBt9GICAAAAAAD9////AQAAAAAAAAAARGpCVGhpcyBpbnB1dHMgaGFzIHR3byBwdWJrZXlzIGJ1dCB5b3Ugb25seSBzZWUgb25lLiAjbXBjZ2FuZyByZXZlbmdlAAAAABT8EU1VU0lHMl9TRVNTSU9OX0lEAAEBAAEBK5/+BAAAAAAAIlEgwf3+vtBjqhSDQMRRMuZxjY3oFGauK5CSnj2TKDZM1u0hFpBmRhZQIJ+LvFmwWvXRYVxQ9fecGI1750L9kyJS9o8MDQBbj7yTAAAAAAMAAAAAAA==
+=> e1040001c306d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a01a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0017d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f16a855e7082255742cb7cb4bd22fcd9799ed531153f08d80544e4d9ad36bfd84e3f1f8bebf4637d1124e1561847446df200236889eb2e0018f1f8d07795a95db
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920600e000
+=> f801000182fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f0303583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+<= 4000fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177fe000
+=> f80100010402020002
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920601e000
+=> f801000182583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d0303fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+<= 4000583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+=> f80100010402020003
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920602e000
+=> f8010001824f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a403039f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3d52c56b473e5246933e7852989cd9feba3b38f078742b93afff1e65ed467978254fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+<= 40004f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+=> f80100010402020004
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920603e000
+=> f8010001829f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3d03034f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a452c56b473e5246933e7852989cd9feba3b38f078742b93afff1e65ed467978254fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+<= 40009f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3de000
+=> f80100010402020005
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920604e000
+=> f80100016295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392602021568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be912885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+<= 400095811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d41653013926e000
+=> f801000104020200fb
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920605e000
+=> f8010001621568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9020295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392612885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+<= 40001568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9e000
+=> f801000117151500fc114d55534947325f53455353494f4e5f494400
+<= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177fe000
+=> f8010001020100
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920600e000
+=> f801000182fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f0303583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+<= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0600e000
+=> f8010001820bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b903038855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4c178813b8617f884a8135fd9f95e1a4596188ab7705a3356480c01c0f977db93d8f2a98b58b4886999cdce146d019102e9192913ffb3fb2f4659113739993395
+<= 40000bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b9e000
+=> f80100010705050002000000
+<= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+=> f8010001020101
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920601e000
+=> f801000182583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d0303fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+<= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0601e000
+=> f8010001828855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a403030bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b9c178813b8617f884a8135fd9f95e1a4596188ab7705a3356480c01c0f977db93d8f2a98b58b4886999cdce146d019102e9192913ffb3fb2f4659113739993395
+<= 40008855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4e000
+=> f80100010705050000000000
+<= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c921568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9e000
+=> f8010001020105
+<= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920605e000
+=> f8010001621568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9020295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392612885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+<= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0605e000
+=> f801000162b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d202020bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b91cdcd137e8bbbf415d3d9e21bd21c7e7918ec18ea1e62231773ef6ec1bb05e0b
+<= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+=> f80100010402020001
+<= 400016a855e7082255742cb7cb4bd22fcd9799ed531153f08d80544e4d9ad36bfd84e000
+=> f801000157555502114d7573696720666f72206d792065617273134d1fdac1a90eed146aa6b3a14d6f99d0b8d7f26fe837880fe77ace31e71c1a78028b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c85
+<= 40004d1fdac1a90eed146aa6b3a14d6f99d0b8d7f26fe837880fe77ace31e71c1a78e000
+=> f80100011513137472286d757369672840302c4031292f2a2a29
+<= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850200e000
+=> f801000142dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f40101adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe
+<= 4000dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4e000
+=> f8010001868484005b66356163633266642f3434272f31272f30275d74707562444377596a70446855645047503572533377674e6731336d5472726a427547385639567057627970745836545250624e6f5a5658736f5655536b436a6d51386a4a79636a75444b4262396561746153796d58616b5454614769667852366b6d56736646656848315a674a54
+<= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850201e000
+=> f801000142adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe0101dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4
+<= 4000adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfee000
+=> f80100017270700074707562444377596a7044685564504751574736774736686b424a7557465a4574726e376a337877473369385863516162634743353378575a6d3168535872555046533555765a3351686450536a58574e66576d464754696f4152487547354a37586775456a67673770385078416d
+<= 41a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00100e000
+=> f801000122a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00000
+<= 4000a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0e000
+=> f80100014442420005d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+=> f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+<= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+=> f80100010402020001
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10501e000
+=> f8010001829f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b1960303b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+<= 40009f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196e000
+=> f8010001040202000e
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10502e000
+=> f8010001823b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae9050903030298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe73cd9c1605ee4d185c8826df445334881b5785e1d4b45144ddd2f7e2fb2ce5297416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+<= 40003b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae90509e000
+=> f8010001040202000f
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10503e000
+=> f8010001820298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe703033b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae905093cd9c1605ee4d185c8826df445334881b5785e1d4b45144ddd2f7e2fb2ce5297416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+<= 40000298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe7e000
+=> f80100010402020010
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10504e000
+=> f801000142416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d962166873660990101b2b11dcdce6e9754ef1b55479cd48cd7a44d183eee3b1bf22092472e1f6e2c23
+<= 4000416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099e000
+=> f801000124222200169066461650209f8bbc59b05af5d1615c50f5f79c188d7be742fd932252f68f0c
+<= 41d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b0504e000
+=> f80100014263dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2c01019f0ed9bfb341bbe25cefe73b3a5ec549974801d5b13da5748feddb1bad429fe0
+<= 400063dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2ce000
+=> f8010001100e0e00005b8fbc930000000003000000
+<= 42d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+=> f8010001020100
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+=> f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+<= 41d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b0500e000
+=> f8010001820647d2ef645aebbe722cbaf0a070e78fb0754f0c5833d24bd9764d48e8cd8456030366dfb8d915f13f34cf3668463a0f03aa8761981cf5c0cee6048c3d4f9f75c074323555107b1388d25445e79ff3d0806e8c9e9eb4c03589a10b492778a9883aa763dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2c
+<= 40000647d2ef645aebbe722cbaf0a070e78fb0754f0c5833d24bd9764d48e8cd8456e000
+=> f80100012e2c2c009ffe040000000000225120c1fdfebed063aa148340c45132e6718d8de81466ae2b90929e3d9328364cd6ed
+<= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850200e000
+=> f801000142dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f40101adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe
+<= 4000dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4e000
+=> f8010001868484005b66356163633266642f3434272f31272f30275d74707562444377596a70446855645047503572533377674e6731336d5472726a427547385639567057627970745836545250624e6f5a5658736f5655536b436a6d51386a4a79636a75444b4262396561746153796d58616b5454614769667852366b6d56736646656848315a674a54
+<= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850201e000
+=> f801000142adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe0101dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4
+<= 4000adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfee000
+=> f80100017270700074707562444377596a7044685564504751574736774736686b424a7557465a4574726e376a337877473369385863516162634743353378575a6d3168535872555046533555765a3351686450536a58574e66576d464754696f4152487547354a37586775456a67673770385078416d
+<= 417d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f0100e000
+=> f8010001227d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f0000
+<= 40007d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07fe000
+=> f8010001444242000278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d74d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b9
+<= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0200e000
+=> f801000142583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d01014f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
+<= 4000583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+=> f80100010402020003
+<= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0201e000
+=> f8010001424f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a40101583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d
+<= 40004f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+=> f80100010402020004
+<= 4278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+=> f8010001020100
+<= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0200e000
+=> f801000142583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d01014f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
+<= 4174d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b90200e000
+=> f8010001423e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d010158b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f040
+<= 40003e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7de000
+=> f80100010b0909000000000000000000
+<= 4278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d4f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+=> f8010001020101
+<= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0201e000
+=> f8010001424f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a40101583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d
+<= 4174d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b90201e000
+=> f80100014258b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f04001013e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d
+<= 400058b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f040e000
+=> f8010001474545006a425468697320696e70757473206861732074776f207075626b6579732062757420796f75206f6e6c7920736565206f6e652e20236d706367616e6720726576656e6765
+<= 41a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00100e000
+=> f801000122a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00000
+<= 4000a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0e000
+=> f80100014442420005d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+=> f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+<= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+=> f80100010402020001
+<= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10501e000
+=> f8010001829f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b1960303b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+<= 40009f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196e000
+=> f8010001040202000e
+----------------------------- Captured stderr call -----------------------------
+[INFO] ragger.apdu_logger - => e105000100
+[INFO] ragger.apdu_logger - <= f5acc2fd9000
+[INFO] ragger.apdu_logger - => e1040001c306d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a01a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0017d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f16a855e7082255742cb7cb4bd22fcd9799ed531153f08d80544e4d9ad36bfd84e3f1f8bebf4637d1124e1561847446df200236889eb2e0018f1f8d07795a95db
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920600e000
+[INFO] ragger.apdu_logger - => f801000182fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f0303583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+[INFO] ragger.apdu_logger - <= 4000fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177fe000
+[INFO] ragger.apdu_logger - => f80100010402020002
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920601e000
+[INFO] ragger.apdu_logger - => f801000182583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d0303fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+[INFO] ragger.apdu_logger - <= 4000583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+[INFO] ragger.apdu_logger - => f80100010402020003
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920602e000
+[INFO] ragger.apdu_logger - => f8010001824f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a403039f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3d52c56b473e5246933e7852989cd9feba3b38f078742b93afff1e65ed467978254fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+[INFO] ragger.apdu_logger - <= 40004f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+[INFO] ragger.apdu_logger - => f80100010402020004
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920603e000
+[INFO] ragger.apdu_logger - => f8010001829f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3d03034f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a452c56b473e5246933e7852989cd9feba3b38f078742b93afff1e65ed467978254fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+[INFO] ragger.apdu_logger - <= 40009f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3de000
+[INFO] ragger.apdu_logger - => f80100010402020005
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920604e000
+[INFO] ragger.apdu_logger - => f80100016295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392602021568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be912885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+[INFO] ragger.apdu_logger - <= 400095811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d41653013926e000
+[INFO] ragger.apdu_logger - => f801000104020200fb
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920605e000
+[INFO] ragger.apdu_logger - => f8010001621568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9020295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392612885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+[INFO] ragger.apdu_logger - <= 40001568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9e000
+[INFO] ragger.apdu_logger - => f801000117151500fc114d55534947325f53455353494f4e5f494400
+[INFO] ragger.apdu_logger - <= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177fe000
+[INFO] ragger.apdu_logger - => f8010001020100
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920600e000
+[INFO] ragger.apdu_logger - => f801000182fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f0303583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+[INFO] ragger.apdu_logger - <= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0600e000
+[INFO] ragger.apdu_logger - => f8010001820bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b903038855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4c178813b8617f884a8135fd9f95e1a4596188ab7705a3356480c01c0f977db93d8f2a98b58b4886999cdce146d019102e9192913ffb3fb2f4659113739993395
+[INFO] ragger.apdu_logger - <= 40000bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b9e000
+[INFO] ragger.apdu_logger - => f80100010705050002000000
+[INFO] ragger.apdu_logger - <= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+[INFO] ragger.apdu_logger - => f8010001020101
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920601e000
+[INFO] ragger.apdu_logger - => f801000182583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d0303fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+[INFO] ragger.apdu_logger - <= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0601e000
+[INFO] ragger.apdu_logger - => f8010001828855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a403030bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b9c178813b8617f884a8135fd9f95e1a4596188ab7705a3356480c01c0f977db93d8f2a98b58b4886999cdce146d019102e9192913ffb3fb2f4659113739993395
+[INFO] ragger.apdu_logger - <= 40008855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4e000
+[INFO] ragger.apdu_logger - => f80100010705050000000000
+[INFO] ragger.apdu_logger - <= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c921568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9e000
+[INFO] ragger.apdu_logger - => f8010001020105
+[INFO] ragger.apdu_logger - <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920605e000
+[INFO] ragger.apdu_logger - => f8010001621568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9020295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392612885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+[INFO] ragger.apdu_logger - <= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0605e000
+[INFO] ragger.apdu_logger - => f801000162b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d202020bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b91cdcd137e8bbbf415d3d9e21bd21c7e7918ec18ea1e62231773ef6ec1bb05e0b
+[INFO] ragger.apdu_logger - <= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+[INFO] ragger.apdu_logger - => f80100010402020001
+[INFO] ragger.apdu_logger - <= 400016a855e7082255742cb7cb4bd22fcd9799ed531153f08d80544e4d9ad36bfd84e000
+[INFO] ragger.apdu_logger - => f801000157555502114d7573696720666f72206d792065617273134d1fdac1a90eed146aa6b3a14d6f99d0b8d7f26fe837880fe77ace31e71c1a78028b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c85
+[INFO] ragger.apdu_logger - <= 40004d1fdac1a90eed146aa6b3a14d6f99d0b8d7f26fe837880fe77ace31e71c1a78e000
+[INFO] ragger.apdu_logger - => f80100011513137472286d757369672840302c4031292f2a2a29
+[INFO] ragger.apdu_logger - <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850200e000
+[INFO] ragger.apdu_logger - => f801000142dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f40101adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe
+[INFO] ragger.apdu_logger - <= 4000dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4e000
+[INFO] ragger.apdu_logger - => f8010001868484005b66356163633266642f3434272f31272f30275d74707562444377596a70446855645047503572533377674e6731336d5472726a427547385639567057627970745836545250624e6f5a5658736f5655536b436a6d51386a4a79636a75444b4262396561746153796d58616b5454614769667852366b6d56736646656848315a674a54
+[INFO] ragger.apdu_logger - <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850201e000
+[INFO] ragger.apdu_logger - => f801000142adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe0101dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4
+[INFO] ragger.apdu_logger - <= 4000adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfee000
+[INFO] ragger.apdu_logger - => f80100017270700074707562444377596a7044685564504751574736774736686b424a7557465a4574726e376a337877473369385863516162634743353378575a6d3168535872555046533555765a3351686450536a58574e66576d464754696f4152487547354a37586775456a67673770385078416d
+[INFO] ragger.apdu_logger - <= 41a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00100e000
+[INFO] ragger.apdu_logger - => f801000122a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00000
+[INFO] ragger.apdu_logger - <= 4000a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0e000
+[INFO] ragger.apdu_logger - => f80100014442420005d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+[INFO] ragger.apdu_logger - => f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+[INFO] ragger.apdu_logger - <= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+[INFO] ragger.apdu_logger - => f80100010402020001
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10501e000
+[INFO] ragger.apdu_logger - => f8010001829f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b1960303b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+[INFO] ragger.apdu_logger - <= 40009f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196e000
+[INFO] ragger.apdu_logger - => f8010001040202000e
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10502e000
+[INFO] ragger.apdu_logger - => f8010001823b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae9050903030298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe73cd9c1605ee4d185c8826df445334881b5785e1d4b45144ddd2f7e2fb2ce5297416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+[INFO] ragger.apdu_logger - <= 40003b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae90509e000
+[INFO] ragger.apdu_logger - => f8010001040202000f
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10503e000
+[INFO] ragger.apdu_logger - => f8010001820298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe703033b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae905093cd9c1605ee4d185c8826df445334881b5785e1d4b45144ddd2f7e2fb2ce5297416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+[INFO] ragger.apdu_logger - <= 40000298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe7e000
+[INFO] ragger.apdu_logger - => f80100010402020010
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10504e000
+[INFO] ragger.apdu_logger - => f801000142416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d962166873660990101b2b11dcdce6e9754ef1b55479cd48cd7a44d183eee3b1bf22092472e1f6e2c23
+[INFO] ragger.apdu_logger - <= 4000416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099e000
+[INFO] ragger.apdu_logger - => f801000124222200169066461650209f8bbc59b05af5d1615c50f5f79c188d7be742fd932252f68f0c
+[INFO] ragger.apdu_logger - <= 41d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b0504e000
+[INFO] ragger.apdu_logger - => f80100014263dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2c01019f0ed9bfb341bbe25cefe73b3a5ec549974801d5b13da5748feddb1bad429fe0
+[INFO] ragger.apdu_logger - <= 400063dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2ce000
+[INFO] ragger.apdu_logger - => f8010001100e0e00005b8fbc930000000003000000
+[INFO] ragger.apdu_logger - <= 42d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+[INFO] ragger.apdu_logger - => f8010001020100
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+[INFO] ragger.apdu_logger - => f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+[INFO] ragger.apdu_logger - <= 41d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b0500e000
+[INFO] ragger.apdu_logger - => f8010001820647d2ef645aebbe722cbaf0a070e78fb0754f0c5833d24bd9764d48e8cd8456030366dfb8d915f13f34cf3668463a0f03aa8761981cf5c0cee6048c3d4f9f75c074323555107b1388d25445e79ff3d0806e8c9e9eb4c03589a10b492778a9883aa763dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2c
+[INFO] ragger.apdu_logger - <= 40000647d2ef645aebbe722cbaf0a070e78fb0754f0c5833d24bd9764d48e8cd8456e000
+[INFO] ragger.apdu_logger - => f80100012e2c2c009ffe040000000000225120c1fdfebed063aa148340c45132e6718d8de81466ae2b90929e3d9328364cd6ed
+[INFO] ragger.apdu_logger - <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850200e000
+[INFO] ragger.apdu_logger - => f801000142dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f40101adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe
+[INFO] ragger.apdu_logger - <= 4000dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4e000
+[INFO] ragger.apdu_logger - => f8010001868484005b66356163633266642f3434272f31272f30275d74707562444377596a70446855645047503572533377674e6731336d5472726a427547385639567057627970745836545250624e6f5a5658736f5655536b436a6d51386a4a79636a75444b4262396561746153796d58616b5454614769667852366b6d56736646656848315a674a54
+[INFO] ragger.apdu_logger - <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850201e000
+[INFO] ragger.apdu_logger - => f801000142adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe0101dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4
+[INFO] ragger.apdu_logger - <= 4000adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfee000
+[INFO] ragger.apdu_logger - => f80100017270700074707562444377596a7044685564504751574736774736686b424a7557465a4574726e376a337877473369385863516162634743353378575a6d3168535872555046533555765a3351686450536a58574e66576d464754696f4152487547354a37586775456a67673770385078416d
+[INFO] ragger.apdu_logger - <= 417d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f0100e000
+[INFO] ragger.apdu_logger - => f8010001227d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f0000
+[INFO] ragger.apdu_logger - <= 40007d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07fe000
+[INFO] ragger.apdu_logger - => f8010001444242000278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d74d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b9
+[INFO] ragger.apdu_logger - <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0200e000
+[INFO] ragger.apdu_logger - => f801000142583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d01014f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
+[INFO] ragger.apdu_logger - <= 4000583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+[INFO] ragger.apdu_logger - => f80100010402020003
+[INFO] ragger.apdu_logger - <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0201e000
+[INFO] ragger.apdu_logger - => f8010001424f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a40101583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d
+[INFO] ragger.apdu_logger - <= 40004f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+[INFO] ragger.apdu_logger - => f80100010402020004
+[INFO] ragger.apdu_logger - <= 4278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+[INFO] ragger.apdu_logger - => f8010001020100
+[INFO] ragger.apdu_logger - <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0200e000
+[INFO] ragger.apdu_logger - => f801000142583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d01014f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
+[INFO] ragger.apdu_logger - <= 4174d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b90200e000
+[INFO] ragger.apdu_logger - => f8010001423e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d010158b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f040
+[INFO] ragger.apdu_logger - <= 40003e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7de000
+[INFO] ragger.apdu_logger - => f80100010b0909000000000000000000
+[INFO] ragger.apdu_logger - <= 4278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d4f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+[INFO] ragger.apdu_logger - => f8010001020101
+[INFO] ragger.apdu_logger - <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0201e000
+[INFO] ragger.apdu_logger - => f8010001424f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a40101583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d
+[INFO] ragger.apdu_logger - <= 4174d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b90201e000
+[INFO] ragger.apdu_logger - => f80100014258b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f04001013e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d
+[INFO] ragger.apdu_logger - <= 400058b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f040e000
+[INFO] ragger.apdu_logger - => f8010001474545006a425468697320696e70757473206861732074776f207075626b6579732062757420796f75206f6e6c7920736565206f6e652e20236d706367616e6720726576656e6765
+[INFO] ragger.apdu_logger - <= 41a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00100e000
+[INFO] ragger.apdu_logger - => f801000122a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00000
+[INFO] ragger.apdu_logger - <= 4000a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0e000
+[INFO] ragger.apdu_logger - => f80100014442420005d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+[INFO] ragger.apdu_logger - => f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+[INFO] ragger.apdu_logger - <= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+[INFO] ragger.apdu_logger - => f80100010402020001
+[INFO] ragger.apdu_logger - <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10501e000
+[INFO] ragger.apdu_logger - => f8010001829f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b1960303b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+[*] exit called (255)
+[INFO] ragger.apdu_logger - <= 40009f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196e000
+[INFO] ragger.apdu_logger - => f8010001040202000e
+------------------------------ Captured log call -------------------------------
+INFO     ragger.apdu_logger:speculos.py:235 => e105000100
+INFO     ragger.apdu_logger:speculos.py:71 <= f5acc2fd9000
+INFO     ragger.apdu_logger:speculos.py:235 => e1040001c306d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a01a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0017d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f16a855e7082255742cb7cb4bd22fcd9799ed531153f08d80544e4d9ad36bfd84e3f1f8bebf4637d1124e1561847446df200236889eb2e0018f1f8d07795a95db
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920600e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000182fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f0303583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177fe000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020002
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920601e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000182583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d0303fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020003
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920602e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001824f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a403039f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3d52c56b473e5246933e7852989cd9feba3b38f078742b93afff1e65ed467978254fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+INFO     ragger.apdu_logger:speculos.py:71 <= 40004f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020004
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920603e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001829f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3d03034f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a452c56b473e5246933e7852989cd9feba3b38f078742b93afff1e65ed467978254fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+INFO     ragger.apdu_logger:speculos.py:71 <= 40009f1afa4dc124cba73134e82ff50f17c8f7164257c79fed9a13f5943a6acb8e3de000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020005
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920604e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100016295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392602021568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be912885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+INFO     ragger.apdu_logger:speculos.py:71 <= 400095811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d41653013926e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000104020200fb
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920605e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001621568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9020295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392612885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+INFO     ragger.apdu_logger:speculos.py:71 <= 40001568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000117151500fc114d55534947325f53455353494f4e5f494400
+INFO     ragger.apdu_logger:speculos.py:71 <= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177fe000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001020100
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920600e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000182fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f0303583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+INFO     ragger.apdu_logger:speculos.py:71 <= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0600e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001820bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b903038855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4c178813b8617f884a8135fd9f95e1a4596188ab7705a3356480c01c0f977db93d8f2a98b58b4886999cdce146d019102e9192913ffb3fb2f4659113739993395
+INFO     ragger.apdu_logger:speculos.py:71 <= 40000bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b9e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010705050002000000
+INFO     ragger.apdu_logger:speculos.py:71 <= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c92583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001020101
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920601e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000182583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d0303fcf0a6c700dd13e274b6fba8deea8dd9b26e4eedde3495717cac8408c9c5177f4b8c129ed14cce2c08cfc6766db7f8cdb133b5f698b8de3d5890ea7ff7f0a8d14fde92d828c2e1e0aab49818df1b1405cde9bc2a8dcc8b76f18ab3baf8f86691
+INFO     ragger.apdu_logger:speculos.py:71 <= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0601e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001828855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a403030bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b9c178813b8617f884a8135fd9f95e1a4596188ab7705a3356480c01c0f977db93d8f2a98b58b4886999cdce146d019102e9192913ffb3fb2f4659113739993395
+INFO     ragger.apdu_logger:speculos.py:71 <= 40008855508aade16ec573d21e6a485dfd0a7624085c1a14b5ecdd6485de0c6839a4e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010705050000000000
+INFO     ragger.apdu_logger:speculos.py:71 <= 42d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c921568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001020105
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d63c0e39cb212a5df61b920c4c702f5dfc4077c451808c65430e92f094857c920605e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001621568aad342fb55cc918f557cdfed905fddeb6c8f6b40526a9b0d266549f38be9020295811f41d3d5c58240be155bb7d1dcb8f47add7e3417c24e1d52d4165301392612885c5025dece82b9e180bdaf19d6e5571772906c9c24de31790023755c8888
+INFO     ragger.apdu_logger:speculos.py:71 <= 41257cd48175d355d6913b3f9d7727f06a8db40cf45eaef404a7796c1e53fd9f4a0605e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000162b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d202020bd288cecce2dfc6c9b9245ab747a10870f84c16e986e61b259603b59cf1f3b91cdcd137e8bbbf415d3d9e21bd21c7e7918ec18ea1e62231773ef6ec1bb05e0b
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020001
+INFO     ragger.apdu_logger:speculos.py:71 <= 400016a855e7082255742cb7cb4bd22fcd9799ed531153f08d80544e4d9ad36bfd84e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000157555502114d7573696720666f72206d792065617273134d1fdac1a90eed146aa6b3a14d6f99d0b8d7f26fe837880fe77ace31e71c1a78028b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c85
+INFO     ragger.apdu_logger:speculos.py:71 <= 40004d1fdac1a90eed146aa6b3a14d6f99d0b8d7f26fe837880fe77ace31e71c1a78e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100011513137472286d757369672840302c4031292f2a2a29
+INFO     ragger.apdu_logger:speculos.py:71 <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850200e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000142dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f40101adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001868484005b66356163633266642f3434272f31272f30275d74707562444377596a70446855645047503572533377674e6731336d5472726a427547385639567057627970745836545250624e6f5a5658736f5655536b436a6d51386a4a79636a75444b4262396561746153796d58616b5454614769667852366b6d56736646656848315a674a54
+INFO     ragger.apdu_logger:speculos.py:71 <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850201e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000142adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe0101dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfee000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100017270700074707562444377596a7044685564504751574736774736686b424a7557465a4574726e376a337877473369385863516162634743353378575a6d3168535872555046533555765a3351686450536a58574e66576d464754696f4152487547354a37586775456a67673770385078416d
+INFO     ragger.apdu_logger:speculos.py:71 <= 41a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00100e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000122a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00000
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100014442420005d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020001
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10501e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001829f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b1960303b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+INFO     ragger.apdu_logger:speculos.py:71 <= 40009f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001040202000e
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10502e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001823b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae9050903030298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe73cd9c1605ee4d185c8826df445334881b5785e1d4b45144ddd2f7e2fb2ce5297416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+INFO     ragger.apdu_logger:speculos.py:71 <= 40003b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae90509e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001040202000f
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10503e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001820298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe703033b2b7c6ee25e2f28a6235e273eaf13f504bd445024147ebacb878262aae905093cd9c1605ee4d185c8826df445334881b5785e1d4b45144ddd2f7e2fb2ce5297416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+INFO     ragger.apdu_logger:speculos.py:71 <= 40000298d122906dcfc10892cb53a73992fc5b9f493ea4c9badb27b791b4127a7fe7e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020010
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10504e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000142416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d962166873660990101b2b11dcdce6e9754ef1b55479cd48cd7a44d183eee3b1bf22092472e1f6e2c23
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000124222200169066461650209f8bbc59b05af5d1615c50f5f79c188d7be742fd932252f68f0c
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b0504e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100014263dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2c01019f0ed9bfb341bbe25cefe73b3a5ec549974801d5b13da5748feddb1bad429fe0
+INFO     ragger.apdu_logger:speculos.py:71 <= 400063dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2ce000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001100e0e00005b8fbc930000000003000000
+INFO     ragger.apdu_logger:speculos.py:71 <= 42d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001020100
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b0500e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001820647d2ef645aebbe722cbaf0a070e78fb0754f0c5833d24bd9764d48e8cd8456030366dfb8d915f13f34cf3668463a0f03aa8761981cf5c0cee6048c3d4f9f75c074323555107b1388d25445e79ff3d0806e8c9e9eb4c03589a10b492778a9883aa763dc29d9b34fa65c1c0d62869a00348afb785112f1ffaa9dbdfe185bda649a2c
+INFO     ragger.apdu_logger:speculos.py:71 <= 40000647d2ef645aebbe722cbaf0a070e78fb0754f0c5833d24bd9764d48e8cd8456e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100012e2c2c009ffe040000000000225120c1fdfebed063aa148340c45132e6718d8de81466ae2b90929e3d9328364cd6ed
+INFO     ragger.apdu_logger:speculos.py:71 <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850200e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000142dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f40101adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001868484005b66356163633266642f3434272f31272f30275d74707562444377596a70446855645047503572533377674e6731336d5472726a427547385639567057627970745836545250624e6f5a5658736f5655536b436a6d51386a4a79636a75444b4262396561746153796d58616b5454614769667852366b6d56736646656848315a674a54
+INFO     ragger.apdu_logger:speculos.py:71 <= 418b724a1e926c5a543d70f0479b7b55f819f1344f732d0c185bfa40eeda1d4c850201e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000142adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfe0101dd9922138f7a8f02c2235fcfe719aa4738594e1a05bb12fe216bdcbcd67bb9f4
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000adf430d01e0f0580e0e8e2ae578134859f025b9c73ff4d534a2a0201f6e77cfee000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100017270700074707562444377596a7044685564504751574736774736686b424a7557465a4574726e376a337877473369385863516162634743353378575a6d3168535872555046533555765a3351686450536a58574e66576d464754696f4152487547354a37586775456a67673770385078416d
+INFO     ragger.apdu_logger:speculos.py:71 <= 417d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f0100e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001227d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07f0000
+INFO     ragger.apdu_logger:speculos.py:71 <= 40007d5dcb3d76c255d6842d3db890224ab995c14d029c2e58e828542bd114f1e07fe000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001444242000278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d74d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b9
+INFO     ragger.apdu_logger:speculos.py:71 <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0200e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000142583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d01014f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020003
+INFO     ragger.apdu_logger:speculos.py:71 <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0201e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001424f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a40101583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d
+INFO     ragger.apdu_logger:speculos.py:71 <= 40004f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020004
+INFO     ragger.apdu_logger:speculos.py:71 <= 4278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5de000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001020100
+INFO     ragger.apdu_logger:speculos.py:71 <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0200e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000142583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d01014f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4
+INFO     ragger.apdu_logger:speculos.py:71 <= 4174d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b90200e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001423e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d010158b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f040
+INFO     ragger.apdu_logger:speculos.py:71 <= 40003e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7de000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010b0909000000000000000000
+INFO     ragger.apdu_logger:speculos.py:71 <= 4278850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d4f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a4e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001020101
+INFO     ragger.apdu_logger:speculos.py:71 <= 4178850a5ab36238b076dd99fd258c70d523168704247988a94caa8c9ccd056b8d0201e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001424f35212d12f9ad2036492c95f1fe79baf4ec7bd9bef3dffa7579f2293ff546a40101583c7dfb7b3055d99465544032a571e10a134b1b6f769422bbb71fd7fa167a5d
+INFO     ragger.apdu_logger:speculos.py:71 <= 4174d37264cfdc49245cdd62e1abf9f603803b55bfdfb59cba6dba1b1b5a8278b90201e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100014258b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f04001013e7077fd2f66d689e0cee6a7cf5b37bf2dca7c979af356d0a31cbc5c85605c7d
+INFO     ragger.apdu_logger:speculos.py:71 <= 400058b8c3324bbcce767f10cd74c4a615ad1505277c485ea8867bc5d03868e9f040e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001474545006a425468697320696e70757473206861732074776f207075626b6579732062757420796f75206f6e6c7920736565206f6e652e20236d706367616e6720726576656e6765
+INFO     ragger.apdu_logger:speculos.py:71 <= 41a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00100e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000122a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e00000
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000a6ff6d4effbd60a4183f8dbd3b59c3a1069f2b246b75a561c130b0fac18a33e0e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100014442420005d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf1d28afe2eaf9509056d8a0d0a5c15863b9ac1c5407f773941476fb99c14f20d4b
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10500e000
+INFO     ragger.apdu_logger:speculos.py:235 => f801000182b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d203039f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+INFO     ragger.apdu_logger:speculos.py:71 <= 4000b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2e000
+INFO     ragger.apdu_logger:speculos.py:235 => f80100010402020001
+INFO     ragger.apdu_logger:speculos.py:71 <= 41d56201f600c5be50509a9450238393413a838188f9a22ff4e1f3762de72cabf10501e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001829f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b1960303b413f47d13ee2fe6c845b2ee141af81de858df4ec549a58b7970bb96645bc8d2d19379c3b959d2f633568f4389726312ac69bd8e3783436175c33216b545ff01416f3c04faea2c64b62f58f0dc04c8c23b8c1f27b0efe9fb2d96216687366099
+INFO     ragger.apdu_logger:speculos.py:71 <= 40009f4917386c45e2c0da0d9b475f1a19cf2db1e929195c6a9f4966ca0d2105b196e000
+INFO     ragger.apdu_logger:speculos.py:235 => f8010001040202000e
+---------------------------- Captured log teardown -----------------------------
+INFO     speculos-client:client.py:244 stopping speculos
+=============================== warnings summary ===============================
+../../venv/lib/python3.12/site-packages/ragger/firmware/structs.py:45: 1 warning
+test_dashboard.py: 1 warning
+test_e2e_miniscript.py: 10 warnings
+test_e2e_multisig.py: 3 warnings
+test_e2e_musig2.py: 6 warnings
+test_e2e_tapscripts.py: 10 warnings
+test_get_extended_pubkey.py: 5 warnings
+test_get_wallet_address.py: 1 warning
+test_get_wallet_address_v1.py: 2 warnings
+test_register_wallet.py: 16 warnings
+test_register_wallet_v1.py: 4 warnings
+test_sighash_setting.py: 12 warnings
+test_sign_message.py: 11 warnings
+test_sign_psbt.py: 34 warnings
+test_sign_psbt_bip322.py: 31 warnings
+test_sign_psbt_locktime.py: 26 warnings
+test_sign_psbt_musig.py: 17 warnings
+test_sign_psbt_v1.py: 8 warnings
+test_sign_psbt_with_sighash_types.py: 38 warnings
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/ragger/firmware/structs.py:45: UserWarning: `ragger.firmware.Firmware` is deprecated, use `ledgered.devices.Devices` or `ledgered.devices.DeviceType` instead
+    self.deprec_warning()
+
+test_dashboard.py: 1 warning
+test_sighash_setting.py: 5 warnings
+test_sign_psbt_bip322.py: 1 warning
+test_sign_psbt_with_sighash_types.py: 30 warnings
+  /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/ragger/firmware/structs.py:54: UserWarning: `ragger.firmware.Firmware` is deprecated, use `ledgered.devices.Devices` or `ledgered.devices.DeviceType` instead
+    self.deprec_warning()
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- generated xml file: /var/lib/orb-node/work/official-suite-resume/evidence/ragger-tests-nanosp-final2.xml -
+=========================== short test summary info ============================
+SKIPPED [1] instructions.py:105: Skipped
+FAILED test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256[nanosp-nanosp]
+FAILED test_sign_psbt_musig.py::test_sign_psbt_musig2_evicts_oldest_session[nanosp-nanosp]
+===== 2 failed, 279 passed, 1 skipped, 273 warnings in 1699.90s (0:28:19) ======
