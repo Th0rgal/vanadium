@@ -1,0 +1,51 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests",
+  "argv": [
+    "strace",
+    "-f",
+    "-tt",
+    "-e",
+    "trace=process,signal",
+    "-o",
+    "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-candidate-trace.process.trace",
+    "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+    "-m",
+    "pytest",
+    "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256",
+    "--device",
+    "nanox",
+    "--model",
+    "nanox",
+    "--speculos_port=6001",
+    "--enable_slow_tests=2",
+    "--timeout=1800",
+    "--log-level=DEBUG",
+    "-ra",
+    "-v",
+    "-s",
+    "--tb=short",
+    "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-candidate-trace.xml"
+  ],
+  "env": {
+    "PATH": "/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+    "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime:/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+    "BITCOIND": "/var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin/bitcoind",
+    "BITCOIN_DIRNAME": "/var/lib/orb-node/work/official-suite-resume/core-512-candidate-trace",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp"
+  },
+  "started_utc": "2026-11-13T14:56:37.145580+00:00",
+  "actual_expiry_epoch": 1794583347,
+  "advisory_deadline_utc": "2026-11-13T15:20:00Z",
+  "deadline_action": "record only; never signal tests",
+  "signals_sent": [],
+  "pid": 1471157,
+  "exit": 1,
+  "ended_utc": "2026-11-13T15:08:44.460836+00:00",
+  "progress": {
+    "requests": 43047,
+    "responses": 43047,
+    "last_request_utc": "2026-11-13T15:08:39.203836+00:00",
+    "last_response_utc": "2026-11-13T15:08:41.757348+00:00",
+    "lines": 349412
+  }
+}

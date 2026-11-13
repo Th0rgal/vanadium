@@ -1,0 +1,19 @@
+{
+  "checkpoint": 29,
+  "all22parts_and_gzip_original_hashes_verified": true,
+  "candidate": {
+    "pass": 0,
+    "fail": 1,
+    "exit": 1,
+    "terminal_junit_exit_match": true,
+    "qemu_exit": 255,
+    "speculos_exit": 255,
+    "guest_caller": "UNKNOWN"
+  },
+  "only_runtime_changes": [
+    "api/apdu.py",
+    "mcu/seproxyhal.py"
+  ],
+  "official_counts_unchanged": true,
+  "boat_expiry": 1794586947
+}

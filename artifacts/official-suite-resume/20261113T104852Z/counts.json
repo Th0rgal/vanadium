@@ -215,6 +215,14 @@
         "exit": 0
       },
       "scope": "separate fixture regression, not official full suite"
+    },
+    "speculos_callback_candidate_512": {
+      "pass": 0,
+      "fail": 1,
+      "exit": 1,
+      "duration_seconds": 724.92,
+      "scope": "exact NanoX diagnostic only; no fullsuite acceptance",
+      "failure": "RemoteDisconnected; QEMU/Speculos exit255; guestcallerUNKNOWN"
     }
   },
   "completed_testnet_1800_retry3": {

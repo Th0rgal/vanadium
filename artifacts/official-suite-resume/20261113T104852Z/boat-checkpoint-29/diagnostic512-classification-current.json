@@ -1,0 +1,54 @@
+{
+  "observed_utc": "2026-11-13T15:15:21.372241+00:00",
+  "actual_expiry_utc": "2026-11-13T15:22:27Z",
+  "actual_expiry_epoch": 1794583347,
+  "official_full_suite_each_device": {
+    "collected": 282,
+    "pass": 280,
+    "fail": 1,
+    "skip": 1,
+    "errors": 0,
+    "deselected": 0,
+    "exit": 1,
+    "accepted_by_parent": true
+  },
+  "diagnostics": [
+    {
+      "name": "diagnostic-512-nanox-serial-trace",
+      "official_full_suite": false,
+      "environment": "unchanged installed Speculos0.27.4; authentic baseline app",
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "classification": "TIMEOUT_1800",
+      "ended_utc": "2026-11-13T14:56:15.877818+00:00",
+      "direct_apdu_requests": 39763,
+      "direct_apdu_responses": 39762,
+      "process_cause": "pytest teardown SIGTERM to Speculos after timeout; Speculos forwards SIGTERM to QEMU; no spontaneous exit255 reproduced; no executor/TTL signal"
+    },
+    {
+      "name": "diagnostic-512-nanox-candidate-trace",
+      "official_full_suite": false,
+      "environment": "separate candidate Speculos callback-lifetime cleanup; identical authentic launcher/assets and baseline app",
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "classification": "REMOTE_DISCONNECTED_AFTER_GUEST_EXIT_255",
+      "ended_utc": "2026-11-13T15:08:44.460836+00:00",
+      "duration_pytest_seconds": 724.92,
+      "direct_apdu_requests": 43047,
+      "direct_apdu_responses": 43047,
+      "process_cause": "QEMU exit_group255 at15:08:42.458480; Speculos exit_group255 at15:08:42.513326; no prior kill. AfterE000 host continues46successful tickersteps, no APDUcontinuation. Guest exception stack unobserved; not established Bitcoin bug."
+    }
+  ],
+  "runner_loss": "cause UNKNOWN; same executor cgroup shared; vanished oldscope; userbus unavailable; journal access denied; no rights bypass",
+  "active_jobs": false,
+  "ttl_interruptions_in_these_diagnostics": false,
+  "no_new_run": true
+}

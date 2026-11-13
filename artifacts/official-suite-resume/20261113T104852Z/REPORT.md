@@ -1,6 +1,6 @@
 # Official Bitcoin full suites — parent assessment
 
-Status: IN_PROGRESS_WITH_FAILURES. Raw evidence independently inspected through checkpoint 15. No global PASS.
+Status: IN_PROGRESS_WITH_FAILURES. Latest full testnet1800: both280pass/1fail/1upstreamskip/0error/0deselected exit1. Raw evidence independently inspected through checkpoint 29. No global PASS.
 
 | Complete fresh run | Passed | Failed | Skipped/ignored | Deselected/filtered | Exit |
 |---|---:|---:|---:|---:|---:|
@@ -79,3 +79,9 @@ Checkpoint28: healthyexecutor15:06, ownedBoatbudgetchecked+60min actualexpiry179
 SpeculoscallbackretentionBUG independentlyaccepted: inspectedpatch APDUBridge registerscallbackonlyduringexchange andremovesfinally; dispatchiteratessnapshot. Regression3fail5passbefore(exit1)/8passafter(exit0), fullPythonunit15pass(exit0), stdout/JUnit/exitmatched. PublicSpeculosbaseline39e6fb1503d2de2c0bc599ffec095470f46097a3. PatchpreservedevidenceSHAf85345d9a3b5f5a5dda035f1484c83b95deb904f67a8874e3b771bf6b3423c07. Contributiontoofficial512failureUNPROVEN, no Lean specchange, nofullPASS; officialbaselineunchanged. Signedpatchdelivery via evidencebranch.
 
 Baselineinstrumented512fullrawaddendumsecured22parts whole11,529,505bytes SHA70b8a8500e69f94549efdfda9d6261ed9ea12bf3b095e11a930f72bf5023a1e7 verified/safeextracted. Terminal1failed1801.84s matchesJUnitTimeout1800/exit1. Processtrace shows pytest1386448 kill(Speculos1386513,SIGTERM)14:56:13.666 then Speculos sendsQEMU1386518SIGTERM; teardown aftertimeout, no spontaneousexit255reproduced. Direct39763/39762APDUcounts retained separatelyfromdoubledpytestreplayrecorder79526/79524. Priorofficial280p1f1skipbothunchanged. No additionalreviewers/source/spec/assertion/skipweakening.
+
+Checkpoint29: parent independently verified all22 harvested parts, three gzip hashes and decompressed original hashes (stdout27373201bytes, stderr18043881bytes, process.trace135383437bytes). Candidate exact NanoX512 completed FAIL exit1 at15:08:44Z; terminal1failed724.92s/JUnit1failure724.200s/completionrecord match. RemoteDisconnected during POST/ticker persists with accepted callback patch; not pytestTimeout, not fixed512, no official certification. Process trace QEMU1471231 exit_group(255)15:08:42.458480 followed Speculos1471226 exit_group(255)15:08:42.513326; no preceding kill or terminating signal observed for those PIDs. Actual guest caller remains UNKNOWN; do not infer device behavior bug from exit code. Direct APDU43047/43047 worker count remains diagnostic, not success.
+
+Runtime provenance compares122 files: only api/apdu.py and mcu/seproxyhal.py differ; hashes match accepted patch tree, launcher/cxlib unchanged. This verifies receipt consistency; parent did not reread remote binary bytes. Callback fix remains independently valid by regression but insufficient for512. No Lean spec change warranted. Prior official full1800 both280pass1fail1upstreamskip0error0deselected exit1 remain latest full results; original frozen locked canary101 distinct from privateoverlay66.
+
+Same executor resumed action2c1dde5f-472b-4775-9f82-817f4f901aa1 for authentic guest caller/PC/LR capture, no new helper/reviewer. Fresh trace15:30 confirms user-space gdb provisioning and SDK source investigation. Health active, Boat ready actual expiry16:22:27Z independently verified, budgetAPI0.05/50 with prior accounting discontinuity retained. No blind full rerun/3600 or test/source/spec weakening. No global PASS.

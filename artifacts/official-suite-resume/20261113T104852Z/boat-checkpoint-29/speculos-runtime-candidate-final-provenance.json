@@ -1,0 +1,766 @@
+{
+  "observed_utc": "2026-11-13T15:20:11.495823+00:00",
+  "label": "SPECULOS_RUNTIME_CANDIDATE_ONLY_NOT_LEAN_CANDIDATE_A",
+  "source_baseline": "39e6fb1503d2de2c0bc599ffec095470f46097a3",
+  "baseline_runtime_root": "/var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos",
+  "candidate_runtime_root": "/var/lib/orb-node/work/official-suite-resume/speculos-candidate-runtime/speculos",
+  "files_compared": 122,
+  "only_changed_files": [
+    "api/apdu.py",
+    "mcu/seproxyhal.py"
+  ],
+  "changed_modules_exactly_match_accepted_patch_tree": true,
+  "patch_path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-apdu-callback-lifetime.patch",
+  "patch_sha256": "f85345d9a3b5f5a5dda035f1484c83b95deb904f67a8874e3b771bf6b3423c07",
+  "files": [
+    {
+      "relative_path": "__init__.py",
+      "runtime_sha256": "12c74d61ed9d58675322400b48e3f72a6e5dd38894a2761b879e3d74b3c5187c",
+      "baseline_sha256": "12c74d61ed9d58675322400b48e3f72a6e5dd38894a2761b879e3d74b3c5187c",
+      "equal": true
+    },
+    {
+      "relative_path": "__main__.py",
+      "runtime_sha256": "dd0db40f7b0e12d62020b5effe49d1bd1f70b6aec64622df0fa1b0c86328d5d5",
+      "baseline_sha256": "dd0db40f7b0e12d62020b5effe49d1bd1f70b6aec64622df0fa1b0c86328d5d5",
+      "equal": true
+    },
+    {
+      "relative_path": "__version__.py",
+      "runtime_sha256": "c21e5454e0ea693b7a5e19b5749f50202362ee1699e9a1e124835f52bbf06949",
+      "baseline_sha256": "c21e5454e0ea693b7a5e19b5749f50202362ee1699e9a1e124835f52bbf06949",
+      "equal": true
+    },
+    {
+      "relative_path": "api/README.md",
+      "runtime_sha256": "b046f9b3d36a1c5163b2d49bd5d8b8993b2b4bdc3cf056b4f0f8fdf5526e0b67",
+      "baseline_sha256": "b046f9b3d36a1c5163b2d49bd5d8b8993b2b4bdc3cf056b4f0f8fdf5526e0b67",
+      "equal": true
+    },
+    {
+      "relative_path": "api/__init__.py",
+      "runtime_sha256": "93d85fc898425a3e262d2cf315bee05de138b577335d172c2ec4ba9c2724957d",
+      "baseline_sha256": "93d85fc898425a3e262d2cf315bee05de138b577335d172c2ec4ba9c2724957d",
+      "equal": true
+    },
+    {
+      "relative_path": "api/apdu.py",
+      "runtime_sha256": "7265bc948fec86c6b51049379c39086e7cd4408d48f41697b24e469aec52f0fb",
+      "baseline_sha256": "ae69fa18aa7c1bdbd4df94202847f9d61de1f5c7e45f70d39441a96783c2ce22",
+      "equal": false,
+      "patch_tree_sha256": "7265bc948fec86c6b51049379c39086e7cd4408d48f41697b24e469aec52f0fb"
+    },
+    {
+      "relative_path": "api/api.py",
+      "runtime_sha256": "ebf0571dd34e183259a67aea534ef3398404e84e26a33d801f3790cbe7d7260e",
+      "baseline_sha256": "ebf0571dd34e183259a67aea534ef3398404e84e26a33d801f3790cbe7d7260e",
+      "equal": true
+    },
+    {
+      "relative_path": "api/automation.py",
+      "runtime_sha256": "5b6bdf66898f81125a0a3b8a3ebd07971f8a3fe46a0c50d76a8504eb3a6971a2",
+      "baseline_sha256": "5b6bdf66898f81125a0a3b8a3ebd07971f8a3fe46a0c50d76a8504eb3a6971a2",
+      "equal": true
+    },
+    {
+      "relative_path": "api/button.py",
+      "runtime_sha256": "36a937fcca75341921155afc89fa87d15129f92e210cdc79de41e71e77a003a9",
+      "baseline_sha256": "36a937fcca75341921155afc89fa87d15129f92e210cdc79de41e71e77a003a9",
+      "equal": true
+    },
+    {
+      "relative_path": "api/events.py",
+      "runtime_sha256": "36ca97c378cf199f688a58ff7663ca5b7a182ab086adf8c97ec73a33e48a8fe4",
+      "baseline_sha256": "36ca97c378cf199f688a58ff7663ca5b7a182ab086adf8c97ec73a33e48a8fe4",
+      "equal": true
+    },
+    {
+      "relative_path": "api/finger.py",
+      "runtime_sha256": "74bc851180c3cfd0b1efbed6edcc7f41ccd8ca338c4f017f732cf54f4bdab22a",
+      "baseline_sha256": "74bc851180c3cfd0b1efbed6edcc7f41ccd8ca338c4f017f732cf54f4bdab22a",
+      "equal": true
+    },
+    {
+      "relative_path": "api/resources/apdu.schema",
+      "runtime_sha256": "48ae762ddf78f78b87b4dc0ee8f41695ba25da9cb883c635a99535623b1ce117",
+      "baseline_sha256": "48ae762ddf78f78b87b4dc0ee8f41695ba25da9cb883c635a99535623b1ce117",
+      "equal": true
+    },
+    {
+      "relative_path": "api/resources/button.schema",
+      "runtime_sha256": "5aaf108c871fa56bfda9a7afdc7f436e03bec46b9ff4c0080c1d1c2ad8529c28",
+      "baseline_sha256": "5aaf108c871fa56bfda9a7afdc7f436e03bec46b9ff4c0080c1d1c2ad8529c28",
+      "equal": true
+    },
+    {
+      "relative_path": "api/resources/finger.schema",
+      "runtime_sha256": "33ee434882f721002dbdfb62e98adc26b84a3e726a7ee1c2216af6eb2328470c",
+      "baseline_sha256": "33ee434882f721002dbdfb62e98adc26b84a3e726a7ee1c2216af6eb2328470c",
+      "equal": true
+    },
+    {
+      "relative_path": "api/resources/ticker.schema",
+      "runtime_sha256": "983422d3e7efbccd455c038ef66054bc2494b45dfdea624cf68fd3e6a2860683",
+      "baseline_sha256": "983422d3e7efbccd455c038ef66054bc2494b45dfdea624cf68fd3e6a2860683",
+      "equal": true
+    },
+    {
+      "relative_path": "api/restful.py",
+      "runtime_sha256": "e0a3d21619f7a31e19e1cc36bc7692e3e34d32ca11b53d3cf5237672bb27c291",
+      "baseline_sha256": "e0a3d21619f7a31e19e1cc36bc7692e3e34d32ca11b53d3cf5237672bb27c291",
+      "equal": true
+    },
+    {
+      "relative_path": "api/screenshot.py",
+      "runtime_sha256": "a16e9a2d0978fa33becbdfb84e407086bfdd1f1c6fd3349d4886c94e0b171441",
+      "baseline_sha256": "a16e9a2d0978fa33becbdfb84e407086bfdd1f1c6fd3349d4886c94e0b171441",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/index.html",
+      "runtime_sha256": "069e9623e81ae192b1842cdf4080ebc55a64a2c2efa7dfd919dc7c92c568e415",
+      "baseline_sha256": "069e9623e81ae192b1842cdf4080ebc55a64a2c2efa7dfd919dc7c92c568e415",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/README.md",
+      "runtime_sha256": "04d18903c3a73b7e012741ff15aee69628bfb3e40055f9475d6355174673f307",
+      "baseline_sha256": "04d18903c3a73b7e012741ff15aee69628bfb3e40055f9475d6355174673f307",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/favicon-16x16.png",
+      "runtime_sha256": "af24ad604dd7b3bcda8f975ab973075f4a2f70a4087944a12f8ef8b63a3e07c2",
+      "baseline_sha256": "af24ad604dd7b3bcda8f975ab973075f4a2f70a4087944a12f8ef8b63a3e07c2",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/favicon-32x32.png",
+      "runtime_sha256": "3ed612f41e050ca5e7000cad6f1cbe7e7da39f65fca99c02e99e6591056e5837",
+      "baseline_sha256": "3ed612f41e050ca5e7000cad6f1cbe7e7da39f65fca99c02e99e6591056e5837",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/index.html",
+      "runtime_sha256": "181b52df3fb75886564fe7f0abd81fe861d915a0aa89c594db4a3f11aae648c9",
+      "baseline_sha256": "181b52df3fb75886564fe7f0abd81fe861d915a0aa89c594db4a3f11aae648c9",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/swagger-ui-bundle.js",
+      "runtime_sha256": "20bff1a05ab4cc1d4286ba5361f9f1e45e130c2f7a0c2108eb91882a9338603e",
+      "baseline_sha256": "20bff1a05ab4cc1d4286ba5361f9f1e45e130c2f7a0c2108eb91882a9338603e",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/swagger-ui-standalone-preset.js",
+      "runtime_sha256": "c82d318a20f72c3677fdf8d1d27682d211326364179a030b712741d77e9b413b",
+      "baseline_sha256": "c82d318a20f72c3677fdf8d1d27682d211326364179a030b712741d77e9b413b",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/swagger-ui.css",
+      "runtime_sha256": "0fd7747552dbb4f44cb3d08dee52dd4a70a2dc04e23310d3a112aefd2f1a3c31",
+      "baseline_sha256": "0fd7747552dbb4f44cb3d08dee52dd4a70a2dc04e23310d3a112aefd2f1a3c31",
+      "equal": true
+    },
+    {
+      "relative_path": "api/static/swagger/swagger.json",
+      "runtime_sha256": "813fe14736c114d3cbd91f0fd2c92f08b3b159f4119f56d3f0ee9f4958779eda",
+      "baseline_sha256": "813fe14736c114d3cbd91f0fd2c92f08b3b159f4119f56d3f0ee9f4958779eda",
+      "equal": true
+    },
+    {
+      "relative_path": "api/swagger.py",
+      "runtime_sha256": "1b015364bc9815d3052d0c05ff6ea4a4d759b031cc6b7116267408ee043d97ff",
+      "baseline_sha256": "1b015364bc9815d3052d0c05ff6ea4a4d759b031cc6b7116267408ee043d97ff",
+      "equal": true
+    },
+    {
+      "relative_path": "api/swagger.yaml",
+      "runtime_sha256": "26e97bf6713a17895a1e14ed8fbe32eb7556c863f0d0db0374bb104c4dbcb7cc",
+      "baseline_sha256": "26e97bf6713a17895a1e14ed8fbe32eb7556c863f0d0db0374bb104c4dbcb7cc",
+      "equal": true
+    },
+    {
+      "relative_path": "api/ticker.py",
+      "runtime_sha256": "25e36bda2f96853432bf6d42e2fce37ff1fabec74ca7f38dc18d3a7cdeaed5b7",
+      "baseline_sha256": "25e36bda2f96853432bf6d42e2fce37ff1fabec74ca7f38dc18d3a7cdeaed5b7",
+      "equal": true
+    },
+    {
+      "relative_path": "api/web_interface.py",
+      "runtime_sha256": "08bd5ba85bea0c8f99f8d0e80b1bcbd96783d04a579ff41e9c240b92247d7bda",
+      "baseline_sha256": "08bd5ba85bea0c8f99f8d0e80b1bcbd96783d04a579ff41e9c240b92247d7bda",
+      "equal": true
+    },
+    {
+      "relative_path": "client.py",
+      "runtime_sha256": "8dd5dc03f727e96e4185860cdb188bc0f59ebc8937fefe9b8f95d6ebaa51dacf",
+      "baseline_sha256": "8dd5dc03f727e96e4185860cdb188bc0f59ebc8937fefe9b8f95d6ebaa51dacf",
+      "equal": true
+    },
+    {
+      "relative_path": "cxlib/flex-api-level-cx-22.elf",
+      "runtime_sha256": "b40915439d5cd2eb180f240006e074136586f57c626b16614a2ff1eedb51905b",
+      "baseline_sha256": "b40915439d5cd2eb180f240006e074136586f57c626b16614a2ff1eedb51905b",
+      "equal": true
+    },
+    {
+      "relative_path": "cxlib/nanosp-api-level-cx-22.elf",
+      "runtime_sha256": "d836c5a2718d98b6ace0e807c64f108ec55529ecf5b117199616d3d94725c89e",
+      "baseline_sha256": "d836c5a2718d98b6ace0e807c64f108ec55529ecf5b117199616d3d94725c89e",
+      "equal": true
+    },
+    {
+      "relative_path": "cxlib/nanox-api-level-cx-22.elf",
+      "runtime_sha256": "dd3ea539a0cc2bfb3a8064abe02539edf52f2d2d2a2347cd1b44ef5554adb568",
+      "baseline_sha256": "dd3ea539a0cc2bfb3a8064abe02539edf52f2d2d2a2347cd1b44ef5554adb568",
+      "equal": true
+    },
+    {
+      "relative_path": "cxlib/stax-api-level-cx-22.elf",
+      "runtime_sha256": "b40915439d5cd2eb180f240006e074136586f57c626b16614a2ff1eedb51905b",
+      "baseline_sha256": "b40915439d5cd2eb180f240006e074136586f57c626b16614a2ff1eedb51905b",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/flex-fonts-18.bin",
+      "runtime_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "baseline_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/flex-fonts-19.bin",
+      "runtime_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "baseline_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/flex-fonts-20.bin",
+      "runtime_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "baseline_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/flex-fonts-21.bin",
+      "runtime_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "baseline_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/flex-fonts-22.bin",
+      "runtime_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "baseline_sha256": "8898d8b8447ed34cd207cc193d713176b2d73836aea97a8b93a32266e04b5504",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/nanosp-fonts-18.bin",
+      "runtime_sha256": "c8a9e2e497b0871582c786944d0e7ae0e34ef5ef726c2d92772e4369a33e2508",
+      "baseline_sha256": "c8a9e2e497b0871582c786944d0e7ae0e34ef5ef726c2d92772e4369a33e2508",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/nanosp-fonts-22.bin",
+      "runtime_sha256": "6bfff9f2008909ab53c41b6df22dedeb6bb29ee046653e5bcc953335923f0cc8",
+      "baseline_sha256": "6bfff9f2008909ab53c41b6df22dedeb6bb29ee046653e5bcc953335923f0cc8",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/nanox-fonts-18.bin",
+      "runtime_sha256": "c9e36a007bcd104c9cd25cd82220fa6594d7d266921c37b4a387334cee6e6232",
+      "baseline_sha256": "c9e36a007bcd104c9cd25cd82220fa6594d7d266921c37b4a387334cee6e6232",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/nanox-fonts-22.bin",
+      "runtime_sha256": "324da29df5797139945fbdd3731ce22404b407338839d06611bbbc2b81673644",
+      "baseline_sha256": "324da29df5797139945fbdd3731ce22404b407338839d06611bbbc2b81673644",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-1.bin",
+      "runtime_sha256": "3ee63faa27452f1d73d012bdd4350d5d88c4e739813eb4e0c15851dc187ef6bd",
+      "baseline_sha256": "3ee63faa27452f1d73d012bdd4350d5d88c4e739813eb4e0c15851dc187ef6bd",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-10.bin",
+      "runtime_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "baseline_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-11.bin",
+      "runtime_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "baseline_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-12.bin",
+      "runtime_sha256": "68666eecf3126f54aaaedf1d8675596060ab255228f4c1523778c79d80a4d28a",
+      "baseline_sha256": "68666eecf3126f54aaaedf1d8675596060ab255228f4c1523778c79d80a4d28a",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-13.bin",
+      "runtime_sha256": "68666eecf3126f54aaaedf1d8675596060ab255228f4c1523778c79d80a4d28a",
+      "baseline_sha256": "68666eecf3126f54aaaedf1d8675596060ab255228f4c1523778c79d80a4d28a",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-14.bin",
+      "runtime_sha256": "32b695843d2a274b1ce53945494aad095809fac05443dfb262fa3f2089181d0b",
+      "baseline_sha256": "32b695843d2a274b1ce53945494aad095809fac05443dfb262fa3f2089181d0b",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-15.bin",
+      "runtime_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "baseline_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-20.bin",
+      "runtime_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "baseline_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-21.bin",
+      "runtime_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "baseline_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-22.bin",
+      "runtime_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "baseline_sha256": "a2edbb9a79d49d079feea357d11a9a7f2367cbe0516df8f44dba00a48b665056",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-3.bin",
+      "runtime_sha256": "3ee63faa27452f1d73d012bdd4350d5d88c4e739813eb4e0c15851dc187ef6bd",
+      "baseline_sha256": "3ee63faa27452f1d73d012bdd4350d5d88c4e739813eb4e0c15851dc187ef6bd",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-5.bin",
+      "runtime_sha256": "3ee63faa27452f1d73d012bdd4350d5d88c4e739813eb4e0c15851dc187ef6bd",
+      "baseline_sha256": "3ee63faa27452f1d73d012bdd4350d5d88c4e739813eb4e0c15851dc187ef6bd",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-7.bin",
+      "runtime_sha256": "d6ec9e620a8d0a87e1cc7c3ff48e03c836f95da13f6c10b2dfbf6220a1bb3137",
+      "baseline_sha256": "d6ec9e620a8d0a87e1cc7c3ff48e03c836f95da13f6c10b2dfbf6220a1bb3137",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-8.bin",
+      "runtime_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "baseline_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "equal": true
+    },
+    {
+      "relative_path": "fonts/stax-fonts-9.bin",
+      "runtime_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "baseline_sha256": "586d57f4323f5511aa3884c10655d0501d4cdd99c6bcc28e0c592b6cbf8ed6e4",
+      "equal": true
+    },
+    {
+      "relative_path": "main.py",
+      "runtime_sha256": "b727fa762406f1b2a093784fb6244486714c485e7c0de52ce3f3651c5b1ec5c6",
+      "baseline_sha256": "b727fa762406f1b2a093784fb6244486714c485e7c0de52ce3f3651c5b1ec5c6",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/__init__.py",
+      "runtime_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/apdu.py",
+      "runtime_sha256": "1e713e78d8cee6dd96480f6557c3a40932b3e14e9dc3b665f52ab42d635f2ea9",
+      "baseline_sha256": "1e713e78d8cee6dd96480f6557c3a40932b3e14e9dc3b665f52ab42d635f2ea9",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/automation.py",
+      "runtime_sha256": "55f1cbe601feb5d67b07671ae39cbf632a3e07f226b97dcd4964a958e654b2d8",
+      "baseline_sha256": "55f1cbe601feb5d67b07671ae39cbf632a3e07f226b97dcd4964a958e654b2d8",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/automation_server.py",
+      "runtime_sha256": "b68d94062fed0959ffa8c6b0d7e52656b59555d105829789c30960b8261c4fcf",
+      "baseline_sha256": "b68d94062fed0959ffa8c6b0d7e52656b59555d105829789c30960b8261c4fcf",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/bagl.py",
+      "runtime_sha256": "28c0eb6f3f483c0301fb1a76efce845389d0d94f0538ee215e8d6233702236d3",
+      "baseline_sha256": "28c0eb6f3f483c0301fb1a76efce845389d0d94f0538ee215e8d6233702236d3",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/bagl_font.py",
+      "runtime_sha256": "8616a461f908a70d25f8ece9fd17522f71fcf162be92ede18ebd99a03b311025",
+      "baseline_sha256": "8616a461f908a70d25f8ece9fd17522f71fcf162be92ede18ebd99a03b311025",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/bagl_glyph.py",
+      "runtime_sha256": "36b77d19c041789b253437055b3302238760724e3cccdb81b0a92b9977b4114a",
+      "baseline_sha256": "36b77d19c041789b253437055b3302238760724e3cccdb81b0a92b9977b4114a",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/button_tcp.py",
+      "runtime_sha256": "ffeaf083f45b9727f3e828ade4c86a4833c6d784a20d62f421b3161221f85eba",
+      "baseline_sha256": "ffeaf083f45b9727f3e828ade4c86a4833c6d784a20d62f421b3161221f85eba",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/display.py",
+      "runtime_sha256": "bcabe73db0ec008b5989cdee0bde807177b41e80edd08cc845acae20a0cf207d",
+      "baseline_sha256": "bcabe73db0ec008b5989cdee0bde807177b41e80edd08cc845acae20a0cf207d",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/finger_tcp.py",
+      "runtime_sha256": "7ac794a9af2b4cbde4a7763b778a152d5d1ed160f574806c07254ef6b3b0c06f",
+      "baseline_sha256": "7ac794a9af2b4cbde4a7763b778a152d5d1ed160f574806c07254ef6b3b0c06f",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/headless.py",
+      "runtime_sha256": "85f91d50b70b7f12c4c3b26b4011ad1157021ae7ebfbf4137bccc2c94eb71722",
+      "baseline_sha256": "85f91d50b70b7f12c4c3b26b4011ad1157021ae7ebfbf4137bccc2c94eb71722",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/icon.png",
+      "runtime_sha256": "942eed2070bd419ada67b9c5f99bd21a2fdcd9e2f9be398ff50f1941b58e61c1",
+      "baseline_sha256": "942eed2070bd419ada67b9c5f99bd21a2fdcd9e2f9be398ff50f1941b58e61c1",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/nbgl.py",
+      "runtime_sha256": "a4c2f14b5244caef426a5e98d4210e85f340ebdf839df72cc3e86b61c5be200e",
+      "baseline_sha256": "a4c2f14b5244caef426a5e98d4210e85f340ebdf839df72cc3e86b61c5be200e",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/nbgl_serialize.py",
+      "runtime_sha256": "cdd4f85354275399409f48b8727efdd4afe35bf2e32649487c7f284f675c1690",
+      "baseline_sha256": "cdd4f85354275399409f48b8727efdd4afe35bf2e32649487c7f284f675c1690",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/ocr.py",
+      "runtime_sha256": "8451b5e6d5396ef77cf8d58d002f17ad88f68aca3592c93fdbab9aef87a7631e",
+      "baseline_sha256": "8451b5e6d5396ef77cf8d58d002f17ad88f68aca3592c93fdbab9aef87a7631e",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/readerror.py",
+      "runtime_sha256": "32246a47c9da40821049f4bc54ab822755d44a69d038d28e2155bab1ad26b5e3",
+      "baseline_sha256": "32246a47c9da40821049f4bc54ab822755d44a69d038d28e2155bab1ad26b5e3",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/resources/automation.schema",
+      "runtime_sha256": "722b0ba34e17ad8d26f3bc1c1ed85a1410b5225d1108bbdfdfb07bd2546bc9de",
+      "baseline_sha256": "722b0ba34e17ad8d26f3bc1c1ed85a1410b5225d1108bbdfdfb07bd2546bc9de",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/rle_custom.py",
+      "runtime_sha256": "1bf9b332fbd5bb8c53449d33b8e0e229f42b81ca10496780b5b6dc4914dbb032",
+      "baseline_sha256": "1bf9b332fbd5bb8c53449d33b8e0e229f42b81ca10496780b5b6dc4914dbb032",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/screen.py",
+      "runtime_sha256": "606902eb8923dc11452515e17084ebea235ac0f4bf50cc60f7b2eeb575cd413d",
+      "baseline_sha256": "606902eb8923dc11452515e17084ebea235ac0f4bf50cc60f7b2eeb575cd413d",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/screen_text.py",
+      "runtime_sha256": "36e38655ab87c9ac725b03cf0b005a821b36210a3c22bc6c7b6735e07db98185",
+      "baseline_sha256": "36e38655ab87c9ac725b03cf0b005a821b36210a3c22bc6c7b6735e07db98185",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/seproxyhal.py",
+      "runtime_sha256": "b4ff75b8a9e3b99f2e32623bfb73ad760d906fe90bf466a1877c1590b6dac127",
+      "baseline_sha256": "5b1f4d67d51cb9b71e12ea567593c420a0fcd6f5a0183ea031efd48e7a1b45a2",
+      "equal": false,
+      "patch_tree_sha256": "b4ff75b8a9e3b99f2e32623bfb73ad760d906fe90bf466a1877c1590b6dac127"
+    },
+    {
+      "relative_path": "mcu/struct.py",
+      "runtime_sha256": "c01e8c5901c5c73fa102752395a145fe071aed2ea5e03f2f13414d6ceefb6550",
+      "baseline_sha256": "c01e8c5901c5c73fa102752395a145fe071aed2ea5e03f2f13414d6ceefb6550",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/transport/__init__.py",
+      "runtime_sha256": "8a2d26a37af7e7e2228223c99103d49372ae36b4cfdbe554f5eb258b9b7dcb7e",
+      "baseline_sha256": "8a2d26a37af7e7e2228223c99103d49372ae36b4cfdbe554f5eb258b9b7dcb7e",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/transport/interface.py",
+      "runtime_sha256": "96fbdfbe1fb3314221cb8fff78b8ed754693e8d3c6f506fc9d11b0739a4f5663",
+      "baseline_sha256": "96fbdfbe1fb3314221cb8fff78b8ed754693e8d3c6f506fc9d11b0739a4f5663",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/transport/nfc.py",
+      "runtime_sha256": "ed149c06b24e64c9748b8c56f56b2e2148c8d57a8e58b4af61f7e2d09f8f7996",
+      "baseline_sha256": "ed149c06b24e64c9748b8c56f56b2e2148c8d57a8e58b4af61f7e2d09f8f7996",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/transport/usb.py",
+      "runtime_sha256": "04a8c61b626b9875bb0cb34dd67b9a88bb2deb03e6720b9ee64f536ad2a3e652",
+      "baseline_sha256": "04a8c61b626b9875bb0cb34dd67b9a88bb2deb03e6720b9ee64f536ad2a3e652",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_BOOT.wav",
+      "runtime_sha256": "87021f4c28788149a50f0ecafbf9cbc8c2fd6d90ad29e1756e187fce3da5f346",
+      "baseline_sha256": "87021f4c28788149a50f0ecafbf9cbc8c2fd6d90ad29e1756e187fce3da5f346",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_CARD_CONNECT.wav",
+      "runtime_sha256": "f7ea1908dfe2cf73605a4b159f0fa3980a4d57f9a8927c2f8de831713182011d",
+      "baseline_sha256": "f7ea1908dfe2cf73605a4b159f0fa3980a4d57f9a8927c2f8de831713182011d",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_CHARGING.wav",
+      "runtime_sha256": "7fc0cca86c035c11861242efda7bdc9b08c13af9f28fe5aff822c06437f41b8c",
+      "baseline_sha256": "7fc0cca86c035c11861242efda7bdc9b08c13af9f28fe5aff822c06437f41b8c",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_ERROR.wav",
+      "runtime_sha256": "7057066af25c7970854f7d510a8d8f741adff2a096231f3a5ab53a6def4689e2",
+      "baseline_sha256": "7057066af25c7970854f7d510a8d8f741adff2a096231f3a5ab53a6def4689e2",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_LEDGER_MOMENT.wav",
+      "runtime_sha256": "756ee02fb121947613c9330d9cb186a2a502d327300e1abc8f9c948482590962",
+      "baseline_sha256": "756ee02fb121947613c9330d9cb186a2a502d327300e1abc8f9c948482590962",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_LOCK.wav",
+      "runtime_sha256": "29533f8c32ce817d18fb4337e2736d3673a34fb83ceebc51e8e2540272c0c293",
+      "baseline_sha256": "29533f8c32ce817d18fb4337e2736d3673a34fb83ceebc51e8e2540272c0c293",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_LOOK_AT_ME.wav",
+      "runtime_sha256": "acea36357a8928ed00c572d505a7bca299b618ca9eff77214533c71711a842e6",
+      "baseline_sha256": "acea36357a8928ed00c572d505a7bca299b618ca9eff77214533c71711a842e6",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_NEUTRAL.wav",
+      "runtime_sha256": "9066b761a0ce8dc585e7bd0fe8e4cb0bcccc300e41c8670478ecdd719d7e9757",
+      "baseline_sha256": "9066b761a0ce8dc585e7bd0fe8e4cb0bcccc300e41c8670478ecdd719d7e9757",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_SILENCE.wav",
+      "runtime_sha256": "9d0f5272ab2db41a5b218b0a6abccf328fdc652e06d8b4874e7246de45946e43",
+      "baseline_sha256": "9d0f5272ab2db41a5b218b0a6abccf328fdc652e06d8b4874e7246de45946e43",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_SUCCESS.wav",
+      "runtime_sha256": "fe1c995e3738f11e78cdd9dcaf4aa10381cc750a9f41e57f5860af949a6d80de",
+      "baseline_sha256": "fe1c995e3738f11e78cdd9dcaf4aa10381cc750a9f41e57f5860af949a6d80de",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_TAP_CASUAL.wav",
+      "runtime_sha256": "e6a4fc14414943c10b364a9034c0de3ec3c329c45ddde1c1822272f22a172a6c",
+      "baseline_sha256": "e6a4fc14414943c10b364a9034c0de3ec3c329c45ddde1c1822272f22a172a6c",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/tunes/TUNE_TAP_NEXT.wav",
+      "runtime_sha256": "97acd3c4f1bf502f5d78aee00c2c48221a4832421b6367170851ce47e0537960",
+      "baseline_sha256": "97acd3c4f1bf502f5d78aee00c2c48221a4832421b6367170851ce47e0537960",
+      "equal": true
+    },
+    {
+      "relative_path": "mcu/vnc.py",
+      "runtime_sha256": "d1bcba5baf78e20a94476e37ffce5d25a9d0f6c80cf0ab9ad397b834347fd07b",
+      "baseline_sha256": "d1bcba5baf78e20a94476e37ffce5d25a9d0f6c80cf0ab9ad397b834347fd07b",
+      "equal": true
+    },
+    {
+      "relative_path": "observer.py",
+      "runtime_sha256": "e35323e3757cc55bbd26438fc4fa69e23ab7367d5d89a2ff763e3781bbfd2826",
+      "baseline_sha256": "e35323e3757cc55bbd26438fc4fa69e23ab7367d5d89a2ff763e3781bbfd2826",
+      "equal": true
+    },
+    {
+      "relative_path": "resources/launcher",
+      "runtime_sha256": "cd414754882b5dff5bd2265f920d044ca1145c1abf191c0ebdaa624cabf79a93",
+      "baseline_sha256": "cd414754882b5dff5bd2265f920d044ca1145c1abf191c0ebdaa624cabf79a93",
+      "equal": true
+    },
+    {
+      "relative_path": "resources/vnc_server",
+      "runtime_sha256": "0a7838339666d275777bf64c869d2aad69926384c3538c8d54f43af413c17091",
+      "baseline_sha256": "0a7838339666d275777bf64c869d2aad69926384c3538c8d54f43af413c17091",
+      "equal": true
+    },
+    {
+      "relative_path": "resources_importer.py",
+      "runtime_sha256": "040f8156c66d3637e617a2f19f08b0fc4831febdf662292f553856b56ef6baf1",
+      "baseline_sha256": "040f8156c66d3637e617a2f19f08b0fc4831febdf662292f553856b56ef6baf1",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/apex_p-api-level-shared-25.elf",
+      "runtime_sha256": "a084eacc9443910291026f3fa960905c8478d57cc97eb13c82075968ec948a41",
+      "baseline_sha256": "a084eacc9443910291026f3fa960905c8478d57cc97eb13c82075968ec948a41",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/apex_p-api-level-shared-26.elf",
+      "runtime_sha256": "6778920fb7443984c5f668d0a5c4600b19336dbcff2cd70492c855aa7ea0c313",
+      "baseline_sha256": "6778920fb7443984c5f668d0a5c4600b19336dbcff2cd70492c855aa7ea0c313",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/apex_p-api-level-shared-27.elf",
+      "runtime_sha256": "c0e20bbb71461052c44d1f9a83dcac4d63819fda81f7cb724ceed1a1a83e029d",
+      "baseline_sha256": "c0e20bbb71461052c44d1f9a83dcac4d63819fda81f7cb724ceed1a1a83e029d",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/flex-api-level-shared-24.elf",
+      "runtime_sha256": "773952efa7532beae9572acf72ba42931f55395248ba7bb5d04cd465f099a5fc",
+      "baseline_sha256": "773952efa7532beae9572acf72ba42931f55395248ba7bb5d04cd465f099a5fc",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/flex-api-level-shared-25.elf",
+      "runtime_sha256": "0c938318c6ed8624a3e59959a776e456961ffa7896ac8d18b68e29ee1d3ef0ba",
+      "baseline_sha256": "0c938318c6ed8624a3e59959a776e456961ffa7896ac8d18b68e29ee1d3ef0ba",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/flex-api-level-shared-26.elf",
+      "runtime_sha256": "2d942e22494138f7e88fdb2cedc6f40331d6f00eff2ec733695e48401f07aa59",
+      "baseline_sha256": "2d942e22494138f7e88fdb2cedc6f40331d6f00eff2ec733695e48401f07aa59",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/flex-api-level-shared-27.elf",
+      "runtime_sha256": "89f20399603d3783fe81f67f7f107551fb3479296b41787a75e031202d53cf12",
+      "baseline_sha256": "89f20399603d3783fe81f67f7f107551fb3479296b41787a75e031202d53cf12",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanosp-api-level-shared-24.elf",
+      "runtime_sha256": "02a51067ca34cc9548b4cf84cf8e27b9321cd55e06b7c89422098d9ad13adc5c",
+      "baseline_sha256": "02a51067ca34cc9548b4cf84cf8e27b9321cd55e06b7c89422098d9ad13adc5c",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanosp-api-level-shared-25.elf",
+      "runtime_sha256": "878b9b434e32ee16e95b9c8badb8f71243ed9095b74d37bd5db9b583eb22f4be",
+      "baseline_sha256": "878b9b434e32ee16e95b9c8badb8f71243ed9095b74d37bd5db9b583eb22f4be",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanosp-api-level-shared-26.elf",
+      "runtime_sha256": "1c368e6180df216416840453682d1fd2de3495d2949f25a9a6a5601809a24e64",
+      "baseline_sha256": "1c368e6180df216416840453682d1fd2de3495d2949f25a9a6a5601809a24e64",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanosp-api-level-shared-27.elf",
+      "runtime_sha256": "b1d45758613c6aea3aede65e63625801088951e852146baefddf7a34c0fd12dc",
+      "baseline_sha256": "b1d45758613c6aea3aede65e63625801088951e852146baefddf7a34c0fd12dc",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanox-api-level-shared-24.elf",
+      "runtime_sha256": "7881df2ff18dcf3322216c3c724590a2910ae4e53352d987a0c1b2ae7cc8b48a",
+      "baseline_sha256": "7881df2ff18dcf3322216c3c724590a2910ae4e53352d987a0c1b2ae7cc8b48a",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanox-api-level-shared-25.elf",
+      "runtime_sha256": "678b9205923f038527a44243ff92d5244de11c0914a876c1c6a4bef3d5869055",
+      "baseline_sha256": "678b9205923f038527a44243ff92d5244de11c0914a876c1c6a4bef3d5869055",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanox-api-level-shared-26.elf",
+      "runtime_sha256": "f6ef3d3515984063a878db3f66ec5b46c1a4393f556424950dbcbbd667d8c788",
+      "baseline_sha256": "f6ef3d3515984063a878db3f66ec5b46c1a4393f556424950dbcbbd667d8c788",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/nanox-api-level-shared-27.elf",
+      "runtime_sha256": "0ff0ba8e4f3011422d9c021c6ff9ee0c83b95537c955c48cfc69da28db54759a",
+      "baseline_sha256": "0ff0ba8e4f3011422d9c021c6ff9ee0c83b95537c955c48cfc69da28db54759a",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/stax-api-level-shared-24.elf",
+      "runtime_sha256": "4243fd9888136122bcad33ac3dfd5e5033483135d3b01c116771a81ddba99734",
+      "baseline_sha256": "4243fd9888136122bcad33ac3dfd5e5033483135d3b01c116771a81ddba99734",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/stax-api-level-shared-25.elf",
+      "runtime_sha256": "221e5a784feea6b6736dbe8dabcad783bd83a9a385b89055bf07498a00bd460f",
+      "baseline_sha256": "221e5a784feea6b6736dbe8dabcad783bd83a9a385b89055bf07498a00bd460f",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/stax-api-level-shared-26.elf",
+      "runtime_sha256": "88da6171e936a498ca32e053bcbe604a3232f5ad5a19eb647e6ddd415fcebae5",
+      "baseline_sha256": "88da6171e936a498ca32e053bcbe604a3232f5ad5a19eb647e6ddd415fcebae5",
+      "equal": true
+    },
+    {
+      "relative_path": "sharedlib/stax-api-level-shared-27.elf",
+      "runtime_sha256": "ac909bd3fa08e946237b56343275797b2e4cac646a750feba1ca0881cdcee253",
+      "baseline_sha256": "ac909bd3fa08e946237b56343275797b2e4cac646a750feba1ca0881cdcee253",
+      "equal": true
+    }
+  ],
+  "candidate_completion": {
+    "receipt_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-candidate-trace.json",
+    "receipt_sha256": "b61f200233a297d8ab32004713849763fe82602c429fff95da84f1124f80957c",
+    "exit": 1,
+    "ended_utc": "2026-11-13T15:08:44.460836+00:00",
+    "pass": 0,
+    "fail": 1,
+    "diagnostic_only": true
+  },
+  "callback_bug_accepted_by_parent": true,
+  "causality_512": "UNPROVEN; candidate still fails; no demonstrated512 fix and no new full rerun",
+  "lean_baseline_unchanged": "f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb",
+  "emitter_sha256": "e0fdcc83ac1273c077da6be968e8a4287851ba7756173e53c5a85a669c21cc98",
+  "root_upstream_lock_sha256": "139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546",
+  "actual_expiry_utc": "2026-11-13T16:22:27Z"
+}

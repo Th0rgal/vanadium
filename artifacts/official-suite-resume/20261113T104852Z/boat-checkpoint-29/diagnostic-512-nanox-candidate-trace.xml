@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="724.200" timestamp="2026-11-13T14:56:38.786512" hostname="box-node-7fabc707450cea8d"><testcase classname="test_sign_psbt" name="test_sign_psbt_singlesig_wpkh_512to256[nanox-nanox]" time="723.839"><failure message="requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))">../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:793: in urlopen
+    response = self._make_request(
+../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:540: in _make_request
+    response = conn.getresponse()
+../../venv/lib/python3.12/site-packages/urllib3/connection.py:638: in getresponse
+    httplib_response = super().getresponse()
+/usr/lib/python3.12/http/client.py:1457: in getresponse
+    response.begin()
+/usr/lib/python3.12/http/client.py:336: in begin
+    version, status, reason = self._read_status()
+/usr/lib/python3.12/http/client.py:305: in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+E   http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+../../venv/lib/python3.12/site-packages/requests/adapters.py:696: in send
+    resp = conn.urlopen(
+../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:847: in urlopen
+    retries = retries.increment(
+../../venv/lib/python3.12/site-packages/urllib3/util/retry.py:510: in increment
+    raise reraise(type(error), error, _stacktrace)
+../../venv/lib/python3.12/site-packages/urllib3/util/util.py:38: in reraise
+    raise value.with_traceback(tb)
+../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:793: in urlopen
+    response = self._make_request(
+../../venv/lib/python3.12/site-packages/urllib3/connectionpool.py:540: in _make_request
+    response = conn.getresponse()
+../../venv/lib/python3.12/site-packages/urllib3/connection.py:638: in getresponse
+    httplib_response = super().getresponse()
+/usr/lib/python3.12/http/client.py:1457: in getresponse
+    response.begin()
+/usr/lib/python3.12/http/client.py:336: in begin
+    version, status, reason = self._read_status()
+/usr/lib/python3.12/http/client.py:305: in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+E   urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+test_sign_psbt.py:714: in test_sign_psbt_singlesig_wpkh_512to256
+    result = client.sign_psbt(psbt, wallet, None, navigator,
+../ragger_bitcoin/ragger_bitcoin.py:195: in sign_psbt
+    result = NewClient.sign_psbt(self, psbt, wallet, wallet_hmac)
+../bitcoin_client/ledger_bitcoin/client.py:341: in sign_psbt
+    sw, _ = self._make_request(
+../ragger_bitcoin/ragger_bitcoin.py:51: in _make_request
+    sw, response = self._make_request_with_navigation(navigator=self.navigator,
+../ragger_bitcoin/ragger_bitcoin.py:139: in _make_request_with_navigation
+    sw, response, index = self.ragger_navigate(
+../ragger_bitcoin/ragger_bitcoin.py:112: in ragger_navigate
+    navigator.navigate_until_text(instr_next,
+../../venv/lib/python3.12/site-packages/ragger/navigator/navigator.py:602: in navigate_until_text
+    self.navigate_until_text_and_compare(
+../../venv/lib/python3.12/site-packages/ragger/navigator/navigator.py:536: in navigate_until_text_and_compare
+    self._run_instruction(
+../../venv/lib/python3.12/site-packages/ragger/navigator/navigator.py:201: in _run_instruction
+    self._backend.wait_for_screen_change(timeout)
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:361: in wait_for_screen_change
+    self.send_tick()
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:189: in send_tick
+    self._client.ticker_ctl("single-step")
+../../speculos-candidate-runtime/speculos/client.py:177: in ticker_ctl
+    with self.session.post(f"{self.api_url}/ticker", json=data) as response:
+../../venv/lib/python3.12/site-packages/requests/sessions.py:712: in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+../../venv/lib/python3.12/site-packages/requests/sessions.py:651: in request
+    resp = self.send(prep, **send_kwargs)
+../../venv/lib/python3.12/site-packages/requests/sessions.py:805: in send
+    history = [resp for resp in gen]
+../../venv/lib/python3.12/site-packages/requests/sessions.py:292: in resolve_redirects
+    resp = self.send(
+../../venv/lib/python3.12/site-packages/requests/sessions.py:784: in send
+    r = adapter.send(request, **kwargs)
+../../venv/lib/python3.12/site-packages/requests/adapters.py:711: in send
+    raise ConnectionError(err, request=request)
+E   requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))</failure></testcase></testsuite></testsuites>
