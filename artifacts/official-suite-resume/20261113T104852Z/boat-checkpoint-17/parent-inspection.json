@@ -1,0 +1,89 @@
+{
+  "capture": "individual SHA-verified files, no atomic archive",
+  "files": [
+    {
+      "path": "device-runtime-1248.stdout",
+      "sha256": "57641d8b77e3fb3dd53db802e6ef66e47e0f6bdde972db4e11a7b11a752b6e8d",
+      "bytes": 8689
+    },
+    {
+      "path": "ragger-tests-nanosp-1800-full.stdout",
+      "sha256": "2b771197e5a9635ab894d85bcaf5ae303f9f4a3a70cafc4c86176ad364ea4c69",
+      "bytes": 10517
+    },
+    {
+      "path": "ragger-tests-nanox-1800-full.stdout",
+      "sha256": "9a5dcaeaee6a85abed1a2539b54e5e43dc9eeea5fe4795de58c8690e24b4a5c7",
+      "bytes": 10342
+    }
+  ],
+  "cpu_interval": [
+    "2026-11-13T12:43:20.983669+00:00",
+    "2026-11-13T12:48:15.633057+00:00"
+  ],
+  "same_pid_cpu_deltas": [
+    {
+      "pid": 626268,
+      "executable": "python3",
+      "user_delta": 0.0,
+      "system_delta": 0.0
+    },
+    {
+      "pid": 626269,
+      "executable": "python3",
+      "user_delta": 0.0,
+      "system_delta": 0.0
+    },
+    {
+      "pid": 626271,
+      "executable": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+      "user_delta": 9.9,
+      "system_delta": 1.86
+    },
+    {
+      "pid": 626272,
+      "executable": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+      "user_delta": 9.92,
+      "system_delta": 1.88
+    },
+    {
+      "pid": 626429,
+      "executable": "/var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin/bitcoind",
+      "user_delta": 0.55,
+      "system_delta": 0.24
+    },
+    {
+      "pid": 626431,
+      "executable": "/var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin/bitcoind",
+      "user_delta": 0.55,
+      "system_delta": 0.24
+    },
+    {
+      "pid": 715779,
+      "executable": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+      "user_delta": 284.93,
+      "system_delta": 4.12
+    },
+    {
+      "pid": 715782,
+      "executable": "qemu-arm-static",
+      "user_delta": 1.83,
+      "system_delta": 0.52
+    },
+    {
+      "pid": 716568,
+      "executable": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+      "user_delta": 284.91,
+      "system_delta": 4.12
+    },
+    {
+      "pid": 716571,
+      "executable": "qemu-arm-static",
+      "user_delta": 1.88,
+      "system_delta": 0.5
+    }
+  ],
+  "new_completed_results": [],
+  "transfer_manifest_error": "harvest_rejected/harvest_not_found",
+  "limit": "CPU chiefly Speculos Python; no inference of forward APDU progress or actual bug"
+}
