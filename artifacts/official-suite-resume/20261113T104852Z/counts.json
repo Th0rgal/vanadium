@@ -247,7 +247,8 @@
     }
   },
   "pending_validation": {
-    "delivery": "final adapter signedpush/externalhostprerequisites/publication/Boatcleanup pending",
+    "suite_work_remaining": false,
+    "delivery": "implementationpublished; finalreport/evidencecleanup pending",
     "global_pass": false
   },
   "diagnostics": {

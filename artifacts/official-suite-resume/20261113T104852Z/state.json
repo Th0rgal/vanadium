@@ -161,7 +161,7 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 42,
+  "latest_parent_checkpoint": 43,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
   "runtime_monitor_deadline": "retry3receiptended13:58:11; noactive monitorasserted",
   "durable_workspace_probe": {
@@ -348,5 +348,14 @@
       }
     },
     "active": false
+  },
+  "delivery": {
+    "app_branch": "test/official-navigation-interruption-20261113",
+    "app_sha": "78520b6240952f64a94a77f83ba3b7e0408bbdea",
+    "remote_sha_verified": true,
+    "adapter_matches_tested_sha256": "02618dd652e52ee7f03c70df740fae37317450850abb2eaa08feb1139014ac03",
+    "external_host_patches": "boat-checkpoint-43/prerequisites",
+    "executor_status": "completed",
+    "cleanup": "pending after final evidence push"
   }
 }
