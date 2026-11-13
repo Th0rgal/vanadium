@@ -1,0 +1,25 @@
+{
+  "capture": "individual SHA-verified files; no atomic archive",
+  "files": [
+    {
+      "path": "device-runtime-1243.stdout",
+      "sha256": "e39817350125fd1d51485090d8f1665572e304c1cdff57a86f860c46e8c23e9b",
+      "bytes": 8683
+    },
+    {
+      "path": "speculos-screen-1243.stdout",
+      "sha256": "600de3f4f2cb82910a8693cd7f421be1e1246b3f758ae9c0f369c60891f0450e",
+      "bytes": 878
+    }
+  ],
+  "new_completed_suites": [],
+  "runtime_utc": "2026-11-13T12:43:20.983669+00:00",
+  "observed": "pytest/Core/Speculos/QEMU present; both read-only APIs HTTP200 Loading transaction",
+  "limit": "single CPU snapshot and responsive API do not establish forward APDU progress or original failure cause",
+  "transfer_manifest": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/checkpoint14-manifest.json",
+    "error": "harvest_rejected/harvest_not_found"
+  },
+  "boat_expiry": 1794579747,
+  "daily_budget_usd": 36.04
+}

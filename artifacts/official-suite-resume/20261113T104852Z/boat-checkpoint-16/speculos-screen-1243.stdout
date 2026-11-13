@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-13T12:43:21.140110+00:00",
+  "method": "GET only; no buttons, navigation, APDU or configuration mutation",
+  "screens": [
+    {
+      "device": "nanosp",
+      "url": "http://127.0.0.1:5501/events?currentscreenonly=true",
+      "http_status": 200,
+      "json": {
+        "events": [
+          {
+            "text": "Loading transaction",
+            "x": 12,
+            "y": 34,
+            "w": 103,
+            "h": 14,
+            "clear": false
+          }
+        ]
+      }
+    },
+    {
+      "device": "nanox",
+      "url": "http://127.0.0.1:5601/events?currentscreenonly=true",
+      "http_status": 200,
+      "json": {
+        "events": [
+          {
+            "text": "Loading transaction",
+            "x": 12,
+            "y": 34,
+            "w": 103,
+            "h": 14,
+            "clear": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -161,7 +161,7 @@
   "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
   "checkpoint7_archive_sha256": "7a0c6476cb2b26b1289a627305220daef34afc946c643902c8ae34c2350bb8cf",
   "checkpoint8_archive_sha256": "1c1af575971bc8c2875b4529c7e6c1f55b6acc1643eee6503dbbe6719b83967a",
-  "latest_parent_checkpoint": 15,
+  "latest_parent_checkpoint": 16,
   "checkpoint9_archive_sha256": "74521576db61539293d36350d2353c3882bffb099acefeb8d1a6bfc66c1a2815",
   "runtime_monitor_deadline": "active newmonitorPID625880 deadline14:20Z proofstart12:21:02/logs signals[]",
   "durable_workspace_probe": {
@@ -269,5 +269,6 @@
   },
   "checkpoint15_capture": "SHAverified individualfiles; splitmanifestharvest_not_found",
   "original_lock_same_nightly_canary_exit": 101,
-  "monitor_last_verified_utc": "2026-11-13T12:41:41.601800+00:00"
+  "monitor_last_verified_utc": "2026-11-13T12:41:41.601800+00:00",
+  "checkpoint16_capture": "individual SHAverified runtime/screens12:43; splitmanifest missing; no new completed result"
 }
