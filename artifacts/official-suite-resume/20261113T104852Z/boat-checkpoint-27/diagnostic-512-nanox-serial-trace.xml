@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1800.718" timestamp="2026-11-13T14:26:13.272080" hostname="box-node-7fabc707450cea8d"><testcase classname="test_sign_psbt" name="test_sign_psbt_singlesig_wpkh_512to256[nanox-nanox]" time="1800.344"><failure message="Failed: Timeout &gt;1800.0s">test_sign_psbt.py:714: in test_sign_psbt_singlesig_wpkh_512to256
+    result = client.sign_psbt(psbt, wallet, None, navigator,
+../ragger_bitcoin/ragger_bitcoin.py:195: in sign_psbt
+    result = NewClient.sign_psbt(self, psbt, wallet, wallet_hmac)
+../bitcoin_client/ledger_bitcoin/client.py:341: in sign_psbt
+    sw, _ = self._make_request(
+../ragger_bitcoin/ragger_bitcoin.py:51: in _make_request
+    sw, response = self._make_request_with_navigation(navigator=self.navigator,
+../ragger_bitcoin/ragger_bitcoin.py:139: in _make_request_with_navigation
+    sw, response, index = self.ragger_navigate(
+../ragger_bitcoin/ragger_bitcoin.py:96: in ragger_navigate
+    with self.transport_client.exchange_async_raw(pack_APDU(cla, ins, p1, p2, data)) as done:
+/usr/lib/python3.12/contextlib.py:137: in __enter__
+    return next(self.gen)
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:253: in exchange_async_raw
+    yield has_data_available(response, timeout=self.apdu_timeout)
+../../venv/lib/python3.12/site-packages/ragger/backend/speculos.py:446: in has_data_available
+    ready, _, _ = select.select([sock], [], [], timeout)
+E   Failed: Timeout &gt;1800.0s</failure></testcase></testsuite></testsuites>

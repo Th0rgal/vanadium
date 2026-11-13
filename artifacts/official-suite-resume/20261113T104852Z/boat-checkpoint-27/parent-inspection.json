@@ -1,0 +1,21 @@
+{
+  "new_official_completed_results": [],
+  "serial_diagnostic": {
+    "exit": 1,
+    "junit_failure": "Timeout1800 inAPDUselectwait",
+    "direct_requests": 39763,
+    "direct_responses": 39762,
+    "recorder_final_doubled_counts": [
+      79526,
+      79524
+    ],
+    "raw_terminal_process_trace_validation": "PENDING"
+  },
+  "candidate": {
+    "type": "Speculoscallbacklifetime",
+    "start_utc": "2026-11-13T14:56:37.145580+00:00",
+    "result": null,
+    "patch_regression_independent_acceptance": false
+  },
+  "spec_changes": []
+}

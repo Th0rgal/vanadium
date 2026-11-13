@@ -1,0 +1,38 @@
+[
+  {
+    "bytes": 1785,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/938a6b83-0a22-4412-82cf-c648843e258d/diagnostic-512-nanox-serial-trace.json",
+    "sha256": "089d6bc67b5d98e0831c4ee1606146ed842993a6d9454c5e7bd2e27a28a85d84",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.json"
+  },
+  {
+    "bytes": 162831,
+    "chunks": 3,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/9cfbe6f7-19f3-4233-a30e-5831b3a74f9d/diagnostic-512-nanox-serial-trace.analysis.json",
+    "sha256": "aee9f6fe58a3ad8f9c6c4b57148cacc3d484d98702e3b32c0af38443036f1dbb",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.analysis.json"
+  },
+  {
+    "bytes": 1589,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/43a0df3d-3993-4ead-9ab7-3cabcaa88ba2/diagnostic-512-nanox-serial-trace.xml",
+    "sha256": "ae69ae7b9d19c5ef51fb301d76ba2756d4dff6cf936b671bcc185cd2c4595e0b",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml"
+  },
+  {
+    "bytes": 1593,
+    "chunks": 1,
+    "machine_id": "af55be7b-51a1-45a9-8d79-04e836758cd7",
+    "node": "ashur",
+    "path": "/var/lib/sandboxed-node/uploads/21e1ddc0-9f6a-4fe7-a2cc-0316707a7328/diagnostic-512-nanox-candidate-trace.active.json",
+    "sha256": "1d3b7c38045f94cfdd457d46605bc6290a39fd12b59b12b10b2dbbc397c4b40d",
+    "source_path": "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-candidate-trace.active.json"
+  }
+]

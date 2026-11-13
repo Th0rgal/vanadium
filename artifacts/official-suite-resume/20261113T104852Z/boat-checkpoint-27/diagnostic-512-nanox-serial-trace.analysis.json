@@ -1,0 +1,2006 @@
+{
+  "observed_utc": "2026-11-13T14:57:34.107611+00:00",
+  "complete": true,
+  "receipt": {
+    "cwd": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/tests",
+    "argv": [
+      "strace",
+      "-f",
+      "-tt",
+      "-e",
+      "trace=process,signal",
+      "-o",
+      "/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace",
+      "/var/lib/orb-node/work/official-suite-resume/venv/bin/python",
+      "-m",
+      "pytest",
+      "test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256",
+      "--device",
+      "nanox",
+      "--model",
+      "nanox",
+      "--speculos_port=5901",
+      "--enable_slow_tests=2",
+      "--timeout=1800",
+      "--log-level=DEBUG",
+      "-ra",
+      "-v",
+      "-s",
+      "--tb=short",
+      "--junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml"
+    ],
+    "env": {
+      "PATH": "/var/lib/orb-node/work/official-suite-resume/venv/bin:/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin:/usr/local/bin:/usr/bin:/bin",
+      "PYTHONPATH": "/var/lib/orb-node/work/official-suite-resume/app-bitcoin",
+      "BITCOIND": "/var/lib/orb-node/work/official-suite-resume/bitcoin-core/bitcoin-32.1/bin/bitcoind",
+      "BITCOIN_DIRNAME": "/var/lib/orb-node/work/official-suite-resume/core-512-serial-trace",
+      "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp"
+    },
+    "started_utc": "2026-11-13T14:26:12.245462+00:00",
+    "actual_expiry_epoch": 1794583347,
+    "advisory_deadline_utc": "2026-11-13T15:20:00Z",
+    "deadline_action": "record only; never signal tests",
+    "signals_sent": [],
+    "pid": 1386443,
+    "exit": 1,
+    "ended_utc": "2026-11-13T14:56:15.877818+00:00",
+    "progress": {
+      "requests": 79526,
+      "responses": 79524,
+      "last_request_utc": "2026-11-13T14:56:15.118140+00:00",
+      "last_response_utc": "2026-11-13T14:56:15.118129+00:00",
+      "lines": 321615
+    }
+  },
+  "direct_stderr_counts": {
+    "requests": 39763,
+    "responses": 39762
+  },
+  "raw_recorder_final_count_warning": "Original recorder counted both stderr and pytest replay on failure; per-interval snapshots before teardown and direct_stderr_counts avoid duplication. Original receipt retained unchanged.",
+  "last_progress": {
+    "utc": "2026-11-13T14:56:12.876581+00:00",
+    "processes": [
+      {
+        "pid": 1386443,
+        "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+        "stat": "1386443 (strace) S 1386441 1386441 1386441 0 -1 4194304 271 19 0 0 1741 20866 0 0 20 0 1 0 1642630 8933376 992 18446744073709551615 104923883003904 104923883692381 140729207277232 0 0 0 8192 3166215 8192 1 0 0 17 0 0 0 0 0 0 104923884083632 104923884499248 104924063391744 140729207281338 140729207281839 140729207281839 140729207283688 0\n",
+        "cgroup": "0::/user.slice/user-996.slice/user@996.service/app.slice/sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-3c05273f97114fc5b4293acca7d25d58.scope\n"
+      },
+      {
+        "pid": 1386448,
+        "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+        "stat": "1386448 (python) S 1386443 1386441 1386441 0 -1 4194304 82921 8665 0 0 41606 2326 3 12 20 0 2 0 1642631 488464384 87852 18446744073709551615 4325376 7352317 140724055959712 0 0 0 0 16781312 9450 0 0 0 17 2 0 0 0 0 0 10653128 12216448 918536192 140724055963420 140724055963778 140724055963778 140724055965627 0\n",
+        "cgroup": "0::/user.slice/user-996.slice/user@996.service/app.slice/sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-3c05273f97114fc5b4293acca7d25d58.scope\n"
+      },
+      {
+        "pid": 1386513,
+        "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+        "stat": "1386513 (python) R 1386448 1386441 1386441 0 -1 4194304 116507 0 0 0 121277 8982 0 0 20 0 6 0 1642739 566829056 34025 18446744073709551615 4325376 7352317 140731549841744 0 0 0 0 16781312 2 0 0 0 17 4 0 0 0 0 0 10653128 12216448 361545728 140731549849205 140731549849595 140731549849595 140731549851579 0\n",
+        "cgroup": "0::/user.slice/user-996.slice/user@996.service/app.slice/sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-3c05273f97114fc5b4293acca7d25d58.scope\n"
+      },
+      {
+        "pid": 1386518,
+        "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+        "stat": "1386518 (qemu-arm-static) S 1386513 1386441 1386441 0 -1 4194304 1336 0 0 0 5528 3239 0 0 20 0 2 0 1642813 4510969856 2591 18446744073709551615 130627095728128 130627098379549 140735848085008 0 0 0 8 16781312 1244 0 0 0 17 3 0 0 0 0 0 130627099413768 130627099735364 93825156820992 140735848088774 140735848089392 140735848089392 140735848091564 0\n",
+        "cgroup": "0::/user.slice/user-996.slice/user@996.service/app.slice/sandboxed-node-d9bf22a0d48ae513763d63ad6f0a2eba-job-3c05273f97114fc5b4293acca7d25d58.scope\n"
+      }
+    ],
+    "log_progress": {
+      "requests": 39756,
+      "responses": 39755,
+      "last_request_utc": "2026-11-13T14:56:12.860649+00:00",
+      "last_response_utc": "2026-11-13T14:56:12.860411+00:00",
+      "lines": 119315
+    }
+  },
+  "intervals": [
+    {
+      "start_utc": "2026-11-13T14:26:12.251304+00:00",
+      "end_utc": "2026-11-13T14:26:42.260228+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.12,
+          "system_seconds": 0.67
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:26:42.260228+00:00",
+      "end_utc": "2026-11-13T14:27:12.268064+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.03,
+          "system_seconds": 0.17
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.0,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.08,
+          "system_seconds": 0.03
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.06,
+          "system_seconds": 0.03
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:27:12.268064+00:00",
+      "end_utc": "2026-11-13T14:27:42.274590+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.03,
+          "system_seconds": 0.13
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.01,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.02
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.02
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:27:42.274590+00:00",
+      "end_utc": "2026-11-13T14:28:12.282082+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.03,
+          "system_seconds": 0.17
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.0,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.07,
+          "system_seconds": 0.03
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.04
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:28:12.282082+00:00",
+      "end_utc": "2026-11-13T14:28:42.290288+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.03,
+          "system_seconds": 0.15
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.0,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.06,
+          "system_seconds": 0.03
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.03
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:28:42.290288+00:00",
+      "end_utc": "2026-11-13T14:29:12.298864+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.04,
+          "system_seconds": 0.18
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.0,
+          "system_seconds": 0.01
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.07,
+          "system_seconds": 0.04
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.03,
+          "system_seconds": 0.06
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:29:12.298864+00:00",
+      "end_utc": "2026-11-13T14:29:42.308144+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.2
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.01,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.08,
+          "system_seconds": 0.06
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.06,
+          "system_seconds": 0.06
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:29:42.308144+00:00",
+      "end_utc": "2026-11-13T14:30:12.317995+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.04,
+          "system_seconds": 0.21
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.0,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.09,
+          "system_seconds": 0.03
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.06,
+          "system_seconds": 0.05
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:30:12.317995+00:00",
+      "end_utc": "2026-11-13T14:30:42.326460+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.03,
+          "system_seconds": 0.27
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.0,
+          "system_seconds": 0.01
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.08,
+          "system_seconds": 0.06
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.1
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:30:42.326460+00:00",
+      "end_utc": "2026-11-13T14:31:12.336602+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.27
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.0,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.09,
+          "system_seconds": 0.05
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.05,
+          "system_seconds": 0.09
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:31:12.336602+00:00",
+      "end_utc": "2026-11-13T14:31:42.346597+00:00",
+      "requests_delta": 0,
+      "responses_delta": 0,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.04,
+          "system_seconds": 0.37
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 30.01,
+          "system_seconds": 0.0
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 0.1,
+          "system_seconds": 0.06
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.07,
+          "system_seconds": 0.12
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:31:42.346597+00:00",
+      "end_utc": "2026-11-13T14:32:12.355681+00:00",
+      "requests_delta": 2428,
+      "responses_delta": 2427,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.75,
+          "system_seconds": 8.29
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 5.49,
+          "system_seconds": 1.02
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 10.65,
+          "system_seconds": 3.61
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 7.44,
+          "system_seconds": 0.95
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:32:12.355681+00:00",
+      "end_utc": "2026-11-13T14:32:42.363810+00:00",
+      "requests_delta": 2133,
+      "responses_delta": 2133,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.75,
+          "system_seconds": 6.16
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 3.8,
+          "system_seconds": 0.78
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 15.73,
+          "system_seconds": 2.42
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 6.05,
+          "system_seconds": 0.68
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:32:42.363810+00:00",
+      "end_utc": "2026-11-13T14:33:12.372145+00:00",
+      "requests_delta": 1983,
+      "responses_delta": 1983,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.63,
+          "system_seconds": 5.03
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 3.16,
+          "system_seconds": 0.71
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 17.97,
+          "system_seconds": 1.81
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 5.37,
+          "system_seconds": 0.5
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:33:12.372145+00:00",
+      "end_utc": "2026-11-13T14:33:42.379018+00:00",
+      "requests_delta": 2093,
+      "responses_delta": 2093,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.52,
+          "system_seconds": 4.2
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.73,
+          "system_seconds": 0.61
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 19.68,
+          "system_seconds": 1.23
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 5.1,
+          "system_seconds": 0.23
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:33:42.379018+00:00",
+      "end_utc": "2026-11-13T14:34:12.386024+00:00",
+      "requests_delta": 1676,
+      "responses_delta": 1676,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.44,
+          "system_seconds": 3.65
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.5,
+          "system_seconds": 0.49
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 21.16,
+          "system_seconds": 1.17
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 4.28,
+          "system_seconds": 0.23
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:34:12.386024+00:00",
+      "end_utc": "2026-11-13T14:34:42.393348+00:00",
+      "requests_delta": 1517,
+      "responses_delta": 1517,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.42,
+          "system_seconds": 3.37
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.28,
+          "system_seconds": 0.47
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 21.99,
+          "system_seconds": 1.05
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 3.88,
+          "system_seconds": 0.2
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:34:42.393348+00:00",
+      "end_utc": "2026-11-13T14:35:12.402741+00:00",
+      "requests_delta": 1375,
+      "responses_delta": 1375,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.39,
+          "system_seconds": 3.76
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.42,
+          "system_seconds": 0.62
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 24.71,
+          "system_seconds": 1.74
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.81,
+          "system_seconds": 0.48
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:35:12.402741+00:00",
+      "end_utc": "2026-11-13T14:35:42.414136+00:00",
+      "requests_delta": 902,
+      "responses_delta": 902,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.51,
+          "system_seconds": 7.55
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.6,
+          "system_seconds": 0.86
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 21.81,
+          "system_seconds": 3.58
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.93,
+          "system_seconds": 1.09
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:35:42.414136+00:00",
+      "end_utc": "2026-11-13T14:36:12.435935+00:00",
+      "requests_delta": 766,
+      "responses_delta": 766,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.53,
+          "system_seconds": 9.03
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.42,
+          "system_seconds": 0.76
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 21.97,
+          "system_seconds": 4.08
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 1.13,
+          "system_seconds": 1.11
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:36:12.435935+00:00",
+      "end_utc": "2026-11-13T14:36:42.450833+00:00",
+      "requests_delta": 285,
+      "responses_delta": 285,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.7,
+          "system_seconds": 17.25
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.62,
+          "system_seconds": 1.13
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 16.62,
+          "system_seconds": 8.19
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 1.51,
+          "system_seconds": 2.31
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:36:42.450833+00:00",
+      "end_utc": "2026-11-13T14:37:12.463494+00:00",
+      "requests_delta": 702,
+      "responses_delta": 702,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.41,
+          "system_seconds": 7.49
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.24,
+          "system_seconds": 0.82
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 22.2,
+          "system_seconds": 3.56
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.89,
+          "system_seconds": 1.2
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:37:12.463494+00:00",
+      "end_utc": "2026-11-13T14:37:42.472031+00:00",
+      "requests_delta": 972,
+      "responses_delta": 972,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.38,
+          "system_seconds": 3.44
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 2.08,
+          "system_seconds": 0.48
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 25.56,
+          "system_seconds": 1.36
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.6,
+          "system_seconds": 0.59
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:37:42.472031+00:00",
+      "end_utc": "2026-11-13T14:38:12.479540+00:00",
+      "requests_delta": 1033,
+      "responses_delta": 1033,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.35,
+          "system_seconds": 2.6
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.97,
+          "system_seconds": 0.44
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.25,
+          "system_seconds": 1.03
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.58,
+          "system_seconds": 0.38
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:38:12.479540+00:00",
+      "end_utc": "2026-11-13T14:38:42.487051+00:00",
+      "requests_delta": 1148,
+      "responses_delta": 1148,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.32,
+          "system_seconds": 2.36
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.9,
+          "system_seconds": 0.4
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.67,
+          "system_seconds": 0.83
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.55,
+          "system_seconds": 0.28
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:38:42.487051+00:00",
+      "end_utc": "2026-11-13T14:39:12.494572+00:00",
+      "requests_delta": 1123,
+      "responses_delta": 1123,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.29,
+          "system_seconds": 2.07
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.89,
+          "system_seconds": 0.4
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.89,
+          "system_seconds": 0.77
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.45,
+          "system_seconds": 0.27
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:39:12.494572+00:00",
+      "end_utc": "2026-11-13T14:39:42.502288+00:00",
+      "requests_delta": 1108,
+      "responses_delta": 1108,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.28,
+          "system_seconds": 2.02
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.75,
+          "system_seconds": 0.32
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.03,
+          "system_seconds": 0.8
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.49,
+          "system_seconds": 0.23
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:39:42.502288+00:00",
+      "end_utc": "2026-11-13T14:40:12.510595+00:00",
+      "requests_delta": 1065,
+      "responses_delta": 1065,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.26,
+          "system_seconds": 2.0
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.7,
+          "system_seconds": 0.33
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.15,
+          "system_seconds": 0.71
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.47,
+          "system_seconds": 0.21
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:40:12.510595+00:00",
+      "end_utc": "2026-11-13T14:40:42.518687+00:00",
+      "requests_delta": 947,
+      "responses_delta": 947,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.3,
+          "system_seconds": 2.0
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.64,
+          "system_seconds": 0.34
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.16,
+          "system_seconds": 0.75
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.47,
+          "system_seconds": 0.24
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:40:42.518687+00:00",
+      "end_utc": "2026-11-13T14:41:12.526108+00:00",
+      "requests_delta": 936,
+      "responses_delta": 936,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.24,
+          "system_seconds": 1.98
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.56,
+          "system_seconds": 0.34
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.2,
+          "system_seconds": 0.76
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.43,
+          "system_seconds": 0.25
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:41:12.526108+00:00",
+      "end_utc": "2026-11-13T14:41:42.533136+00:00",
+      "requests_delta": 957,
+      "responses_delta": 957,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.25,
+          "system_seconds": 1.96
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.5,
+          "system_seconds": 0.34
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.33,
+          "system_seconds": 0.72
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.44,
+          "system_seconds": 0.25
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:41:42.533136+00:00",
+      "end_utc": "2026-11-13T14:42:12.542643+00:00",
+      "requests_delta": 772,
+      "responses_delta": 772,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.26,
+          "system_seconds": 2.03
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.64,
+          "system_seconds": 0.29
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.01,
+          "system_seconds": 0.82
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.41,
+          "system_seconds": 0.32
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:42:12.542643+00:00",
+      "end_utc": "2026-11-13T14:42:42.550819+00:00",
+      "requests_delta": 757,
+      "responses_delta": 757,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.24,
+          "system_seconds": 1.64
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.45,
+          "system_seconds": 0.29
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.53,
+          "system_seconds": 0.73
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.39,
+          "system_seconds": 0.22
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:42:42.550819+00:00",
+      "end_utc": "2026-11-13T14:43:12.560402+00:00",
+      "requests_delta": 691,
+      "responses_delta": 691,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.25,
+          "system_seconds": 1.96
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.42,
+          "system_seconds": 0.3
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.31,
+          "system_seconds": 0.83
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.4,
+          "system_seconds": 0.28
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:43:12.560402+00:00",
+      "end_utc": "2026-11-13T14:43:42.570445+00:00",
+      "requests_delta": 655,
+      "responses_delta": 655,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.24,
+          "system_seconds": 1.78
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.41,
+          "system_seconds": 0.28
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.44,
+          "system_seconds": 0.76
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.39,
+          "system_seconds": 0.27
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:43:42.570445+00:00",
+      "end_utc": "2026-11-13T14:44:12.579319+00:00",
+      "requests_delta": 724,
+      "responses_delta": 724,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.24,
+          "system_seconds": 1.66
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.37,
+          "system_seconds": 0.28
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.59,
+          "system_seconds": 0.7
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.37,
+          "system_seconds": 0.24
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:44:12.579319+00:00",
+      "end_utc": "2026-11-13T14:44:42.587213+00:00",
+      "requests_delta": 670,
+      "responses_delta": 670,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.25,
+          "system_seconds": 1.6
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.34,
+          "system_seconds": 0.28
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.66,
+          "system_seconds": 0.69
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.37,
+          "system_seconds": 0.23
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:44:42.587213+00:00",
+      "end_utc": "2026-11-13T14:45:12.597265+00:00",
+      "requests_delta": 620,
+      "responses_delta": 620,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.21,
+          "system_seconds": 1.48
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.28,
+          "system_seconds": 0.28
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.83,
+          "system_seconds": 0.65
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.34,
+          "system_seconds": 0.21
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:45:12.597265+00:00",
+      "end_utc": "2026-11-13T14:45:42.607081+00:00",
+      "requests_delta": 616,
+      "responses_delta": 616,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.23,
+          "system_seconds": 1.97
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.29,
+          "system_seconds": 0.29
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.4,
+          "system_seconds": 0.85
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.35,
+          "system_seconds": 0.32
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:45:42.607081+00:00",
+      "end_utc": "2026-11-13T14:46:12.617022+00:00",
+      "requests_delta": 486,
+      "responses_delta": 486,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.31,
+          "system_seconds": 5.14
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.5,
+          "system_seconds": 0.53
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 24.81,
+          "system_seconds": 2.46
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.49,
+          "system_seconds": 0.87
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:46:12.617022+00:00",
+      "end_utc": "2026-11-13T14:46:42.628795+00:00",
+      "requests_delta": 511,
+      "responses_delta": 511,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.31,
+          "system_seconds": 3.73
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.43,
+          "system_seconds": 0.41
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 25.98,
+          "system_seconds": 1.67
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.42,
+          "system_seconds": 0.66
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:46:42.628795+00:00",
+      "end_utc": "2026-11-13T14:47:12.638131+00:00",
+      "requests_delta": 566,
+      "responses_delta": 566,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.2,
+          "system_seconds": 1.76
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.25,
+          "system_seconds": 0.26
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.54,
+          "system_seconds": 0.84
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.33,
+          "system_seconds": 0.29
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:47:12.638131+00:00",
+      "end_utc": "2026-11-13T14:47:42.648187+00:00",
+      "requests_delta": 543,
+      "responses_delta": 543,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.21,
+          "system_seconds": 1.65
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.39,
+          "system_seconds": 0.25
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.52,
+          "system_seconds": 0.79
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.32,
+          "system_seconds": 0.28
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:47:42.648187+00:00",
+      "end_utc": "2026-11-13T14:48:12.658320+00:00",
+      "requests_delta": 554,
+      "responses_delta": 554,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.26,
+          "system_seconds": 1.57
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.2,
+          "system_seconds": 0.27
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.71,
+          "system_seconds": 0.77
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.31,
+          "system_seconds": 0.26
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:48:12.658320+00:00",
+      "end_utc": "2026-11-13T14:48:42.666581+00:00",
+      "requests_delta": 506,
+      "responses_delta": 506,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.21,
+          "system_seconds": 2.14
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.16,
+          "system_seconds": 0.31
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.35,
+          "system_seconds": 0.95
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.35,
+          "system_seconds": 0.39
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:48:42.666581+00:00",
+      "end_utc": "2026-11-13T14:49:12.677459+00:00",
+      "requests_delta": 522,
+      "responses_delta": 522,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.23,
+          "system_seconds": 2.6
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.22,
+          "system_seconds": 0.31
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.82,
+          "system_seconds": 1.21
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.41,
+          "system_seconds": 0.48
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:49:12.677459+00:00",
+      "end_utc": "2026-11-13T14:49:42.688568+00:00",
+      "requests_delta": 395,
+      "responses_delta": 395,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.35,
+          "system_seconds": 4.99
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.39,
+          "system_seconds": 0.51
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 24.96,
+          "system_seconds": 2.21
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.53,
+          "system_seconds": 0.98
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:49:42.688568+00:00",
+      "end_utc": "2026-11-13T14:50:12.700597+00:00",
+      "requests_delta": 533,
+      "responses_delta": 533,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.23,
+          "system_seconds": 2.2
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.21,
+          "system_seconds": 0.27
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.23,
+          "system_seconds": 0.99
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.37,
+          "system_seconds": 0.35
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:50:12.700597+00:00",
+      "end_utc": "2026-11-13T14:50:42.712617+00:00",
+      "requests_delta": 441,
+      "responses_delta": 441,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.23,
+          "system_seconds": 2.95
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.25,
+          "system_seconds": 0.31
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.8,
+          "system_seconds": 1.28
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.4,
+          "system_seconds": 0.52
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:50:42.712617+00:00",
+      "end_utc": "2026-11-13T14:51:12.730078+00:00",
+      "requests_delta": 291,
+      "responses_delta": 291,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.4,
+          "system_seconds": 8.69
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.57,
+          "system_seconds": 0.64
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 22.47,
+          "system_seconds": 3.87
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.68,
+          "system_seconds": 1.7
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:51:12.730078+00:00",
+      "end_utc": "2026-11-13T14:51:42.748442+00:00",
+      "requests_delta": 291,
+      "responses_delta": 291,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.39,
+          "system_seconds": 8.02
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.49,
+          "system_seconds": 0.66
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 22.94,
+          "system_seconds": 3.65
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.65,
+          "system_seconds": 1.64
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:51:42.748442+00:00",
+      "end_utc": "2026-11-13T14:52:12.774639+00:00",
+      "requests_delta": 260,
+      "responses_delta": 260,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.5,
+          "system_seconds": 10.76
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.7,
+          "system_seconds": 0.77
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 21.0,
+          "system_seconds": 4.99
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.76,
+          "system_seconds": 1.96
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:52:12.774639+00:00",
+      "end_utc": "2026-11-13T14:52:42.786277+00:00",
+      "requests_delta": 436,
+      "responses_delta": 436,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.24,
+          "system_seconds": 3.7
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.22,
+          "system_seconds": 0.4
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.19,
+          "system_seconds": 1.59
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.4,
+          "system_seconds": 0.75
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:52:42.786277+00:00",
+      "end_utc": "2026-11-13T14:53:12.800221+00:00",
+      "requests_delta": 456,
+      "responses_delta": 456,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.27,
+          "system_seconds": 3.9
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.28,
+          "system_seconds": 0.4
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.02,
+          "system_seconds": 1.74
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.41,
+          "system_seconds": 0.77
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:53:12.800221+00:00",
+      "end_utc": "2026-11-13T14:53:42.817548+00:00",
+      "requests_delta": 299,
+      "responses_delta": 299,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.43,
+          "system_seconds": 8.33
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.52,
+          "system_seconds": 0.62
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 23.04,
+          "system_seconds": 3.8
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.59,
+          "system_seconds": 1.6
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:53:42.817548+00:00",
+      "end_utc": "2026-11-13T14:54:12.830709+00:00",
+      "requests_delta": 305,
+      "responses_delta": 305,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.42,
+          "system_seconds": 8.78
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.55,
+          "system_seconds": 0.65
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 22.61,
+          "system_seconds": 3.89
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.64,
+          "system_seconds": 1.63
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:54:12.830709+00:00",
+      "end_utc": "2026-11-13T14:54:42.842490+00:00",
+      "requests_delta": 459,
+      "responses_delta": 459,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.23,
+          "system_seconds": 3.23
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.19,
+          "system_seconds": 0.37
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.57,
+          "system_seconds": 1.33
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.43,
+          "system_seconds": 0.62
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:54:42.842490+00:00",
+      "end_utc": "2026-11-13T14:55:12.852972+00:00",
+      "requests_delta": 483,
+      "responses_delta": 483,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.22,
+          "system_seconds": 2.69
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.16,
+          "system_seconds": 0.33
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 27.08,
+          "system_seconds": 1.17
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.34,
+          "system_seconds": 0.51
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:55:12.852972+00:00",
+      "end_utc": "2026-11-13T14:55:42.863711+00:00",
+      "requests_delta": 397,
+      "responses_delta": 397,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.3,
+          "system_seconds": 3.53
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.19,
+          "system_seconds": 0.38
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 26.34,
+          "system_seconds": 1.56
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.38,
+          "system_seconds": 0.73
+        }
+      ]
+    },
+    {
+      "start_utc": "2026-11-13T14:55:42.863711+00:00",
+      "end_utc": "2026-11-13T14:56:12.876581+00:00",
+      "requests_delta": 368,
+      "responses_delta": 368,
+      "process_cpu": [
+        {
+          "pid": 1386443,
+          "cmdline": "strace -f -tt -e trace=process,signal -o /var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.process.trace /var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 0.34,
+          "system_seconds": 5.18
+        },
+        {
+          "pid": 1386448,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m pytest test_sign_psbt.py::test_sign_psbt_singlesig_wpkh_512to256 --device nanox --model nanox --speculos_port=5901 --enable_slow_tests=2 --timeout=1800 --log-level=DEBUG -ra -v -s --tb=short --junitxml=/var/lib/orb-node/work/official-suite-resume/evidence/diagnostic-512-nanox-serial-trace.xml ",
+          "user_seconds": 1.27,
+          "system_seconds": 0.48
+        },
+        {
+          "pid": 1386513,
+          "cmdline": "/var/lib/orb-node/work/official-suite-resume/venv/bin/python -m speculos --api-port 5901 --verbose --seed glory promote mansion idle axis finger extra february uncover one trip resource lawn turtle enact monster seven myth punch hobby comfort wild raise skin --model nanox --apdu-port 5902 --display headless /var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf ",
+          "user_seconds": 25.08,
+          "system_seconds": 2.27
+        },
+        {
+          "pid": 1386518,
+          "cmdline": "qemu-arm-static /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/resources/launcher -m nanox -a 27 -c /var/lib/orb-node/work/official-suite-resume/venv/lib/python3.12/site-packages/speculos/sharedlib/nanox-api-level-shared-27.elf:0x10000:0xc068:0x210000:0x1800:0x601800:0x21a559:0x21a56c:0x217114 main:/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf:0x10000:0x16164:0xda7a0000:0x7000:0xc0de0208:0xc0de0218:0xc0de0000:0x21add8:0xc:0xc0df5800:0x900:0:0:1:09027fffffff800000010180454c45018000002d95004c45444745522d57616c6c657420706f6c696379 -l 2624 ",
+          "user_seconds": 0.47,
+          "system_seconds": 1.0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "strace and DEBUG logging can alter timing; diagnostic only",
+    "APDU counts are log-based, not independent wire capture",
+    "no guest stack captured; exit255 caller cannot be inferred from message alone",
+    "historical full-suite failures and runner process loss remain separate"
+  ]
+}
