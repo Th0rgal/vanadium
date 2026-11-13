@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS: emitter source now pinned8c3503; new build and isolated full testnet results pending",
+  "status": "IN_PROGRESS: BitcoinRustapp90/common81unit+4integration verified; full testnet pending; rootcommon lock limitation",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -83,7 +83,78 @@
     "requested": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
     "action": "explicit baseline checkout and executable hash requested before Rust acceptance",
     "observed_checkout": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
-    "pinned_build_gate": "pending"
+    "pinned_build_gate": "success, source8c3503 and authentic FFI audit; executable hash requested"
   },
-  "checkpoint4_archive_sha256": "56a7fcfa9eab46eed138683556519846b341087ec7f39029b18fbd7f50eb2b70"
+  "checkpoint4_archive_sha256": "56a7fcfa9eab46eed138683556519846b341087ec7f39029b18fbd7f50eb2b70",
+  "checkpoint5_archive_sha256": "3b999127b82710d9d900f72098110c0f333feb2f7da18a27a9c5a4081b16113c",
+  "accepted_bitcoin_rust": {
+    "app": {
+      "run": "bitcoin-app-with-ffi",
+      "exit": 0,
+      "unit_pass": 90,
+      "integration_pass": 0,
+      "doc_pass": 0,
+      "fail": 0,
+      "ignored": 0,
+      "filtered_out": 0,
+      "groups": [
+        [
+          90,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/app"
+    },
+    "common": {
+      "run": "bitcoin-common-with-ffi",
+      "exit": 0,
+      "unit_pass": 81,
+      "integration_pass": 4,
+      "doc_pass": 0,
+      "fail": 0,
+      "ignored": 0,
+      "filtered_out": 0,
+      "groups": [
+        [
+          81,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common"
+    }
+  }
 }

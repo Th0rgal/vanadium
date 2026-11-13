@@ -1,0 +1,32 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin",
+  "argv": [
+    "env",
+    "PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/llvm-21/bin:/usr/local/bin:/usr/bin:/bin",
+    "LD_LIBRARY_PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/x86_64-linux-gnu",
+    "LEAN_NUM_THREADS=1",
+    "/var/lib/orb-node/work/official-suite-resume/turbo-lean/lean/.lake/build/bin/lean-native",
+    "emit-freestanding-c-lib",
+    "--input",
+    "BitcoinLedger/FreestandingKernels.lean",
+    "--target",
+    "x86_64",
+    "--clang-bin",
+    "/var/lib/orb-node/work/official-suite-resume/prefix/usr/bin/clang-21",
+    "-o",
+    "/var/lib/orb-node/work/official-suite-resume/lean-ledger-bitcoin/ffi/vanadium/build/host/liblean_ledger_bitcoin.a",
+    "--json"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568891.5944638,
+  "exit": 0,
+  "ended": 1794568933.1678305
+}

@@ -1,0 +1,5 @@
+139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546  vanadium/Cargo.lock
+a06a3367c8595ad3d0d650d7546d25ded405567d17131ca0b5ed0a92e9c51525  vanadium/apps/bitcoin/app/Cargo.lock
+0102c2b3e5b8bd79baa4c93014be5021e6e5d2bb282cff67f8a3cbd6e31b3cbc  vanadium/apps/bitcoin/common/Cargo.lock
+33973ca6abfc5114a51cfcafc3b465f446aa69b40c76e8b0dd23c8e9e90b8f3e  app-mainnet/build/nanos2/bin/app.elf
+b31c456c4cf08f35ee98671d9be50132fcfbfa4af87601c02793d5366e7e0cc6  app-mainnet/build/nanox/bin/app.elf

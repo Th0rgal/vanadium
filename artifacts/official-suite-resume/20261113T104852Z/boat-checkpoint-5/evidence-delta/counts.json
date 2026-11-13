@@ -1,0 +1,959 @@
+{
+  "status": "IN_PROGRESS",
+  "time": "2026-11-13T11:25:00.095223+00:00",
+  "selected_runs": {
+    "ctest_full": {
+      "exit": 0,
+      "pass": 31,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 31,
+      "log": "ctest-full"
+    },
+    "mainnet_nanosp": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2,
+      "log": "mainnet-nanosp"
+    },
+    "mainnet_nanox": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2,
+      "log": "mainnet-nanox2"
+    },
+    "testnet_nanosp": {
+      "status": "RUNNING_OR_NOT_RUN",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "ragger-tests-nanosp3"
+    },
+    "testnet_nanox": {
+      "status": "RUNNING_OR_NOT_RUN",
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "exit": null,
+      "log": "ragger-tests-nanox"
+    },
+    "bitcoin_rust_app": {
+      "exit": 0,
+      "pass": 90,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          90,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "log": "bitcoin-app-with-ffi"
+    },
+    "bitcoin_rust_common": {
+      "exit": 0,
+      "pass": 85,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          81,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "log": "bitcoin-common-with-ffi"
+    },
+    "root_common_canary": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null,
+      "log": "common-canary"
+    }
+  },
+  "attempts": {
+    "compatible-emitter-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "clone-lean": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emitter-public-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ragger-runner-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ctest-full": {
+      "exit": 0,
+      "pass": 31,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 31
+    },
+    "newlib-sysroot": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-canary": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ffi-prerequisite-check": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "clone-builder": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-app-lock": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emitter-rejection-details": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-app-with-ffi": {
+      "exit": 0,
+      "pass": 90,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          90,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "provisioned-versions": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-full-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emitter-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ctest-enumeration": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "libtool-relocate": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-common-lock": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "app-configure": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "toolchain": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ctest-target-reconciliation": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "inspect-lean": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ragger-tests-nanosp": {
+      "exit": 1,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "errors": 279,
+      "deselected": 0,
+      "reported_cases": 282
+    },
+    "locked-source-state-after-rust": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "pin-lean": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-pure-canary-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "device-testnet-nanox-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emit-baseline-host": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-pure-canary-build2": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "device-build-inspection": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "common-canary": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "device-worktrees": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "isolate-test-process": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emitter-public-ref": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "app-instructions": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "mainnet-nanox": {
+      "exit": 1,
+      "pass": 0,
+      "fail": 1,
+      "skip": 0,
+      "errors": 1,
+      "deselected": 0,
+      "reported_cases": 2
+    },
+    "device-testnet-nanosp-build3": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "device-mainnet-nanox-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "stage-testnet-artifacts": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-canary-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "clone-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "pin-compatible-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emit-compatible-baseline-host": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "llvm21-provision": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-app-pinned": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "cmocka-extract": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "python-venv": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "python-dependencies": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "mainnet-nanosp": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2
+    },
+    "python-dependencies2": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ctest-native-configure": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "python-dependencies3": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ffi-authentic-artifact-audit": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "prerequisites": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-full-build21": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "clone-app": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "source-verification": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emitter-build-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ragger-tests-nanosp2": {
+      "exit": 2,
+      "pass": 10,
+      "fail": 1,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 11
+    },
+    "final-inventory": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "lockfile-patch": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-tool-debs": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "docker-access": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ffi-artifacts": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "runner-details": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "device-testnet-nanosp-build": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "lockfile-patch-check": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "final-source-state": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ctest-llvm21-configure": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-core-install": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "cmocka-download": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "inspect-flat-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "inventory": {
+      "exit": 1,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "mainnet-nanox2": {
+      "exit": 0,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "reported_cases": 2
+    },
+    "device-testnet-nanosp-build2": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "prerequisite-source-details": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-app-resolved": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emitter-docs": {
+      "exit": 2,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "authentic-emitter-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-common-pinned": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "clone-sdk": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "emitter-public-branches": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-common-resolved": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "native-prerequisite-plan": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "tool-extract": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "runner-prerequisites": {
+      "exit": 127,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "device-python-tools": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "speculos-native-deps": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "lockfile-patch-verify-existing": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-common-with-ffi": {
+      "exit": 0,
+      "pass": 85,
+      "fail": 0,
+      "skip": 0,
+      "errors": 0,
+      "deselected": 0,
+      "rust_result_groups": [
+        [
+          81,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "speculos-qemu-extract": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "bitcoin-rust": {
+      "exit": 101,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "mainnet-runner-help": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "ctest-target-delta": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "device-mainnet-nanosp-build": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    },
+    "fetch-flat-emitter": {
+      "exit": 0,
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "errors": null,
+      "deselected": null
+    }
+  },
+  "ctest_enumerated": 31,
+  "exclusions_added": [],
+  "notes": [
+    "Source worktree attempt failed Ragger .git-directory discovery; moved to exact standalone clone without editing tests.",
+    "Default-port overlapping testnet attempt interrupted after mainnet collision; full isolated reruns supersede it, all raw results retained.",
+    "Mainnet suite is legacy Speculos fixtures in tests_mainnet, not Ragger plugin; both devices still ran full directory slow=2.",
+    "Tests pure checks may pass even when session backend setup fails; never certify whole suite from those passes."
+  ]
+}

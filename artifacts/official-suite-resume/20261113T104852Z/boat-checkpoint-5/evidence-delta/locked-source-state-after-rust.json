@@ -1,0 +1,20 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "bash",
+    "-c",
+    "git -C vanadium diff --exit-code; git -C lean-ledger-bitcoin status --short; git -C turbo-lean status --short; sha256sum vanadium/Cargo.lock vanadium/apps/bitcoin/app/Cargo.lock vanadium/apps/bitcoin/common/Cargo.lock; sha256sum app-mainnet/build/nanos2/bin/app.elf app-mainnet/build/nanox/bin/app.elf; git -C app-mainnet status --short"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794569011.0321136,
+  "exit": 0,
+  "ended": 1794569011.2722986
+}

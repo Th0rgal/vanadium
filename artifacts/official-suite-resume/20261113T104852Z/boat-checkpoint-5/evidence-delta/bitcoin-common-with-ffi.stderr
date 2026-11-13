@@ -1,0 +1,27 @@
+   Compiling bitcoin v0.32.102
+   Compiling bip388 v0.1.2
+   Compiling vanadium-app-sdk v0.1.0 (/var/lib/orb-node/work/official-suite-resume/vanadium/app-sdk)
+   Compiling common v0.1.0 (/var/lib/orb-node/work/official-suite-resume/vanadium/common)
+   Compiling serde_json v1.0.154
+   Compiling zmij v1.0.23
+   Compiling itoa v1.0.19
+   Compiling memchr v2.8.3
+   Compiling vnd-bitcoin-common v0.1.0 (/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common)
+warning: unused dependency `base64`
+  --> Cargo.toml:21:1
+   |
+21 | base64 = { version = "0.22.1", default-features = false, features = ["alloc"] }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `cargo::unused_dependencies` is set to `warn` by default
+help: consider removing the dependency on `base64`
+help: to still use for development builds, move to `dev-dependencies`
+warning: `vnd-bitcoin-common` (manifest) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 12.88s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+     Running unittests src/lib.rs (/var/lib/orb-node/work/official-suite-resume/target/debug/build/vnd-bitcoin-common/397b66c139f4596e/out/vnd_bitcoin_common-397b66c139f4596e)
+     Running tests/bip352_vectors.rs (/var/lib/orb-node/work/official-suite-resume/target/debug/build/vnd-bitcoin-common/f491bb1b1da0cbcd/out/bip352_vectors-f491bb1b1da0cbcd)
+     Running tests/bip374_vectors.rs (/var/lib/orb-node/work/official-suite-resume/target/debug/build/vnd-bitcoin-common/fc0f426738545767/out/bip374_vectors-fc0f426738545767)
+     Running tests/bip375_vectors.rs (/var/lib/orb-node/work/official-suite-resume/target/debug/build/vnd-bitcoin-common/8de7d60e9011f7d5/out/bip375_vectors-8de7d60e9011f7d5)
+   Doc-tests vnd_bitcoin_common

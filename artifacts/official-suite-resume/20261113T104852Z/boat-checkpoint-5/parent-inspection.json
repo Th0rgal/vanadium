@@ -1,0 +1,81 @@
+{
+  "archive_sha256": "3b999127b82710d9d900f72098110c0f333feb2f7da18a27a9c5a4081b16113c",
+  "accepted_bitcoin_rust": {
+    "app": {
+      "run": "bitcoin-app-with-ffi",
+      "exit": 0,
+      "unit_pass": 90,
+      "integration_pass": 0,
+      "doc_pass": 0,
+      "fail": 0,
+      "ignored": 0,
+      "filtered_out": 0,
+      "groups": [
+        [
+          90,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/app"
+    },
+    "common": {
+      "run": "bitcoin-common-with-ffi",
+      "exit": 0,
+      "unit_pass": 81,
+      "integration_pass": 4,
+      "doc_pass": 0,
+      "fail": 0,
+      "ignored": 0,
+      "filtered_out": 0,
+      "groups": [
+        [
+          81,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common"
+    }
+  },
+  "baseline": "f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb",
+  "emitter_source": "8c3503fa0df74fafcd7a3b91e4319606985b7198",
+  "ffi_archive_sha256": "e01676d36e77e8fa22368f7331f498a7af2bd7a0276b95a2968c7e66c069f889",
+  "ffi_undefined_symbols": 0,
+  "host_max_frame_bytes": 296,
+  "root_common": "still original locked failure101, not Bitcoincommon81",
+  "ragger_testnet": "no full suite counts accepted yet",
+  "spec_changes": []
+}

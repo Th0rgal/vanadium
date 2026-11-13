@@ -1,0 +1,110 @@
+
+running 81 tests
+test fastpsbt::test::musig2_output_participant_pubkeys ... ok
+test fastpsbt::test::bug_009_non_canonical_compact_size_and_long_witness_utxo ... ok
+test fastpsbt::test::musig2_partial_sig_bad_length ... ok
+test fastpsbt::test::musig2_partial_sig_round_trip ... ok
+test fastpsbt::test::bug_004_bip370_locktime_rules ... ok
+test fastpsbt::test::musig2_participant_pubkeys_bad_value_length ... ok
+test fastpsbt::test::musig2_participant_pubkeys_scriptpath ... ok
+test fastpsbt::test::musig2_pub_nonce_bad_length ... ok
+test fastpsbt::test::musig2_pub_nonce_round_trip ... ok
+test fastpsbt::test::sp_fields ... ok
+test fastpsbt::test::test_parse_psbt ... ok
+test fastpsbt::test::sp_output_scripts ... ok
+test identity::tests::test_build_identity_message ... ok
+test identity::tests::test_build_identity_message_too_long ... ok
+test identity::tests::test_identity_derivation_path ... ok
+test fastpsbt::test::sp_output_rules ... ok
+test identity::tests::test_is_identity_path ... ok
+test fastpsbt::test::sp_field_sizes ... ok
+test message::tests::musig2_partial_sig_roundtrip ... ok
+test message::tests::musig2_pubnonce_roundtrip ... ok
+test message::tests::response_psbt_signed_roundtrip_empty_musig ... ok
+test message::tests::response_psbt_signed_roundtrip_with_musig ... ok
+test message::tests::response_psbt_signed_roundtrip_silent_payments ... ok
+test account::tests::test_wallet_policy_destination ... ok
+test fastpsbt::test::musig2_participant_pubkeys_keypath ... ok
+test miniscript_check::tests::bug_006_rejects_older_zero_and_disable_flag ... ok
+test miniscript_check::tests::bug_006_rejects_after_zero_and_msb_set ... ok
+test miniscript_check::tests::bug_006_rejects_timelock_height_time_mixing ... ok
+test miniscript_check::tests::bug_006_rejects_missing_signature_and_malleable_scripts ... ok
+test message::tests::silent_payment_roundtrip ... ok
+test miniscript_check::tests::bug_006_accepts_sane_wsh_and_tapscript_policies ... ok
+test musig::tests::aggregate_xpub_then_two_ckdpub_steps ... ok
+test musig::tests::nonce_gen_is_deterministic_in_rand ... ok
+test musig::tests::ckdpub_with_tweak_bip32_tv1_m0h_to_m0h1 ... ok
+test psbt::account::tests::test_account_id_is_a_compact_size ... ok
+test psbt::account::tests::test_get_nonexistent_account ... ok
+test psbt::account::tests::test_invalid_account_name ... ok
+test musig::tests::aggregate_xpub_matches_key_agg ... ok
+test psbt::account::tests::test_prepare_psbt ... ok
+test psbt::account::tests::test_set_and_get_input_coordinates ... ok
+test psbt::account::tests::test_set_and_get_output_coordinates ... ok
+test psbt::account::tests::test_set_and_get_proof_of_registration ... ok
+test psbt::id_auth::tests::test_add_and_get_output_auth_proof ... ok
+test psbt::id_auth::tests::test_add_and_get_registered_identity_key ... ok
+test psbt::id_auth::tests::test_add_multiple_registered_identity_keys ... ok
+test psbt::account::tests::test_set_and_get_account ... ok
+test psbt::account::tests::test_set_and_get_account_name ... ok
+test psbt::id_auth::tests::test_output_auth_malformed_value_returns_error ... ok
+test psbt::id_auth::tests::test_registered_identity_key_empty_name_rejected ... ok
+test psbt::id_auth::tests::test_output_auth_multiple_proofs ... ok
+test psbt::v2::tests::edits_serialize_sorted ... ok
+test psbt::v2::tests::from_v0 ... ok
+test psbt::v2::tests::from_v0_rejects_script_sigs ... ok
+test psbt::v2::tests::key_origins_and_scripts ... ok
+test psbt::v2::tests::parse_rejects_invalid_psbts ... ok
+test psbt::v2::tests::proprietary_keys_read_back ... ok
+test psbt::account::tests::test_prepare_psbt_musig ... ok
+test psbt::v2::tests::from_v0_rejects_v2_fields ... ok
+test psbt::v2::tests::iter_type ... ok
+test script::tests::tr_musig_keypath_to_script ... ok
+test silent_payments::account::tests::test_coordinates_serialization ... ok
+test psbt::account::tests::test_prepare_psbt_several_accounts ... ok
+test musig::tests::key_agg_vectors_bip327 ... ok
+test script::tests::tr_musig_keypath_changes_with_index ... ok
+test silent_payments::account::tests::test_serialization ... ok
+test silent_payments::account::tests::test_new ... ok
+test silent_payments::account::tests::test_spscan ... ok
+test silent_payments::address::tests::codes_have_no_infinity ... ok
+test silent_payments::account::tests::test_destination ... ok
+test silent_payments::address::tests::address_padding ... ok
+test silent_payments::sender::tests::k_counts_per_scan_key_in_the_given_order ... ok
+test silent_payments::address::tests::spscan_round_trip ... ok
+test silent_payments::sender::tests::create_outputs_rejects_degenerate_inputs ... ok
+test silent_payments::address::tests::address_round_trip ... ok
+test silent_payments::address::tests::address_versions ... ok
+test silent_payments::sender::tests::k_max_per_scan_key ... ok
+test silent_payments::sender::tests::output_key_rejects_infinity ... ok
+test musig::tests::round_trip_two_party_keypath_no_tweaks ... ok
+test silent_payments::sender::tests::taproot_keys_are_normalized ... ok
+test musig::tests::round_trip_two_party_keypath_with_bip32_and_taptweak ... ok
+test silent_payments::dleq::tests::proofs_verify_and_bind_their_inputs ... ok
+
+test result: ok. 81 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+
+running 1 test
+test bip352_vectors ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.56s
+
+
+running 2 tests
+test generate_proof_vectors ... ok
+test verify_proof_vectors ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+
+running 1 test
+test bip375_vectors ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

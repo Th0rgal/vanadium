@@ -1,0 +1,22 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume",
+  "argv": [
+    "env",
+    "LD_LIBRARY_PATH=/var/lib/orb-node/work/official-suite-resume/prefix/usr/lib/x86_64-linux-gnu",
+    "python3",
+    "-c",
+    "import pathlib,hashlib,subprocess,json; p=pathlib.Path(\"lean-ledger-bitcoin/ffi/vanadium/build/host/liblean_ledger_bitcoin\");print(\"baseline\",subprocess.check_output([\"git\",\"-C\",\"lean-ledger-bitcoin\",\"rev-parse\",\"HEAD\"],text=True).strip());print(\"emitter\",subprocess.check_output([\"git\",\"-C\",\"turbo-lean\",\"rev-parse\",\"HEAD\"],text=True).strip())\nfor ext in [\".ll\",\".h\",\".o\",\".a\",\".su\"]:\n q=p.with_suffix(ext);print(q,hashlib.sha256(q.read_bytes()).hexdigest(),q.stat().st_size)\nnm=subprocess.check_output([\"prefix/usr/bin/llvm-nm-21\",str(p.with_suffix(\".a\"))],text=True);print(nm);undef=[l for l in nm.splitlines() if \" U \" in l or l.strip().startswith(\"U \")];assert not undef\nsu=p.with_suffix(\".su\").read_text().splitlines();frames=[int(l.split(\"\\t\")[1]) for l in su if l];print(json.dumps({\"undefined\":len(undef),\"worst_host_frame\":max(frames),\"exported_llb_symbols\":sum(\" T llb_\" in l for l in nm.splitlines())}));assert max(frames)<1024"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794568989.5786874,
+  "exit": 0,
+  "ended": 1794568989.623671
+}

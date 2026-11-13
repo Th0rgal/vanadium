@@ -1,0 +1,23 @@
+{
+  "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common",
+  "argv": [
+    "env",
+    "LEAN_NATIVE=/var/lib/orb-node/work/official-suite-resume/turbo-lean/lean/.lake/build/bin/lean-native",
+    "cargo",
+    "+stable",
+    "test",
+    "--locked"
+  ],
+  "env": {
+    "CARGO_HOME": "/var/lib/orb-node/work/official-suite-resume/cargo",
+    "RUSTUP_HOME": "/var/lib/orb-node/work/official-suite-resume/rustup",
+    "CARGO_TARGET_DIR": "/var/lib/orb-node/work/official-suite-resume/target",
+    "CARGO_BUILD_JOBS": "1",
+    "GIT_TERMINAL_PROMPT": "0",
+    "TMPDIR": "/var/lib/orb-node/work/official-suite-resume/tmp",
+    "PIP_CACHE_DIR": "/var/lib/orb-node/work/official-suite-resume/pip-cache"
+  },
+  "started": 1794569009.867382,
+  "exit": 0,
+  "ended": 1794569032.0794666
+}
