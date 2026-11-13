@@ -1,0 +1,1 @@
+{"awaiting_complete_attempt": "ragger-tests-nanosp3", "next_complete_run": "ragger-tests-nanosp-long", "change_only": "timeout300 to1800; same full directory and slow2", "start_deadline_utc": "2026-11-13T11:50:00Z"}

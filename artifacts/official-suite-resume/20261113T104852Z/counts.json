@@ -1,21 +1,155 @@
 {
-  "fresh_runs": [],
-  "official_counts": {
-    "pass": null,
-    "fail": null,
-    "skip": null,
-    "deselected": null
+  "status": "IN_PROGRESS",
+  "accepted": {
+    "ctest": {
+      "evidence_tier": "executable-reproduced",
+      "pass": 31,
+      "fail": 0,
+      "skip": 0,
+      "deselected": 0,
+      "count_unit": "CTest targets, not individual cmocka cases",
+      "exit": 0,
+      "enumeration_matches_executed_junit": true,
+      "added_target": "test_lean_bolos_kernels",
+      "full_cmocka_output": "requested LastTest.log, JUnit truncates stdout per test at1024bytes"
+    },
+    "mainnet": {
+      "nanosp": {
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "deselected": 0,
+        "exit": 0,
+        "case_names": [
+          "test_bip86",
+          "test_dashboard"
+        ],
+        "run": "mainnet-nanosp",
+        "scope": "Entire official tests_mainnet directory, legacy official pytest fixtures, not testnet Ragger"
+      },
+      "nanox": {
+        "pass": 2,
+        "fail": 0,
+        "skip": 0,
+        "deselected": 0,
+        "exit": 0,
+        "case_names": [
+          "test_bip86",
+          "test_dashboard"
+        ],
+        "run": "mainnet-nanox2",
+        "scope": "Entire official tests_mainnet directory, legacy official pytest fixtures, not testnet Ragger"
+      }
+    },
+    "bitcoin_rust": {
+      "app": {
+        "run": "bitcoin-app-with-ffi",
+        "exit": 0,
+        "unit_pass": 90,
+        "integration_pass": 0,
+        "doc_pass": 0,
+        "fail": 0,
+        "ignored": 0,
+        "filtered_out": 0,
+        "groups": [
+          [
+            90,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/app"
+      },
+      "common": {
+        "run": "bitcoin-common-with-ffi",
+        "exit": 0,
+        "unit_pass": 81,
+        "integration_pass": 4,
+        "doc_pass": 0,
+        "fail": 0,
+        "ignored": 0,
+        "filtered_out": 0,
+        "groups": [
+          [
+            81,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common"
+      }
+    }
+  },
+  "uncompleted": {
+    "testnet_nanosp": {
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "exit": null,
+      "status": "RUNNING; full result required"
+    },
+    "testnet_nanox": {
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "exit": null,
+      "status": "RUNNING; full result required"
+    },
+    "vanadium_root_common": {
+      "pass": null,
+      "fail": null,
+      "skip": null,
+      "deselected": null,
+      "exit": 101,
+      "status": "original --locked canary blocked before execution; private overlay investigation requested"
+    }
   },
   "historical_unverified": {
     "app": [
       79,
       90
     ],
-    "common": [
+    "bitcoin_common": [
       74,
       81
     ],
     "NanoS+": "277/5 subset",
-    "X": "53/2 subset"
-  }
+    "NanoX": "53/2 subset"
+  },
+  "fresh_attempts": "See each boat-checkpoint-N/evidence or evidence-delta; aborted/failed runs retained separately; no summing across retries",
+  "spec_changes": []
 }

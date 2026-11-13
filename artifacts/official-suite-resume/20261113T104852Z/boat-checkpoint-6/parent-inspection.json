@@ -1,0 +1,20 @@
+{
+  "archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24",
+  "new_command_records": [
+    "clone-slow-diagnostic.json",
+    "diagnostic-isolation.json",
+    "patch-index-initialize.json",
+    "patch-pristine-head-check.json"
+  ],
+  "new_test_results_accepted": [],
+  "testnet_status": "Full runs and separate512-input diagnostics active, no completed result counts yet",
+  "long_run_queue": "same full directory/slow2/assertions, timeout300 to1800; attempts distinct; new-run start deadline11:50Z",
+  "root_common": "unchanged rootlock blocker, private overlay investigation requested",
+  "accepted_prior_results": [
+    "CTest31",
+    "mainnet2/device",
+    "BitcoinRustapp90",
+    "BitcoinRustcommon81unit+4integration"
+  ],
+  "no_spec_changes": true
+}

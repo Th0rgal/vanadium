@@ -1,0 +1,5 @@
+# Checkpoint6 — slow device tests continue, no new certification
+
+Full isolated testnet runs remain active. Executor reports512-input case reaches300-second runner limit on both devices; complete attempts continue and preserve failures. Separate512-input diagnostics with longer allowance are active. A queued full rerun retains entire directory, slow2, assertions and upstream skip rules; only per-test timeout changes300to1800. It starts only after corresponding first run completes and before11:50Z. No diagnostic/subset result substitutes for full-suite evidence; no timebox impliesPASS.
+
+Checkpoint6 adds pristine private-index application check of nested-lockfiles.patch and exact diagnostic clone/artifact isolation. No completed new test result. Earlier CTest/Mainnet/Rust successes remain acquired. Parent main REPORT/counts now consolidated to avoid stale checkpoint1 claims; old worker REPORT remains historical. No source/spec/assertion change. Boat active expiry12:22Z; no rights bypass or extra review.

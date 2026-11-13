@@ -1,23 +1,27 @@
-# Official suite resume — fresh evidence 2026-11-13
+# Official Bitcoin suite resume — current parent assessment
 
-Status: BLOCKED before test execution. No official suite is certified.
+Status: IN_PROGRESS. Evidence reviewed through checkpoint6. No global PASS.
 
-Pinned source: Vanadium 6ee1f9545e2efaed439d463a02187c73a9d6d1b4; app-bitcoin afe126fea70c8c7d6091948bb8a8ae529ea89a60; Lean f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb; candidate A 092bb97fe05e4957e3f8399c04fd2434b9a902f1.
+| Complete fresh suite | Passed | Failed | Skipped/ignored | Deselected/filtered | Exit |
+|---|---:|---:|---:|---:|---:|
+| Native CTest, all31targets (30upstream+added Lean target), SpeculosON |31|0|0|0|0|
+| Official mainnet directory, NanoS+, slow2 |2|0|0|0|0|
+| Official mainnet directory, NanoX, slow2 |2|0|0|0|0|
+| Bitcoin Rust app, separate workspace |90|0|0|0|0|
+| Bitcoin Rust common, separate workspace |81unit+4integration|0|0|0|0|
 
-Only new worktrees official-resume-vanadium and official-resume-app are owned. Shared source, site, RAM and candidate trees were not modified. No heavy compilation was started on this host. No reviewer launched.
+Mainnet uses the official legacy fixture suite, distinct from testnet Ragger. Rust common integrations are BIP3521,BIP3742,BIP3751; doc0. CTest counts executable targets, not individual cmocka cases; full LastTest.log requested, JUnit stdout truncates at1024bytes. Parent independently matched exact argv, completed exits and raw summaries/JUnit. See counts.json and checkpoint parent-inspection files. Historical app79/90/common74/81/subsetdevice counts remain unverified, never reused as fresh evidence.
 
-## Fresh checks
+## Incomplete suites and observed failures
 
-See inventory.txt, canary.txt, resolution.stderr.txt, resolution.lock.diff and prerequisites.txt for exact argument vectors, output and exit status. Canary: exit 101 before compilation; upstream Cargo.lock SHA-256 preserved. Official pass/fail/skip/deselected are unknown, not zero. The diagnostic metadata run without --locked was ONLY dependency resolution in the owned worktree, then restored the original lock in a finally block. It is not test evidence. The resolver diff adds rhai_codegen to cargo-vnd; offline resolution also lacks addr2line v0.24.2. This is a build prerequisite discrepancy, not an established Bitcoin behavioral bug. No spec was changed.
+Full testnet Ragger NanoS+/NanoX both collected282 with slow2 and isolated emulator/BitcoinCore ports. Complete counts remain unknown while running. An earlier overlapping attempt stopped after9pass/1fail RAPDU0x6901; it is retained and not certified. Isolated runs reportedly passed that early case but full raw completion is still required before resolving cause. Enabled512-input case hits300-second runner limit on bothdevices; separate longer diagnostics and queued full timeout1800 runs preserve assertions/selection/skips. None of these partial/diagnostic outputs is PASS.
 
-## Remaining acceptance
+Root Vanadium common is a DIFFERENT crate from Bitcoincommon81: original --locked canary exits101 before compilation because workspace lock lacks cargo-vnd->rhai_codegen edge. Upstream lock remains byte-identical SHA256139326fa0b3bd5d75ba9447549493fd135330d1f2bf51a0d9c95ee50a04e7546. A private --lockfile-path overlay investigation is authorized, with exact diff/lock recorded and any result clearly distinguished from frozen original. No upstream lock rewrite or silent --locked removal.
 
-Run Bitcoin Rust tests from their own apps/bitcoin workspace, separately from Vanadium common. Run full ctest with all 30 upstream targets and the added target, checking raw enumeration. Run complete Ragger suites tests/ and tests_mainnet/ for nanosp and nanox, with --enable_slow_tests where supported by the actual runner. Preserve all upstream skip rules and explicitly record every exclusion. Record pass/fail/skip/deselected from raw output; test collection is not a run. Historical app 79/90, common 74/81 and device subset counts are unverified and separate in counts.json.
+## Reproduction pins and provenance
 
-## Safe remediation
+Vanadium source6ee1f9545e2efaed439d463a02187c73a9d6d1b4, public evidence/contract ref045439a8c1a984b67f13b913df7c75002ef732a7. Appafe126fea70c8c7d6091948bb8a8ae529ea89a60. Leanf68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb. Correct emitter8c3503fa0df74fafcd7a3b91e4319606985b7198 rebuilt on dedicatedBoat; candidateA092bb97 not substituted. Authentic host FFIarchivee01676d36e77e8fa22368f7331f498a7af2bd7a0276b95a2968c7e66c069f889, undefined0, maximumhostframe296bytes. SDKv27.1.7 SHA9ea0fae9b40bb91e7c4f94bb0e9b8cf22df36306, compiler21, native user-space dependencies. New private nested Rust locks archived as patch/hashes.
 
-Use a dedicated Boat VM after budget/catalog inventory, with public source and no credentials; provision authentic SDK, Speculos, CMake, pytest/Ragger and device build tooling there. Do not change socket permissions or create SDK stubs. Resolve the lock discrepancy in a separately justified, reviewed dependency step, or select the matching pinned toolchain if it demonstrably preserves the upstream lock. Do not remove --locked silently. No semantic spec relaxation is justified by these environment failures. Before cloud build, establish an anonymous public path to these exact commits; original origin points at LedgerHQ, while the local custom branch is not advertised there.
+Initial failures (Dockerdenied,CMakeSDKmissing,Pythondependencies,staleemitter) are preserved as individual raw records; public native provisioning resolved them without socket/group changes or stubs. They are not Bitcoin bugs. Original phase1 report/counts preserved as initial-PHASE1 files. Worker REPORT.md inside older archives remains stale; current parent assessment supersedes it.
 
-## Continuation
-
-Local prerequisite gates remain BLOCKED. A dedicated Boat large executor is active; see state.json. Budget inventory completed before rental ($0.072/h, 90min). Public forks created after original LedgerHQ push403; both pinned source refs remotely verified. Requested/effective backend codex/codex, effective model gpt-6.1-sol. No reviewer launched. Remote test evidence has not yet been accepted.
+Only NEW owned integration/test trees used; no shared/site/RAM edits. No specs/tests/assertions weakened or changed, no added exclusions or reviewers, no merge/deploy. Exact commands/stdout/stderr/exits in checkpoint records; remote evidence branchtest/official-resume-evidence-20261113 signed and pushed to publicTh0rgal/vanadium after LedgerHQ403. Machine/executor IDs,TTL12:22Z and ownership in state.json.

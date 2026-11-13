@@ -1,5 +1,5 @@
 {
-  "status": "IN_PROGRESS: BitcoinRustapp90/common81unit+4integration verified; full testnet pending; rootcommon lock limitation",
+  "status": "IN_PROGRESS: complete testnet runs and512-input duration diagnostics active; acquired suites retained",
   "branch": "test/official-resume-20261113",
   "vanadium_remote": "https://github.com/Th0rgal/vanadium.git",
   "vanadium_pushed_sha": "045439a8c1a984b67f13b913df7c75002ef732a7",
@@ -156,5 +156,6 @@
       ],
       "cwd": "/var/lib/orb-node/work/official-suite-resume/vanadium/apps/bitcoin/common"
     }
-  }
+  },
+  "checkpoint6_archive_sha256": "bf4ccb071df8e035aa011715680fbda481d82e5a6028f9609e25e35a69b64a24"
 }
