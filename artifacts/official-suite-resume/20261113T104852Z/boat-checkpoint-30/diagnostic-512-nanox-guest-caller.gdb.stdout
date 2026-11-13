@@ -1,0 +1,7 @@
+The target architecture is set to "arm".
+0xf00008ac in _start ()
+add symbol table from file "/var/lib/orb-node/work/official-suite-resume/app-bitcoin/build/nanox/bin/app.elf" at
+	.text_addr = 0x40000000
+Hardware assisted breakpoint 1 at 0x400136c6
+Hardware assisted breakpoint 2 at 0x40013cdc
+Breakpoint 3 at 0xf000804e

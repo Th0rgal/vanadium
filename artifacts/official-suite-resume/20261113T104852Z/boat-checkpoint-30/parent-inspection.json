@@ -1,0 +1,17 @@
+{
+  "checkpoint": 30,
+  "last_runtime_utc": "2026-11-13T15:42:57.562153Z",
+  "observed_alive": [
+    "pytest1651388",
+    "Speculos1651462",
+    "QEMU1651467"
+  ],
+  "APDUrequests": 16022,
+  "APDUresponses": 16021,
+  "completion": null,
+  "exit": null,
+  "guest_caller": "UNKNOWN",
+  "gdb_breakpoints_installed": true,
+  "official_counts_unchanged": true,
+  "boat_expiry": 1794586947
+}

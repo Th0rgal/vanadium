@@ -1,0 +1,134 @@
+{
+  "observed_utc": "2026-11-13T15:19:05.801141+00:00",
+  "label": "SPECULOS_RUNTIME_CANDIDATE_ONLY_NOT_LEAN_CANDIDATE_A",
+  "patch": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-apdu-callback-lifetime.patch",
+    "bytes": 5704,
+    "sha256": "f85345d9a3b5f5a5dda035f1484c83b95deb904f67a8874e3b771bf6b3423c07"
+  },
+  "runtime_diff": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-runtime-candidate.diff",
+    "bytes": 3383,
+    "sha256": "5825dc117246fd9284c2fc035c54491a64db97a2950ec0788697b316d83d3500"
+  },
+  "standalone_regression": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-test.py",
+    "bytes": 2026,
+    "sha256": "a3da4a4412bd4f844d1232ce19bf053c174eeec227201eeeb3e67aeb573abb83"
+  },
+  "provenance": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-candidate-runtime-provenance.json",
+    "bytes": 33486,
+    "sha256": "8037245e3290d603b449b4f808d01cf9cb596ca4f66cf7e57da229900b7ce529"
+  },
+  "regression_results": {
+    "speculos-callback-regression-before": {
+      "json": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-before.json",
+        "bytes": 1057,
+        "sha256": "33d4879bf45f323cc56641c7e43636ab1a1086c7b0db6e5ff5f6f6402a3cc88a"
+      },
+      "stdout": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-before.stdout",
+        "bytes": 10288,
+        "sha256": "d8959e29958ab2c6f78307829bfdafff8f854f462adb8063a69912581686dc44"
+      },
+      "stderr": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-before.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xml": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-before.xml",
+        "bytes": 6728,
+        "sha256": "2749dc430b60bed3925c3523a822e7734416a963cbf5b7291b4da6a749e90f54"
+      }
+    },
+    "speculos-callback-regression-after": {
+      "json": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-after.json",
+        "bytes": 1056,
+        "sha256": "02e7934825d9adc530bd8486155284dd3b3ce5e29bf6f8152f4c7b4e3b4279ed"
+      },
+      "stdout": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-after.stdout",
+        "bytes": 968,
+        "sha256": "ddaff0ad2c315f4e4a37eea2008fbc70bc88317edf708a9dbd968d26665ae723"
+      },
+      "stderr": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-after.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xml": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-regression-after.xml",
+        "bytes": 1249,
+        "sha256": "b536d779d115608814c004906734c36205a1ac3f72d1b9a403263c17699ab8c4"
+      }
+    },
+    "speculos-callback-unit-full": {
+      "json": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-unit-full.json",
+        "bytes": 970,
+        "sha256": "6f103de3c9f04b5c17d16ce20b1eace5d56c646190fdae5b1b1f8e3cc013d174"
+      },
+      "stdout": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-unit-full.stdout",
+        "bytes": 675,
+        "sha256": "67e36e0682bf047ce1fa5571dab39b827d9bd27dc5e0315954a21cdced91e09f"
+      },
+      "stderr": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-unit-full.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "xml": {
+        "path": "/var/lib/orb-node/work/official-suite-resume/evidence/speculos-callback-unit-full.xml",
+        "bytes": 2095,
+        "sha256": "9469aee2912aab4cfc15db2b45f4d19a029dbd833f955c3211b58f4c147d2cc5"
+      }
+    }
+  },
+  "raw_gzip_manifest": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic512-rawgzip-final-manifest.json",
+    "bytes": 16239,
+    "sha256": "51e6ac1e2925e22ae0f9952d15cda4933fc51560699257b32e3093c6a8e55519"
+  },
+  "small_patch_and_regression_archive": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/speculos-callback-fix-manifest.json",
+    "bytes": 355,
+    "sha256": "e131c6470a163f9a57d70422b567b1c543f4230a8271db9e6ccad9183c02526f"
+  },
+  "terminal_diagnosis": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/candidate512-terminal-diagnosis.json",
+    "bytes": 27293,
+    "sha256": "1f1e49fd77be9161bb504eb81bf179c080afdb175bd41de55c214c80c91b1044"
+  },
+  "classification": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/diagnostic512-classification-current.json",
+    "bytes": 2071,
+    "sha256": "a5e1386b00253ff3d750758ca735a8c03cb95f8e27a724fd75d18445e7b9ca3d"
+  },
+  "extension_receipt": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/parent-extension-1622.json",
+    "bytes": 499,
+    "sha256": "ff20ff806a113b15300ba7a2c61085552948d408c2662cbb7aa979ac7f96b2cf"
+  },
+  "candidate_completed": {
+    "ended_utc": "2026-11-13T15:08:44.460836+00:00",
+    "exit": 1,
+    "pass": 0,
+    "fail": 1,
+    "active": false,
+    "full_suite": false
+  },
+  "parent_patch_acceptance": "Parent accepted callback-retention bug and inspected before/after/raw; causality512 remains unproven",
+  "no_claim_fixed_full_suite": true,
+  "no_new_full_runs": true,
+  "lean_baseline_unchanged": "f68864d1f2af8fd9f2ca26acddb5f0abd3e80bcb",
+  "candidate_final_provenance": {
+    "path": "/var/lib/orb-node/work/official-suite-resume/transfer/speculos-runtime-candidate-final-provenance.json",
+    "bytes": 34614,
+    "sha256": "6a2c6125a3d5640aa4fc26b423832968275065efe51ca0a5257d87753393cdd5"
+  }
+}
